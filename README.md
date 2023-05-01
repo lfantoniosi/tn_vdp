@@ -6,6 +6,18 @@ This project recreates the F18a FPGA Board using the over the counter Sipeed's T
 
 The bitstream file is fpga/tn9k_f18a/impl/pnr/tn9k_f19A.fs
 
+Follow this link to install the Gowins IDE:
+
+https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html
+
+The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 12.5Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
+
+Building:
+
+The Tang Nano 9K board can be purchased on AliExpress or ebay.
+
+The 2 boards gerber files are inside each kicad project gerber folders.
+
 The BOM can be found here https://www.digikey.ca/short/2t98zrjw
 
 Or transcribed here
@@ -45,8 +57,9 @@ Quantity	Part Number					Description
 3			CF14JT470RCT-ND				RES 470 OHM 5% 1/4W AXIAL
 
 Notes:
+
 1) CONN HDR DIP POST 20POS GOLD: It is expensive on DigiKey but it can be sourced elsewhere cheaper, even Amazon.
 2) GPIO RIBBON CABLE 2X10 IDC CABLE : It was supposed to be 2x8 but is out of stock. The 2x10 just works. Or build your own.
-3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference.
+3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference under images folder.
 4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the TN9K_F18A pins.
 
