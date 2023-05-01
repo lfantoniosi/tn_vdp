@@ -6,6 +6,12 @@ This project recreates the F18a FPGA Board using the over the counter Sipeed's T
 
 The bitstream file is fpga/tn9k_f18a/impl/pnr/tn9k_f19A.fs
 
+## Floppy images
+
+Bootable 80 colums CP/M 3 images can be downloaded here (flux and HxC2001): 
+
+https://drive.google.com/file/d/1nU48-01ozhA_n-ZHN1SCNINqFqhcBxUN/view?usp=sharing
+
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
