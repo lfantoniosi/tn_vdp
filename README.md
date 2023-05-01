@@ -55,3 +55,12 @@ Qty | Part Number                | Description
 3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference under images folder.
 4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the TN9K_F18A pins.
 
+## Jumper Settings
+
+I took the liberty to change the way the jumper works because I found them a bit confusing. Since the F18a uses Pull Ups an On jumper means the jumper is removed. I changed that, to turn a jumper on you just close it instead:
+```
+USR1 : SPR MAX - Turn it on for 32 sprites per line
+USR2 : SCANLIN - Turn it on for scanlines
+USR3 : GROMCLK - Turn it on to have GROM CLOCK enabled, Disabling it puts CPUCLK on pin 37 (9128/29)
+USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
+```
