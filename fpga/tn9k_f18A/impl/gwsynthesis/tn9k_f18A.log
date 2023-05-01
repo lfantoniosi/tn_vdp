@@ -1,0 +1,113 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_100.v'
+Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_125.v'
+Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v'
+Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v'
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd'
+Analyzing entity 'f18a_color'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":75)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd'
+Analyzing entity 'f18a_single_port_ram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd":55)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd":67)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd'
+Analyzing entity 'f18a_vram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd":74)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_div32x16.vhd'
+Analyzing entity 'f18a_div32x16'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_div32x16.vhd":57)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_div32x16.vhd":72)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd'
+Analyzing entity 'f18a_gpu'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":86)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":125)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_cpu.vhd'
+Analyzing entity 'f18a_cpu'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_cpu.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_cpu.vhd":146)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vga_cont_640_60.vhd'
+Analyzing entity 'f18a_vga_cont_640_60'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vga_cont_640_60.vhd":53)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vga_cont_640_60.vhd":67)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_counters.vhd'
+Analyzing entity 'f18a_counters'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_counters.vhd":57)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_counters.vhd":85)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd'
+Analyzing entity 'f18a_tiles'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":55)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":112)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd'
+Analyzing entity 'f18a_sprites'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":58)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":94)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd'
+Analyzing entity 'f18a_version'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":51)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":68)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd'
+Analyzing entity 'f18a_core'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd":63)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd":97)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd'
+Analyzing entity 'f18a_tile_linebuf'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd":84)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd":102)
+Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd'
+Analyzing entity 'f18a_top'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd":54)
+Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd":92)
+Compiling module 'top'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":43)
+Compiling module 'CLK_100'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_100.v":10)
+Compiling module 'CLK_125'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_125.v":10)
+Compiling module 'DVI_TX'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":1041)
+Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
+Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
+Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
+Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
+Switching to VHDL mode to elaborate design unit 'f18a_top'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":204)
+Processing 'f18a_top(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd":54)
+Processing 'f18a_core(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd":63)
+Processing 'f18a_vram(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd":56)
+Processing 'f18a_single_port_ram(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd":55)
+Extracting RAM for identifier 'ram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd":71)
+Processing 'f18a_cpu(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_cpu.vhd":56)
+Processing 'f18a_gpu(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":86)
+Extracting RAM for identifier 'gpuram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":135)
+Extracting RAM for identifier 'regfile'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":171)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":518)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":1040)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":1057)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":1152)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":1210)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd":1325)
+Processing 'f18a_div32x16(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_div32x16.vhd":57)
+Processing 'f18a_vga_cont_640_60(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vga_cont_640_60.vhd":53)
+Processing 'f18a_counters(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_counters.vhd":57)
+Processing 'f18a_tiles(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":55)
+Extracting RAM for identifier 'fifo'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":323)
+Processing 'f18a_tile_linebuf(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd":84)
+Extracting RAM for identifier 'linebuf1'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd":105)
+Extracting RAM for identifier 'linebuf2'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd":106)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":643)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd":736)
+Processing 'f18a_sprites(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":58)
+Extracting RAM for identifier 'linebuf1'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":102)
+Extracting RAM for identifier 'linebuf2'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":103)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":368)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":394)
+'others' clause is never selected("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd":808)
+Processing 'f18a_color(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":56)
+Extracting RAM for identifier 'colram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":81)
+Processing 'f18a_version(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":51)
+WARN  (EX4206) : Using initial value for 'verrom' since it is never assigned("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":111)
+Returning to Verilog mode to proceed with elaboration("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":204)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+[95%] Generate netlist file "D:\src\tn9k_f18a\fpga\tn9k_f18A\impl\gwsynthesis\tn9k_f18A.vg" completed
+[100%] Generate report file "D:\src\tn9k_f18a\fpga\tn9k_f18A\impl\gwsynthesis\tn9k_f18A_syn.rpt.html" completed
+GowinSynthesis finish

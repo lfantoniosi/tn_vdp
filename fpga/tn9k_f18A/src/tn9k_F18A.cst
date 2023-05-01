@@ -1,0 +1,131 @@
+// Generated with Lushay Code
+
+IO_LOC  "clk" 52;
+IO_PORT "clk" IO_TYPE=LVCMOS33;
+
+IO_LOC  "rst_n" 4;
+IO_PORT "rst_n" IO_TYPE=LVCMOS18;
+
+IO_LOC  "reset_n" 27;
+IO_PORT "reset_n" IO_TYPE=LVCMOS33;
+
+IO_LOC  "mode" 38;
+IO_PORT "mode" IO_TYPE=LVCMOS33;
+
+IO_LOC  "csw_n" 37;
+IO_PORT "csw_n" IO_TYPE=LVCMOS33;
+
+IO_LOC  "csr_n" 36;
+IO_PORT "csr_n" IO_TYPE=LVCMOS33;
+
+IO_LOC  "cpuclk" 25;
+IO_PORT "cpuclk" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "gromclk" 26;
+IO_PORT "gromclk" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "int_n" 39;
+IO_PORT "int_n" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "maxspr_n" 86;
+IO_PORT "maxspr_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC  "scnlin_n" 85;
+IO_PORT "scnlin_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC  "gromclk_n" 84;
+IO_PORT "gromclk_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC  "cpuclk_n" 83;
+IO_PORT "cpuclk_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+
+IO_LOC  "cd[0]" 28;
+IO_PORT "cd[0]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[1]" 29;
+IO_PORT "cd[1]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[2]" 30;
+IO_PORT "cd[2]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[3]" 33;
+IO_PORT "cd[3]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[4]" 34;
+IO_PORT "cd[4]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[5]" 40;
+IO_PORT "cd[5]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[6]" 35;
+IO_PORT "cd[6]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "cd[7]" 41;
+IO_PORT "cd[7]" DRIVE=12 IO_TYPE=LVCMOS33;
+
+IO_LOC  "red[3]" 51;
+IO_PORT "red[3]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "red[2]" 53;
+IO_PORT "red[2]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "red[1]" 77;
+IO_PORT "red[1]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "red[0]" 76;
+IO_PORT "red[0]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "grn[3]" 54;
+IO_PORT "grn[3]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "grn[2]" 55;
+IO_PORT "grn[2]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "grn[1]" 56;
+IO_PORT "grn[1]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "grn[0]" 57;
+IO_PORT "grn[0]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "blu[3]" 48;
+IO_PORT "blu[3]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "blu[2]" 49;
+IO_PORT "blu[2]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "blu[1]" 31;
+IO_PORT "blu[1]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "blu[0]" 32;
+IO_PORT "blu[0]" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "hsync" 63;
+IO_PORT "hsync" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "vsync" 42;
+IO_PORT "vsync" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "spi_clk" 59;
+IO_PORT "spi_clk" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "spi_cs" 60;
+IO_PORT "spi_cs" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "spi_miso" 62;
+IO_PORT "spi_miso" IO_TYPE=LVCMOS33;
+
+IO_LOC  "spi_mosi" 61;
+IO_PORT "spi_mosi" DRIVE=8 IO_TYPE=LVCMOS33;
+
+IO_LOC  "tmds_clk_p" 69,68;
+IO_PORT "tmds_clk_p" DRIVE=8 IO_TYPE=LVCMOS33D;
+
+IO_LOC  "tmds_d_p[0]" 71,70;
+IO_PORT "tmds_d_p[0]" DRIVE=8 IO_TYPE=LVCMOS33D;
+
+IO_LOC  "tmds_d_p[1]" 73,72;
+IO_PORT "tmds_d_p[1]" DRIVE=8 IO_TYPE=LVCMOS33D;
+
+IO_LOC  "tmds_d_p[2]" 75,74;
+IO_PORT "tmds_d_p[2]" DRIVE=8 IO_TYPE=LVCMOS33D;
+

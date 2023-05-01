@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Lut="4">
+    <SubModule name="clk_100_inst"/>
+    <SubModule name="clk_125_inst"/>
+    <SubModule name="dvi_tx_inst" Register="73" Alu="68" Lut="217"/>
+    <SubModule name="f18a_top_inst" Register="20" Alu="6" Lut="18">
+        <SubModule name="inst_f18a" Register="19" Lut="46" Bsram="1">
+            <SubModule name="inst_vram" Lut="124">
+                <SubModule name="inst_ram" Bsram="8"/>
+            </SubModule>
+            <SubModule name="inst_cpu" Register="435" Alu="63" Lut="515">
+                <SubModule name="inst_gpu" Register="510" Alu="208" Lut="1634" Dsp="2" Bsram="1" Ssram="5">
+                    <SubModule name="inst_divide" Register="56" Alu="17" Lut="94"/>
+                </SubModule>
+            </SubModule>
+            <SubModule name="inst_vga_cont" Register="23" Alu="9" Lut="32"/>
+            <SubModule name="inst_counters" Register="44" Alu="16" Lut="74"/>
+            <SubModule name="inst_tiles" Register="320" Alu="115" Lut="600" Dsp="4" Ssram="2">
+                <SubModule name="inst_linebuf" Lut="256" Ssram="128"/>
+            </SubModule>
+            <SubModule name="inst_sprites" Register="153" Alu="28" Lut="249" Bsram="2"/>
+            <SubModule name="inst_color" Register="25" Lut="29" Bsram="1"/>
+            <SubModule name="inst_version" Register="20" Alu="8" Lut="4"/>
+        </SubModule>
+    </SubModule>
+</Module>

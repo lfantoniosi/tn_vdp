@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_100.v" type="verilog"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_125.v" type="verilog"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v" type="verilog"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v" type="verilog"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_counters.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_cpu.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_div32x16.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_gpu.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_single_port_ram.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_sprites.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tile_linebuf.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_tiles.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vga_cont_640_60.vhd" type="vhdl"/>
+        <File path="D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd" type="vhdl"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="dsp_balance" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\src\tn9k_f18a\fpga\tn9k_f18A\impl\gwsynthesis\tn9k_f18A.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="top"/>
+        <Option type="verilog_language" value="verilog-2001"/>
+        <Option type="vhdl_language" value="vhdl-1993"/>
+    </OptionList>
+</Project>
