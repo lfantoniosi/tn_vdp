@@ -8,22 +8,24 @@ The bitstream file is fpga/tn9k_f18a/impl/pnr/tn9k_f19A.fs
 
 ## Floppy images
 
-Bootable 80 colums CP/M 3 images can be downloaded here (flux and HxC2001): 
+Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and HxC2001): 
 
-https://drive.google.com/file/d/1nU48-01ozhA_n-ZHN1SCNINqFqhcBxUN/view?usp=sharing
+[NABU PC images](https://drive.google.com/file/d/1nU48-01ozhA_n-ZHN1SCNINqFqhcBxUN/view?usp=sharing)
 
 ## Gerber files
 
 The gerber files can be located inside each KiCad project:
 
-/KiCad/tn9k_f18a/gerber
+[MainBoard](KiCad/tn9k_f18a/gerber)
 
-/KiCad/tn9k_vga/gerber
+[VGA breakout](KiCad/tn9k_vga/gerber)
+
+The VGA module is optional, only if you want VGA output.
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
-https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html
+[IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
 The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 12.5Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
 
@@ -33,7 +35,7 @@ The Tang Nano 9K board can be purchased on AliExpress or ebay.
 
 The 2 boards gerber files are inside each kicad project gerber folders.
 
-The BOM can be found here https://www.digikey.ca/short/2t98zrjw
+The BOM can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
 
 Or transcribed here
 ```
@@ -72,3 +74,17 @@ USR2 : SCANLIN - Turn it on for scanlines
 USR3 : GROMCLK - Turn it on to have GROM CLOCK enabled, Disabling it puts CPUCLK on pin 37 (9128/29)
 USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
 ```
+
+## Assembling Instructions
+
+You shoulnd't have problem assembling it as all components are labeled. Just remember the pins on the TMS9118 slot goes under the board. Everything else it on the top side:
+
+![Front of the board](images/front.jpg)
+
+You need to solder the capacitors under each IC's. I made this way to reduce the size of it:
+
+![Back of the bard](images/back.jpg)
+
+And the final board stack up:
+
+![Stacked](images/stacked.jpg)
