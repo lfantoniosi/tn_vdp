@@ -4,7 +4,7 @@
 
 This project recreates the F18a FPGA Board using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
 
-The bitstream file is [here](fpga/tn9k_f18a/impl/pnr/tn9k_f19A.fs)
+The bitstream file is [here](fpga/tn9k_f18A/impl/pnr/tn9k_f18A.fs)
 
 ## Floppy images
 
