@@ -77,14 +77,14 @@ USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
 
 ## Assembling Instructions
 
-You shoulnd't have problem assembling it as all components are labeled. Just remember the pins on the TMS9118 slot goes under the board. Everything else it on the top side:
+You shoulnd't have problem assembling it as all components are labeled. Just remember the 2 pin strips for the TMS9118 slot goes under the board as well the 3 caps. Everything else it on the top side. I personally prefer soldering the female header on the FPGA board. Mind the prientation of the **DIP switch** as the image below.
 
 ![Front of the board](images/front.jpg)
 
-You need to solder the capacitors under each IC's. I made this way to reduce the size of it:
+You need to solder the capacitors under each IC's. I made this way to reduce the size of the board.
 
 ![Back of the bard](images/back.jpg)
 
-And the final board stack up:
+And the final board stacked up. To avoid plugging the board inverted there are two labels on it: **USB-C SIDE** and **HDMI SIDE**. The orientation of the board towards the TMS9118 slot is the USB-C up (pin 1 of TMS9118). The TMS9118 pin number 1 and 40 are printed under it.
 
 ![Stacked](images/stacked.jpg)
