@@ -92,7 +92,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/impl/temp/rtl_parser.result",
- "Top" : "",
+ "Top" : "top",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_93"
 }
