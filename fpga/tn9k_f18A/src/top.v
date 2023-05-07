@@ -82,7 +82,7 @@ module top(
 );
 
 // clocks
-wire clk_w;
+//wire clk_w;
 wire clk_100_w;
 wire clk_100_lock_w;
 wire clk_25_w;
@@ -100,16 +100,16 @@ wire [7:0] rgb_g_w;
 wire [7:0] rgb_b_w;
 
 
-    BUFG clk_bufg_inst(
-    .O(clk_w),
-    .I(clk)
-    );
+//    BUFG clk_bufg_inst(
+//    .O(clk_w),
+//    .I(clk)
+//    );
 
     CLK_100 clk_100_inst(
         .clkout(clk_100_w), 
         .lock(clk_100_lock_w),
         .reset(~rst_n), 
-        .clkin(clk_w) 
+        .clkin(clk) 
     );
 
     CLKDIV clk_50_inst (
