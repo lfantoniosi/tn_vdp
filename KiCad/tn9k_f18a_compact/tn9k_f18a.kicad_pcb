@@ -2226,7 +2226,7 @@
     (stroke (width 0.1) (type default)) (layer "Edge.Cuts") (tstamp e680f154-d708-44aa-be94-30eff4773e07))
   (gr_line (start 128.778 128.143) (end 126.492 128.143)
     (stroke (width 0.1) (type default)) (layer "Edge.Cuts") (tstamp e76b7ec3-219e-4529-ba3d-a84834dfd015))
-  (gr_text "TANG NANO 9K F18A\n2023 Luis Antoniosi, Hans Hübner\nhttps://github.com/lfantoniosi/tn9k_f18a" (at 118.618 67.945 90) (layer "B.SilkS") (tstamp 6fd3ebeb-e5a3-4788-b35d-fba291a26fdf)
+  (gr_text "TANG NANO 9K F18A - Version H1\n2023 Luis Antoniosi, Hans Hübner\nhttps://github.com/lfantoniosi/tn9k_f18a" (at 118.618 67.945 90) (layer "B.SilkS") (tstamp 6fd3ebeb-e5a3-4788-b35d-fba291a26fdf)
     (effects (font (size 1.5 1.5) (thickness 0.25) bold) (justify left bottom mirror))
   )
   (gr_text "USB-C SIDE" (at 114.173 60.325) (layer "F.SilkS") (tstamp 8d472607-152f-4722-a5ec-becdd64ac99d)
