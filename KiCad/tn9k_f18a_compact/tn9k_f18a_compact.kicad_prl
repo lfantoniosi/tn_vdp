@@ -64,11 +64,11 @@
       39,
       40
     ],
-    "visible_layers": "00290a0_00000000",
+    "visible_layers": "0015050_00000000",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "tn9k_f18a.kicad_prl",
+    "filename": "tn9k_f18a_compact.kicad_prl",
     "version": 3
   },
   "project": {
