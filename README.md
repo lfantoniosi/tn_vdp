@@ -82,7 +82,7 @@ USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
 You shoulnd't have problem assembling it as all components are labeled. Just remember the 2 pin strips for the TMS9118 slot goes under the board as well the 3 caps. Everything else it on the top side. I personally prefer soldering the female header on the FPGA board. Mind the prientation of the **DIP switch** as the image below.
 ```
 1) solder the 3 DIP-20 sockets on top side
-2) for each socket, solder one axial caps under the board connecting pins GND and VCC (see the [back](images/back.jpg))
+2) for each socket, solder one axial caps under the board connecting pins GND and VCC the back image below
 3) solder the mini-switch on top side, mind hte numbering according to the text
 4) solder the two male machine strips under the board (20 pins each strip)
 5) solder the male pins that came with the Tang Nano 9K board on the top side of the board (24 pins each)
