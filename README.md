@@ -16,7 +16,9 @@ Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and Hx
 
 The gerber files can be located inside each KiCad project:
 
-[MainBoard](KiCad/tn9k_f18a/gerber)
+[MainBoard for NABU](KiCad/tn9k_f18a/gerber)
+
+[MainBoard for TI-99 (FAT)](KiCad/tn9k_f18_fat/gerber)
 
 [VGA breakout](KiCad/tn9k_vga/gerber)
 
