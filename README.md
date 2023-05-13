@@ -80,6 +80,44 @@ USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
 ## Assembling Instructions
 
 You shoulnd't have problem assembling it as all components are labeled. Just remember the 2 pin strips for the TMS9118 slot goes under the board as well the 3 caps. Everything else it on the top side. I personally prefer soldering the female header on the FPGA board. Mind the prientation of the **DIP switch** as the image below.
+```
+1) solder the 3 DIP-20 sockets on top side
+2) for each socket, solder one axial caps under the board connecting pins GND and VCC the back image below
+3) solder the mini-switch on top side, mind hte numbering according to the text
+4) solder the two male machine strips under the board (20 pins each strip)
+5) solder the male pins that came with the Tang Nano 9K board on the top side of the board (24 pins each)
+6) solder the 8x2 right angle header (optional for VGA)
+6) solder the 2 female headers under the Tang Nano 9K board
+7) install the 3 74VLC256 chips. Mind the half-moon orientation
+7) plug the Tang Nano 9K on the male pins, mind the HDMI and UBS-C orientation as printed on the board
+8) configure the dip-switches
+```
+
+## DIP switches
+```
+USR1 - 32 sprite max
+USR2 - scanlines
+USR3 - pin 37: gromclk (on), cpuclk (off)
+USR4 - pin 38: cpuclk (on), NC (off)
+
+TMS9918A: (NABU-PC, CX5M)
+USR3 - on
+USR4 - on
+
+TMS9928/29A
+USR3 - on
+USR4 - off
+
+TMS9918
+USR3 - on
+USR4 - on
+
+TMS9128/29
+USR3 - off
+USR4 - off
+```
+
+## Images
 
 ![Front of the board](images/front.jpg)
 
@@ -90,3 +128,8 @@ You need to solder the capacitors under each IC's. I made this way to reduce the
 And the final board stacked up. To avoid plugging the board inverted there are two labels on it: **USB-C SIDE** and **HDMI SIDE**. The orientation of the board towards the TMS9118 slot is the USB-C up (pin 1 of TMS9118). The TMS9118 pin number 1 and 40 are printed under it.
 
 ![Stacked](images/stacked.jpg)
+
+![On Nabu 1](images/on_nabu1.jpg)
+
+![On Nabu 2](images/on_nabu2.jpg)
+
