@@ -4,6 +4,7 @@ Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_100.v'
 Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\clk_125.v'
 Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v'
 Analyzing Verilog file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v'
+Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":184)
 Analyzing VHDL file 'D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd'
 Analyzing entity 'f18a_color'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":56)
 Analyzing architecture 'rtl'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":75)
@@ -54,7 +55,7 @@ Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
 Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
 Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
 Compiling module '**'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\gowin\dvi_tx.v":0)
-Switching to VHDL mode to elaborate design unit 'f18a_top'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":204)
+Switching to VHDL mode to elaborate design unit 'f18a_top'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":252)
 Processing 'f18a_top(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_top.vhd":54)
 Processing 'f18a_core(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_core.vhd":63)
 Processing 'f18a_vram(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_vram.vhd":56)
@@ -90,7 +91,7 @@ Processing 'f18a_color(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd
 Extracting RAM for identifier 'colram'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_color.vhd":81)
 Processing 'f18a_version(rtl)'("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":51)
 WARN  (EX4206) : Using initial value for 'verrom' since it is never assigned("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\f18a_version.vhd":111)
-Returning to Verilog mode to proceed with elaboration("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":204)
+Returning to Verilog mode to proceed with elaboration("D:\src\tn9k_f18a\fpga\tn9k_f18A\src\top.v":252)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

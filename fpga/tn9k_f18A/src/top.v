@@ -91,6 +91,9 @@ wire clk_125_lock_w;
 wire hdmi_rst_n_w;
 wire clk_50_w;
 
+wire clk_7_w;
+wire clk_3_w;
+
 // hdmi
 wire rgb_vs_w;
 wire rgb_hs_w;
@@ -137,10 +140,53 @@ wire [7:0] rgb_b_w;
         .clkin(clk_25_w) //input clkin
     );
 
-assign hdmi_rst_n_w = rst_n & clk_125_lock_w & reset_n;
+
+    CLKDIV clk_7_inst (
+        .CLKOUT(clk_7_w),
+        .HCLKIN(clk_25_w), 
+        .RESETN(clk_100_lock_w),
+        .CALIB(1'b1)
+    );
+    defparam clk_7_inst.DIV_MODE = "3.5";
+    defparam clk_7_inst.GSREN = "false"; 
+
+    CLKDIV clk_3_inst (
+        .CLKOUT(clk_3_w),
+        .HCLKIN(clk_7_w), 
+        .RESETN(clk_100_lock_w),
+        .CALIB(1'b1)
+    );
+    defparam clk_3_inst.DIV_MODE = "2";
+    defparam clk_3_inst.GSREN = "false"; 
+
+
+wire rst_n_w;
+assign rst_n_w = rst_n & clk_100_lock_w & clk_125_lock_w;
+
+reg  [31:0] pwr_cnt;
+reg  pwr_on_r;
+always @(posedge clk_25_w or negedge rst_n_w) begin
+    if(rst_n_w == 0) begin
+        pwr_cnt = 7'b0;
+        pwr_on_r = 32'b0;
+    end
+    else begin
+        if (pwr_cnt == 32'd1260000) begin
+            pwr_on_r = 1'b1;
+        end else
+        begin
+            pwr_cnt = pwr_cnt + 32'd1;
+        end
+    end
+end
+
+wire reset_w;
+assign reset_n_w = pwr_on_r & reset_n;
+assign reset_w = ~reset_n_w;
+
 
 	DVI_TX dvi_tx_inst(
-		.I_rst_n(hdmi_rst_n_w), //input I_rst_n
+		.I_rst_n(reset_n_w), //input I_rst_n
 		.I_serial_clk(clk_125_w), //input I_serial_clk
 		.I_rgb_clk(clk_25_w), //input I_rgb_clk
 		.I_rgb_vs(rgb_vs_w), //input I_rgb_vs
@@ -176,16 +222,18 @@ assign blu = b_w;
 assign hsync = hs_w;
 assign vsync = vs_w;
 
+
+
 f18a_top f18a_top_inst(
     .clk_100m0_s(clk_50_w),
     .clk_25m0_s(clk_25_w),
-    .reset_n_net(hdmi_rst_n_w),
+    .reset_n_net(reset_n_w),
     .mode_net(mode),
     .csw_n_net(csw_n),
     .csr_n_net(csr_n),
     .int_n_net(int_n),
-    .clk_grom_net(gromclk),
-    .clk_cpu_net(cpuclk),
+    //.clk_grom_net(gromclk),
+    //.clk_cpu_net(cpuclk),
     .cd_net(cd),
     .hsync_net(hs_w),
     .vsync_net(vs_w),
@@ -203,5 +251,22 @@ f18a_top f18a_top_inst(
     .spi_clk_net(spi_clk)
     );
 
+reg [2:0] gromtick;
+always @(posedge clk_3_w) begin
+    if (pwr_on_r == 0) begin
+        gromtick = 3'b0;
+    end 
+    else begin
+        gromtick = gromtick + 3'b1;
+    end
+end
+
+wire cpuclk_w;
+assign cpuclk_w = clk_3_w & pwr_on_r;
+wire gromclk_w;
+assign gromclk_w = ~gromtick[2] & pwr_on_r;
+
+assign gromclk = gromclk_n ? cpuclk_w: gromclk_w; 
+assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
 
 endmodule

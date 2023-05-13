@@ -63,8 +63,8 @@ entity f18a_top is
       csw_n_net      : in  std_logic;
       csr_n_net      : in  std_logic;
       int_n_net      : out std_logic;
-      clk_grom_net   : out std_logic;  -- 447.443KHz GROMCLK
-      clk_cpu_net    : out std_logic;  -- 3.5795MHz CPUCLK
+--      clk_grom_net   : out std_logic;  -- 447.443KHz GROMCLK
+--      clk_cpu_net    : out std_logic;  -- 3.5795MHz CPUCLK
       cd_net         : inout std_logic_vector(0 to 7);
 
       -- Video generation
@@ -215,26 +215,26 @@ begin
    -- 100MHz / 3.5795MHz =  27.93, use  28 (3.5714MHz)
    -- 100MHz / 447.44KHz = 223.49, use 224 (446.428KHz)
 
-   ext_clock_gen :
-   process (clk_100m0_s)
-   begin if rising_edge(clk_100m0_s) then
+--   ext_clock_gen :
+--   process (clk_100m0_s)
+--   begin if rising_edge(clk_100m0_s) then
       -- 224 / 2 = 112, count 0..111 to generate 50% GROMCLK period.
-      if gromdiv_r = 55 then
-         gromclk_r <= (not gromclk_r) and reset_n_r;
-         gromdiv_r <= (others => '0');
-      else
-         gromdiv_r <= gromdiv_r + 1;
-      end if;
+--      if gromdiv_r = 55 then
+--         gromclk_r <= (not gromclk_r) and reset_n_r;
+--         gromdiv_r <= (others => '0');
+--      else
+--         gromdiv_r <= gromdiv_r + 1;
+--      end if;
 
       -- 28 / 2 = 14, count 0..13 to generate 50% CPUCLK period.
-      if cpudiv_r = 6 then
-         cpuclk_r <= (not cpuclk_r) and reset_n_r;
-         cpudiv_r <= (others => '0');
-      else
-         cpudiv_r <= cpudiv_r + 1;
-      end if;
-   end if;
-   end process;
+--      if cpudiv_r = 6 then
+--         cpuclk_r <= (not cpuclk_r) and reset_n_r;
+--         cpudiv_r <= (others => '0');
+--      else
+--         cpudiv_r <= cpudiv_r + 1;
+--      end if;
+--   end if;
+--   end process;
 
 
    -- User header.  Pull-up in the FPGA, a jumper in place will pull to ground.
@@ -266,9 +266,9 @@ begin
    -- not used    off  off    -- CPUCLK output on both pin37 and pin38
 
    -- USR3 selects GROMCLK or CPUCLK on pin37.
-   clk_grom_net <= gromclk_r when usr3_net = '0' else cpuclk_r;
+--   clk_grom_net <= gromclk_r when usr3_net = '0' else cpuclk_r;
 
    -- USR4 controls if pin38 outputs the CPUCLK or not.
-   clk_cpu_net <= cpuclk_r when usr4_net = '0' else 'Z';
+--   clk_cpu_net <= cpuclk_r when usr4_net = '0' else 'Z';
 
 end rtl;

@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/top.v",
-    "InstLine" : 108,
+    "InstLine" : 110,
     "InstName" : "clk_100_inst",
     "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/gowin/clk_100.v",
     "ModuleLine" : 10,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/top.v",
-    "InstLine" : 133,
+    "InstLine" : 135,
     "InstName" : "clk_125_inst",
     "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/gowin/clk_125.v",
     "ModuleLine" : 10,
@@ -25,7 +25,7 @@
    },
    {
     "InstFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/top.v",
-    "InstLine" : 142,
+    "InstLine" : 163,
     "InstName" : "dvi_tx_inst",
     "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/gowin/dvi_tx.v",
     "ModuleLine" : 1041,
@@ -43,7 +43,7 @@
    },
    {
     "InstFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/top.v",
-    "InstLine" : 179,
+    "InstLine" : 200,
     "InstName" : "f18a_top_inst",
     "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/f18a_top.vhd",
     "ModuleLine" : 54,
@@ -51,7 +51,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/f18a_top.vhd",
-      "InstLine" : 166,
+      "InstLine" : 168,
       "InstName" : "inst_f18a",
       "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn9k_f18A/src/f18a_core.vhd",
       "ModuleLine" : 63,
