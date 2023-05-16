@@ -27,7 +27,7 @@ The VGA module is optional, only if you want VGA output.
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
-**Note: The code can be built using the Education Version 1.9.8.11 - The Education EDA does not require license. **
+**Note: The code can be built using the Education Version 1.9.8.11 - The Education EDA does not require license.**
 
 [IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
