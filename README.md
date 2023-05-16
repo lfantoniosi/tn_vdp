@@ -27,6 +27,8 @@ The VGA module is optional, only if you want VGA output.
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
+**Note: You must use the version 1.9.8.10 of the Gowin IDE and programmer 
+
 [IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
 The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 12.5Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
