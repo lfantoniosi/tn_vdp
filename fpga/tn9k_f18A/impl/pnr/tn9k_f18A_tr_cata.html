@@ -3,6 +3,7 @@
 <head>
 <title>Timing Report Navigation</title>
 <style type="text/css">
+@import url(../temp/style.css);
 body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
 div#catalog_wrapper { width: 100%; }
 div#catalog ul { list-style: none; margin-left: -15px; }
@@ -43,7 +44,7 @@ function onClick(obj){var childs=obj.parentNode.childNodes;for(var i=0;i<childs.
 <li><div class="triangle" onclick="onClick(this)"></div><a href="tn9k_f18A_tr_content.html#All_Path_Slack_Table" style=" font-size: 14px;" target="mainFrame">Path Slacks Table</a>
 <ul>
 <!--Setup_Slack_Table begin-->
-<li><div class="triangle_fake"></div><a href="tn9k_f18A_tr_content.html#Setup_Slack_Table" style=" font-size: 13px;color: #FF0000;" target="mainFrame">Setup Paths Table</a>
+<li><div class="triangle_fake"></div><a href="tn9k_f18A_tr_content.html#Setup_Slack_Table" style=" font-size: 13px;color: #FF0000;" class = "error" target="mainFrame">Setup Paths Table</a>
 </li>
 <!--Setup_Slack_Table end-->
 <!--Hold_Slack_Table begin-->
@@ -51,7 +52,7 @@ function onClick(obj){var childs=obj.parentNode.childNodes;for(var i=0;i<childs.
 </li>
 <!--Hold_Slack_Table end-->
 <!--Recovery_Slack_Table begin-->
-<li><div class="triangle_fake"></div><a href="tn9k_f18A_tr_content.html#Recovery_Slack_Table" style=" font-size: 13px;color: #FF0000;" target="mainFrame">Recovery Paths Table</a>
+<li><div class="triangle_fake"></div><a href="tn9k_f18A_tr_content.html#Recovery_Slack_Table" style=" font-size: 13px;color: #FF0000;" class = "error" target="mainFrame">Recovery Paths Table</a>
 </li>
 <!--Recovery_Slack_Table end-->
 <!--Removal_Slack_Table begin-->

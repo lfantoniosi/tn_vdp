@@ -11,4 +11,5 @@
 -cst_error
 -place_option 1
 -route_option 1
+-correct_hold 1
 -route_maxfan 23

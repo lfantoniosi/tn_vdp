@@ -147,7 +147,7 @@ begin
    -- at least once, ensuring any resets based on the vga_clk have time to
    -- complete.  This also helps during simulation to get valid signals.
    process (clk_100m0_s) begin if rising_edge(clk_100m0_s) then
-      if reset_cnt_r = "011" then
+      if reset_cnt_r = "000" then
          reset_por_r <= '1';
       else
          reset_por_r <= '0';

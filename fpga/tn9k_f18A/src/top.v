@@ -171,7 +171,7 @@ always @(posedge clk_25_w or negedge rst_n_w) begin
         pwr_on_r = 32'b0;
     end
     else begin
-        if (pwr_cnt == 32'd1260000) begin
+        if (pwr_cnt == 32'd8) begin
             pwr_on_r = 1'b1;
         end else
         begin

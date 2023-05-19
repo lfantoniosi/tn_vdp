@@ -67,7 +67,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Version</td>
-<td>V1.9.8.10</td>
+<td>V1.9.8.11 Education</td>
 </tr>
 <tr>
 <td class="label">Part Number</td>
@@ -83,12 +83,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri May 12 23:59:29 2023
+<td>Fri May 19 10:51:11 2023
 </td>
 </tr>
 <tr>
 <td class="label">Legal Announcement</td>
-<td>Copyright (C)2014-2022 Gowin Semiconductor Corporation. All rights reserved.</td>
+<td>Copyright (C)2014-2023 Gowin Semiconductor Corporation. All rights reserved.</td>
 </tr>
 </table>
 <h1><a name="PnR_Details">PnR Details</a></h1>
@@ -97,23 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Placement Phase 1: CPU time = 0h 0m 0.189s, Elapsed time = 0h 0m 0.189s
+   Placement Phase 0: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+   Placement Phase 1: CPU time = 0h 0m 0.215s, Elapsed time = 0h 0m 0.215s
    Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-   Placement Phase 3: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
+   Placement Phase 3: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
    Total Placement: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
    Routing Phase 1: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Routing Phase 2: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
-   Total Routing: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
+   Routing Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
+   Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
+   Total Routing: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
 Generate output files:
    CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 20s, Elapsed time = 0h 0m 20s, Peak memory usage = 238MB</td>
+<td>CPU time = 0h 0m 19s, Elapsed time = 0h 0m 19s, Peak memory usage = 230MB</td>
 </tr>
 </table>
 <br/>
@@ -128,22 +129,22 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>5331/8640</td>
-<td>62%</td>
+<td>5373/8640</td>
+<td>63%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>4521(3875 LUT, 646 ALU, 0 ROM16)</td>
+<td>4569(3923 LUT, 646 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --SSRAM(RAM16)</td>
-<td>135</td>
+<td>134</td>
 <td>-</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>1721/6693</td>
+<td>1718/6693</td>
 <td>26%</td>
 </tr>
 <tr>
@@ -153,7 +154,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>1704/6480</td>
+<td>1701/6480</td>
 <td>27%</td>
 </tr>
 <tr>
@@ -168,7 +169,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>3208/4320</td>
+<td>3233/4320</td>
 <td>75%</td>
 </tr>
 <tr>
@@ -203,8 +204,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">BSRAM</td>
-<td>1 SP<br/>9 DPB<br/>2 DPX9B<br/>1 pROM<br/></td>
-<td>50%</td>
+<td>1 SP<br/>9 DPB<br/>2 DPX9B<br/></td>
+<td>47%</td>
 </tr>
 <tr>
 <td class="label">DSP</td>
@@ -323,7 +324,7 @@ Generate output files:
 <tr>
 <td class="label">clk_25_w</td>
 <td>PRIMARY</td>
-<td> TR TL BR</td>
+<td> TR TL BR BL</td>
 </tr>
 <tr>
 <td class="label">clk_7_w</td>
@@ -397,7 +398,6 @@ Generate output files:
 <td><b>PCI Clamp</b></td>
 <td><b>Hysteresis</b></td>
 <td><b>Open Drain</b></td>
-<td><b>Slew Rate</b></td>
 <td><b>Vref</b></td>
 <td><b>Single Resistor</b></td>
 <td><b>Diff Resistor</b></td>
@@ -417,7 +417,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
@@ -434,7 +433,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -457,7 +455,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -472,7 +469,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -495,7 +491,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -510,7 +505,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -531,7 +525,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.2</td>
@@ -548,7 +541,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -569,7 +561,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.2</td>
@@ -586,7 +577,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -607,7 +597,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
@@ -625,7 +614,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -644,7 +632,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -663,7 +650,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -682,7 +668,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -701,7 +686,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -720,7 +704,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -739,7 +722,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -758,7 +740,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -777,7 +758,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -796,7 +776,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -815,7 +794,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -834,7 +812,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -853,7 +830,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -872,7 +848,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -891,7 +866,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -910,7 +884,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -929,7 +902,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -948,7 +920,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -967,7 +938,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -986,7 +956,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1005,7 +974,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1024,7 +992,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1043,7 +1010,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1062,7 +1028,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1081,7 +1046,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1100,7 +1064,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1119,7 +1082,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1138,7 +1100,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1157,7 +1118,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1176,7 +1136,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1195,7 +1154,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1214,7 +1172,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1235,7 +1192,6 @@ Generate output files:
 <td><b>PCI Clamp</b></td>
 <td><b>Hysteresis</b></td>
 <td><b>Open Drain</b></td>
-<td><b>Slew Rate</b></td>
 <td><b>Vref</b></td>
 <td><b>Single Resistor</b></td>
 <td><b>Diff Resistor</b></td>
@@ -1251,7 +1207,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1272,7 +1227,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -1285,7 +1239,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1304,7 +1257,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.2</td>
@@ -1319,7 +1271,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -1338,7 +1289,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>1.2</td>
@@ -1353,7 +1303,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -1374,7 +1323,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -1387,7 +1335,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1408,7 +1355,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -1421,7 +1367,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1439,7 +1384,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1456,7 +1400,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1473,7 +1416,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1490,7 +1432,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1507,7 +1448,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1524,7 +1464,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1541,7 +1480,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1558,7 +1496,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1575,7 +1512,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1592,7 +1528,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -1608,7 +1543,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1629,7 +1563,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1642,7 +1575,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1663,7 +1595,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1677,7 +1608,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1694,7 +1624,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1714,7 +1643,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1728,7 +1656,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1745,7 +1672,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1762,7 +1688,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1779,7 +1704,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1796,7 +1720,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1813,7 +1736,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1830,7 +1752,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1847,7 +1768,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1863,7 +1783,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1884,7 +1803,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1897,7 +1815,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1915,7 +1832,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1932,7 +1848,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1949,7 +1864,6 @@ Generate output files:
 <td>NA</td>
 <td>NONE</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1966,7 +1880,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -1986,7 +1899,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -1999,7 +1911,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
@@ -2020,7 +1931,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -2033,7 +1943,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2054,7 +1963,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -2068,7 +1976,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2084,7 +1991,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2105,7 +2011,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -2118,7 +2023,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2139,7 +2043,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -2152,7 +2055,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2173,7 +2075,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>1.2</td>
 </tr>
 <tr>
@@ -2186,7 +2087,6 @@ Generate output files:
 <td>UP</td>
 <td>ON</td>
 <td>NONE</td>
-<td>NA</td>
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
@@ -2204,7 +2104,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2222,7 +2121,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
@@ -2238,7 +2136,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2255,7 +2152,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2272,7 +2168,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2289,7 +2184,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2306,7 +2200,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2323,7 +2216,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2340,7 +2232,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2357,7 +2248,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2375,7 +2265,6 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
@@ -2391,7 +2280,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2411,7 +2299,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
 <td>3.3</td>
 </tr>
 <tr>
@@ -2425,7 +2312,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
@@ -2442,7 +2328,6 @@ Generate output files:
 <td>NA</td>
 <td>NA</td>
 <td>OFF</td>
-<td>FAST</td>
 <td>NA</td>
 <td>OFF</td>
 <td>NA</td>
