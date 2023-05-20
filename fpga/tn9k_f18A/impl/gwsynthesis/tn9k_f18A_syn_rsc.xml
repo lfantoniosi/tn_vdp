@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="36" Alu="31" Lut="24">
+<Module name="top" Register="36" Alu="31" Lut="22">
     <SubModule name="clk_100_inst"/>
     <SubModule name="clk_125_inst"/>
     <SubModule name="dvi_tx_inst" Register="73" Alu="68" Lut="217"/>
-    <SubModule name="f18a_top_inst" Register="7" Lut="6">
-        <SubModule name="inst_f18a" Register="18" Lut="109">
-            <SubModule name="inst_vram" Lut="116">
+    <SubModule name="f18a_top_inst" Register="7" Lut="7">
+        <SubModule name="inst_f18a" Register="18" Lut="112">
+            <SubModule name="inst_vram" Lut="119">
                 <SubModule name="inst_ram" Bsram="8"/>
             </SubModule>
-            <SubModule name="inst_cpu" Register="435" Alu="63" Lut="516">
-                <SubModule name="inst_gpu" Register="508" Alu="209" Lut="1609" Dsp="2" Bsram="1" Ssram="4">
+            <SubModule name="inst_cpu" Register="435" Alu="63" Lut="518">
+                <SubModule name="inst_gpu" Register="508" Alu="209" Lut="1621" Dsp="2" Bsram="1" Ssram="4">
                     <SubModule name="inst_divide" Register="56" Alu="17" Lut="94"/>
                 </SubModule>
             </SubModule>
-            <SubModule name="inst_vga_cont" Register="23" Alu="9" Lut="31"/>
-            <SubModule name="inst_counters" Register="44" Alu="16" Lut="73"/>
-            <SubModule name="inst_tiles" Register="320" Alu="115" Lut="606" Dsp="4" Ssram="2">
+            <SubModule name="inst_vga_cont" Register="23" Alu="9" Lut="30"/>
+            <SubModule name="inst_counters" Register="44" Alu="16" Lut="78"/>
+            <SubModule name="inst_tiles" Register="320" Alu="115" Lut="605" Dsp="4" Ssram="2">
                 <SubModule name="inst_linebuf" Lut="256" Ssram="128"/>
             </SubModule>
-            <SubModule name="inst_sprites" Register="153" Alu="28" Lut="250" Bsram="2"/>
+            <SubModule name="inst_sprites" Register="153" Alu="28" Lut="248" Bsram="2"/>
             <SubModule name="inst_color" Register="25" Lut="29" Bsram="1"/>
-            <SubModule name="inst_version" Register="20" Alu="8" Lut="3"/>
+            <SubModule name="inst_version" Register="20" Alu="8" Lut="4"/>
         </SubModule>
     </SubModule>
 </Module>

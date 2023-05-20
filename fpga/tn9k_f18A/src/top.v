@@ -252,8 +252,8 @@ f18a_top f18a_top_inst(
     );
 
 reg [2:0] gromtick;
-always @(posedge clk_3_w) begin
-    if (pwr_on_r == 0) begin
+always @(posedge clk_3_w or negedge rst_n) begin
+    if (rst_n == 0) begin
         gromtick = 3'b0;
     end 
     else begin
@@ -262,9 +262,9 @@ always @(posedge clk_3_w) begin
 end
 
 wire cpuclk_w;
-assign cpuclk_w = clk_3_w & pwr_on_r;
+assign cpuclk_w = clk_3_w; // & pwr_on_r;
 wire gromclk_w;
-assign gromclk_w = ~gromtick[2] & pwr_on_r;
+assign gromclk_w = ~gromtick[2]; // & pwr_on_r;
 
 assign gromclk = gromclk_n ? cpuclk_w: gromclk_w; 
 assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
