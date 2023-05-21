@@ -33,7 +33,13 @@ Follow this link to install the Gowin's IDE:
 
 The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 12.5Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
 
-# Programming the FPGA
+## Programming the FPGA
+
+**Gowin Programmer**
+Together Gowin IDE you find the programmer or you can install the programmer stand alone. Check the Gowin IDE instructions
+
+**openFPGALoader**
+Alternatively you can use the openFPGALoader but it requires changing the FTDI drivers through zadig. Follow the official page for instructions
 
 The [openFPGALoader](https://github.com/trabucayre/openFPGALoader)
 tool can be used to program the FPGA from the command line.
