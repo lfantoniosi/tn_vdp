@@ -2,7 +2,7 @@
  "Allow_Duplicate_Modules" : false,
  "Annotated_Properties_for_Analyst" : true,
  "BACKGROUND_PROGRAMMING" : "off",
- "COMPRESS" : false,
+ "COMPRESS" : true,
  "CRC_CHECK" : true,
  "Clock_Conversion" : true,
  "Clock_Route_Order" : 0,

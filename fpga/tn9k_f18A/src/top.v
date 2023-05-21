@@ -62,10 +62,10 @@ module top(
     input   cpuclk_n,       // usr4
 
     // flash spi ports
-//    output  spi_cs,
-//    output  spi_mosi,
-//    input   spi_miso,
-//    output  spi_clk,
+    output  O_cs_n,
+    inout   IO_di,
+    inout   IO_do,
+    output  O_ck,
 
     // VGA ports
     output  hsync,
@@ -82,7 +82,6 @@ module top(
 );
 
 // clocks
-//wire clk_w;
 wire clk_100_w;
 wire clk_100_lock_w;
 wire clk_25_w;
@@ -102,11 +101,6 @@ wire [7:0] rgb_r_w;
 wire [7:0] rgb_g_w;
 wire [7:0] rgb_b_w;
 
-
-//    BUFG clk_bufg_inst(
-//    .O(clk_w),
-//    .I(clk)
-//    );
 
     CLK_100 clk_100_inst(
         .clkout(clk_100_w), 
@@ -202,29 +196,10 @@ assign blu = b_w;
 assign hsync = hs_w;
 assign vsync = vs_w;
 
-//reg  [31:0] pwr_cnt;
-//reg  pwr_on_r;
-//always @(posedge clk_25_w or negedge rst_n_w) begin
-//    if(rst_n_w == 0) begin
-//        pwr_cnt = 7'b0;
-//        pwr_on_r = 32'b0;
-//    end
-//    else begin
-//        if (pwr_cnt == 32'd7) begin
-//            pwr_on_r = 1'b1;
-//        end else
-//        begin
-//            pwr_cnt = pwr_cnt + 32'd1;
-//        end
-//    end
-//end
-
-//assign reset_n_w = pwr_on_r & reset_n;
-
-    wire  spi_cs;
-    wire  spi_mosi;
-    wire   spi_miso;
-    wire  spi_clk;
+//wire  O_cs_n;
+//wire   IO_di;
+//wire   IO_do;
+//wire  O_ck;
 
 f18a_top f18a_top_inst(
     .clk_100m0_s(clk_50_w),
@@ -247,10 +222,10 @@ f18a_top f18a_top_inst(
     .usr2_net(scnlin_n),
     .usr3_net(gromclk_n),
     .usr4_net(cpuclk_n),
-    .spi_cs_net(spi_cs),
-    .spi_mosi_net(spi_mosi),
-    .spi_miso_net(spi_miso),
-    .spi_clk_net(spi_clk)
+    .spi_cs_net(O_cs_n),
+    .spi_mosi_net(IO_di),
+    .spi_miso_net(IO_do),
+    .spi_clk_net(O_ck)
     );
 
 reg [2:0] gromtick;
@@ -266,7 +241,7 @@ end
 wire cpuclk_w;
 assign cpuclk_w = clk_3_w & rst_n_w;
 wire gromclk_w;
-assign gromclk_w = ~gromtick[2]; // & pwr_on_r;
+assign gromclk_w = ~gromtick[2];
 
 assign gromclk = gromclk_n ? cpuclk_w: gromclk_w; 
 assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
