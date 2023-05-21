@@ -105,17 +105,17 @@ IO_PORT "hsync" DRIVE=8 IO_TYPE=LVCMOS33;
 IO_LOC  "vsync" 42;
 IO_PORT "vsync" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "spi_clk" 59;
-IO_PORT "spi_clk" DRIVE=8 IO_TYPE=LVCMOS33;
+//IO_LOC  "spi_clk" 59;
+//IO_PORT "spi_clk" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "spi_cs" 60;
-IO_PORT "spi_cs" DRIVE=8 IO_TYPE=LVCMOS33;
+//IO_LOC  "spi_cs" 60;
+//IO_PORT "spi_cs" DRIVE=8 IO_TYPE=LVCMOS33;
 
-IO_LOC  "spi_miso" 62;
-IO_PORT "spi_miso" IO_TYPE=LVCMOS33;
+//IO_LOC  "spi_miso" 62;
+//IO_PORT "spi_miso" IO_TYPE=LVCMOS33;
 
-IO_LOC  "spi_mosi" 61;
-IO_PORT "spi_mosi" DRIVE=8 IO_TYPE=LVCMOS33;
+//IO_LOC  "spi_mosi" 61;
+//IO_PORT "spi_mosi" DRIVE=8 IO_TYPE=LVCMOS33;
 
 IO_LOC  "tmds_clk_p" 69,68;
 IO_PORT "tmds_clk_p" DRIVE=8 IO_TYPE=LVCMOS33D;

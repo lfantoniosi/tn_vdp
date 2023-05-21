@@ -62,10 +62,10 @@ module top(
     input   cpuclk_n,       // usr4
 
     // flash spi ports
-    output  spi_cs,
-    output  spi_mosi,
-    input   spi_miso,
-    output  spi_clk,
+//    output  spi_cs,
+//    output  spi_mosi,
+//    input   spi_miso,
+//    output  spi_clk,
 
     // VGA ports
     output  hsync,
@@ -163,30 +163,10 @@ wire [7:0] rgb_b_w;
 wire rst_n_w;
 assign rst_n_w = rst_n & clk_100_lock_w & clk_125_lock_w;
 
-reg  [31:0] pwr_cnt;
-reg  pwr_on_r;
-always @(posedge clk_25_w or negedge rst_n_w) begin
-    if(rst_n_w == 0) begin
-        pwr_cnt = 7'b0;
-        pwr_on_r = 32'b0;
-    end
-    else begin
-        if (pwr_cnt == 32'd8) begin
-            pwr_on_r = 1'b1;
-        end else
-        begin
-            pwr_cnt = pwr_cnt + 32'd1;
-        end
-    end
-end
-
-wire reset_w;
-assign reset_n_w = pwr_on_r & reset_n;
-assign reset_w = ~reset_n_w;
-
+assign dvi_rst_n_w = rst_n_w & reset_n;
 
 	DVI_TX dvi_tx_inst(
-		.I_rst_n(reset_n_w), //input I_rst_n
+		.I_rst_n(dvi_rst_n_w), //input I_rst_n
 		.I_serial_clk(clk_125_w), //input I_serial_clk
 		.I_rgb_clk(clk_25_w), //input I_rgb_clk
 		.I_rgb_vs(rgb_vs_w), //input I_rgb_vs
@@ -222,18 +202,40 @@ assign blu = b_w;
 assign hsync = hs_w;
 assign vsync = vs_w;
 
+//reg  [31:0] pwr_cnt;
+//reg  pwr_on_r;
+//always @(posedge clk_25_w or negedge rst_n_w) begin
+//    if(rst_n_w == 0) begin
+//        pwr_cnt = 7'b0;
+//        pwr_on_r = 32'b0;
+//    end
+//    else begin
+//        if (pwr_cnt == 32'd7) begin
+//            pwr_on_r = 1'b1;
+//        end else
+//        begin
+//            pwr_cnt = pwr_cnt + 32'd1;
+//        end
+//    end
+//end
 
+//assign reset_n_w = pwr_on_r & reset_n;
+
+    wire  spi_cs;
+    wire  spi_mosi;
+    wire   spi_miso;
+    wire  spi_clk;
 
 f18a_top f18a_top_inst(
     .clk_100m0_s(clk_50_w),
     .clk_25m0_s(clk_25_w),
-    .reset_n_net(reset_n_w),
+    .reset_n_net(dvi_rst_n_w),
     .mode_net(mode),
     .csw_n_net(csw_n),
     .csr_n_net(csr_n),
     .int_n_net(int_n),
-    //.clk_grom_net(gromclk),
-    //.clk_cpu_net(cpuclk),
+//    .clk_grom_net(gromclk),
+//    .clk_cpu_net(cpuclk),
     .cd_net(cd),
     .hsync_net(hs_w),
     .vsync_net(vs_w),
@@ -252,8 +254,8 @@ f18a_top f18a_top_inst(
     );
 
 reg [2:0] gromtick;
-always @(posedge clk_3_w or negedge rst_n) begin
-    if (rst_n == 0) begin
+always @(posedge clk_3_w or negedge rst_n_w) begin
+    if (rst_n_w == 0) begin
         gromtick = 3'b0;
     end 
     else begin
@@ -262,7 +264,7 @@ always @(posedge clk_3_w or negedge rst_n) begin
 end
 
 wire cpuclk_w;
-assign cpuclk_w = clk_3_w; // & pwr_on_r;
+assign cpuclk_w = clk_3_w & rst_n_w;
 wire gromclk_w;
 assign gromclk_w = ~gromtick[2]; // & pwr_on_r;
 

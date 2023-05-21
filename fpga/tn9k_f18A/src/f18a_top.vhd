@@ -134,7 +134,6 @@ begin
    process (clk_100m0_s) begin if rising_edge(clk_100m0_s) then
       reset_n_i_r1 <= reset_n_net;
       reset_n_i_r  <= reset_n_i_r1;
-      --reset_n_r <= reset_n_net;
    end if; end process;
 
    -- Some systems have a short Power-On Reset time and are out of reset before
@@ -147,7 +146,7 @@ begin
    -- at least once, ensuring any resets based on the vga_clk have time to
    -- complete.  This also helps during simulation to get valid signals.
    process (clk_100m0_s) begin if rising_edge(clk_100m0_s) then
-      if reset_cnt_r = "000" then
+      if reset_cnt_r = "011" then
          reset_por_r <= '1';
       else
          reset_por_r <= '0';
@@ -218,17 +217,17 @@ begin
 --   ext_clock_gen :
 --   process (clk_100m0_s)
 --   begin if rising_edge(clk_100m0_s) then
-      -- 224 / 2 = 112, count 0..111 to generate 50% GROMCLK period.
+----       224 / 2 = 112, count 0..111 to generate 50% GROMCLK period.
 --      if gromdiv_r = 55 then
---         gromclk_r <= (not gromclk_r) and reset_n_r;
+--         gromclk_r <= (not gromclk_r);
 --         gromdiv_r <= (others => '0');
 --      else
 --         gromdiv_r <= gromdiv_r + 1;
 --      end if;
 
-      -- 28 / 2 = 14, count 0..13 to generate 50% CPUCLK period.
+----       28 / 2 = 14, count 0..13 to generate 50% CPUCLK period.
 --      if cpudiv_r = 6 then
---         cpuclk_r <= (not cpuclk_r) and reset_n_r;
+--         cpuclk_r <= (not cpuclk_r);
 --         cpudiv_r <= (others => '0');
 --      else
 --         cpudiv_r <= cpudiv_r + 1;
@@ -266,9 +265,9 @@ begin
    -- not used    off  off    -- CPUCLK output on both pin37 and pin38
 
    -- USR3 selects GROMCLK or CPUCLK on pin37.
---   clk_grom_net <= gromclk_r when usr3_net = '0' else cpuclk_r;
+--   clk_grom_net <= gromclk_r when usr3_net = '1' else cpuclk_r;
 
    -- USR4 controls if pin38 outputs the CPUCLK or not.
---   clk_cpu_net <= cpuclk_r when usr4_net = '0' else 'Z';
+--   clk_cpu_net <= 'Z' when usr4_net = '1' else cpuclk_r;
 
 end rtl;
