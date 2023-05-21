@@ -101,6 +101,7 @@
         "courtyards_overlap|117491501|112713999|a7c0b4b3-4dea-4be3-a60e-4ceec7d509ed|e6e04133-97b7-48cf-990a-ac98388c8c49",
         "courtyards_overlap|117491501|112713999|e6e04133-97b7-48cf-990a-ac98388c8c49|a7c0b4b3-4dea-4be3-a60e-4ceec7d509ed",
         "courtyards_overlap|117491501|114618999|a7c0b4b3-4dea-4be3-a60e-4ceec7d509ed|e6e04133-97b7-48cf-990a-ac98388c8c49",
+        "courtyards_overlap|122675001|100774999|9149a989-77ae-4d6e-8b64-1276ea1a862a|e6e04133-97b7-48cf-990a-ac98388c8c49",
         "lib_footprint_mismatch|115057000|92172000|e6e04133-97b7-48cf-990a-ac98388c8c49|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|116078000|145269669|56b96f7f-4c28-435c-8858-47ed03a85e57|00000000-0000-0000-0000-000000000000",
         "starved_thermal|111388500|89954000|3f25df75-bd4c-4f98-8669-6d736ea0e9d5|365be86f-1e79-4d84-a216-4e2fcd812d9f|F.Cu",
@@ -228,8 +229,10 @@
       ],
       "track_widths": [
         0.0,
+        0.0,
         0.127,
-        0.15
+        0.15,
+        0.5
       ],
       "via_dimensions": [
         {
