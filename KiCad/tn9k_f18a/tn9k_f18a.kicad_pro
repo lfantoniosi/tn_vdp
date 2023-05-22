@@ -453,15 +453,15 @@
     "netclass_patterns": [
       {
         "netclass": "Power",
-        "pattern": "VCC"
+        "pattern": ""
       },
       {
         "netclass": "Power",
-        "pattern": "VCC_3V3"
+        "pattern": ""
       },
       {
         "netclass": "Power",
-        "pattern": "GND"
+        "pattern": ""
       }
     ]
   },

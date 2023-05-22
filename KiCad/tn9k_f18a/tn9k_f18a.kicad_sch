@@ -665,6 +665,73 @@
         )
       )
     )
+    (symbol "Diode:1N4001" (pin_numbers hide) (pin_names hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "1N4001" (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Sim.Device" "D" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Sim.Pins" "1=K 2=A" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "diode" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "50V 1A General Purpose Rectifier Diode, DO-41" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "D*DO?41*" (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "1N4001_0_1"
+        (polyline
+          (pts
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy -1.27 0)
+          )
+          (stroke (width 0) (type default))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 1.27)
+            (xy 1.27 -1.27)
+            (xy -1.27 0)
+            (xy 1.27 1.27)
+          )
+          (stroke (width 0.254) (type default))
+          (fill (type none))
+        )
+      )
+      (symbol "1N4001_1_1"
+        (pin passive line (at -3.81 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 2.54)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
     (symbol "tms9118a_sym:SN74LVC245" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "U" (at -7.62 16.51 0)
         (effects (font (size 1.27 1.27)))
@@ -1046,7 +1113,7 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "VCC" (shape input) (at 226.06 63.5 180) (fields_autoplaced)
+  (global_label "VDD" (shape input) (at 226.06 63.5 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 53450b94-2923-4390-a470-1256b9abbb57)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 219.5256 63.5 0)
@@ -1186,7 +1253,7 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "VCC" (shape input) (at 193.04 127 180) (fields_autoplaced)
+  (global_label "VDD" (shape input) (at 193.04 127 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 7bd5bd12-8063-41b6-95db-2555df7efa8c)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 186.5056 127 0)
@@ -1219,6 +1286,13 @@
     (uuid 827f3e26-6c6b-4d9d-baa7-ce4f85936a61)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 58.1147 64.77 0)
       (effects (font (size 1.27 1.27)) (justify right) hide)
+    )
+  )
+  (global_label "VCC" (shape input) (at 109.22 82.55 0) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify left))
+    (uuid 82db6ef8-9b00-4fd4-b7d6-a7029c6e5486)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 115.7544 82.55 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
   (global_label "VCC" (shape input) (at 85.09 41.91 180) (fields_autoplaced)
@@ -1277,7 +1351,7 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "VCC" (shape input) (at 135.89 127 180) (fields_autoplaced)
+  (global_label "VDD" (shape input) (at 135.89 127 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
     (uuid 9493c9d2-a91b-4114-b911-d2c72d9b73bf)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 129.3556 127 0)
@@ -1401,6 +1475,13 @@
     (uuid ae107305-f27a-4645-8e95-9d28a8691599)
     (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 172.4205 119.38 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "VDD" (shape input) (at 101.6 82.55 180) (fields_autoplaced)
+    (effects (font (size 1.27 1.27)) (justify right))
+    (uuid ae7fd638-1328-463f-ace4-f6c7e64fab46)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 95.0656 82.55 0)
+      (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
   (global_label "USR4_1V8" (shape input) (at 226.06 30.48 180) (fields_autoplaced)
@@ -1725,10 +1806,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "VCC" (shape input) (at 106.68 124.46 0) (fields_autoplaced)
+  (global_label "GND" (shape input) (at 106.68 124.46 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid f143044f-7819-44d6-acb6-d7ba248d9908)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 113.2144 124.46 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 113.4563 124.46 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1832,7 +1913,7 @@
     (pin "8" (uuid 86711f02-0e1a-4d61-b235-df84c2ff4c9a))
     (pin "9" (uuid d07461d3-cdde-4494-b823-678df34668dc))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J1") (unit 1)
         )
@@ -1876,7 +1957,7 @@
     (pin "8" (uuid d2eb9842-6624-4163-bd63-1023594f908b))
     (pin "9" (uuid 8aae90a0-e034-4169-9dd6-883bb0f2f726))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "U3") (unit 1)
         )
@@ -1908,7 +1989,7 @@
     (pin "7" (uuid fe2ca630-ec92-45f0-85c3-3adbd82c6b61))
     (pin "8" (uuid cedc946d-061f-4cfc-a2c7-c148d879de23))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J5") (unit 1)
         )
@@ -1956,7 +2037,7 @@
     (pin "8" (uuid c29d9373-a957-49b0-9b9c-f87aee6455d2))
     (pin "9" (uuid a715124b-2d4a-4683-9c22-91767c3cecba))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J3") (unit 1)
         )
@@ -1996,7 +2077,7 @@
     (pin "8" (uuid c0796784-0968-4a4d-a150-5d614716731b))
     (pin "9" (uuid dc59852c-c2b5-459a-bb55-19d4d3c36f62))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J6") (unit 1)
         )
@@ -2040,7 +2121,7 @@
     (pin "8" (uuid 727ed663-ecf7-470e-8576-1456d082fcce))
     (pin "9" (uuid 98f3f5a9-ef58-4f35-873c-f5458f582ecd))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J2") (unit 1)
         )
@@ -2084,9 +2165,41 @@
     (pin "8" (uuid 74616643-ef26-4ac4-8083-3e21e7e4e64b))
     (pin "9" (uuid cd225849-e283-458b-b236-7e75ec49658e))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "U1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Diode:1N4001") (at 105.41 82.55 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid a0ac0185-d770-4e0a-b185-6fa391098b26)
+    (property "Reference" "D1" (at 105.41 77.47 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "1N5817" (at 105.41 80.01 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" (at 105.41 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "http://www.vishay.com/docs/88503/1n4001.pdf" (at 105.41 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Device" "D" (at 105.41 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Sim.Pins" "1=K 2=A" (at 105.41 82.55 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 95d24e03-3c4b-48f3-a1a0-617b8a5ce2f2))
+    (pin "2" (uuid 1862501d-86cb-476c-af52-d1829388b853))
+    (instances
+      (project "tn9k_f18a"
+        (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
+          (reference "D1") (unit 1)
         )
       )
     )
@@ -2132,7 +2245,7 @@
     (pin "8" (uuid a0f26764-87a2-436b-ab32-5ca16ea1f2ab))
     (pin "9" (uuid 66a618d5-62a3-4d97-91e7-b8b1fb51c91f))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J4") (unit 1)
         )
@@ -2176,7 +2289,7 @@
     (pin "8" (uuid 37b40375-0042-4511-8d6b-45ea29cf9bdb))
     (pin "9" (uuid 7bdde744-cab6-4180-992c-6fd6b4af2cb0))
     (instances
-      (project "TN9K_F18A"
+      (project "tn9k_f18a"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "U2") (unit 1)
         )
