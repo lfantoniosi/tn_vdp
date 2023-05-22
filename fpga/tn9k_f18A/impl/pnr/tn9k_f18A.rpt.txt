@@ -12,14 +12,14 @@
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Sun May 21 12:16:15 2023
+  <Created Time>:Sun May 21 19:05:52 2023
 
 
 2. PnR Details
 
   Running placement:
     Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 1: CPU time = 0h 0m 0.241s, Elapsed time = 0h 0m 0.242s
+    Placement Phase 1: CPU time = 0h 0m 0.219s, Elapsed time = 0h 0m 0.219s
     Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
     Placement Phase 3: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
     Total Placement: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
@@ -32,7 +32,7 @@
  Generate output files:
     CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 
- Total Time and Memory Usage: CPU time = 0h 0m 18s, Elapsed time = 0h 0m 18s, Peak memory usage = 294MB
+ Total Time and Memory Usage: CPU time = 0h 0m 17s, Elapsed time = 0h 0m 17s, Peak memory usage = 227MB
 
 
 3. Resource Usage Summary
