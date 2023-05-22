@@ -6,6 +6,11 @@ This project recreates the F18a FPGA Board using the over the counter Sipeed's T
 
 The bitstream file is [here](fpga/tn9k_f18A/impl/pnr/tn9k_f18A.fs)
 
+## Bugfix v1.01
+
+Thanks to the help of AtariAge community a diode connecting the TMS VCC and the Tang board is needed to avoid the HDMI EDID power moving the Z80 or TI9900 before the boot.
+BOM list updated, schematics and gerber for FAT files and compact SMD (Hans Huebener contribution).
+
 ## Floppy images
 
 Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and HxC2001): 
@@ -79,6 +84,7 @@ Qty | Part Number                | Description
 3x  | CF14JT4K70CT-ND            | RES 4.7K OHM 5% 1/4W AXIAL
 3x  | CF14JT1K00CT-ND            | RES 1K OHM 5% 1/4W AXIAL
 3x  | F14JT470RCT-ND             | RES 470 OHM 5% 1/4W AXIAL
+1x  | 497-4547-1-ND              | DIODE SCHOTTKY 20V 1A DO41
 ```
 **Notes:**
 
