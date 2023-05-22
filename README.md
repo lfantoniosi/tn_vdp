@@ -23,6 +23,7 @@ The gerber files can be located inside each KiCad project:
 [VGA breakout](KiCad/tn9k_vga/gerber)
 
 [Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
+See the [separate README](KiCad/tn9k_f18a_compact/README.md) for BOM and additional information.
 
 The VGA module is optional, only if you want VGA output.
 
