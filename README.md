@@ -22,14 +22,14 @@ The gerber files can be located inside each KiCad project:
 
 [VGA breakout](KiCad/tn9k_vga/gerber)
 
-[Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber)
+[Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
 
 The VGA module is optional, only if you want VGA output.
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
-**Note: The code can be built and programmed using the latest Education Version 1.9.8.11 - The Education EDA does not require license. DO NOT USE THE BETA EDA/PROGRAMMER.**
+**Note: The code can be built and programmed using the latest Education Version 1.9.8.11 - The Education EDA does not require a license. DO NOT USE THE BETA EDA/PROGRAMMER.**
 
 [IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
