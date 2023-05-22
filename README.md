@@ -18,16 +18,18 @@ The gerber files can be located inside each KiCad project:
 
 [MainBoard for NABU](KiCad/tn9k_f18a/gerber)
 
-[MainBoard for TI-99 (FAT)](KiCad/tn9k_f18_fat/gerber)
+[MainBoard for TI-99/4A (FAT)](KiCad/tn9k_f18_fat/gerber)
 
 [VGA breakout](KiCad/tn9k_vga/gerber)
+
+[Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
 
 The VGA module is optional, only if you want VGA output.
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
 
-**Note: The code can be built and programmed using the latest Education Version 1.9.8.11 - The Education EDA does not require license. DO NOT USE THE BETA EDA/PROGRAMMER.**
+**Note: The code can be built and programmed using the latest Education Version 1.9.8.11 - The Education EDA does not require a license. DO NOT USE THE BETA EDA/PROGRAMMER.**
 
 [IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
@@ -52,9 +54,9 @@ sudo openFPGALoader -b tangnano9k tn9k_f18A.fs
 
 The Tang Nano 9K board can be purchased on AliExpress or ebay.
 
-The 2 boards gerber files are inside each kicad project gerber folders.
+The boards gerber files are inside each kicad project gerber folders.
 
-The BOM can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
+The BOM for the NABU and FAT variants can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
 
 Or transcribed here
 ```
@@ -96,7 +98,7 @@ USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
 
 ## Assembling Instructions
 
-You shoulnd't have problem assembling it as all components are labeled. Just remember the 2 pin strips for the TMS9118 slot goes under the board as well the 3 caps. Everything else it on the top side. I personally prefer soldering the female header on the FPGA board. Mind the prientation of the **DIP switch** as the image below.
+You shouldn't have problem assembling it as all components are labeled. Just remember the 2 pin strips for the TMS9118 slot goes under the board as well the 3 caps. Everything else it on the top side. I personally prefer soldering the female header on the FPGA board. Mind the orientation of the **DIP switch** as the image below.
 ```
 1) solder the 3 DIP-20 sockets on top side
 2) for each socket, solder one axial caps under the board connecting pins GND and VCC the back image below
