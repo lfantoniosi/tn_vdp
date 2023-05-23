@@ -9,7 +9,7 @@ The bitstream file is [here](fpga/tn9k_f18A/impl/pnr/tn9k_f18A.fs)
 ## Bugfix v1.01
 
 Thanks to the help of AtariAge community a diode connecting the TMS VCC and the Tang board is needed to avoid the HDMI EDID power moving the Z80 or TI9900 before the boot.
-BOM list updated, schematics and gerber for FAT files and compact SMD (Hans Huebener contribution).
+BOM list updated, schematics and gerber for FAT files and compact SMD (Hans Hübner contribution).
 
 ## Floppy images
 
