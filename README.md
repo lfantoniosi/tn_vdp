@@ -1,8 +1,8 @@
-# tn9k_f18a
+# Tang Nano 9K - TN VDP
  
 ## Tang Nano 9K F18a Clone
 
-This project recreates the F18a FPGA Board using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
+This project recreates the TMS9118 FPGA Board using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
 
 The bitstream file is [here](fpga/tn9k_f18A/impl/pnr/tn9k_f18A.fs)
 
