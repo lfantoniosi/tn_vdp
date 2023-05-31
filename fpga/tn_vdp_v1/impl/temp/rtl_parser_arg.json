@@ -1,0 +1,138 @@
+{
+ "Files" : [
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/clk_100.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/clk_125.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/dvi_tx.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_clock_regeneration_packet.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_sample_packet.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/auxiliary_video_information_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_assembler.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/serializer.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/source_product_description_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/tmds_channel.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_color.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_counters.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_cpu.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_div32x16.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_gpu.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_single_port_ram.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_sprites.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_tile_linebuf.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_tiles.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_top.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_version.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_vga_cont_640_60.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_vram.vhd",
+   "Type" : "vhdl"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/impl/temp/rtl_parser.result",
+ "Top" : "top",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_2008"
+}

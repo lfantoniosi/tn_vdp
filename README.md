@@ -1,10 +1,10 @@
-# Tang Nano 9K - TN VDP
+# TN VDP 
  
 ## Tang Nano 9K TMS 9118 VDP
 
-This project recreates the TMS9118 using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
+This project recreates the TMS9118 in FPGA using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
 
-The bitstream file is [here](fpga/tn9k_f18A/impl/pnr/tn9k_f18A.fs)
+The bitstream file is [here](fpga/tn_vdp_v1/impl/pnr/tn_vdp.fs)
 
 ## Bugfix v1.01
 
@@ -21,14 +21,14 @@ Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and Hx
 
 The gerber files can be located inside each KiCad project:
 
-[MainBoard for NABU](KiCad/tn9k_f18a/gerber)
+[MainBoard for NABU](KiCad/tn_vdp_v1_slim/gerber.zip)
 
-[MainBoard for TI-99/4A (FAT)](KiCad/tn9k_f18_fat/gerber)
+[MainBoard for TI-99/4A (FAT)](KiCad/tn_vdp_v1_fat/gerber.zip)
 
-[VGA breakout](KiCad/tn9k_vga/gerber)
+[VGA breakout](KiCad/tn_vdp_v1_vga/gerber)
 
 [Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
-See the [separate README](KiCad/tn9k_f18a_compact/README.md) for BOM and additional information.
+See the [separate README](KiCad/tn9k_f18a_compact/README.md) for BOM ipand additional information.
 
 The VGA module is optional, only if you want VGA output.
 
@@ -39,7 +39,7 @@ Follow this link to install the Gowin's IDE:
 
 [IDE Installation](https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-Doc/install-the-ide.html)
 
-The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 12.5Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
+The FPGA series is GW1NR and the Device is GW1NR-9C. Use Embedded Flash Mode for permanent programming. Make sure the bitstream is set to Load Rate of 25Mhz (or higher) in the Project -> Configuration -> BitStream: Loading Rate (MHZ). The maximum for this device is 25 Mhz.
 
 ## Programming the FPGA
 
@@ -53,8 +53,12 @@ The [openFPGALoader](https://github.com/trabucayre/openFPGALoader)
 tool can be used to program the FPGA from the command line.
 
 ```
-sudo openFPGALoader -b tangnano9k tn9k_f18A.fs
+sudo openFPGALoader -b tangnano9k tn_vdp.fs
 ```
+
+## Standalone test
+
+The board has a standalone boot screen when you connect it to the USB-C and HDMI only. This will tell the FPGA has been programmed with success.
 
 ## Building:
 
@@ -91,11 +95,11 @@ Qty | Part Number                | Description
 1) CONN HDR DIP POST 20POS GOLD: It is expensive on DigiKey but it can be sourced elsewhere cheaper, even Amazon.
 2) GPIO RIBBON CABLE 2X10 IDC CABLE : It was supposed to be 2x8 but is out of stock. The 2x10 just works. Or build your own.
 3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference under images folder.
-4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the TN9K_F18A pins.
+4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the tn_vdp pins.
 
 ## Jumper Settings
 
-I took the liberty to change the way the jumper works because I found them a bit confusing. Since the F18a uses Pull Ups an On jumper means the jumper is removed. I changed that, to turn a jumper on you just close it instead:
+These are the jumper. Closed means ON:
 ```
 USR1 : SPR MAX - Turn it on for 32 sprites per line
 USR2 : SCANLIN - Turn it on for scanlines

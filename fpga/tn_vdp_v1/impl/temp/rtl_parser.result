@@ -1,0 +1,270 @@
+[
+ {
+  "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/dvi_tx.v",
+  "InstLine" : 1041,
+  "InstName" : "DVI_TX",
+  "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/dvi_tx.v",
+  "ModuleLine" : 1041,
+  "ModuleName" : "DVI_TX",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/dvi_tx.v",
+    "InstLine" : 1072,
+    "InstName" : "rgb2dvi_inst",
+    "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/dvi_tx.v",
+    "ModuleLine" : 1,
+    "ModuleName" : "~rgb2dvi.DVI_TX"
+   }
+  ]
+ },
+ {
+  "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+  "InstLine" : 44,
+  "InstName" : "top",
+  "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+  "ModuleLine" : 44,
+  "ModuleName" : "top",
+  "SubInsts" : [
+   {
+    "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+    "InstLine" : 106,
+    "InstName" : "clk_100_inst",
+    "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/clk_100.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "CLK_100"
+   },
+   {
+    "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+    "InstLine" : 131,
+    "InstName" : "clk_125_inst",
+    "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/gowin/clk_125.v",
+    "ModuleLine" : 10,
+    "ModuleName" : "CLK_125"
+   },
+   {
+    "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+    "InstLine" : 205,
+    "InstName" : "f18a_top_inst",
+    "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_top.vhd",
+    "ModuleLine" : 54,
+    "ModuleName" : "f18a_top",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_top.vhd",
+      "InstLine" : 165,
+      "InstName" : "inst_f18a",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+      "ModuleLine" : 63,
+      "ModuleName" : "f18a_core",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 259,
+        "InstName" : "inst_vram",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_vram.vhd",
+        "ModuleLine" : 56,
+        "ModuleName" : "f18a_vram",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_vram.vhd",
+          "InstLine" : 81,
+          "InstName" : "inst_ram",
+          "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_single_port_ram.vhd",
+          "ModuleLine" : 55,
+          "ModuleName" : "f18a_single_port_ram"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 278,
+        "InstName" : "inst_cpu",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_cpu.vhd",
+        "ModuleLine" : 56,
+        "ModuleName" : "f18a_cpu",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_cpu.vhd",
+          "InstLine" : 1078,
+          "InstName" : "inst_gpu",
+          "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_gpu.vhd",
+          "ModuleLine" : 86,
+          "ModuleName" : "f18a_gpu",
+          "SubInsts" : [
+           {
+            "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_gpu.vhd",
+            "InstLine" : 1527,
+            "InstName" : "inst_divide",
+            "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_div32x16.vhd",
+            "ModuleLine" : 57,
+            "ModuleName" : "f18a_div32x16"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 369,
+        "InstName" : "inst_vga_cont",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_vga_cont_640_60.vhd",
+        "ModuleLine" : 53,
+        "ModuleName" : "f18a_vga_cont_640_60"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 384,
+        "InstName" : "inst_counters",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_counters.vhd",
+        "ModuleLine" : 57,
+        "ModuleName" : "f18a_counters"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 414,
+        "InstName" : "inst_tiles",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_tiles.vhd",
+        "ModuleLine" : 55,
+        "ModuleName" : "f18a_tiles",
+        "SubInsts" : [
+         {
+          "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_tiles.vhd",
+          "InstLine" : 336,
+          "InstName" : "inst_linebuf",
+          "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_tile_linebuf.vhd",
+          "ModuleLine" : 84,
+          "ModuleName" : "f18a_tile_linebuf"
+         }
+        ]
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 473,
+        "InstName" : "inst_sprites",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_sprites.vhd",
+        "ModuleLine" : 58,
+        "ModuleName" : "f18a_sprites"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_core.vhd",
+        "InstLine" : 510,
+        "InstName" : "inst_color",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_color.vhd",
+        "ModuleLine" : 56,
+        "ModuleName" : "f18a_color"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/top.v",
+    "InstLine" : 295,
+    "InstName" : "hdmi",
+    "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+    "ModuleLine" : 4,
+    "ModuleName" : "hdmi",
+    "SubInsts" : [
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 313,
+      "InstName" : "true_hdmi_output.packet_picker",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "packet_picker",
+      "SubInsts" : [
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+        "InstLine" : 51,
+        "InstName" : "audio_clock_regeneration_packet",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_clock_regeneration_packet.sv",
+        "ModuleLine" : 5,
+        "ModuleName" : "audio_clock_regeneration_packet"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+        "InstLine" : 131,
+        "InstName" : "audio_sample_packet",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_sample_packet.sv",
+        "ModuleLine" : 8,
+        "ModuleName" : "audio_sample_packet"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+        "InstLine" : 137,
+        "InstName" : "auxiliary_video_information_info_frame",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/auxiliary_video_information_info_frame.sv",
+        "ModuleLine" : 5,
+        "ModuleName" : "auxiliary_video_information_info_frame"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+        "InstLine" : 140,
+        "InstName" : "source_product_description_info_frame",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/source_product_description_info_frame.sv",
+        "ModuleLine" : 5,
+        "ModuleName" : "source_product_description_info_frame"
+       },
+       {
+        "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_picker.sv",
+        "InstLine" : 143,
+        "InstName" : "audio_info_frame",
+        "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/audio_info_frame.sv",
+        "ModuleLine" : 5,
+        "ModuleName" : "audio_info_frame"
+       }
+      ]
+     },
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 315,
+      "InstName" : "true_hdmi_output.packet_assembler",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/packet_assembler.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "packet_assembler"
+     },
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 366,
+      "InstName" : "tmds_gen[0].tmds_channel",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/tmds_channel.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "tmds_channel"
+     },
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 366,
+      "InstName" : "tmds_gen[1].tmds_channel",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/tmds_channel.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "tmds_channel"
+     },
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 366,
+      "InstName" : "tmds_gen[2].tmds_channel",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/tmds_channel.sv",
+      "ModuleLine" : 4,
+      "ModuleName" : "tmds_channel"
+     },
+     {
+      "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/hdmi.sv",
+      "InstLine" : 370,
+      "InstName" : "serializer",
+      "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/hdmi/serializer.sv",
+      "ModuleLine" : 3,
+      "ModuleName" : "serializer"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "InstFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_version.vhd",
+  "InstLine" : 51,
+  "InstName" : "f18a_version",
+  "ModuleFile" : "D:/src/tn9k_f18a/fpga/tn_vdp_v1/src/f18a/f18a_version.vhd",
+  "ModuleLine" : 51,
+  "ModuleName" : "f18a_version"
+ }
+]
