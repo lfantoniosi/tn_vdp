@@ -2720,7 +2720,7 @@
     )
     (pin "1" (uuid ae07f455-141e-4c95-acdf-242c0377956f))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR013") (unit 1)
         )
@@ -2745,7 +2745,7 @@
     )
     (pin "1" (uuid 2656f7b5-6b46-48dd-84bf-6565a23d1d65))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR017") (unit 1)
         )
@@ -2771,7 +2771,7 @@
     (pin "1" (uuid 831f976d-f7c4-402f-83cc-15fc8b7570dc))
     (pin "2" (uuid 67c61374-172f-41ed-9f4f-d9d5530bc790))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "JP4") (unit 1)
         )
@@ -2800,7 +2800,7 @@
     (pin "1" (uuid 554730bb-fec5-4713-92c7-06f0c41f0a21))
     (pin "2" (uuid 135d1576-8178-4465-a934-0e18007bdc58))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R14") (unit 1)
         )
@@ -2825,7 +2825,7 @@
     )
     (pin "1" (uuid 657363f1-e5bb-4f0b-86c5-3d3a8eb2d299))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR05") (unit 1)
         )
@@ -2851,7 +2851,7 @@
     (pin "1" (uuid 18f7cd85-b991-4bcc-9947-ebaf49e90f36))
     (pin "2" (uuid 2c8d6a0b-80e3-45ee-9564-a6ab49f4f9f9))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "JP2") (unit 1)
         )
@@ -2880,7 +2880,7 @@
     (pin "1" (uuid b8bfd1e0-be19-4c11-b11a-6213e4400311))
     (pin "2" (uuid 30a71d6b-6274-45ad-8b06-f22371170344))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R7") (unit 1)
         )
@@ -2905,7 +2905,7 @@
     )
     (pin "1" (uuid 1b3d831c-fd7b-4c5e-8482-7f17b2fa482b))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR016") (unit 1)
         )
@@ -2980,7 +2980,7 @@
     (pin "8" (uuid 7b7ba161-8bf3-4aaa-a166-c1f98a8d73ce))
     (pin "9" (uuid 5de9fbe3-89d7-45af-a5fd-2f86f9a9f2cf))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "U4") (unit 1)
         )
@@ -3012,7 +3012,7 @@
     (pin "4" (uuid 5e1ce78f-688d-4e62-8c16-6b1e43524a18))
     (pin "5" (uuid 6e8d78d2-7873-435a-af7b-c70029191a44))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "U1") (unit 1)
         )
@@ -3037,7 +3037,7 @@
     )
     (pin "1" (uuid ac7c77be-1e74-4385-8719-e645c527099b))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR03") (unit 1)
         )
@@ -3082,7 +3082,7 @@
           (reference "J2") (unit 1)
         )
       )
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J5") (unit 1)
         )
@@ -3111,7 +3111,7 @@
     (pin "1" (uuid 0a4af5b7-fe55-49f1-9636-5fd8b1c9212c))
     (pin "2" (uuid f17552f2-092d-4249-b0d1-2045762d0083))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R4") (unit 1)
         )
@@ -3136,7 +3136,7 @@
     )
     (pin "1" (uuid 739dec0f-1f25-4cc5-b582-68f7b855e3c9))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR018") (unit 1)
         )
@@ -3165,7 +3165,7 @@
     (pin "1" (uuid fff60d3a-f70b-4b2d-b8b2-d2c24e730659))
     (pin "2" (uuid ded6b8ec-13c5-4438-8914-c976ad746f0d))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R1") (unit 1)
         )
@@ -3195,7 +3195,7 @@
           (reference "#PWR0101") (unit 1)
         )
       )
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR019") (unit 1)
         )
@@ -3224,7 +3224,7 @@
     (pin "1" (uuid c64f7449-31b9-42ea-a1fd-53cd639626dc))
     (pin "2" (uuid 6d9d5f26-4853-4c58-a984-43ff51f9f0fd))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R6") (unit 1)
         )
@@ -3265,7 +3265,7 @@
     (pin "37" (uuid 06d062c4-eefb-437a-a3c4-e489136acf80))
     (pin "38" (uuid c83831ba-dd0f-413b-9150-b6f11fe0c093))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J1") (unit 1)
         )
@@ -3291,7 +3291,7 @@
     (pin "1" (uuid a16a7c20-6bdc-479e-9da3-dbd907329d5e))
     (pin "2" (uuid f63dac6f-7d5d-4c07-b305-b69ba105b28d))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "JP3") (unit 1)
         )
@@ -3320,7 +3320,7 @@
     (pin "1" (uuid 110ed3c0-04ed-4e9c-8f0b-90b61c10ee2e))
     (pin "2" (uuid 8872c390-9e7b-4561-be30-4423b36273c8))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R3") (unit 1)
         )
@@ -3345,7 +3345,7 @@
     )
     (pin "1" (uuid 900ec1e1-f900-4b28-b0e0-f488a885ba08))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR02") (unit 1)
         )
@@ -3374,7 +3374,7 @@
     (pin "1" (uuid 6ef57b2c-32ac-4f95-85d6-7c19e294a212))
     (pin "2" (uuid e7757f8e-efb2-425d-a4c7-d36fc4c8c304))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "D1") (unit 1)
         )
@@ -3422,7 +3422,7 @@
     (pin "8" (uuid c29d9373-a957-49b0-9b9c-f87aee6455d2))
     (pin "9" (uuid a715124b-2d4a-4683-9c22-91767c3cecba))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J3") (unit 1)
         )
@@ -3462,7 +3462,7 @@
     (pin "8" (uuid c0796784-0968-4a4d-a150-5d614716731b))
     (pin "9" (uuid dc59852c-c2b5-459a-bb55-19d4d3c36f62))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J6") (unit 1)
         )
@@ -3487,7 +3487,7 @@
     )
     (pin "1" (uuid 564962e1-492f-4ddf-a1ab-da69885d1370))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR01") (unit 1)
         )
@@ -3527,7 +3527,7 @@
     (pin "8" (uuid 1d830fe1-3c63-41a0-a68b-a87bb6b8e398))
     (pin "9" (uuid 0bc679d6-d36e-4513-940a-b84fe2274206))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J2") (unit 1)
         )
@@ -3552,7 +3552,7 @@
     )
     (pin "1" (uuid 42cbd998-ec44-425c-b198-e2e77b51e0c3))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR015") (unit 1)
         )
@@ -3577,7 +3577,7 @@
     )
     (pin "1" (uuid 8f51b8c5-3545-4fc2-9e75-0edc4193721a))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR09") (unit 1)
         )
@@ -3602,7 +3602,7 @@
     )
     (pin "1" (uuid f649327b-ff15-42f3-8805-7580e38161f6))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR04") (unit 1)
         )
@@ -3631,7 +3631,7 @@
     (pin "1" (uuid 7eccb92d-62e7-4963-b8cb-37ad205e95e7))
     (pin "2" (uuid 2edea6c5-32da-4ed1-93dd-b04bd4d4014e))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R9") (unit 1)
         )
@@ -3656,7 +3656,7 @@
     )
     (pin "1" (uuid 688928cf-2569-404f-ba76-213351079909))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR011") (unit 1)
         )
@@ -3685,7 +3685,7 @@
     (pin "1" (uuid 66400d8f-c62f-4333-aa2b-fe691ac62deb))
     (pin "2" (uuid 766d426d-c154-477c-b6a6-70c377d6b53f))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R8") (unit 1)
         )
@@ -3714,7 +3714,7 @@
     (pin "1" (uuid 7a594684-9284-45c5-ba52-e38f7a217a17))
     (pin "2" (uuid fad73280-094e-4a0e-b5a1-a35c122d2bbf))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R12") (unit 1)
         )
@@ -3739,7 +3739,7 @@
     )
     (pin "1" (uuid 290df7ee-d7b6-4ec8-92ba-c2cd0f1faf4c))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR014") (unit 1)
         )
@@ -3768,7 +3768,7 @@
     (pin "1" (uuid 9dcc5e7d-0ded-4146-b361-43342b9c1b86))
     (pin "2" (uuid 4c4ccef7-0413-4185-9503-913522e33984))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R11") (unit 1)
         )
@@ -3816,7 +3816,7 @@
     (pin "8" (uuid a0f26764-87a2-436b-ab32-5ca16ea1f2ab))
     (pin "9" (uuid 66a618d5-62a3-4d97-91e7-b8b1fb51c91f))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "J4") (unit 1)
         )
@@ -3845,7 +3845,7 @@
     (pin "1" (uuid 3985f3bf-9cc6-4454-bab7-470bdb2c6f76))
     (pin "2" (uuid 466e35d3-eec8-48b9-b694-ff853a89363e))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R10") (unit 1)
         )
@@ -3870,7 +3870,7 @@
     )
     (pin "1" (uuid bbcd0353-0493-4775-9b18-424507e6c469))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR06") (unit 1)
         )
@@ -3899,7 +3899,7 @@
     (pin "1" (uuid 11a3b390-759e-41fb-bfa6-7988876c553a))
     (pin "2" (uuid b650c8bc-4626-4e29-a1bb-78fedfc794fa))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "C1") (unit 1)
         )
@@ -3925,7 +3925,7 @@
     (pin "1" (uuid 9c350cb0-7f0f-4206-b292-57b837f7c8bb))
     (pin "2" (uuid 0d409deb-a96d-4698-ae2d-c40a1438757b))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "JP1") (unit 1)
         )
@@ -3954,7 +3954,7 @@
     (pin "1" (uuid 32b838a3-80ae-427f-b785-72108df82375))
     (pin "2" (uuid 4f53c2ed-dffe-4865-9233-776857141888))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R5") (unit 1)
         )
@@ -3979,7 +3979,7 @@
     )
     (pin "1" (uuid a94937ff-0391-430b-8498-fbd24b3f8b1d))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR08") (unit 1)
         )
@@ -4008,7 +4008,7 @@
     (pin "1" (uuid 96c00528-8187-4645-9001-8e7d2a3d4067))
     (pin "2" (uuid bc941da6-83d6-4f15-9d77-1fdafe6b705f))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R13") (unit 1)
         )
@@ -4033,7 +4033,7 @@
     )
     (pin "1" (uuid eba69b1a-6450-4001-9cc9-171e1cbae587))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR012") (unit 1)
         )
@@ -4058,7 +4058,7 @@
     )
     (pin "1" (uuid 4266001e-719a-4738-9c80-f955b0f7c931))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR010") (unit 1)
         )
@@ -4087,7 +4087,7 @@
     (pin "1" (uuid 4dfc5160-4789-4895-8b6b-4a29f194da00))
     (pin "2" (uuid 81496580-89b7-47f2-a7c2-5d31a8bfb07c))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "R2") (unit 1)
         )
@@ -4112,7 +4112,7 @@
     )
     (pin "1" (uuid e9bfe927-6e26-468b-9c14-0fc52926d9a8))
     (instances
-      (project "tn9k_f18a_compact"
+      (project "tn_vdp_v1_compact"
         (path "/e3c6ad0b-efa5-4827-958c-c20bf8519fa1"
           (reference "#PWR07") (unit 1)
         )

@@ -1,6 +1,6 @@
-# F18A based on Tang Nano 9k - Compact (SMD) version
+# TMS9918A compatible VDP based on Tang Nano 9k - Compact (SMD) version
 
-This version is a compact variant of the tn9k_f18a board that directly
+This version is a compact variant of the tn_vdp_v1 board that directly
 fits into the VDP socket of the TI-99/4A.  It uses SMD components and
 has the same size as the Tang Nano 9k board.  It comes with a VGA
 breakout connector that can be directly used if the space in the host

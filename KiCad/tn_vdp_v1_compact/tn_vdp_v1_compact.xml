@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/Users/hans/Development/privat/tn9k_f18a/KiCad/tn9k_f18a_compact/tn9k_f18a_compact.kicad_sch</source>
+    <source>/Users/hans/Development/privat/tn9k_f18a/KiCad/tn_vdp_v1_compact/tn_vdp_v1_compact.kicad_sch</source>
     <date>2023 May 24, Wednesday 20:12:42</date>
     <tool>Eeschema 7.0.2-0</tool>
     <sheet number="1" name="/" tstamps="/">
@@ -10,7 +10,7 @@
         <company/>
         <rev/>
         <date/>
-        <source>tn9k_f18a_compact.kicad_sch</source>
+        <source>tn_vdp_v1_compact.kicad_sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -33,7 +33,7 @@
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="LCSC" value="C2857981"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <sheetpath names="/" tstamps="/"/>
@@ -48,7 +48,7 @@
       <libsource lib="Device" part="D_Schottky" description="Schottky diode"/>
       <property name="LCSC" value="C2900723"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Schottky diode"/>
       <property name="ki_keywords" value="diode Schottky"/>
       <sheetpath names="/" tstamps="/"/>
@@ -59,7 +59,7 @@
       <footprint>f18a_footprints:TMS99xxA_Replacement</footprint>
       <libsource lib="f18a_tn9k" part="TMS99xxA_Replacement" description=""/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>4fd4dbb3-b299-410d-8d53-2dd1169e73a9</tstamps>
     </comp>
@@ -68,7 +68,7 @@
       <footprint>Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical</footprint>
       <libsource lib="Connector_Generic" part="Conn_02x08_Odd_Even" description="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
@@ -79,7 +79,7 @@
       <footprint>Connector_PinSocket_2.54mm:PinSocket_1x24_P2.54mm_Vertical</footprint>
       <libsource lib="Connector_Generic" part="Conn_01x24" description="Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
@@ -90,7 +90,7 @@
       <footprint>Connector_PinSocket_2.54mm:PinSocket_1x24_P2.54mm_Vertical</footprint>
       <libsource lib="Connector_Generic" part="Conn_01x24" description="Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Generic connector, single row, 01x24, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
@@ -102,7 +102,7 @@
       <datasheet> ~</datasheet>
       <libsource lib="Connector" part="DB15_Female_HighDensity_MountingHoles" description="15-pin female D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="15-pin female D-SUB connector, High density (3 columns), Triple Row, Generic, VGA-connector, Mounting Hole"/>
       <property name="ki_keywords" value="connector db15 female D-SUB VGA"/>
       <sheetpath names="/" tstamps="/"/>
@@ -113,7 +113,7 @@
       <footprint>Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical</footprint>
       <libsource lib="Connector_Generic" part="Conn_02x08_Odd_Even" description="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
@@ -124,7 +124,7 @@
       <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
       <libsource lib="" part="SolderJumper_2_Open_1" description="Solder Jumper, 2-pole, open"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
       <property name="ki_keywords" value="solder jumper SPST"/>
       <sheetpath names="/" tstamps="/"/>
@@ -135,7 +135,7 @@
       <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
       <libsource lib="" part="SolderJumper_2_Open_1" description="Solder Jumper, 2-pole, open"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
       <property name="ki_keywords" value="solder jumper SPST"/>
       <sheetpath names="/" tstamps="/"/>
@@ -146,7 +146,7 @@
       <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
       <libsource lib="" part="SolderJumper_2_Open_1" description="Solder Jumper, 2-pole, open"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
       <property name="ki_keywords" value="solder jumper SPST"/>
       <sheetpath names="/" tstamps="/"/>
@@ -157,7 +157,7 @@
       <footprint>Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm</footprint>
       <libsource lib="" part="SolderJumper_2_Open_1" description="Solder Jumper, 2-pole, open"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
       <property name="ki_keywords" value="solder jumper SPST"/>
       <sheetpath names="/" tstamps="/"/>
@@ -172,7 +172,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C5140130"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -187,7 +187,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016472"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -202,7 +202,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016283"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -217,7 +217,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C103660"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -232,7 +232,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C5140130"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -247,7 +247,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016472"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -262,7 +262,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016283"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -277,7 +277,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C103660"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -292,7 +292,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C5140130"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -307,7 +307,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016472"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -322,7 +322,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016283"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -337,7 +337,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C103660"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -352,7 +352,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016437"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -367,7 +367,7 @@
       <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
       <property name="LCSC" value="C3016437"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Resistor, US symbol"/>
       <property name="ki_keywords" value="R res resistor"/>
       <sheetpath names="/" tstamps="/"/>
@@ -383,7 +383,7 @@
       <libsource lib="74xGxx" part="74AHC1G08" description="Single AND Gate, Low-Voltage CMOS"/>
       <property name="LCSC" value="C7666"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Single AND Gate, Low-Voltage CMOS"/>
       <property name="ki_keywords" value="Single Gate AND LVC CMOS"/>
       <sheetpath names="/" tstamps="/"/>
@@ -399,7 +399,7 @@
       <libsource lib="74xx" part="MC74LCX16245DT" description="Low Voltage 16-Bit Bidirectional Transceiver with 5V Tolerant Inputs and Outputs, TSSOP-48"/>
       <property name="LCSC" value="C894789"/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="tn9k_f18a_compact.kicad_sch"/>
+      <property name="Sheetfile" value="tn_vdp_v1_compact.kicad_sch"/>
       <property name="ki_description" value="Low Voltage 16-Bit Bidirectional Transceiver with 5V Tolerant Inputs and Outputs, TSSOP-48"/>
       <property name="ki_keywords" value="transceiver"/>
       <sheetpath names="/" tstamps="/"/>
@@ -699,7 +699,7 @@
       <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
     </library>
     <library logical="f18a_tn9k">
-      <uri>/Users/hans/Development/privat/tn9k_f18a/KiCad/tn9k_f18a_compact/f18a_tn9k.kicad_sym</uri>
+      <uri>/Users/hans/Development/privat/tn9k_f18a/KiCad/tn_vdp_v1_compact/f18a_tn9k.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
