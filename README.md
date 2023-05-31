@@ -1,8 +1,17 @@
 # TN VDP 
  
-## Tang Nano 9K TMS 9118 VDP
+## Tang Nano 9K TMS9118A VDP
 
-This project recreates the TMS9118 in FPGA using the over the counter Sipeed's Tang Nano 9K board plus a designed set of boards to be stacked on top where the TMS9118 was located.
+This project recreates the TMS9118A (and its TMS9928A/TMS9929A
+variants) in FPGA using the over the counter Sipeed's Tang Nano 9K
+board plus a designed set of boards to be stacked on top where the
+TMS9118 was located.
+
+TN VDP v1 uses
+[Matthew Haggerty's F18A core](https://github.com/dnotq/f18a), which
+is completely compatible with the original Texas Instruments VDP, but
+adds
+[additional video modes, sprites and color capabilities](https://dnotq.io/f18a/intro.html).
 
 The bitstream file is [here](fpga/tn_vdp_v1/impl/pnr/tn_vdp.fs)
 
