@@ -1,0 +1,173 @@
+{
+ "Device" : "GW1NR-9C",
+ "Files" : [
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/audio_clock_regeneration_packet.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/audio_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/audio_sample_packet.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/auxiliary_video_information_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/hdmi.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/packet_assembler.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/packet_picker.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/serializer.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/source_product_description_info_frame.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/tmds_channel.sv",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/SPI_MCP3202.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_108_3.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_126.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram32k.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
+   "Type" : "verilog"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_colordec.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_command.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_doublebuf.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_graphic123m.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_graphic4567.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_hvcounter.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_interrupt.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_linebuf.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_ntsc_pal.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_package.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_register.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_spinforam.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_ssg.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_text12.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_vga.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_wait_control.vhd",
+   "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vencode.vhd",
+   "Type" : "vhdl"
+  }
+ ],
+ "IncludePath" : [
+
+ ],
+ "LoopLimit" : 2000,
+ "ResultFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/impl/temp/rtl_parser.result",
+ "Top" : "v9958_top",
+ "VerilogStd" : "sysv",
+ "VhdlStd" : "vhdl_2008"
+}

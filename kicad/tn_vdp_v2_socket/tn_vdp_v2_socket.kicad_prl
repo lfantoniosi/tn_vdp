@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 31,
+    "active_layer": 44,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -64,11 +64,11 @@
       39,
       40
     ],
-    "visible_layers": "80010ec_7ffffffe",
+    "visible_layers": "80010fc_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "tn_vdp_v1_fat.kicad_prl",
+    "filename": "tn_vdp_v2_socket.kicad_prl",
     "version": 3
   },
   "project": {

@@ -1,0 +1,158 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\SPI_MCP3202.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\gowin\clk_100.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\gowin\clk_125.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_clock_regeneration_packet.sv'
+WARN  (EX2478) : Non-net output port 'clk_audio_counter_wrap' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_clock_regeneration_packet.sv":13)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_info_frame.sv'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_sample_packet.sv'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\auxiliary_video_information_info_frame.sv'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\hdmi.sv'
+WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\hdmi.sv":81)
+WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\hdmi.sv":82)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_assembler.sv'
+WARN  (EX2478) : Non-net output port 'counter' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_assembler.sv":11)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\serializer.sv'
+WARN  (EX3182) : Initial value of parameter 'VIDEO_RATE' is omitted("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\serializer.sv":6)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\source_product_description_info_frame.sv'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\tmds_channel.sv'
+WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\tmds_channel.sv":16)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v'
+Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":161)
+Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":271)
+Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":298)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_color.vhd'
+Analyzing entity 'f18a_color'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_color.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_color.vhd":75)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_single_port_ram.vhd'
+Analyzing entity 'f18a_single_port_ram'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_single_port_ram.vhd":55)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_single_port_ram.vhd":67)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vram.vhd'
+Analyzing entity 'f18a_vram'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vram.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vram.vhd":74)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_div32x16.vhd'
+Analyzing entity 'f18a_div32x16'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_div32x16.vhd":57)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_div32x16.vhd":72)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd'
+Analyzing entity 'f18a_gpu'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":86)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":125)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_cpu.vhd'
+Analyzing entity 'f18a_cpu'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_cpu.vhd":56)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_cpu.vhd":146)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vga_cont_640_60.vhd'
+Analyzing entity 'f18a_vga_cont_640_60'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vga_cont_640_60.vhd":53)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vga_cont_640_60.vhd":67)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_counters.vhd'
+Analyzing entity 'f18a_counters'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_counters.vhd":57)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_counters.vhd":85)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd'
+Analyzing entity 'f18a_tiles'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":55)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":112)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd'
+Analyzing entity 'f18a_sprites'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":58)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":94)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd'
+Analyzing entity 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":63)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":97)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd'
+Analyzing entity 'f18a_tile_linebuf'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd":84)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd":102)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_top.vhd'
+Analyzing entity 'f18a_top'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_top.vhd":54)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_top.vhd":92)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_version.vhd'
+Analyzing entity 'f18a_version'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_version.vhd":51)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_version.vhd":68)
+WARN  (EX3073) : Port 'screen_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":275)
+Compiling module 'top'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":44)
+Compiling module 'CLK_100'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\gowin\clk_100.v":10)
+Compiling module 'CLK_125'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\gowin\clk_125.v":10)
+Switching to VHDL mode to elaborate design unit 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":198)
+Processing 'f18a_core(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":63)
+WARN  (EX4206) : Using initial value for 'override_r_s' since it is never assigned("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":222)
+WARN  (EX4206) : Using initial value for 'override_g_s' since it is never assigned("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":223)
+WARN  (EX4206) : Using initial value for 'override_b_s' since it is never assigned("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_core.vhd":224)
+Processing 'f18a_vram(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vram.vhd":56)
+Processing 'f18a_single_port_ram(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_single_port_ram.vhd":55)
+Extracting RAM for identifier 'ram'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_single_port_ram.vhd":71)
+Processing 'f18a_cpu(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_cpu.vhd":56)
+Processing 'f18a_gpu(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":86)
+Extracting RAM for identifier 'gpuram'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":135)
+Extracting RAM for identifier 'regfile'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":171)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":518)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":1040)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":1057)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":1152)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":1210)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_gpu.vhd":1325)
+Processing 'f18a_div32x16(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_div32x16.vhd":57)
+Processing 'f18a_vga_cont_640_60(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_vga_cont_640_60.vhd":53)
+Processing 'f18a_counters(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_counters.vhd":57)
+Processing 'f18a_tiles(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":55)
+Extracting RAM for identifier 'fifo'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":323)
+Processing 'f18a_tile_linebuf(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd":84)
+Extracting RAM for identifier 'linebuf1'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd":105)
+Extracting RAM for identifier 'linebuf2'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tile_linebuf.vhd":106)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":643)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_tiles.vhd":736)
+Processing 'f18a_sprites(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":58)
+Extracting RAM for identifier 'linebuf1'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":102)
+Extracting RAM for identifier 'linebuf2'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":103)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":368)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":394)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_sprites.vhd":808)
+Processing 'f18a_color(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_color.vhd":56)
+Extracting RAM for identifier 'colram'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\f18a\f18a_color.vhd":81)
+Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":198)
+Compiling module 'hdmi(VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\hdmi.sv":4)
+Compiling module 'packet_picker(VIDEO_ID_CODE=1,VIDEO_RATE=25174825.1748252,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=44100,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":4)
+Extracting RAM for identifier 'audio_sample_word_buffer'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":80)
+Compiling module 'audio_clock_regeneration_packet(VIDEO_RATE=25174825.1748252,AUDIO_RATE=44100)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_clock_regeneration_packet.sv":5)
+Compiling module 'audio_sample_packet(WORD_LENGTH=4'b0010)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_sample_packet.sv":8)
+WARN  (EX3780) : Using initial value of 'CHANNEL_LEFT' since it is never assigned("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_sample_packet.sv":63)
+WARN  (EX3780) : Using initial value of 'CHANNEL_RIGHT' since it is never assigned("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_sample_packet.sv":64)
+Compiling module 'auxiliary_video_information_info_frame(IT_CONTENT=1'b1,VIDEO_ID_CODE=32'sb00000000000000000000000000000001)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\auxiliary_video_information_info_frame.sv":5)
+Compiling module 'source_product_description_info_frame(VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\source_product_description_info_frame.sv":5)
+Compiling module 'audio_info_frame'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\audio_info_frame.sv":5)
+WARN  (EX1998) : Net 'headers[255][23]' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":29)
+WARN  (EX1998) : Net 'subs[255][3][55]' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":30)
+Compiling module 'packet_assembler'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_assembler.sv":4)
+Compiling module 'tmds_channel'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\tmds_channel.sv":4)
+Compiling module 'tmds_channel(CN=1)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\tmds_channel.sv":4)
+Compiling module 'tmds_channel(CN=2)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\tmds_channel.sv":4)
+Compiling module 'serializer(VIDEO_RATE=25174825.1748252)'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\serializer.sv":3)
+Compiling module 'SPI_MCP3202'("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\SPI_MCP3202.v":20)
+WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\SPI_MCP3202.v":63)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\SPI_MCP3202.v":77)
+WARN  (EX1998) : Net 'blank_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":163)
+WARN  (EX1998) : Net 'hs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":164)
+WARN  (EX1998) : Net 'vs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":165)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+WARN  (CV0016) : Input scnlin_n is unused("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\top.v":61)
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":143)
+WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":131)
+WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":137)
+WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v9918\src\hdmi\packet_picker.sv":140)
+[95%] Generate netlist file "D:\src\tn_vdp\fpga\tn_vdp_v9918\impl\gwsynthesis\tn_vdp.vg" completed
+WARN  (CK3000) : Can't calculate clocks' relationship between: "clk_audio_w" and "clk_25_inst/CLKOUT.default_gen_clk"
+WARN  (CK3000) : Can't calculate clocks' relationship between: "clk_25_inst/CLKOUT.default_gen_clk" and "clk_audio_w"
+[100%] Generate report file "D:\src\tn_vdp\fpga\tn_vdp_v9918\impl\gwsynthesis\tn_vdp_syn.rpt.html" completed
+GowinSynthesis finish

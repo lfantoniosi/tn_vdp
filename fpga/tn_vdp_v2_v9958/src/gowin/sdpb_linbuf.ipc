@@ -1,0 +1,17 @@
+[General]
+ipc_version=4
+file=sdpb_linbuf
+module=SDPB_LINBUF
+target_device=gw1nr9c-004
+type=ram_sdpb
+version=1.0
+
+[Config]
+BYTE_SIZE=0
+DEPTH_A=2048
+DEPTH_B=2048
+LANG=0
+READ=0
+RESET_MODE=true
+WIDTH_A=18
+WIDTH_B=18

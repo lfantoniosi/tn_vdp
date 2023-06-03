@@ -1,0 +1,46 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>5</Version>
+    <Device name="GW1NR-9C" pn="GW1NR-LV9QN88PC6/I5">gw1nr9c-004</Device>
+    <FileList>
+        <File path="hdmi/audio_clock_regeneration_packet.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/audio_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/audio_sample_packet.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/auxiliary_video_information_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/hdmi.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/packet_assembler.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/packet_picker.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/serializer.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/source_product_description_info_frame.sv" type="file.verilog" enable="1"/>
+        <File path="hdmi/tmds_channel.sv" type="file.verilog" enable="1"/>
+        <File path="src/SPI_MCP3202.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/clk_108_3.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/clk_126.v" type="file.verilog" enable="1"/>
+        <File path="src/ram32k.v" type="file.verilog" enable="1"/>
+        <File path="src/v9958_top.v" type="file.verilog" enable="1"/>
+        <File path="src/ram.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_colordec.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_command.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_doublebuf.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_graphic123m.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_graphic4567.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_hvcounter.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_interrupt.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_linebuf.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_ntsc_pal.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_package.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_register.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_spinforam.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_sprite.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_ssg.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_text12.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_vga.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vdp_wait_control.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/vdp/vencode.vhd" type="file.vhdl" enable="1"/>
+        <File path="src/v9958.cst" type="file.cst" enable="1"/>
+        <File path="src/v9958.sdc" type="file.sdc" enable="1"/>
+    </FileList>
+</Project>

@@ -19,7 +19,7 @@
       "footprints": true,
       "graphics": true,
       "keepouts": true,
-      "lockedItems": false,
+      "lockedItems": true,
       "otherItems": true,
       "pads": true,
       "text": true,
@@ -64,11 +64,11 @@
       39,
       40
     ],
-    "visible_layers": "80010ec_7ffffffe",
+    "visible_layers": "80010fc_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "tn_vdp_v1_fat.kicad_prl",
+    "filename": "tn_vdp_v2_board.kicad_prl",
     "version": 3
   },
   "project": {

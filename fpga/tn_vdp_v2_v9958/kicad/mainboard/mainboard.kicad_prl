@@ -15,17 +15,17 @@
       "zones": 0.6
     },
     "selection_filter": {
-      "dimensions": true,
-      "footprints": true,
-      "graphics": true,
-      "keepouts": true,
+      "dimensions": false,
+      "footprints": false,
+      "graphics": false,
+      "keepouts": false,
       "lockedItems": false,
-      "otherItems": true,
-      "pads": true,
-      "text": true,
+      "otherItems": false,
+      "pads": false,
+      "text": false,
       "tracks": true,
-      "vias": true,
-      "zones": true
+      "vias": false,
+      "zones": false
     },
     "visible_items": [
       0,
@@ -64,11 +64,11 @@
       39,
       40
     ],
-    "visible_layers": "80010ec_7ffffffe",
+    "visible_layers": "80010fc_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
-    "filename": "tn_vdp_v1_fat.kicad_prl",
+    "filename": "mainboard.kicad_prl",
     "version": 3
   },
   "project": {

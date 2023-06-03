@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE gowin-synthesis-project>
+<Project>
+    <Version>beta</Version>
+    <Device id="GW1NR-9C" package="QFN88P" speed="6" partNumber="GW1NR-LV9QN88PC6/I5"/>
+    <FileList>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_clock_regeneration_packet.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_info_frame.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_sample_packet.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\auxiliary_video_information_info_frame.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_assembler.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\serializer.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\source_product_description_info_frame.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\tmds_channel.sv" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_108_3.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_126.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_colordec.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_command.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_graphic123m.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_graphic4567.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_hvcounter.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_interrupt.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_linebuf.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ntsc_pal.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_package.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_register.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_spinforam.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ssg.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_text12.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_vga.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_wait_control.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vencode.vhd" type="vhdl"/>
+    </FileList>
+    <OptionList>
+        <Option type="disable_insert_pad" value="0"/>
+        <Option type="looplimit" value="2000"/>
+        <Option type="output_file" value="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958.vg"/>
+        <Option type="print_all_synthesis_warning" value="0"/>
+        <Option type="ram_rw_check" value="1"/>
+        <Option type="top_module" value="v9958_top"/>
+        <Option type="verilog_language" value="sysv-2017"/>
+        <Option type="vhdl_language" value="vhdl-2008"/>
+    </OptionList>
+</Project>
