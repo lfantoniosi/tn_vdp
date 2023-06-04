@@ -1027,6 +1027,7 @@ BEGIN
     VDPR9PALMODE    <=  REG_R9_PAL_MODE     WHEN( NTSC_PAL_TYPE = '1' )ELSE
                         FORCED_V_MODE;
 
+
     IVIDEOR <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
                 IVIDEOR_VDP;
     IVIDEOG <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
@@ -1175,7 +1176,7 @@ BEGIN
         REG_R25_YJK             => REG_R25_YJK              ,
         CENTERYJK_R25_N         => CENTERYJK_R25_N          ,
         OFFSET_Y                => OFFSET_Y                 
-    );
+    );  
 
     -- GENERATE BWINDOW
     PROCESS( RESET, CLK21M )
@@ -1183,11 +1184,11 @@ BEGIN
         IF( RESET = '1' )THEN
             BWINDOW_X <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( H_CNT = 200 ) THEN
+            --IF( H_CNT = 200 ) THEN
                 BWINDOW_X <= '1';
-            ELSIF( H_CNT = CLOCKS_PER_LINE-1-1 )THEN
-                BWINDOW_X <= '0';
-            END IF;
+            --ELSIF( H_CNT = CLOCKS_PER_LINE-1-1 )THEN
+            --    BWINDOW_X <= '0';
+            --END IF;
         END IF;
     END PROCESS;
 

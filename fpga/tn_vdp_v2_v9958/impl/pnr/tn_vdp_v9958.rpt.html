@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Fri Jun 02 22:42:19 2023
+<td>Sat Jun 03 17:51:53 2023
 </td>
 </tr>
 <tr>
@@ -97,13 +97,13 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Placement Phase 1: CPU time = 0h 0m 0.079s, Elapsed time = 0h 0m 0.08s
-   Placement Phase 2: CPU time = 0h 0m 0.959s, Elapsed time = 0h 0m 0.96s
+   Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+   Placement Phase 1: CPU time = 0h 0m 0.079s, Elapsed time = 0h 0m 0.079s
+   Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
    Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
    Total Placement: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
 Running routing:
-   Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.001s
+   Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
    Routing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
    Routing Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
@@ -114,7 +114,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s, Peak memory usage = 205MB</td>
+<td>CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s, Peak memory usage = 255MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>3827/8640</td>
-<td>45%</td>
+<td>3722/8640</td>
+<td>44%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>3779(3418 LUT, 361 ALU, 0 ROM16)</td>
+<td>3674(3313 LUT, 361 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,8 +144,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>1964/6693</td>
-<td>30%</td>
+<td>1933/6693</td>
+<td>29%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as Latch</td>
@@ -154,8 +154,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>1952/6480</td>
-<td>31%</td>
+<td>1921/6480</td>
+<td>30%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as Latch</td>
@@ -169,8 +169,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>2738/4320</td>
-<td>64%</td>
+<td>2668/4320</td>
+<td>62%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
@@ -213,8 +213,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PLL</td>
-<td>2/2</td>
-<td>100%</td>
+<td>1/2</td>
+<td>50%</td>
 </tr>
 <tr>
 <td class="label">DCS</td>
@@ -238,8 +238,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLKDIV</td>
-<td>1/8</td>
-<td>13%</td>
+<td>0/8</td>
+<td>0%</td>
 </tr>
 <tr>
 <td class="label">DLLDLY</td>
@@ -285,11 +285,11 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PRIMARY</td>
-<td>6/8(75%)</td>
+<td>3/8(38%)</td>
 </tr>
 <tr>
 <td class="label">LW</td>
-<td>2/8(25%)</td>
+<td>3/8(38%)</td>
 </tr>
 <tr>
 <td class="label">GCLK_PIN</td>
@@ -297,11 +297,11 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">PLL</td>
-<td>2/2(100%)</td>
+<td>1/2(50%)</td>
 </tr>
 <tr>
 <td class="label">CLKDIV</td>
-<td>1/8(13%)</td>
+<td>0/8(0%)</td>
 </tr>
 <tr>
 <td class="label">DLLDLY</td>
@@ -319,7 +319,7 @@ Generate output files:
 <tr>
 <td class="label">clk_d</td>
 <td>PRIMARY</td>
-<td> TR TL</td>
+<td> TR TL BR BL</td>
 </tr>
 <tr>
 <td class="label">clk_audio_w</td>
@@ -327,24 +327,9 @@ Generate output files:
 <td> BR</td>
 </tr>
 <tr>
-<td class="label">clk_25_w</td>
-<td>PRIMARY</td>
-<td> TR TL BR BL</td>
-</tr>
-<tr>
-<td class="label">clk_108_w</td>
+<td class="label">clk_135_w</td>
 <td>PRIMARY</td>
 <td> BR</td>
-</tr>
-<tr>
-<td class="label">clk_3_w</td>
-<td>PRIMARY</td>
-<td> BR BL</td>
-</tr>
-<tr>
-<td class="label">clk_126_w</td>
-<td>PRIMARY</td>
-<td> TR BR</td>
 </tr>
 <tr>
 <td class="label">reset_w</td>
@@ -352,12 +337,17 @@ Generate output files:
 <td> -</td>
 </tr>
 <tr>
-<td class="label">hdmi/true_hdmi_output.packet_picker/n4054_5</td>
+<td class="label">clk_3_w</td>
 <td>LW</td>
 <td> -</td>
 </tr>
 <tr>
-<td class="label">clk_126_w</td>
+<td class="label">hdmi_ntsc/true_hdmi_output.packet_picker/n4054_5</td>
+<td>LW</td>
+<td> -</td>
+</tr>
+<tr>
+<td class="label">clk_135_w</td>
 <td>HCLK</td>
 <td>TOP[0]</td>
 </tr>

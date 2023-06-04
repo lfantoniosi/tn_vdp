@@ -19,6 +19,7 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_126.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_colordec.vhd" type="vhdl"/>

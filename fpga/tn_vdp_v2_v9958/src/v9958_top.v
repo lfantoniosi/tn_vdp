@@ -49,6 +49,8 @@ module v9958_top(
 	wire	[6:0]	OFFSET_Y;
     wire            blank_o;
 
+    wire            r9palmode;
+
 	// Video signals
 	wire	[5:0]	VideoR;								// RGB Red
 	wire	[5:0]	VideoG;								// RGB Green
@@ -64,17 +66,17 @@ module v9958_top(
     wire clk_w;
     wire clk_3_w;
     //wire clk_21_w;
-    wire clk_108_w;
-    wire clk_108_lock_w;
+    wire clk_135_w;
+    wire clk_135_lock_w;
 
-    wire clk_25_w;
-    wire clk_126_w;
-    wire clk_126_lock_w;
+//    wire clk_25_w;
+//    wire clk_126_w;
+//    wire clk_126_lock_w;
 
 
-    CLK_108_3 clk_108_3_inst(
-        .clkout(clk_108_w), 
-        .lock(clk_108_lock_w), 
+    CLK_135_3 clk_135_3_inst(
+        .clkout(clk_135_w), 
+        .lock(clk_135_lock_w), 
         .clkoutd(clk_3_w), 
         .reset(~rst_n), 
         .clkin(clk) 
@@ -89,29 +91,29 @@ module v9958_top(
 //    defparam clk_21_inst.DIV_MODE = "5";
 //    defparam clk_21_inst.GSREN = "false"; 
 
-    CLK_126 clk_126_inst(
-        .clkout(clk_126_w), //output clkout
-        .lock(clk_126_lock_w), //output lock
-        .reset(~rst_n), //input reset
-        .clkin(clk) //input clkin
-    );
+//    CLK_126 clk_126_inst(
+//        .clkout(clk_126_w), //output clkout
+//        .lock(clk_126_lock_w), //output lock
+//        .reset(~rst_n), //input reset
+//        .clkin(clk) //input clkin
+//    );
 
-    CLKDIV clk_25_inst (
-        .CLKOUT(clk_25_w), 
-        .HCLKIN(clk_126_w), 
-        .RESETN(clk_126_lock_w),
-        .CALIB(1'b1)
-    );
-    defparam clk_25_inst.DIV_MODE = "5";
-    defparam clk_25_inst.GSREN = "false"; 
+//    CLKDIV clk_25_inst (
+//        .CLKOUT(clk_25_w), 
+//        .HCLKIN(clk_126_w), 
+//        .RESETN(clk_126_lock_w),
+//        .CALIB(1'b1)
+//    );
+//    defparam clk_25_inst.DIV_MODE = "5";
+//    defparam clk_25_inst.GSREN = "false"; 
 
     wire rst_n_w;
-    assign rst_n_w = rst_n & clk_108_lock_w & clk_126_lock_w;
+    assign rst_n_w = rst_n & clk_135_lock_w; // & clk_126_lock_w;
 
     reg  [31:0] pwr_cnt;
     reg  pwr_on_r;
 
-    always @(posedge clk_25_w or negedge rst_n_w) begin
+    always @(posedge clk or negedge rst_n_w) begin
         if(rst_n_w == 0) begin
             pwr_cnt = 7'b0;
             pwr_on_r = 32'b0;
@@ -143,7 +145,7 @@ module v9958_top(
     reg cswn_21_r;
     
     ram32k vram32k_inst(
-      .clk(clk_25_w),
+      .clk(clk),
       .we(~WeVdp_n & VideoDLClk),
       .addr(VdpAdr[14:0]),
       .din(VrmDbo),
@@ -173,7 +175,7 @@ module v9958_top(
     assign vidmod = ~vidmod_n;
 
 
-    always @(posedge clk_108_w or negedge reset_n_w) begin
+    always @(posedge clk_135_w or negedge reset_n_w) begin
         if(reset_n_w == 0) begin
             csr_sync_r = 2'b11;
             csrn_108_r = 1'b1;
@@ -205,7 +207,7 @@ module v9958_top(
 	reg   	[15:0]	CpuAdr;
     reg     [7:0]   CpuDbo;
 
-     always @(posedge clk_25_w or negedge reset_n_w) begin
+     always @(posedge clk or negedge reset_n_w) begin
         if(reset_n_w == 0) begin
             io_state_r = 1'b0;
             csrn_21_r = 1'b1;
@@ -246,7 +248,7 @@ module v9958_top(
     end
 
     VDP u_v9958 (
-		.CLK21M				( clk_25_w							),
+		.CLK21M				( clk   							),
 		.RESET				( reset_w        					),
 		.REQ				( CpuReq 							),
 		.ACK				( 									),
@@ -286,8 +288,8 @@ module v9958_top(
 	//--------------------------------------------------------------
 
     logic[2:0] tmds;
-    logic [9:0] cy, frameHeight;
-    logic [9:0] cx, frameWidth;
+    logic [9:0] cy;
+    logic [9:0] cx;
 
     wire [7:0] dvi_r;
     wire [7:0] dvi_g;
@@ -319,14 +321,14 @@ module v9958_top(
 
 ////////////
 
-    localparam CLKFRQ = 25200;
+    localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
     localparam AUDIO_BIT_WIDTH = 16;
     localparam AUDIO_CLK_DELAY = CLKFRQ * 1000 / AUDIO_RATE / 2;
     logic [$clog2(AUDIO_CLK_DELAY)-1:0] audio_divider;
     logic clk_audio_w;
 
-    always_ff@(posedge clk_25_w) 
+    always_ff@(posedge clk) 
     begin
         if (audio_divider != AUDIO_CLK_DELAY - 1) 
             audio_divider++;
@@ -338,14 +340,14 @@ module v9958_top(
 
     reg [15:0] sample; 
     reg [15:0] audio_sample_word [1:0], audio_sample_word0 [1:0];
-    always @(posedge clk_25_w) begin       // crossing clock domain
+    always @(posedge clk) begin       // crossing clock domain
         audio_sample_word0[0] <= sample;
         audio_sample_word[0] <= audio_sample_word0[0];
         audio_sample_word0[1] <= sample;
         audio_sample_word[1] <= audio_sample_word0[1];
     end
 
-    hdmi #( .VIDEO_ID_CODE(1), 
+    hdmi #( .VIDEO_ID_CODE(2), 
             .DVI_OUTPUT(0), 
             .VIDEO_REFRESH_RATE(59.94),
             .IT_CONTENT(1),
@@ -354,27 +356,25 @@ module v9958_top(
             .VENDOR_NAME({"Unknown", 8'd0}), // Must be 8 bytes null-padded 7-bit ASCII
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
-            .START_X(788), //756),
+            .START_X(20), //788), //756),
             .START_Y(476) )
 
-    hdmi ( .clk_pixel_x5(clk_126_w), 
-          .clk_pixel(clk_25_w), 
+    hdmi_ntsc ( .clk_pixel_x5(clk_135_w), 
+          .clk_pixel(clk), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
           .reset( reset_w ),
-          .h_sync(ck25_hs),
-          .v_sync(ck25_vs),
           .audio_sample_word(audio_sample_word),
           .tmds(tmds), 
           .tmds_clock(tmdsClk), 
           .cx(cx), 
           .cy(cy),
-          .frame_width( frameWidth ),
+          .frame_width( frameWidth),
           .frame_height( frameHeight ) );
 
     // Gowin LVDS output buffer
     ELVDS_OBUF tmds_bufds [3:0] (
-        .I({clk_25_w, tmds}),
+        .I({clk, tmds}),
         .O({tmds_clk_p, tmds_data_p}),
         .OB({tmds_clk_n, tmds_data_n})
     );
@@ -386,7 +386,7 @@ module v9958_top(
 	.ODD(0)         // sets sample input to channel 0
 	)
     SPI_MCP3202 (
-	.clk(clk_126_w),                 // 125  MHz 
+	.clk(clk_135_w),                 // 125  MHz 
 	.EN(reset_n_w),                  // Enable the SPI core (ACTIVE HIGH)
 	.MISO(adc_miso),                // data out of ADC (Dout pin)
 	.MOSI(adc_mosi),               // Data into ADC (Din pin)
@@ -396,7 +396,7 @@ module v9958_top(
 	.DATA_VALID(sample_valid)          // is high when there is a full 12 bit word. 
 	); 
 
-    always @(posedge clk_25_w) begin     
+    always @(posedge clk_135_w) begin     
         if (sample_valid)
             sample <= { 3'b0, audio_sample[11:2], 3'b0 };
     end

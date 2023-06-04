@@ -71,9 +71,6 @@ module hdmi
     input logic [23:0] rgb,
     input logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word [1:0],
 
-    output logic h_sync,
-    output logic v_sync,
-
     // These outputs go to your HDMI port
     output logic [2:0] tmds,
     output logic tmds_clock,
@@ -202,9 +199,6 @@ always_comb begin
     else
         vsync <= invert ^ (cy >= screen_height + vsync_pulse_start && cy < screen_height + vsync_pulse_start + vsync_pulse_size);
 end
-
-assign h_sync = hsync;
-assign v_sync = vsync;
 
 localparam real VIDEO_RATE = (VIDEO_ID_CODE == 1 ? 25.2E6
     : VIDEO_ID_CODE == 2 || VIDEO_ID_CODE == 3 ? 27.027E6

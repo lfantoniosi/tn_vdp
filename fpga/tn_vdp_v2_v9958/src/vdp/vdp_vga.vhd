@@ -161,8 +161,9 @@ ARCHITECTURE RTL OF VDP_VGA IS
     SIGNAL DATABOUT     : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
 
     -- DISP_START_X + DISP_WIDTH < CLOCKS_PER_LINE/2 = 684
-    CONSTANT DISP_WIDTH             : INTEGER := 720; --576;
+    CONSTANT DISP_WIDTH             : INTEGER := 792; --576;
     SHARED VARIABLE DISP_START_X    : INTEGER := (CLOCKS_PER_LINE/2) - DISP_WIDTH - 32;          -- 106
+
 BEGIN
 
     VIDEOROUT <= DATAROUT WHEN( VIDEOOUTX = '1' )ELSE (OTHERS => '0');
@@ -192,35 +193,35 @@ BEGIN
     PROCESS( CLK21M )
         CONSTANT DISP_START_Y   : INTEGER := 3;
         CONSTANT PRB_HEIGHT     : INTEGER := 25;
-        CONSTANT RIGHT_X        : INTEGER := (CLOCKS_PER_LINE/2) - DISP_WIDTH - 32;              -- 106
+        CONSTANT RIGHT_X        : INTEGER := 858 - DISP_WIDTH - 2;              -- 106
         CONSTANT PAL_RIGHT_X    : INTEGER := 87;                                -- 87
         CONSTANT CENTER_X       : INTEGER := RIGHT_X - 32 - 2;                  -- 72
         CONSTANT BASE_LEFT_X    : INTEGER := CENTER_X - 32 - 2 - 3;             -- 35
     BEGIN
         IF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( (RATIOMODE = "000" OR INTERLACEMODE = '1' OR PALMODE = '1') AND LEGACY_VGA = '1' )THEN
-                -- LEGACY OUTPUT
-                DISP_START_X := RIGHT_X;                                        -- 106
-            ELSIF( PALMODE = '1' )THEN
-                -- 50HZ
-                DISP_START_X := PAL_RIGHT_X;                                    -- 87
-            ELSIF( RATIOMODE = "000" OR INTERLACEMODE = '1' )THEN
-                -- 60HZ
-                DISP_START_X := CENTER_X;                                       -- 72
-            ELSIF( (VCOUNTERIN < 38 + DISP_START_Y + PRB_HEIGHT) OR
-                   (VCOUNTERIN > 526 - PRB_HEIGHT AND VCOUNTERIN < 526 ) OR
-                   (VCOUNTERIN > 524 + 38 + DISP_START_Y AND VCOUNTERIN < 524 + 38 + DISP_START_Y + PRB_HEIGHT) OR
-                   (VCOUNTERIN > 524 + 526 - PRB_HEIGHT) )THEN
-                -- PIXEL RATIO 1:1 (VGA MODE, 60HZ, NOT INTERLACED)
---              IF( EVENODD = '0' )THEN                                         -- PLOT FROM TOP-RIGHT
-                IF( EVENODD = '1' )THEN                                         -- PLOT FROM TOP-LEFT
-                    DISP_START_X := BASE_LEFT_X + CONV_INTEGER(NOT RATIOMODE);  -- 35 TO 41
-                ELSE
-                    DISP_START_X := RIGHT_X;                                    -- 106
-                END IF;
-            ELSE
-                DISP_START_X := CENTER_X;                                       -- 72
-            END IF;
+--             IF( (RATIOMODE = "000" OR INTERLACEMODE = '1' OR PALMODE = '1') AND LEGACY_VGA = '1' )THEN
+-- --                -- LEGACY OUTPUT
+--                 DISP_START_X := RIGHT_X;                                        -- 106
+--             ELSIF( PALMODE = '1' )THEN
+-- --                -- 50HZ
+--                 DISP_START_X := PAL_RIGHT_X;                                    -- 87
+--             ELSIF( RATIOMODE = "000" OR INTERLACEMODE = '1' )THEN
+-- --                -- 60HZ
+--                 DISP_START_X := CENTER_X;                                       -- 72
+--             ELSIF( (VCOUNTERIN < 38 + DISP_START_Y + PRB_HEIGHT) OR
+--                    (VCOUNTERIN > 526 - PRB_HEIGHT AND VCOUNTERIN < 526 ) OR
+--                    (VCOUNTERIN > 524 + 38 + DISP_START_Y AND VCOUNTERIN < 524 + 38 + DISP_START_Y + PRB_HEIGHT) OR
+--                    (VCOUNTERIN > 524 + 526 - PRB_HEIGHT) )THEN
+-- --                -- PIXEL RATIO 1:1 (VGA MODE, 60HZ, NOT INTERLACED)
+-- --              --IF( EVENODD = '0' )THEN                                         -- PLOT FROM TOP-RIGHT
+--                 IF( EVENODD = '1' )THEN                                         -- PLOT FROM TOP-LEFT
+--                     DISP_START_X := BASE_LEFT_X + CONV_INTEGER(NOT RATIOMODE);  -- 35 TO 41
+--                 ELSE
+--                     DISP_START_X := RIGHT_X;                                    -- 106
+--                 END IF;
+--             ELSE
+                DISP_START_X := (CLOCKS_PER_LINE/2) - DISP_WIDTH - 32 - 32 - 2;                                       -- 72
+--            END IF;
         END IF;
     END PROCESS;
 

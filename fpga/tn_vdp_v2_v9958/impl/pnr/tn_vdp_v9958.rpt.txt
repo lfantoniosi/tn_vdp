@@ -12,19 +12,19 @@
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Fri Jun 02 22:42:19 2023
+  <Created Time>:Sat Jun 03 17:51:53 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 1: CPU time = 0h 0m 0.079s, Elapsed time = 0h 0m 0.08s
-    Placement Phase 2: CPU time = 0h 0m 0.959s, Elapsed time = 0h 0m 0.96s
+    Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    Placement Phase 1: CPU time = 0h 0m 0.079s, Elapsed time = 0h 0m 0.079s
+    Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
     Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
     Total Placement: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.001s
+    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
     Routing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
     Routing Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
@@ -32,7 +32,7 @@
  Generate output files:
     CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 
- Total Time and Memory Usage: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s, Peak memory usage = 205MB
+ Total Time and Memory Usage: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s, Peak memory usage = 255MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 3827/8640  45%
-    --LUT,ALU,ROM16           | 3779(3418 LUT, 361 ALU, 0 ROM16)
+  Logic                       | 3722/8640  44%
+    --LUT,ALU,ROM16           | 3674(3313 LUT, 361 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
-  Register                    | 1964/6693  30%
+  Register                    | 1933/6693  29%
     --Logic Register as Latch | 0/6480  0%
-    --Logic Register as FF    | 1952/6480  31%
+    --Logic Register as FF    | 1921/6480  30%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 12/213  6%
-  CLS                         | 2738/4320  64%
+  CLS                         | 2668/4320  62%
   I/O Port                    | 40
   I/O Buf                     | 35
     --Input Buf               | 11
@@ -61,12 +61,12 @@
     --SDPX9B                  | 1
     --pROM                    | 1
   DSP                         | 0%
-  PLL                         | 2/2  100%
+  PLL                         | 1/2  50%
   DCS                         | 0/8  0%
   DQCE                        | 0/24  0%
   OSC                         | 0/1  0%
   User Flash                  | 0/1  0%
-  CLKDIV                      | 1/8  13%
+  CLKDIV                      | 0/8  0%
   DLLDLY                      | 0/8  0%
   DHCEN                       | 0/8  0%
   DHCENC                      | 0/4  0%
@@ -90,11 +90,11 @@
   -------------------------------
   Global Clock  | Usage       
   -------------------------------
-  PRIMARY       | 6/8(75%)
-  LW            | 2/8(25%)
+  PRIMARY       | 3/8(38%)
+  LW            | 3/8(38%)
   GCLK_PIN      | 3/3(100%)
-  PLL           | 2/2(100%)
-  CLKDIV        | 1/8(13%)
+  PLL           | 1/2(50%)
+  CLKDIV        | 0/8(0%)
   DLLDLY        | 0/8(0%)
   ===============================
 
@@ -104,15 +104,13 @@
   -------------------------------------------
   Signal         | Global Clock   | Location
   -------------------------------------------
-  clk_d          | PRIMARY        |  TR TL
+  clk_d          | PRIMARY        |  TR TL BR BL
   clk_audio_w    | PRIMARY        |  BR
-  clk_25_w       | PRIMARY        |  TR TL BR BL
-  clk_108_w      | PRIMARY        |  BR
-  clk_3_w        | PRIMARY        |  BR BL
-  clk_126_w      | PRIMARY        |  TR BR
+  clk_135_w      | PRIMARY        |  BR
   reset_w        | LW             |  -
-  hdmi/true_hdmi_output.packet_picker/n4054_5| LW             |  -
-  clk_126_w      | HCLK           | TOP[0]
+  clk_3_w        | LW             |  -
+  hdmi_ntsc/true_hdmi_output.packet_picker/n4054_5| LW             |  -
+  clk_135_w      | HCLK           | TOP[0]
   ===========================================
 
 

@@ -62,6 +62,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_135_3.v",
+   "Type" : "verilog"
+  },
+  {
    "Library" : "work",
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
    "Type" : "vhdl"

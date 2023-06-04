@@ -18,6 +18,7 @@
         <File path="src/SPI_MCP3202.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_108_3.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_126.v" type="file.verilog" enable="1"/>
+        <File path="src/gowin/clk_135_3.v" type="file.verilog" enable="1"/>
         <File path="src/ram32k.v" type="file.verilog" enable="1"/>
         <File path="src/v9958_top.v" type="file.verilog" enable="1"/>
         <File path="src/ram.vhd" type="file.vhdl" enable="1"/>

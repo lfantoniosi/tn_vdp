@@ -113,7 +113,7 @@ PACKAGE VDP_PACKAGE IS
     --
 
     -- NUMBER OF CLOCKS PER LINE, MUST BE A MULTIPLE OF 4
-    CONSTANT CLOCKS_PER_LINE                    : INTEGER := 1600; -- 1372                             -- 342*4
+    CONSTANT CLOCKS_PER_LINE             : INTEGER := 1716; --1600; 
 
     -- LEFT-TOP POSITION OF VISIBLE AREA
     CONSTANT OFFSET_X                           : STD_LOGIC_VECTOR(  6 DOWNTO 0 ) := "0110101"; --"1000000"; --"0110001"; -- 49
