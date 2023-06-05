@@ -5,34 +5,34 @@
 1. PnR Messages
 
   <Report Title>: PnR Report
-  <Design File>: D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg
-  <Physical Constraints File>: D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.cst
-  <Timing Constraints File>: D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.sdc
+  <Design File>: D:\src\tn_vdp\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg
+  <Physical Constraints File>: D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.cst
+  <Timing Constraints File>: D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.sdc
   <PnR Version>: V1.9.8.11 Education
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Tue May 30 21:08:37 2023
+  <Created Time>:Mon Jun 05 09:12:39 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 1: CPU time = 0h 0m 0.187s, Elapsed time = 0h 0m 0.187s
-    Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Placement Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
-    Total Placement: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+    Placement Phase 0: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    Placement Phase 1: CPU time = 0h 0m 0.247s, Elapsed time = 0h 0m 0.246s
+    Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    Placement Phase 3: CPU time = 0h 0m 10s, Elapsed time = 0h 0m 10s
+    Total Placement: CPU time = 0h 0m 16s, Elapsed time = 0h 0m 16s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.001s
-    Routing Phase 1: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Routing Phase 2: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
+    Routing Phase 1: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+    Routing Phase 2: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-    Total Routing: CPU time = 0h 0m 15s, Elapsed time = 0h 0m 15s
+    Total Routing: CPU time = 0h 0m 18s, Elapsed time = 0h 0m 18s
  Generate output files:
-    CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
+    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 29s, Elapsed time = 0h 0m 29s, Peak memory usage = 274MB
+ Total Time and Memory Usage: CPU time = 0h 0m 36s, Elapsed time = 0h 0m 36s, Peak memory usage = 289MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 5948/8640  69%
-    --LUT,ALU,ROM16           | 5144(4523 LUT, 621 ALU, 0 ROM16)
+  Logic                       | 6018/8640  70%
+    --LUT,ALU,ROM16           | 5214(4586 LUT, 628 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 134
-  Register                    | 2189/6693  33%
+  Register                    | 2202/6693  33%
     --Logic Register as Latch | 0/6480  0%
-    --Logic Register as FF    | 2170/6480  34%
+    --Logic Register as FF    | 2183/6480  34%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 19/213  9%
-  CLS                         | 3658/4320  85%
+  CLS                         | 3633/4320  85%
   I/O Port                    | 47
   I/O Buf                     | 43
     --Input Buf               | 11
@@ -93,7 +93,7 @@
   Global Clock  | Usage       
   -------------------------------
   PRIMARY       | 5/8(63%)
-  LW            | 4/8(50%)
+  LW            | 5/8(63%)
   GCLK_PIN      | 2/4(50%)
   PLL           | 2/2(100%)
   CLKDIV        | 4/8(50%)
@@ -111,9 +111,10 @@
   clk_25_w       | PRIMARY        |  TR TL BR BL
   clk_7_w        | PRIMARY        |  BR
   clk_3_w        | PRIMARY        |  BL
-  n195_7         | LW             |  -
-  reset_n_r_0    | LW             |  -
+  n229_7         | LW             |  -
+  reset_n_r      | LW             |  -
   n957_5         | LW             |  -
+  n198_6         | LW             |  -
   n4054_12       | LW             |  -
   clk_d          | HCLK           | BOTTOM[0]
   clk_25_w       | HCLK           | 
@@ -138,11 +139,13 @@ maxspr_n     |           | 86/3          | Y          | in    | IOT8[A]  | LVCMO
 scnlin_n     |           | 85/3          | Y          | in    | IOT8[B]  | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
 gromclk_n    |           | 84/3          | Y          | in    | IOT10[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
 cpuclk_n     |           | 83/3          | Y          | in    | IOT10[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.2       
+flash_miso   |           | 62/1          | Y          | in    | IOR11[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 int_n        |           | 39/2          | Y          | out   | IOB33[A] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3       
 gromclk      |           | 26/2          | Y          | out   | IOB8[B]  | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3       
 cpuclk       |           | 25/2          | Y          | out   | IOB8[A]  | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3       
-O_cs_n       |           | 60/1          | Y          | out   | IOR12[A] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
-O_ck         |           | 59/1          | Y          | out   | IOR12[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
+flash_clk    |           | 59/1          | Y          | out   | IOR12[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
+flash_cs     |           | 60/1          | Y          | out   | IOR12[A] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
+flash_mosi   |           | 61/1          | Y          | out   | IOR11[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
 hsync        |           | 63/1          | Y          | out   | IOR5[A]  | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
 vsync        |           | 42/2          | Y          | out   | IOB41[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | NA              | NA            | 3.3       
 red[0]       |           | 76/1          | Y          | out   | IOT37[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
@@ -169,8 +172,6 @@ cd[3]        |           | 33/2          | Y          | io    | IOB23[A] | LVCMO
 cd[2]        |           | 30/2          | Y          | io    | IOB13[B] | LVCMOS33   | 8     | UP        | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
 cd[1]        |           | 29/2          | Y          | io    | IOB13[A] | LVCMOS33   | 8     | UP        | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
 cd[0]        |           | 28/2          | Y          | io    | IOB11[B] | LVCMOS33   | 8     | UP        | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
-IO_di        |           | 61/1          | Y          | io    | IOR11[B] | LVCMOS33   | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3       
-IO_do        |           | 62/1          | Y          | io    | IOR11[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 ====================================================================================================================================================================================================================
 
 
@@ -241,10 +242,10 @@ Loc./Bank| Signal       | Dir.  | Site     | IO Type  | Drive | Pull Mode | PCI 
 16/3     | -            | in    | IOL26[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.2  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 63/1     | hsync        | out   | IOR5[A]  | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
-62/1     | IO_do        | in    | IOR11[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
-61/1     | IO_di        | out   | IOR11[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
-60/1     | O_cs_n       | out   | IOR12[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
-59/1     | O_ck         | out   | IOR12[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
+62/1     | flash_miso   | in    | IOR11[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
+61/1     | flash_mosi   | out   | IOR11[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
+60/1     | flash_cs     | out   | IOR12[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
+59/1     | flash_clk    | out   | IOR12[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
 57/1     | grn[0]       | out   | IOR13[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
 56/1     | grn[1]       | out   | IOR14[A] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  
 55/1     | grn[2]       | out   | IOR14[B] | LVCMOS33 | 8     | UP        | NA        | NA         | OFF        | NA         | OFF             | NA            | 3.3  

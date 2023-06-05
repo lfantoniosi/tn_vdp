@@ -19,13 +19,13 @@ WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_108_3.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_126.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v'
 Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":369)
 Undeclared symbol 'frameWidth', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":372)
 Undeclared symbol 'frameHeight', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":373)
 Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":396)
-Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v'
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd'
 Analyzing entity 'ram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":37)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":47)

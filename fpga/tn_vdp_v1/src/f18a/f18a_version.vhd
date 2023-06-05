@@ -87,8 +87,8 @@ architecture rtl of f18a_version is
    -- ..#####################################################..
    -- .........................................................
 
-   constant XMAX : integer := 58;   -- The pixel is delayed by 1-pixel period, so give an extra pixel for each side.
-   constant YMAX : integer := 14;
+   constant XMAX : integer := 1;   -- The pixel is delayed by 1-pixel period, so give an extra pixel for each side.
+   constant YMAX : integer := 1;
 
    --  64 x 16 bitmap.  MUST BE PADDED TO 64 pixels per line!
    type verrom_t is array (0 to 1023) of std_logic;

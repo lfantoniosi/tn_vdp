@@ -1,9 +1,9 @@
--d D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg
+-d D:\src\tn_vdp\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg
 -p GW1NR-9C-QFN88P-6
 -pn GW1NR-LV9QN88PC6/I5
--cst D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.cst
--cfg D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\device.cfg
--sdc D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.sdc
+-cst D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.cst
+-cfg D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\device.cfg
+-sdc D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.sdc
 -bit
 -tr
 -ph

@@ -50,15 +50,15 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Design File</td>
-<td>D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg</td>
+<td>D:\src\tn_vdp\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg</td>
 </tr>
 <tr>
 <td class="label">Physical Constraints File</td>
-<td>D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.cst</td>
+<td>D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.cst</td>
 </tr>
 <tr>
 <td class="label">Timing Constraints File</td>
-<td>D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.sdc</td>
+<td>D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.sdc</td>
 </tr>
 <tr>
 <td class="label">Version</td>
@@ -78,7 +78,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Tue May 30 21:08:37 2023
+<td>Mon Jun 05 09:12:39 2023
 </td>
 </tr>
 <tr>
@@ -288,6 +288,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>1.2</td>
 </tr>
 <tr>
+<td class="label">flash_miso</td>
+<td></td>
+<td>62/1</td>
+<td>Y</td>
+<td>in</td>
+<td>IOR11[A]</td>
+<td>LVCMOS33</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
 <td class="label">int_n</td>
 <td></td>
 <td>39/2</td>
@@ -342,7 +360,25 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">O_cs_n</td>
+<td class="label">flash_clk</td>
+<td></td>
+<td>59/1</td>
+<td>Y</td>
+<td>out</td>
+<td>IOR12[B]</td>
+<td>LVCMOS33</td>
+<td>8</td>
+<td>UP</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">flash_cs</td>
 <td></td>
 <td>60/1</td>
 <td>Y</td>
@@ -360,12 +396,12 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>3.3</td>
 </tr>
 <tr>
-<td class="label">O_ck</td>
+<td class="label">flash_mosi</td>
 <td></td>
-<td>59/1</td>
+<td>61/1</td>
 <td>Y</td>
 <td>out</td>
-<td>IOR12[B]</td>
+<td>IOR11[B]</td>
 <td>LVCMOS33</td>
 <td>8</td>
 <td>UP</td>
@@ -842,42 +878,6 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <td>OFF</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
-<td>3.3</td>
-</tr>
-<tr>
-<td class="label">IO_di</td>
-<td></td>
-<td>61/1</td>
-<td>Y</td>
-<td>io</td>
-<td>IOR11[B]</td>
-<td>LVCMOS33</td>
-<td>8</td>
-<td>UP</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>OFF</td>
-<td>NA</td>
-<td>3.3</td>
-</tr>
-<tr>
-<td class="label">IO_do</td>
-<td></td>
-<td>62/1</td>
-<td>Y</td>
-<td>io</td>
-<td>IOR11[A]</td>
-<td>LVCMOS33</td>
-<td>NA</td>
-<td>UP</td>
-<td>ON</td>
-<td>NONE</td>
-<td>NA</td>
-<td>NA</td>
-<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>
@@ -1815,7 +1815,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">62/1</td>
-<td>IO_do</td>
+<td>flash_miso</td>
 <td>in</td>
 <td>IOR11[A]</td>
 <td>LVCMOS33</td>
@@ -1831,7 +1831,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">61/1</td>
-<td>IO_di</td>
+<td>flash_mosi</td>
 <td>out</td>
 <td>IOR11[B]</td>
 <td>LVCMOS33</td>
@@ -1847,7 +1847,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">60/1</td>
-<td>O_cs_n</td>
+<td>flash_cs</td>
 <td>out</td>
 <td>IOR12[A]</td>
 <td>LVCMOS33</td>
@@ -1863,7 +1863,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">59/1</td>
-<td>O_ck</td>
+<td>flash_clk</td>
 <td>out</td>
 <td>IOR12[B]</td>
 <td>LVCMOS33</td>

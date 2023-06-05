@@ -552,17 +552,17 @@ begin
    -- Simulated scan lines every other VGA line when scanlines_i = '1'.
    -- The odd scan lines have their color value reduced by 50%.
    red_s <=
-      --override_r_s when override_s = '1' else
+      override_r_s when override_s = '1' else
       "0" & tile_r_s(0 to 2) when ((scanlines_r = '1' or vscanln_en_s = '1') and raster_y_s(9) = '1') else
       tile_r_s;
 
    grn_s <=
-      --override_g_s when override_s = '1' else
+      override_g_s when override_s = '1' else
       "0" & tile_g_s(0 to 2) when ((scanlines_r = '1' or vscanln_en_s = '1') and raster_y_s(9) = '1') else
       tile_g_s;
 
    blu_s <=
-      --override_b_s when override_s = '1' else
+      override_b_s when override_s = '1' else
       "0" & tile_b_s(0 to 2) when ((scanlines_r = '1' or vscanln_en_s = '1') and raster_y_s(9) = '1') else
       tile_b_s;
 

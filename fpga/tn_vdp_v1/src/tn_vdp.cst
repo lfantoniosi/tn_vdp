@@ -105,17 +105,17 @@ IO_PORT "hsync" IO_TYPE=LVCMOS33;
 IO_LOC  "vsync" 42;
 IO_PORT "vsync" IO_TYPE=LVCMOS33;
 
-IO_LOC  "O_ck" 59;
-IO_PORT "O_ck" IO_TYPE=LVCMOS33;
+IO_LOC  "flash_clk" 59;
+IO_PORT "flash_clk" IO_TYPE=LVCMOS33;
 
-IO_LOC  "O_cs_n" 60;
-IO_PORT "O_cs_n" IO_TYPE=LVCMOS33;
+IO_LOC  "flash_cs" 60;
+IO_PORT "flash_cs" IO_TYPE=LVCMOS33;
 
-IO_LOC  "IO_do" 62;
-IO_PORT "IO_do" IO_TYPE=LVCMOS33;
+IO_LOC  "flash_miso" 62;
+IO_PORT "flash_miso" IO_TYPE=LVCMOS33;
 
-IO_LOC  "IO_di" 61;
-IO_PORT "IO_di" IO_TYPE=LVCMOS33;
+IO_LOC  "flash_mosi" 61;
+IO_PORT "flash_mosi" IO_TYPE=LVCMOS33;
 
 IO_LOC  "tmds_clk_p" 69,68;
 IO_PORT "tmds_clk_p" IO_TYPE=LVCMOS33D;

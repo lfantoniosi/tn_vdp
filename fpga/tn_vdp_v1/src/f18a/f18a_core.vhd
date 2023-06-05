@@ -526,21 +526,21 @@ begin
 
 
    -- Version ROM and banner generation
---   inst_version : entity work.f18a_version
---   port map (
---      clk            => clk_100m0_i,
---      rst_n_i        => reset_n_r,
---      vga_clk        => clk_25m0_i,
---      intr_en_i      => intr_en_s,
---      raster_x       => raster_x_s,
---      raster_y       => raster_y_s,
---      blank_i        => blank_s,
-----       outputs
---      override_o     => override_s,
---      red_o          => override_r_s,
---      grn_o          => override_g_s,
---      blu_o          => override_b_s
---   );
+   inst_version : entity work.f18a_version
+   port map (
+      clk            => clk_100m0_i,
+      rst_n_i        => reset_n_r,
+      vga_clk        => clk_25m0_i,
+      intr_en_i      => intr_en_s,
+      raster_x       => raster_x_s,
+      raster_y       => raster_y_s,
+      blank_i        => blank_s,
+--       outputs
+      override_o     => override_s,
+      red_o          => override_r_s,
+      grn_o          => override_g_s,
+      blu_o          => override_b_s
+   );
 
 
    -- Use TL1 as the background color palette selector.

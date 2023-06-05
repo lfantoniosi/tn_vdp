@@ -1,7 +1,7 @@
-Reading netlist file: "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg"
-Parsing netlist file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg" completed
+Reading netlist file: "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg"
+Parsing netlist file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\gwsynthesis\tn_vdp.vg" completed
 Processing netlist completed
-Reading constraint file: "D:\src\tn9k_f18a\fpga\tn_vdp_v1\src\tn_vdp.cst"
+Reading constraint file: "D:\src\tn_vdp\fpga\tn_vdp_v1\src\tn_vdp.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -20,10 +20,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\tn_vdp.power.html" completed
-Generate file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\tn_vdp.pin.html" completed
-Generate file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\tn_vdp.rpt.html" completed
-Generate file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\tn_vdp.rpt.txt" completed
-Generate file "D:\src\tn9k_f18a\fpga\tn_vdp_v1\impl\pnr\tn_vdp.tr.html" completed
-Tue May 30 21:08:37 2023
+Generate file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\tn_vdp.power.html" completed
+Generate file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\tn_vdp.pin.html" completed
+Generate file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\tn_vdp.rpt.html" completed
+Generate file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\tn_vdp.rpt.txt" completed
+Generate file "D:\src\tn_vdp\fpga\tn_vdp_v1\impl\pnr\tn_vdp.tr.html" completed
+Mon Jun 05 09:12:40 2023
 

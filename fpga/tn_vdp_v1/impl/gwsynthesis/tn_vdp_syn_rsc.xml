@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="top" Register="13" Alu="8" Lut="14">
+<Module name="top" Register="13" Alu="8" Lut="16">
     <SubModule name="clk_100_inst"/>
     <SubModule name="clk_125_inst"/>
-    <SubModule name="f18a_top_inst" Register="7" Lut="6">
-        <SubModule name="inst_f18a" Register="17" Lut="27">
-            <SubModule name="inst_vram" Lut="116">
-                <SubModule name="inst_ram" Bsram="8"/>
-            </SubModule>
-            <SubModule name="inst_cpu" Register="435" Alu="63" Lut="511">
-                <SubModule name="inst_gpu" Register="508" Alu="209" Lut="1606" Dsp="2" Bsram="1" Ssram="4">
-                    <SubModule name="inst_divide" Register="56" Alu="17" Lut="94"/>
-                </SubModule>
-            </SubModule>
-            <SubModule name="inst_vga_cont" Register="23" Alu="9" Lut="34"/>
-            <SubModule name="inst_counters" Register="44" Alu="16" Lut="73"/>
-            <SubModule name="inst_tiles" Register="320" Alu="115" Lut="590" Dsp="4" Ssram="2">
-                <SubModule name="inst_linebuf" Lut="256" Ssram="128"/>
-            </SubModule>
-            <SubModule name="inst_sprites" Register="153" Alu="28" Lut="248" Bsram="2"/>
-            <SubModule name="inst_color" Register="25" Lut="29" Bsram="1"/>
+    <SubModule name="f18a_core_inst" Register="17" Lut="98">
+        <SubModule name="inst_vram" Lut="117">
+            <SubModule name="inst_ram" Bsram="8"/>
         </SubModule>
+        <SubModule name="inst_cpu" Register="435" Alu="63" Lut="523">
+            <SubModule name="inst_gpu" Register="508" Alu="209" Lut="1589" Dsp="2" Bsram="1" Ssram="4">
+                <SubModule name="inst_divide" Register="56" Alu="17" Lut="94"/>
+            </SubModule>
+        </SubModule>
+        <SubModule name="inst_vga_cont" Register="23" Alu="9" Lut="30"/>
+        <SubModule name="inst_counters" Register="44" Alu="16" Lut="77"/>
+        <SubModule name="inst_tiles" Register="320" Alu="115" Lut="590" Dsp="4" Ssram="2">
+            <SubModule name="inst_linebuf" Lut="256" Ssram="128"/>
+        </SubModule>
+        <SubModule name="inst_sprites" Register="153" Alu="28" Lut="247" Bsram="2"/>
+        <SubModule name="inst_color" Register="25" Lut="29" Bsram="1"/>
+        <SubModule name="inst_version" Register="20" Alu="8" Lut="4"/>
     </SubModule>
-    <SubModule name="hdmi" Register="55" Alu="9" Lut="48">
+    <SubModule name="hdmi" Register="55" Alu="9" Lut="50">
         <SubModule name="true_hdmi_output.packet_picker" Register="406" Lut="302">
             <SubModule name="audio_clock_regeneration_packet" Register="40" Alu="19" Lut="8"/>
         </SubModule>
-        <SubModule name="true_hdmi_output.packet_assembler" Register="45" Alu="4" Lut="380"/>
-        <SubModule name="tmds_gen[0].tmds_channel" Register="14" Alu="16" Lut="71"/>
+        <SubModule name="true_hdmi_output.packet_assembler" Register="45" Alu="4" Lut="378"/>
+        <SubModule name="tmds_gen[0].tmds_channel" Register="14" Alu="16" Lut="70"/>
         <SubModule name="tmds_gen[1].tmds_channel" Register="14" Alu="16" Lut="60"/>
-        <SubModule name="tmds_gen[2].tmds_channel" Register="14" Alu="16" Lut="60"/>
+        <SubModule name="tmds_gen[2].tmds_channel" Register="14" Alu="16" Lut="58"/>
         <SubModule name="serializer"/>
     </SubModule>
 </Module>

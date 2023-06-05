@@ -1,7 +1,7 @@
 //
 //Written by GowinSynthesis
 //Product Version "V1.9.9 Beta-1"
-//Sat Jun 03 17:51:44 2023
+//Sun Jun 04 16:18:18 2023
 
 //Source file index table:
 //file0 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/audio_clock_regeneration_packet.sv"
@@ -17,9 +17,9 @@
 //file10 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/SPI_MCP3202.v"
 //file11 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_108_3.v"
 //file12 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_126.v"
-//file13 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram32k.v"
-//file14 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v"
-//file15 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_135_3.v"
+//file13 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_135_3.v"
+//file14 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram32k.v"
+//file15 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v"
 //file16 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd"
 //file17 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd"
 //file18 "\D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_colordec.vhd"

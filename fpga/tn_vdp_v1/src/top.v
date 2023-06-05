@@ -63,10 +63,10 @@ module top(
     input   cpuclk_n,       // usr4
 
     // flash spi ports
-    output  O_cs_n,
-    inout   IO_di,
-    inout   IO_do,
-    output  O_ck,
+    output  flash_clk,
+    output  flash_cs,
+    output  flash_mosi,
+    input   flash_miso,
 
     // VGA ports
     output  hsync,
@@ -158,10 +158,10 @@ wire [7:0] rgb_b_w;
 wire rst_n_w;
 assign rst_n_w = rst_n & clk_100_lock_w & clk_125_lock_w;
 
-assign dvi_rst_n_w = rst_n_w & reset_n;
+assign reset_n_w = rst_n_w & reset_n;
 
 //	DVI_TX dvi_tx_inst(
-//		.I_rst_n(dvi_rst_n_w), //input I_rst_n
+//		.I_rst_n(reset_n_w), //input I_rst_n
 //		.I_serial_clk(clk_125_w), //input I_serial_clk
 //		.I_rgb_clk(clk_25_w), //input I_rgb_clk
 //		.I_rgb_vs(rgb_vs_w), //input I_rgb_vs
@@ -183,13 +183,6 @@ wire [3:0] r_w;
 wire [3:0] g_w;
 wire [3:0] b_w;
 
-assign rgb_r_w = {r_w, 4'b0};
-assign rgb_g_w = {g_w, 4'b0};
-assign rgb_b_w = {b_w, 4'b0};
-assign rgb_hs_w = hs_w;
-assign rgb_vs_w = vs_w;
-assign rgb_de_w = ~blank_w; 
-
 assign red = r_w;
 assign grn = g_w;
 assign blu = b_w;
@@ -197,37 +190,41 @@ assign blu = b_w;
 assign hsync = hs_w;
 assign vsync = vs_w;
 
-//wire  O_cs_n;
-//wire   IO_di;
-//wire   IO_do;
-//wire  O_ck;
+assign rgb_r_w = {r_w, 4'b0};
+assign rgb_g_w = {g_w, 4'b0};
+assign rgb_b_w = {b_w, 4'b0};
+assign rgb_hs_w = hs_w;
+assign rgb_vs_w = vs_w;
+assign rgb_de_w = ~blank_w; 
 
-f18a_top f18a_top_inst(
-    .clk_100m0_s(clk_50_w),
-    .clk_25m0_s(clk_25_w),
-    .reset_n_net(dvi_rst_n_w),
-    .mode_net(mode),
-    .csw_n_net(csw_n),
-    .csr_n_net(csr_n),
-    .int_n_net(int_n),
-//    .clk_grom_net(gromclk),
-//    .clk_cpu_net(cpuclk),
-    .cd_net(cd),
-    .hsync_net(hs_w),
-    .vsync_net(vs_w),
-    .red_net(r_w),
-    .grn_net(g_w),
-    .blu_net(b_w),
-    .blank_net(blank_w),
-    .usr1_net(maxspr_n),
-    .usr2_net(scnlin_n),
-    .usr3_net(gromclk_n),
-    .usr4_net(cpuclk_n),
-    .spi_cs_net(O_cs_n),
-    .spi_mosi_net(IO_di),
-    .spi_miso_net(IO_do),
-    .spi_clk_net(O_ck)
-    );
+wire [0:7] cd_out_s;
+
+   f18a_core f18a_core_inst (
+      .clk_100m0_i(clk_50_w),
+      .clk_25m0_i(clk_25_w),
+      .reset_n_i(reset_n_w),
+      .mode_i(mode),
+      .csw_n_i(csw_n),
+      .csr_n_i(csr_n),
+      .int_n_o(int_n),
+      .cd_i(cd),
+      .cd_o(cd_out_s),
+      .red_o(r_w),
+      .grn_o(g_w),
+      .blu_o(b_w),
+      .blank_o(blank_w),
+      .hsync_o(hs_w),
+      .vsync_o(vs_w),
+      .sprite_max_i(~maxspr_n),
+      .scanlines_i(~scnlin_n),
+      .spi_clk_o(flash_clk),
+      .spi_cs_o(flash_cs),
+      .spi_mosi_o(flash_mosi),
+      .spi_miso_i(flash_miso)
+   );
+
+   assign cd = csr_n ? 8'bzzzzzzzz : cd_out_s;
+
 
 reg [2:0] gromtick;
 always @(posedge clk_3_w or negedge rst_n_w) begin
@@ -264,7 +261,7 @@ assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
         end
     end
 
-    ////
+    //
     logic[2:0] tmds;
     wire [9:0] cy, frameHeight;
     wire [9:0] cx, frameWidth;
@@ -296,7 +293,7 @@ assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
           .clk_pixel(clk_25_w), 
           .clk_audio(clk_audio_w),
           .rgb({rgb_r_w, rgb_g_w, rgb_b_w}), 
-          .reset( ~dvi_rst_n_w ),
+          .reset( ~reset_n_w ),
           .audio_sample_word(audio_sample_word),
           .tmds(tmds), 
           .tmds_clock(tmdsClk), 
@@ -305,7 +302,7 @@ assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
           .frame_width( frameWidth ),
           .frame_height( frameHeight ) );
 
-    // Gowin LVDS output buffer
+//     Gowin LVDS output buffer
     ELVDS_OBUF tmds_bufds [3:0] (
         .I({clk_25_w, tmds}),
         .O({tmds_clk_p, tmds_d_p}),
