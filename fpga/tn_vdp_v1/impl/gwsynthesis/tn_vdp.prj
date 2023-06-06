@@ -29,9 +29,9 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_tile_linebuf.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_tiles.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_top.vhd" type="vhdl"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_version.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vga_cont_640_60.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd" type="vhdl"/>
-        <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_version.vhd" type="vhdl"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>

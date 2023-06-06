@@ -215,7 +215,7 @@ wire [0:7] cd_out_s;
       .blank_o(blank_w),
       .hsync_o(hs_w),
       .vsync_o(vs_w),
-      .sprite_max_i(~maxspr_n),
+      .sprite_max_i(maxspr_n),
       .scanlines_i(~scnlin_n),
       .spi_clk_o(flash_clk),
       .spi_cs_o(flash_cs),

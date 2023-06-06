@@ -189,7 +189,7 @@ wire [0:7] cd_out_s;
       .red_o(r_w),
       .grn_o(g_w),
       .blu_o(b_w),
-      .sprite_max_i(~maxspr_n),
+      .sprite_max_i(maxspr_n),
       .scanlines_i(~scnlin_n),
       .spi_clk_o(flash_clk),
       .spi_cs_o(flash_cs),
@@ -300,7 +300,7 @@ assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
 
     always @(posedge clk_25_w) begin     
         if (sample_valid)
-            sample <= { 3'b0, audio_sample[11:2], 3'b0 };
+            sample <= { 4'b0, audio_sample[11:3], 3'b0 };
     end
 
 
