@@ -297,7 +297,8 @@ ENTITY VDP IS
         LEGACY_VGA          : IN    STD_LOGIC;
 
         VDP_ID              : IN    STD_LOGIC_VECTOR(  4 DOWNTO 0 );
-        OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 )
+        OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
+        SPMAXSPR32          : IN    STD_LOGIC
 
         -- DEBUG OUTPUT
     --  DEBUG_OUTPUT        : OUT   STD_LOGIC_VECTOR( 15 DOWNTO 0 ) -- ★
@@ -405,7 +406,8 @@ ARCHITECTURE RTL OF VDP IS
             -- JP: 描画する事もできるので、このビットが必要
             SPCOLOROUT                  : OUT   STD_LOGIC;
             -- OUTPUT COLOR
-            SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 )
+            SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 );
+            SPMAXSPR32                  : IN    STD_LOGIC
         );
     END COMPONENT;
 
@@ -1665,7 +1667,8 @@ BEGIN
         PRAMDAT                     => PRAMDAT,
         PRAMADR                     => PRAMADRSPRITE,
         SPCOLOROUT                  => SPRITECOLOROUT,
-        SPCOLORCODE                 => COLORCODESPRITE
+        SPCOLORCODE                 => COLORCODESPRITE,
+        SPMAXSPR32                  => SPMAXSPR32
     );
 
     -----------------------------------------------------------------------------

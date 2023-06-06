@@ -59,8 +59,8 @@ IO_LOC "gromclk_ena_n" 84;
 IO_PORT "gromclk_ena_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 IO_LOC "scanlin_n" 85;
 IO_PORT "scanlin_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
-IO_LOC "vidmod_n" 86;
-IO_PORT "vidmod_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
+IO_LOC "maxspr_n" 86;
+IO_PORT "maxspr_n" IO_TYPE=LVCMOS18 PULL_MODE=UP;
 
 IO_LOC "csr_n" 36;
 IO_PORT "csr_n" IO_TYPE=LVCMOS33 PULL_MODE=UP;

@@ -1,5 +1,4 @@
 {
- "Device" : "GW1NR-9C",
  "Files" : [
   {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/audio_clock_regeneration_packet.sv",

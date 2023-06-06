@@ -193,7 +193,7 @@ BEGIN
     PROCESS( CLK21M )
         CONSTANT DISP_START_Y   : INTEGER := 3;
         CONSTANT PRB_HEIGHT     : INTEGER := 25;
-        CONSTANT RIGHT_X        : INTEGER := 858 - DISP_WIDTH - 2;              -- 106
+        CONSTANT RIGHT_X        : INTEGER := 684 - DISP_WIDTH - 2;              -- 106
         CONSTANT PAL_RIGHT_X    : INTEGER := 87;                                -- 87
         CONSTANT CENTER_X       : INTEGER := RIGHT_X - 32 - 2;                  -- 72
         CONSTANT BASE_LEFT_X    : INTEGER := CENTER_X - 32 - 2 - 3;             -- 35
@@ -303,8 +303,8 @@ BEGIN
             IF( (HCOUNTERIN = DISP_START_X) OR
                     ((HCOUNTERIN = DISP_START_X + (CLOCKS_PER_LINE/2)) AND INTERLACEMODE = '0') )THEN
                 VIDEOOUTX <= '1';
-            ELSIF( (HCOUNTERIN = DISP_START_X + DISP_WIDTH - 116) OR
-                    (HCOUNTERIN = DISP_START_X + DISP_WIDTH + (CLOCKS_PER_LINE/2) - 116) )THEN
+            ELSIF( (HCOUNTERIN = DISP_START_X + DISP_WIDTH) OR
+                    (HCOUNTERIN = DISP_START_X + DISP_WIDTH + (CLOCKS_PER_LINE/2)) )THEN
                 VIDEOOUTX <= '0';
             END IF;
         END IF;

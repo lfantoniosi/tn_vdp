@@ -224,7 +224,8 @@ ENTITY VDP_SPRITE IS
         -- JP: 描画する事もできるので、このビットが必要
         SPCOLOROUT                  : OUT   STD_LOGIC;
         -- OUTPUT COLOR
-        SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 )
+        SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 );
+        SPMAXSPR32                  : IN    STD_LOGIC
     );
 END VDP_SPRITE;
 
@@ -536,7 +537,7 @@ BEGIN
                         '0';
 
     -- [Y_TEST]４つ（８つ）のスプライトが並んでいるかどうかの信号
-    W_SP_OVERMAP    <=  '1' WHEN( (FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' )ELSE
+    W_SP_OVERMAP    <=  '1' WHEN(SPMAXSPR32 = '0' AND ( (FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' ) )ELSE
                         '0';
 
     -- [Y_TEST]表示中のラインか否か

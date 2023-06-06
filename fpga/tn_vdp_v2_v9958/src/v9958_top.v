@@ -21,7 +21,7 @@ module v9958_top(
 
     output  [5:0]   led,
 
-    input   vidmod_n,
+    input   maxspr_n,
     input   scanlin_n,
     input   gromclk_ena_n,
     input   cpuclk_ena_n,
@@ -60,7 +60,6 @@ module v9958_top(
 	wire			VideoCS_n;							// Composite Sync
 
     wire            scanlin;
-    wire            vidmod;
     wire            reset_n_w;
 
     wire clk_w;
@@ -172,7 +171,6 @@ module v9958_top(
     assign VDP_ID  =  5'b00010; // V9958
     assign OFFSET_Y =  6'b0010011;
     assign scanlin = ~scanlin_n;
-    assign vidmod = ~vidmod_n;
 
 
     always @(posedge clk_135_w or negedge reset_n_w) begin
@@ -279,7 +277,8 @@ module v9958_top(
 		.FORCED_V_MODE		( 1'b0      						),
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
-		.OFFSET_Y			( OFFSET_Y							)
+		.OFFSET_Y			( OFFSET_Y							),
+        .SPMAXSPR32         ( ~maxspr_n                         )
 	);
 
 
@@ -339,11 +338,13 @@ module v9958_top(
     end
 
     reg [15:0] sample; 
+    wire [15:0] sample_w;
+
     reg [15:0] audio_sample_word [1:0], audio_sample_word0 [1:0];
     always @(posedge clk) begin       // crossing clock domain
-        audio_sample_word0[0] <= sample;
+        audio_sample_word0[0] <= sample_w;
         audio_sample_word[0] <= audio_sample_word0[0];
-        audio_sample_word0[1] <= sample;
+        audio_sample_word0[1] <= sample_w;
         audio_sample_word[1] <= audio_sample_word0[1];
     end
 
@@ -398,9 +399,10 @@ module v9958_top(
 
     always @(posedge clk_135_w) begin     
         if (sample_valid)
-            sample <= { 3'b0, audio_sample[11:2], 3'b0 };
+            sample <= { 4'b0, audio_sample[11:3], 3'b0 };
     end
 
+    assign sample_w = sample;
 
     assign led[5:0] = ~sample[12:7];
 

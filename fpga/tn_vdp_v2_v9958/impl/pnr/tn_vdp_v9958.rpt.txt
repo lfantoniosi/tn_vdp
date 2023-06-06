@@ -8,31 +8,31 @@
   <Design File>: D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958.vg
   <Physical Constraints File>: D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958.cst
   <Timing Constraints File>: D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958.sdc
-  <PnR Version>: V1.9.9 Beta-1
+  <PnR Version>: V1.9.8.11 Education
   <Part Number>: GW1NR-LV9QN88PC6/I5
   <Device>: GW1NR-9
   <Device Version>: C
-  <Created Time>:Sun Jun 04 16:18:29 2023
+  <Created Time>:Tue Jun 06 09:10:27 2023
 
 
 2. PnR Details
 
   Running placement:
     Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Placement Phase 1: CPU time = 0h 0m 0.08s, Elapsed time = 0h 0m 0.08s
-    Placement Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Placement Phase 3: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Total Placement: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+    Placement Phase 1: CPU time = 0h 0m 0.075s, Elapsed time = 0h 0m 0.075s
+    Placement Phase 2: CPU time = 0h 0m 0.995s, Elapsed time = 0h 0m 0.995s
+    Placement Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s
+    Total Placement: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.001s
     Routing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-    Routing Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
  Generate output files:
-    CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
+    CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
 
- Total Time and Memory Usage: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s, Peak memory usage = 236MB
+ Total Time and Memory Usage: CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s, Peak memory usage = 265MB
 
 
 3. Resource Usage Summary
@@ -40,26 +40,25 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 3722/8640  44%
-    --LUT,ALU,ROM16           | 3674(3313 LUT, 361 ALU, 0 ROM16)
+  Logic                       | 3704/8640  43%
+    --LUT,ALU,ROM16           | 3656(3294 LUT, 362 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
-  Register                    | 1933/6693  29%
+  Register                    | 1947/6693  30%
     --Logic Register as Latch | 0/6480  0%
-    --Logic Register as FF    | 1921/6480  30%
+    --Logic Register as FF    | 1935/6480  30%
     --I/O Register as Latch   | 0/213  0%
     --I/O Register as FF      | 12/213  6%
-  CLS                         | 2668/4320  62%
+  CLS                         | 2608/4320  61%
   I/O Port                    | 40
-  I/O Buf                     | 35
-    --Input Buf               | 11
+  I/O Buf                     | 36
+    --Input Buf               | 12
     --Output Buf              | 16
     --Inout Buf               | 8
   IOLOGIC                     | 7%
     --OSER10                  | 3
-  BSRAM                       | 89%
+  BSRAM                       | 85%
     --SP                      | 21
     --SDPX9B                  | 1
-    --pROM                    | 1
   DSP                         | 0%
   PLL                         | 1/2  50%
   DCS                         | 0/8  0%
@@ -92,7 +91,7 @@
   -------------------------------
   PRIMARY       | 3/8(38%)
   LW            | 3/8(38%)
-  GCLK_PIN      | 3/3(100%)
+  GCLK_PIN      | 3/4(75%)
   PLL           | 1/2(50%)
   CLKDIV        | 0/8(0%)
   DLLDLY        | 0/8(0%)
@@ -109,7 +108,7 @@
   clk_135_w      | PRIMARY        |  BR
   reset_w        | LW             |  -
   clk_3_w        | LW             |  -
-  hdmi_ntsc/true_hdmi_output.packet_picker/n4054_5| LW             |  -
+  n4054_4        | LW             |  -
   clk_135_w      | HCLK           | TOP[0]
   ===========================================
 
@@ -127,7 +126,7 @@ mode[1]         |           | 82/3          | Y          | in    | IOT11[A] | LV
 csw_n           |           | 37/2          | Y          | in    | IOB31[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
 csr_n           |           | 36/2          | Y          | in    | IOB29[B] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
 adc_miso        |           | 31/2          | Y          | in    | IOB15[A] | LVCMOS33   | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
-vidmod_n        |           | 86/3          | Y          | in    | IOT8[A]  | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8       
+maxspr_n        |           | 86/3          | Y          | in    | IOT8[A]  | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8       
 scanlin_n       |           | 85/3          | Y          | in    | IOT8[B]  | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8       
 gromclk_ena_n   |           | 84/3          | Y          | in    | IOT10[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8       
 cpuclk_ena_n    |           | 83/3          | Y          | in    | IOT10[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8       
@@ -168,7 +167,7 @@ Loc./Bank| Signal          | Dir.  | Site     | IO Type  | Drive | Pull Mode | P
 3/3      | -               | in    | IOT2[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 88/3     | -               | in    | IOT5[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
 87/3     | -               | in    | IOT6[B]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 1.8  
-86/3     | vidmod_n        | in    | IOT8[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  
+86/3     | maxspr_n        | in    | IOT8[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  
 85/3     | scanlin_n       | in    | IOT8[B]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  
 84/3     | gromclk_ena_n   | in    | IOT10[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  
 83/3     | cpuclk_ena_n    | in    | IOT10[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 1.8  
