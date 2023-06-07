@@ -278,7 +278,7 @@ module v9958_top(
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
 		.OFFSET_Y			( OFFSET_Y							),
-        .SPMAXSPR32         ( ~maxspr_n                         )
+        .SPMAXSPR           ( ~maxspr_n                         )
 	);
 
 

@@ -416,7 +416,7 @@ BEGIN
                 WHEN "01"       => -- PORT#1 (0x99): READ STATUS REGISTER
                     CASE( VDPR15STATUSREGNUM )IS
                     WHEN "0000" => -- READ S#0
-                        DBI <= (NOT REQ_VSYNC_INT_N) & (VDPS0SPOVERMAPPED AND REQ_VSYNC_INT_N) & VDPS0SPCOLLISIONINCIDENCE & VDPS0SPOVERMAPPEDNUM;
+                        DBI <= (NOT REQ_VSYNC_INT_N) & VDPS0SPOVERMAPPED & VDPS0SPCOLLISIONINCIDENCE & VDPS0SPOVERMAPPEDNUM;
                     WHEN "0001" => -- READ S#1
                         DBI <= "00" & VDP_ID & (NOT REQ_HSYNC_INT_N);
                     WHEN "0010" => -- READ S#2

@@ -225,7 +225,8 @@ ENTITY VDP_SPRITE IS
         SPCOLOROUT                  : OUT   STD_LOGIC;
         -- OUTPUT COLOR
         SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 );
-        SPMAXSPR32                  : IN    STD_LOGIC
+        REG_R9_Y_DOTS               : IN    STD_LOGIC;
+        SPMAXSPR                    : IN    STD_LOGIC
     );
 END VDP_SPRITE;
 
@@ -344,6 +345,8 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL W_SP_OFF                 : STD_LOGIC;
     SIGNAL W_SP_OVERMAP             : STD_LOGIC;
     SIGNAL W_ACTIVE                 : STD_LOGIC;
+    SIGNAL SPWINDOW_Y               : STD_LOGIC;
+
 BEGIN
 
     PVDPS0RESETACK          <= FF_VDPS0RESETACK;
@@ -537,11 +540,28 @@ BEGIN
                         '0';
 
     -- [Y_TEST]４つ（８つ）のスプライトが並んでいるかどうかの信号
-    W_SP_OVERMAP    <=  '1' WHEN(SPMAXSPR32 = '0' AND ( (FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' ) )ELSE
+    W_SP_OVERMAP    <=  '1' WHEN( (FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0' AND SPMAXSPR = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' )ELSE
                         '0';
-
     -- [Y_TEST]表示中のラインか否か
     W_ACTIVE        <=  BWINDOW_Y;
+
+    -----------------------------------------------------------------------------
+    -- [SPWINDOW_Y]
+    -----------------------------------------------------------------------------
+    PROCESS( RESET, CLK21M )
+    BEGIN
+        IF( RESET = '1' )THEN
+            SPWINDOW_Y <= '0';
+        ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
+            IF (DOTCOUNTERYP = 0) THEN
+                SPWINDOW_Y <= '1';
+            ELSIF( (REG_R9_Y_DOTS = '0' AND DOTCOUNTERYP = 192) OR
+                (REG_R9_Y_DOTS = '1' AND DOTCOUNTERYP = 212) )THEN
+                SPWINDOW_Y <= '0';
+            END IF;
+        END IF;
+    END PROCESS;
+
 
     -----------------------------------------------------------------------------
     -- [Y_TEST]Yテストステートでないことを示す信号
@@ -639,7 +659,7 @@ BEGIN
                 IF( DOTCOUNTERX = 0 )THEN
                     -- INITIALIZE
                 ELSIF( EIGHTDOTSTATE = "110" )THEN
-                    IF( FF_Y_TEST_EN = '1' AND W_TARGET_SP_EN = '1' AND W_SP_OVERMAP = '1' AND W_SP_OFF = '0' )THEN
+                    IF( SPWINDOW_Y = '1' AND FF_Y_TEST_EN = '1' AND W_TARGET_SP_EN = '1' AND W_SP_OVERMAP = '1' AND W_SP_OFF = '0' )THEN
                         FF_SP_OVERMAP <= '1';
                     END IF;
                 END IF;
@@ -663,7 +683,7 @@ BEGIN
                 ELSIF( EIGHTDOTSTATE = "110" )THEN
                     -- JP: 調査をあきらめたスプライト番号が格納される。OVERMAPとは限らない。
                     -- JP: しかし、すでに OVERMAP で値が確定している場合は更新しない。
-                    IF( FF_Y_TEST_EN = '1' AND W_TARGET_SP_EN = '1' AND W_SP_OVERMAP = '1' AND W_SP_OFF = '0' AND FF_SP_OVERMAP = '0' )THEN
+                    IF( SPWINDOW_Y = '1' AND FF_Y_TEST_EN = '1' AND W_TARGET_SP_EN = '1' AND W_SP_OVERMAP = '1' AND W_SP_OFF = '0' AND FF_SP_OVERMAP = '0' )THEN
                         FF_SP_OVERMAP_NUM <= FF_Y_TEST_SP_NUM;
                     END IF;
                 END IF;
@@ -805,7 +825,7 @@ BEGIN
 
                             WHEN "111" =>
                                 SPPREPARELOCALPLANENUM <= SPPREPARELOCALPLANENUM + 1;
-                                IF( SPPREPARELOCALPLANENUM = 7 ) THEN
+                                IF( (SPPREPARELOCALPLANENUM = 7) OR ((SPPREPARELOCALPLANENUM = 3 AND SPMODE2='0' AND SPMAXSPR = '0')) ) THEN
                                     SPPREPAREEND <= '1';
                                 END IF;
                             WHEN OTHERS =>
@@ -931,7 +951,7 @@ BEGIN
                             SPCC0FOUNDV := '0';
                         ELSIF( DOTCOUNTERX(4 DOWNTO 0) = 0 ) THEN
                             SPPREDRAWLOCALPLANENUM <= SPPREDRAWLOCALPLANENUM + 1;
-                            IF( SPPREDRAWLOCALPLANENUM = 7 ) THEN
+                            IF( (SPPREDRAWLOCALPLANENUM = 7) OR (SPPREDRAWLOCALPLANENUM = 3 AND SPMODE2 = '0' AND SPMAXSPR = '0') ) THEN
                                 SPPREDRAWEND <= '1';
                             END IF;
                         END IF;

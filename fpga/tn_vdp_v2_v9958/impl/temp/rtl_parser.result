@@ -49,7 +49,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1040,
+      "InstLine" : 1041,
       "InstName" : "U_VDP_NTSC_PAL",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_ntsc_pal.vhd",
       "ModuleLine" : 96,
@@ -57,7 +57,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1059,
+      "InstLine" : 1060,
       "InstName" : "U_VDP_VGA",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_vga.vhd",
       "ModuleLine" : 102,
@@ -125,7 +125,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1115,
+      "InstLine" : 1116,
       "InstName" : "U_INTERRUPT",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_interrupt.vhd",
       "ModuleLine" : 65,
@@ -133,7 +133,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1145,
+      "InstLine" : 1146,
       "InstName" : "U_SSG",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_ssg.vhd",
       "ModuleLine" : 69,
@@ -151,7 +151,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1510,
+      "InstLine" : 1511,
       "InstName" : "U_VDP_COLORDEC",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_colordec.vhd",
       "ModuleLine" : 68,
@@ -159,7 +159,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1558,
+      "InstLine" : 1559,
       "InstName" : "U_VDP_TEXT12",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_text12.vhd",
       "ModuleLine" : 104,
@@ -167,7 +167,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1582,
+      "InstLine" : 1583,
       "InstName" : "U_VDP_GRAPHIC123M",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_graphic123m.vhd",
       "ModuleLine" : 86,
@@ -175,7 +175,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1605,
+      "InstLine" : 1606,
       "InstName" : "U_VDP_GRAPHIC4567",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_graphic4567.vhd",
       "ModuleLine" : 97,
@@ -193,7 +193,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1638,
+      "InstLine" : 1639,
       "InstName" : "U_SPRITE",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
       "ModuleLine" : 183,
@@ -201,7 +201,7 @@
       "SubInsts" : [
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 372,
+        "InstLine" : 375,
         "InstName" : "ISPINFORAM",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_spinforam.vhd",
         "ModuleLine" : 88,
@@ -209,7 +209,7 @@
        },
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 401,
+        "InstLine" : 404,
         "InstName" : "U_EVEN_LINE_BUF",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
         "ModuleLine" : 37,
@@ -217,7 +217,7 @@
        },
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 415,
+        "InstLine" : 418,
         "InstName" : "U_ODD_LINE_BUF",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
         "ModuleLine" : 37,
@@ -227,7 +227,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1677,
+      "InstLine" : 1679,
       "InstName" : "U_VDP_REGISTER",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_register.vhd",
       "ModuleLine" : 89,
@@ -253,7 +253,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1794,
+      "InstLine" : 1796,
       "InstName" : "U_VDP_COMMAND",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_command.vhd",
       "ModuleLine" : 67,
@@ -261,7 +261,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
-      "InstLine" : 1827,
+      "InstLine" : 1829,
       "InstName" : "U_VDP_WAIT_CONTROL",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_wait_control.vhd",
       "ModuleLine" : 59,

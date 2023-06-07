@@ -298,7 +298,7 @@ ENTITY VDP IS
 
         VDP_ID              : IN    STD_LOGIC_VECTOR(  4 DOWNTO 0 );
         OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-        SPMAXSPR32          : IN    STD_LOGIC
+        SPMAXSPR            : IN    STD_LOGIC
 
         -- DEBUG OUTPUT
     --  DEBUG_OUTPUT        : OUT   STD_LOGIC_VECTOR( 15 DOWNTO 0 ) -- ★
@@ -407,7 +407,8 @@ ARCHITECTURE RTL OF VDP IS
             SPCOLOROUT                  : OUT   STD_LOGIC;
             -- OUTPUT COLOR
             SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 );
-            SPMAXSPR32                  : IN    STD_LOGIC
+            REG_R9_Y_DOTS               : IN    STD_LOGIC;
+            SPMAXSPR                    : IN    STD_LOGIC
         );
     END COMPONENT;
 
@@ -1668,7 +1669,8 @@ BEGIN
         PRAMADR                     => PRAMADRSPRITE,
         SPCOLOROUT                  => SPRITECOLOROUT,
         SPCOLORCODE                 => COLORCODESPRITE,
-        SPMAXSPR32                  => SPMAXSPR32
+        REG_R9_Y_DOTS               => REG_R9_Y_DOTS,
+        SPMAXSPR                    => SPMAXSPR
     );
 
     -----------------------------------------------------------------------------

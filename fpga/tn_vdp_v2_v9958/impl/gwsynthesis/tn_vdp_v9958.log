@@ -73,7 +73,7 @@ Analyzing entity 'vdp_spinforam'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_spinforam.vhd":98)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd'
 Analyzing entity 'vdp_sprite'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":183)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":232)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":233)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ssg.vhd'
 Analyzing entity 'vdp_ssg'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ssg.vhd":69)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ssg.vhd":109)
@@ -122,9 +122,9 @@ Extracting RAM for identifier 'blkram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\r
 Processing 'VDP_SPRITE(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":183)
 Processing 'VDP_SPINFORAM(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_spinforam.vhd":88)
 Extracting RAM for identifier 'IMEM'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_spinforam.vhd":100)
-'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":457)
-'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":517)
-'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":938)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":460)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":520)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_sprite.vhd":958)
 Processing 'VDP_REGISTER(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_register.vhd":89)
 Processing 'palette_rb(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":73)
 Extracting RAM for identifier 'blkram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":85)
@@ -179,13 +179,13 @@ WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame
 WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":131)
 WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":137)
 WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":140)
-WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1040)
+WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1041)
 WARN  (NL0002) : The module "palette_g" instantiated to "U_PALETTEMEMG" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_register.vhd":394)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":128)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":155)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_RE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":119)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_RO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":146)
-WARN  (NL0002) : The module "VDP_WAIT_CONTROL" instantiated to "U_VDP_WAIT_CONTROL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1827)
+WARN  (NL0002) : The module "VDP_WAIT_CONTROL" instantiated to "U_VDP_WAIT_CONTROL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1829)
 [95%] Generate netlist file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958.vg" completed
 [100%] Generate report file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958_syn.rpt.html" completed
 GowinSynthesis finish

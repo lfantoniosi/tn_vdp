@@ -43,7 +43,6 @@
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
-        <Option type="dsp_balance" value="0"/>
         <Option type="looplimit" value="2000"/>
         <Option type="output_file" value="D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
