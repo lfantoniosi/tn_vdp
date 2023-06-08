@@ -162,7 +162,7 @@ ARCHITECTURE RTL OF VDP_VGA IS
 
     -- DISP_START_X + DISP_WIDTH < CLOCKS_PER_LINE/2 = 684
     CONSTANT DISP_WIDTH             : INTEGER := 792; --576;
-    SHARED VARIABLE DISP_START_X    : INTEGER := (CLOCKS_PER_LINE/2) - DISP_WIDTH - 32;          -- 106
+    SHARED VARIABLE DISP_START_X    : INTEGER := 0;
 
 BEGIN
 
@@ -185,18 +185,18 @@ BEGIN
         DATABOUT    => DATABOUT
     );
 
-    XPOSITIONW  <=  HCOUNTERIN(10 DOWNTO 1) - (CLOCKS_PER_LINE/2 - DISP_WIDTH - 10);
+    XPOSITIONW  <=  HCOUNTERIN(10 DOWNTO 1); -- - (CLOCKS_PER_LINE/2 - DISP_WIDTH - 10);
     EVENODD     <=  VCOUNTERIN(1);
     WE_BUF      <=  '1';
 
     -- PIXEL RATIO 1:1 FOR LED DISPLAY
     PROCESS( CLK21M )
-        CONSTANT DISP_START_Y   : INTEGER := 3;
-        CONSTANT PRB_HEIGHT     : INTEGER := 25;
-        CONSTANT RIGHT_X        : INTEGER := 684 - DISP_WIDTH - 2;              -- 106
-        CONSTANT PAL_RIGHT_X    : INTEGER := 87;                                -- 87
-        CONSTANT CENTER_X       : INTEGER := RIGHT_X - 32 - 2;                  -- 72
-        CONSTANT BASE_LEFT_X    : INTEGER := CENTER_X - 32 - 2 - 3;             -- 35
+--        CONSTANT DISP_START_Y   : INTEGER := 3;
+--        CONSTANT PRB_HEIGHT     : INTEGER := 25;
+--        CONSTANT RIGHT_X        : INTEGER := 684 - DISP_WIDTH - 2;              -- 106
+--        CONSTANT PAL_RIGHT_X    : INTEGER := 87;                                -- 87
+--        CONSTANT CENTER_X       : INTEGER := RIGHT_X - 32 - 2;                  -- 72
+--        CONSTANT BASE_LEFT_X    : INTEGER := CENTER_X - 32 - 2 - 3;             -- 35
     BEGIN
         IF( CLK21M'EVENT AND CLK21M = '1' )THEN
 --             IF( (RATIOMODE = "000" OR INTERLACEMODE = '1' OR PALMODE = '1') AND LEGACY_VGA = '1' )THEN
@@ -220,7 +220,7 @@ BEGIN
 --                     DISP_START_X := RIGHT_X;                                    -- 106
 --                 END IF;
 --             ELSE
-                DISP_START_X := (CLOCKS_PER_LINE/2) - DISP_WIDTH - 32 - 32 - 2;                                       -- 72
+                DISP_START_X := 0;
 --            END IF;
         END IF;
     END PROCESS;

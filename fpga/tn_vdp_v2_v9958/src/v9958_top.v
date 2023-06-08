@@ -357,7 +357,7 @@ module v9958_top(
             .VENDOR_NAME({"Unknown", 8'd0}), // Must be 8 bytes null-padded 7-bit ASCII
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
-            .START_X(20), //788), //756),
+            .START_X(0), //788), //756),
             .START_Y(476) )
 
     hdmi_ntsc ( .clk_pixel_x5(clk_135_w), 
