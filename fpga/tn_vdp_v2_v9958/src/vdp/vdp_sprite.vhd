@@ -233,7 +233,7 @@ END VDP_SPRITE;
 ARCHITECTURE RTL OF VDP_SPRITE IS
     COMPONENT VDP_SPINFORAM
         PORT(
-            ADDRESS     : IN    STD_LOGIC_VECTOR(  2 DOWNTO 0 );
+            ADDRESS     : IN    STD_LOGIC_VECTOR(  4 DOWNTO 0 );
             INCLOCK     : IN    STD_LOGIC;
             WE          : IN    STD_LOGIC;
             DATA        : IN    STD_LOGIC_VECTOR( 31 DOWNTO 0 );
@@ -241,13 +241,13 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
         );
     END COMPONENT;
 
-    COMPONENT RAM
+    COMPONENT RAM10
         PORT(
             ADR     : IN    STD_LOGIC_VECTOR(    7 DOWNTO 0 );
             CLK     : IN    STD_LOGIC;
             WE      : IN    STD_LOGIC;
-            DBO     : IN    STD_LOGIC_VECTOR(    7 DOWNTO 0 );
-            DBI     : OUT   STD_LOGIC_VECTOR(    7 DOWNTO 0 )
+            DBO     : IN    STD_LOGIC_VECTOR(    9 DOWNTO 0 );
+            DBI     : OUT   STD_LOGIC_VECTOR(    9 DOWNTO 0 )
         );
     END COMPONENT;
 
@@ -258,7 +258,7 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL FF_VDPS5RESETACK         : STD_LOGIC;
 
     -- FOR SPINFORAM
-    SIGNAL SPINFORAMADDR            : STD_LOGIC_VECTOR(  2 DOWNTO 0);
+    SIGNAL SPINFORAMADDR            : STD_LOGIC_VECTOR(  4 DOWNTO 0);
     SIGNAL SPINFORAMWE              : STD_LOGIC;
     SIGNAL SPINFORAMDATA_IN         : STD_LOGIC_VECTOR( 31 DOWNTO 0);
     SIGNAL SPINFORAMDATA_OUT        : STD_LOGIC_VECTOR( 31 DOWNTO 0);
@@ -268,7 +268,7 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL SPINFORAMCOLOR_IN        : STD_LOGIC_VECTOR(  3 DOWNTO 0);
     SIGNAL SPINFORAMCC_IN           : STD_LOGIC;
     SIGNAL SPINFORAMIC_IN           : STD_LOGIC;
-    SIGNAL SPINFORAMX_OUT           : STD_LOGIC_VECTOR(  8 DOWNTO 0);
+    SIGNAL SPINFORAMX_OUT           : STD_LOGIC_VECTOR( 8 DOWNTO 0);
     SIGNAL SPINFORAMPATTERN_OUT     : STD_LOGIC_VECTOR( 15 DOWNTO 0);
     SIGNAL SPINFORAMCOLOR_OUT       : STD_LOGIC_VECTOR(  3 DOWNTO 0);
     SIGNAL SPINFORAMCC_OUT          : STD_LOGIC;
@@ -278,7 +278,7 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL SPSTATE                  : TYPESPSTATE;
 
     -- JP: スプライトプレーン番号×横方向表示枚数の配列
-    TYPE SPRENDERPLANESTYPE IS ARRAY( 0 TO 7 ) OF STD_LOGIC_VECTOR( 4 DOWNTO 0 );
+    TYPE SPRENDERPLANESTYPE IS ARRAY( 0 TO 31 ) OF STD_LOGIC_VECTOR( 4 DOWNTO 0 );
     SIGNAL SPRENDERPLANES           : SPRENDERPLANESTYPE;
 
     SIGNAL IRAMADR                  : STD_LOGIC_VECTOR( 16 DOWNTO 0 );
@@ -293,10 +293,10 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
 
     -- JP: Y座標検査中のプレーン番号
     SIGNAL FF_Y_TEST_SP_NUM         : STD_LOGIC_VECTOR(  4 DOWNTO 0 );
-    SIGNAL FF_Y_TEST_LISTUP_ADDR    : STD_LOGIC_VECTOR(  3 DOWNTO 0 );   -- 0 - 8
+    SIGNAL FF_Y_TEST_LISTUP_ADDR    : STD_LOGIC_VECTOR(  4 DOWNTO 0 );   -- 0 - 8
     SIGNAL FF_Y_TEST_EN             : STD_LOGIC;
     -- JP: 下書きデータ準備中のローカルプレーン番号
-    SIGNAL SPPREPARELOCALPLANENUM   : STD_LOGIC_VECTOR(  2 DOWNTO 0 );
+    SIGNAL SPPREPARELOCALPLANENUM   : STD_LOGIC_VECTOR(  4 DOWNTO 0 );
     -- JP: 下書きデータ準備中のプレーン番号
     SIGNAL SPPREPAREPLANENUM        : STD_LOGIC_VECTOR(  4 DOWNTO 0 );
     -- JP: 下書きデータ準備中のスプライトのYライン番号(スプライトのどの部分を描画するか)
@@ -309,7 +309,7 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL SPCCD                    : STD_LOGIC;
 
     -- JP: 下書きをしているスプライトのローカルプレーン番号
-    SIGNAL SPPREDRAWLOCALPLANENUM   : STD_LOGIC_VECTOR(  2 DOWNTO 0 );   -- 0 - 7
+    SIGNAL SPPREDRAWLOCALPLANENUM   : STD_LOGIC_VECTOR(  4 DOWNTO 0 );   -- 0 - 7
     SIGNAL SPPREDRAWEND             : STD_LOGIC;
 
     -- JP: ラインバッファへの描画用
@@ -322,18 +322,18 @@ ARCHITECTURE RTL OF VDP_SPRITE IS
     SIGNAL SPLINEBUFADDR_O          : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
     SIGNAL SPLINEBUFWE_E            : STD_LOGIC;
     SIGNAL SPLINEBUFWE_O            : STD_LOGIC;
-    SIGNAL SPLINEBUFDATA_IN_E       : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDATA_IN_O       : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDATA_OUT_E      : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDATA_OUT_O      : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
+    SIGNAL SPLINEBUFDATA_IN_E       : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
+    SIGNAL SPLINEBUFDATA_IN_O       : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
+    SIGNAL SPLINEBUFDATA_OUT_E      : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
+    SIGNAL SPLINEBUFDATA_OUT_O      : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
 
     SIGNAL SPLINEBUFDISPWE          : STD_LOGIC;
     SIGNAL SPLINEBUFDRAWWE          : STD_LOGIC;
     SIGNAL SPLINEBUFDISPX           : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
     SIGNAL SPLINEBUFDRAWX           : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDRAWCOLOR       : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDISPDATA_OUT    : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL SPLINEBUFDRAWDATA_OUT    : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
+    SIGNAL SPLINEBUFDRAWCOLOR       : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
+    SIGNAL SPLINEBUFDISPDATA_OUT    : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
+    SIGNAL SPLINEBUFDRAWDATA_OUT    : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
 
     SIGNAL SPWINDOWX                : STD_LOGIC;
 
@@ -397,11 +397,11 @@ BEGIN
     -- SPRITE LINE BUFFER
     -----------------------------------------------------------------------------
     SPLINEBUFADDR_E         <= SPLINEBUFDISPX       WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDRAWX;
-    SPLINEBUFDATA_IN_E      <= "00000000"           WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDRAWCOLOR;
+    SPLINEBUFDATA_IN_E      <= "0000000000"           WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDRAWCOLOR;
     SPLINEBUFWE_E           <= SPLINEBUFDISPWE      WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDRAWWE;
     SPLINEBUFDISPDATA_OUT   <= SPLINEBUFDATA_OUT_E  WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDATA_OUT_O;
 
-    U_EVEN_LINE_BUF: RAM
+    U_EVEN_LINE_BUF: RAM10
     PORT MAP(
         ADR     => SPLINEBUFADDR_E      ,
         CLK     => CLK21M               ,
@@ -411,11 +411,11 @@ BEGIN
     );
 
     SPLINEBUFADDR_O         <= SPLINEBUFDRAWX       WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDISPX;
-    SPLINEBUFDATA_IN_O      <= SPLINEBUFDRAWCOLOR   WHEN( DOTCOUNTERYP(0) = '0' )ELSE "00000000";
+    SPLINEBUFDATA_IN_O      <= SPLINEBUFDRAWCOLOR   WHEN( DOTCOUNTERYP(0) = '0' )ELSE "0000000000";
     SPLINEBUFWE_O           <= SPLINEBUFDRAWWE      WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDISPWE;
     SPLINEBUFDRAWDATA_OUT   <= SPLINEBUFDATA_OUT_O  WHEN( DOTCOUNTERYP(0) = '0' )ELSE SPLINEBUFDATA_OUT_E;
 
-    U_ODD_LINE_BUF: RAM
+    U_ODD_LINE_BUF: RAM10
     PORT MAP(
         ADR     => SPLINEBUFADDR_O      ,
         CLK     => CLK21M               ,
@@ -540,7 +540,7 @@ BEGIN
                         '0';
 
     -- [Y_TEST]４つ（８つ）のスプライトが並んでいるかどうかの信号
-    W_SP_OVERMAP    <=  '1' WHEN( (FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0' AND SPMAXSPR = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' )ELSE
+    W_SP_OVERMAP    <=  '1' WHEN(FF_Y_TEST_LISTUP_ADDR(4) = '1' OR (SPMAXSPR = '0' AND ((FF_Y_TEST_LISTUP_ADDR(2) = '1' AND SPMODE2 = '0') OR FF_Y_TEST_LISTUP_ADDR(3) = '1' ))) ELSE
                         '0';
     -- [Y_TEST]表示中のラインか否か
     W_ACTIVE        <=  BWINDOW_Y;
@@ -825,7 +825,7 @@ BEGIN
 
                             WHEN "111" =>
                                 SPPREPARELOCALPLANENUM <= SPPREPARELOCALPLANENUM + 1;
-                                IF( (SPPREPARELOCALPLANENUM = 7) OR ((SPPREPARELOCALPLANENUM = 3 AND SPMODE2='0' AND SPMAXSPR = '0')) ) THEN
+                                IF( SPPREPARELOCALPLANENUM = 15 OR (SPMAXSPR = '0' AND ((SPPREPARELOCALPLANENUM = 7) OR (SPPREPARELOCALPLANENUM = 3 AND SPMODE2='0'))) ) THEN
                                     SPPREPAREEND <= '1';
                                 END IF;
                             WHEN OTHERS =>
@@ -867,7 +867,7 @@ BEGIN
     -----------------------------------------------------------------------------
     PROCESS( CLK21M, RESET )
         VARIABLE SPCC0FOUNDV                        : STD_LOGIC;
-        VARIABLE LASTCC0LOCALPLANENUMV              : STD_LOGIC_VECTOR(2 DOWNTO 0);
+        VARIABLE LASTCC0LOCALPLANENUMV              : STD_LOGIC_VECTOR(4 DOWNTO 0);
         VARIABLE SPDRAWXV                           : STD_LOGIC_VECTOR(8 DOWNTO 0);  -- -32 - 287 (=256+31)
         VARIABLE VDPS0SPCOLLISIONINCIDENCEV         : STD_LOGIC;
         VARIABLE VDPS3S4SPCOLLISIONXV               : STD_LOGIC_VECTOR(8 DOWNTO 0);
@@ -895,7 +895,7 @@ BEGIN
                         SPLINEBUFDRAWWE <= '0';
                     WHEN "00" =>
                         -- JP:
-                        IF( DOTCOUNTERX(4 DOWNTO 0) = 1 ) THEN
+                        IF( DOTCOUNTERX(3 DOWNTO 0) = 1 ) THEN
                             SPDRAWPATTERN   <= SPINFORAMPATTERN_OUT;
                             SPDRAWXV        := SPINFORAMX_OUT;
                         ELSE
@@ -920,25 +920,25 @@ BEGIN
                             -- JP: ラインバッファの6-4ビット目はそこに描画されているドットのローカルプレーン番号
                             -- JP: (色合成されているときは親となるCC='0'のスプライトのローカルプレーン番号)が入る。
                             -- JP: つまり、LASTCC0LOCALPLANENUMVがこの番号と等しいときはOR合成してよい事になる。
-                            IF( (SPLINEBUFDRAWDATA_OUT(7) = '0') AND (SPCC0FOUNDV = '1') ) THEN
+                            IF( (SPLINEBUFDRAWDATA_OUT(9) = '0') AND (SPCC0FOUNDV = '1') ) THEN
                                 -- JP: 何も描かれていない(ビット7が'0')とき、このドットに初めての
                                 -- JP: スプライトが描画される。ただし、CC='0'のスプライトが同一ライン上にまだ
                                 -- JP: 現れていない時は描画しない
                                 SPLINEBUFDRAWCOLOR <= ("1" & LASTCC0LOCALPLANENUMV & SPDRAWCOLOR);
                                 SPLINEBUFDRAWWE <= '1';
-                            ELSIF( (SPLINEBUFDRAWDATA_OUT(7) = '1') AND (SPINFORAMCC_OUT = '1') AND
-                                         (SPLINEBUFDRAWDATA_OUT(6 DOWNTO 4) = LASTCC0LOCALPLANENUMV) ) THEN
+                            ELSIF( (SPLINEBUFDRAWDATA_OUT(9) = '1') AND (SPINFORAMCC_OUT = '1') AND
+                                         (SPLINEBUFDRAWDATA_OUT(8 DOWNTO 4) = LASTCC0LOCALPLANENUMV) ) THEN
                                 -- JP: 既に絵が描かれているが、CCが'1'でかつこのドットに描かれているスプライトの
                                 -- JP: LOCALPLANENUMが LASTCC0LOCALPLANENUMVと等しい時は、ラインバッファから
                                 -- JP: 下地データを読み、書きたい色と論理和を取リ、書き戻す。
-                                SPLINEBUFDRAWCOLOR <= SPLINEBUFDRAWDATA_OUT OR ("0000" & SPDRAWCOLOR);
+                                SPLINEBUFDRAWCOLOR <= SPLINEBUFDRAWDATA_OUT OR ("000000" & SPDRAWCOLOR);
                                 SPLINEBUFDRAWWE <= '1';
-                            ELSIF( (SPLINEBUFDRAWDATA_OUT(7) = '1') AND (SPINFORAMIC_OUT = '0') ) THEN
+                            ELSIF( (SPLINEBUFDRAWDATA_OUT(9) = '1') AND (SPINFORAMIC_OUT = '0') ) THEN
                                 SPLINEBUFDRAWCOLOR <= SPLINEBUFDRAWDATA_OUT;
                                 -- JP: スプライトが衝突。
                                 -- SPRITE COLISION OCCURED
                                 VDPS0SPCOLLISIONINCIDENCEV := '1';
-                                VDPS3S4SPCOLLISIONXV := SPDRAWX + 12;
+                                VDPS3S4SPCOLLISIONXV := SPDRAWX(8 DOWNTO 0) + 12;
                                 -- NOTE: DRAWING LINE IS PREVIOUS LINE.
                                 VDPS5S6SPCOLLISIONYV := FF_CUR_Y + 7;
                             END IF;
@@ -949,9 +949,9 @@ BEGIN
                             SPPREDRAWEND <= '0';
                             LASTCC0LOCALPLANENUMV := (OTHERS => '0');
                             SPCC0FOUNDV := '0';
-                        ELSIF( DOTCOUNTERX(4 DOWNTO 0) = 0 ) THEN
+                        ELSIF( DOTCOUNTERX(3 DOWNTO 0) = 0 ) THEN
                             SPPREDRAWLOCALPLANENUM <= SPPREDRAWLOCALPLANENUM + 1;
-                            IF( (SPPREDRAWLOCALPLANENUM = 7) OR (SPPREDRAWLOCALPLANENUM = 3 AND SPMODE2 = '0' AND SPMAXSPR = '0') ) THEN
+                            IF( SPPREDRAWLOCALPLANENUM = 15 OR (SPMAXSPR = '0' AND ((SPPREDRAWLOCALPLANENUM = 7) OR (SPPREDRAWLOCALPLANENUM = 3 AND SPMODE2 = '0' ))) ) THEN
                                 SPPREDRAWEND <= '1';
                             END IF;
                         END IF;
@@ -1035,7 +1035,7 @@ BEGIN
         ELSIF (CLK21M'EVENT AND CLK21M = '1') THEN
             IF( DOTSTATE = "01" )THEN
                 IF( SPWINDOWX = '1' ) THEN
-                    SPCOLOROUT  <= SPLINEBUFDISPDATA_OUT( 7 );
+                    SPCOLOROUT  <= SPLINEBUFDISPDATA_OUT( 9 );
                     SPCOLORCODE <= SPLINEBUFDISPDATA_OUT( 3 DOWNTO 0 );
                 ELSE
                     SPCOLOROUT  <= '0';
