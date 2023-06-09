@@ -67,11 +67,16 @@ module v9958_top(
     //wire clk_21_w;
     wire clk_135_w;
     wire clk_135_lock_w;
+    wire clk_67_w;
 
 //    wire clk_25_w;
 //    wire clk_126_w;
 //    wire clk_126_lock_w;
 
+    BUFG clk_bufg_inst(
+    .O(clk_w),
+    .I(clk)
+    );
 
     CLK_135_3 clk_135_3_inst(
         .clkout(clk_135_w), 
@@ -80,6 +85,16 @@ module v9958_top(
         .reset(~rst_n), 
         .clkin(clk) 
     );
+
+    CLKDIV clk_67_inst (
+        .CLKOUT(clk_67_w), 
+        .HCLKIN(clk_135_w), 
+        .RESETN(clk_135_lock_w),
+        .CALIB(1'b1)
+    );
+    defparam clk_67_inst.DIV_MODE = "2";
+    defparam clk_67_inst.GSREN = "false"; 
+
 
 //    CLKDIV clk_21_inst (
 //        .CLKOUT(clk_21_w), 
@@ -112,7 +127,7 @@ module v9958_top(
     reg  [31:0] pwr_cnt;
     reg  pwr_on_r;
 
-    always @(posedge clk or negedge rst_n_w) begin
+    always @(posedge clk_w or negedge rst_n_w) begin
         if(rst_n_w == 0) begin
             pwr_cnt = 7'b0;
             pwr_on_r = 32'b0;
@@ -144,7 +159,7 @@ module v9958_top(
     reg cswn_21_r;
     
     ram32k vram32k_inst(
-      .clk(clk),
+      .clk(clk_w),
       .we(~WeVdp_n & VideoDLClk),
       .addr(VdpAdr[14:0]),
       .din(VrmDbo),
@@ -173,7 +188,7 @@ module v9958_top(
     assign scanlin = ~scanlin_n;
 
 
-    always @(posedge clk_135_w or negedge reset_n_w) begin
+    always @(posedge clk_67_w or negedge reset_n_w) begin
         if(reset_n_w == 0) begin
             csr_sync_r = 2'b11;
             csrn_108_r = 1'b1;
@@ -205,7 +220,7 @@ module v9958_top(
 	reg   	[15:0]	CpuAdr;
     reg     [7:0]   CpuDbo;
 
-     always @(posedge clk or negedge reset_n_w) begin
+     always @(posedge clk_w or negedge reset_n_w) begin
         if(reset_n_w == 0) begin
             io_state_r = 1'b0;
             csrn_21_r = 1'b1;
@@ -246,7 +261,7 @@ module v9958_top(
     end
 
     VDP u_v9958 (
-		.CLK21M				( clk   							),
+		.CLK21M				( clk_w   							),
 		.RESET				( reset_w        					),
 		.REQ				( CpuReq 							),
 		.ACK				( 									),
@@ -327,7 +342,7 @@ module v9958_top(
     logic [$clog2(AUDIO_CLK_DELAY)-1:0] audio_divider;
     logic clk_audio_w;
 
-    always_ff@(posedge clk) 
+    always_ff@(posedge clk_w) 
     begin
         if (audio_divider != AUDIO_CLK_DELAY - 1) 
             audio_divider++;
@@ -341,7 +356,7 @@ module v9958_top(
     wire [15:0] sample_w;
 
     reg [15:0] audio_sample_word [1:0], audio_sample_word0 [1:0];
-    always @(posedge clk) begin       // crossing clock domain
+    always @(posedge clk_w) begin       // crossing clock domain
         audio_sample_word0[0] <= sample_w;
         audio_sample_word[0] <= audio_sample_word0[0];
         audio_sample_word0[1] <= sample_w;
@@ -361,7 +376,7 @@ module v9958_top(
             .START_Y(476) )
 
     hdmi_ntsc ( .clk_pixel_x5(clk_135_w), 
-          .clk_pixel(clk), 
+          .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
           .reset( reset_w ),
@@ -369,13 +384,12 @@ module v9958_top(
           .tmds(tmds), 
           .tmds_clock(tmdsClk), 
           .cx(cx), 
-          .cy(cy),
-          .frame_width( frameWidth),
-          .frame_height( frameHeight ) );
+          .cy(cy)
+        );
 
     // Gowin LVDS output buffer
     ELVDS_OBUF tmds_bufds [3:0] (
-        .I({clk, tmds}),
+        .I({clk_w, tmds}),
         .O({tmds_clk_p, tmds_data_p}),
         .OB({tmds_clk_n, tmds_data_n})
     );
@@ -397,7 +411,7 @@ module v9958_top(
 	.DATA_VALID(sample_valid)          // is high when there is a full 12 bit word. 
 	); 
 
-    always @(posedge clk_135_w) begin     
+    always @(posedge clk_67_w) begin     
         if (sample_valid)
             sample <= { 4'b0, audio_sample[11:3], 3'b0 };
     end

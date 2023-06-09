@@ -25,7 +25,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
-    "InstLine" : 76,
+    "InstLine" : 81,
     "InstName" : "clk_135_3_inst",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/gowin/clk_135_3.v",
     "ModuleLine" : 10,
@@ -33,7 +33,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
-    "InstLine" : 146,
+    "InstLine" : 161,
     "InstName" : "vram32k_inst",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram32k.v",
     "ModuleLine" : 1,
@@ -41,7 +41,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
-    "InstLine" : 248,
+    "InstLine" : 263,
     "InstName" : "u_v9958",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp.vhd",
     "ModuleLine" : 254,
@@ -271,7 +271,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
-    "InstLine" : 363,
+    "InstLine" : 378,
     "InstName" : "hdmi_ntsc",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/hdmi/hdmi.sv",
     "ModuleLine" : 4,
@@ -371,7 +371,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/v9958_top.v",
-    "InstLine" : 389,
+    "InstLine" : 403,
     "InstName" : "SPI_MCP3202",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/SPI_MCP3202.v",
     "ModuleLine" : 20,
