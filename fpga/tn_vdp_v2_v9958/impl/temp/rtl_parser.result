@@ -201,7 +201,7 @@
       "SubInsts" : [
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 375,
+        "InstLine" : 377,
         "InstName" : "ISPINFORAM",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_spinforam.vhd",
         "ModuleLine" : 88,
@@ -209,19 +209,19 @@
        },
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 404,
+        "InstLine" : 406,
         "InstName" : "U_EVEN_LINE_BUF",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
-        "ModuleLine" : 72,
-        "ModuleName" : "ram10"
+        "ModuleLine" : 37,
+        "ModuleName" : "ram"
        },
        {
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/vdp/vdp_sprite.vhd",
-        "InstLine" : 418,
+        "InstLine" : 420,
         "InstName" : "U_ODD_LINE_BUF",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
-        "ModuleLine" : 72,
-        "ModuleName" : "ram10"
+        "ModuleLine" : 37,
+        "ModuleName" : "ram"
        }
       ]
      },
@@ -238,7 +238,7 @@
         "InstLine" : 385,
         "InstName" : "U_PALETTEMEMRB",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
-        "ModuleLine" : 108,
+        "ModuleLine" : 73,
         "ModuleName" : "palette_rb"
        },
        {
@@ -246,7 +246,7 @@
         "InstLine" : 394,
         "InstName" : "U_PALETTEMEMG",
         "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9958/src/ram.vhd",
-        "ModuleLine" : 163,
+        "ModuleLine" : 128,
         "ModuleName" : "palette_g"
        }
       ]

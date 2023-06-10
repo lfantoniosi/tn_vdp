@@ -69,41 +69,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
-entity ram10 is
-  port (
-    adr     : in  std_logic_vector(7 downto 0);
-    clk     : in  std_logic;
-    we      : in  std_logic;
-    dbo     : in  std_logic_vector(9 downto 0);
-    dbi     : out std_logic_vector(9 downto 0)
-  );
-end ram10;
-
-architecture RTL of ram10 is
-  type typram is array (255 downto 0) of std_logic_vector(9 downto 0);
-  signal blkram : typram;
-  signal iadr   : std_logic_vector(7 downto 0);
-
-  begin
-
-  process (clk)
-  begin
-    if (clk'event and clk ='1') then
-      if (we = '1') then
-        blkram(conv_integer(adr)) <= dbo;
-      end if;
-      iadr <= adr;
-    end if;
-  end process;
-
-  dbi <= blkram(conv_integer(iadr));
-
-end RTL;
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_unsigned.all;
-
 
 entity palette_rb is
   port (
