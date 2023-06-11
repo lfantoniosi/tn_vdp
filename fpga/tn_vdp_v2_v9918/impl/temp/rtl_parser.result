@@ -43,9 +43,9 @@
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vram.vhd",
         "InstLine" : 81,
         "InstName" : "inst_ram",
-        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_single_port_ram.vhd",
-        "ModuleLine" : 55,
-        "ModuleName" : "f18a_single_port_ram"
+        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/ram16k.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "ram16k"
        }
       ]
      },
@@ -240,6 +240,14 @@
   ]
  },
  {
+  "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_single_port_ram.vhd",
+  "InstLine" : 55,
+  "InstName" : "f18a_single_port_ram",
+  "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_single_port_ram.vhd",
+  "ModuleLine" : 55,
+  "ModuleName" : "f18a_single_port_ram"
+ },
+ {
   "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_top.vhd",
   "InstLine" : 54,
   "InstName" : "f18a_top",
@@ -267,9 +275,9 @@
         "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vram.vhd",
         "InstLine" : 81,
         "InstName" : "inst_ram",
-        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_single_port_ram.vhd",
-        "ModuleLine" : 55,
-        "ModuleName" : "f18a_single_port_ram"
+        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/ram16k.v",
+        "ModuleLine" : 1,
+        "ModuleName" : "ram16k"
        }
       ]
      },

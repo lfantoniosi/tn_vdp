@@ -545,7 +545,7 @@ f18a_core_inst/inst_vram/addr_mux_3_s1
 f18a_core_inst/inst_vram/addr_mux_3_s0
 15.219
 16.251
-f18a_core_inst/inst_vram/inst_ram/ram_ram_0_0_s
+f18a_core_inst/inst_vram/inst_ram/mem_r_mem_r_0_0_s
 18.701
 =====
 SETUP

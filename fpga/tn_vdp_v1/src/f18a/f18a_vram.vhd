@@ -78,7 +78,7 @@ architecture rtl of f18a_vram is
 begin
 
    -- Main RAM
-   inst_ram : entity work.f18a_single_port_ram
+   inst_ram : entity work.ram16k    --f18a_single_port_ram
       port map (
          clk   => clk,
          we    => cpu_we,

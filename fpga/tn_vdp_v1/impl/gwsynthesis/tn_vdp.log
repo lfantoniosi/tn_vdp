@@ -22,12 +22,10 @@ WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\top.v'
 Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\top.v":161)
 Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\top.v":299)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\ram16k.v'
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_color.vhd'
 Analyzing entity 'f18a_color'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_color.vhd":56)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_color.vhd":75)
-Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd'
-Analyzing entity 'f18a_single_port_ram'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":55)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":67)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd'
 Analyzing entity 'f18a_vram'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd":56)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd":74)
@@ -58,6 +56,9 @@ Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_version
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_core.vhd'
 Analyzing entity 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_core.vhd":63)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_core.vhd":97)
+Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd'
+Analyzing entity 'f18a_single_port_ram'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":55)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":67)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_tile_linebuf.vhd'
 Analyzing entity 'f18a_tile_linebuf'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_tile_linebuf.vhd":84)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_tile_linebuf.vhd":102)
@@ -71,8 +72,10 @@ Compiling module 'CLK_125'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\gowin\clk_125.v":10
 Switching to VHDL mode to elaborate design unit 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\top.v":224)
 Processing 'f18a_core(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_core.vhd":63)
 Processing 'f18a_vram(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd":56)
-Processing 'f18a_single_port_ram(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":55)
-Extracting RAM for identifier 'ram'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_single_port_ram.vhd":71)
+Switching to Verilog mode to elaborate module 'ram16k'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd":90)
+Compiling module 'ram16k'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\ram16k.v":1)
+Extracting RAM for identifier 'mem_r'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\ram16k.v":11)
+Returning to VHDL mode to continue with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_vram.vhd":90)
 Processing 'f18a_cpu(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_cpu.vhd":56)
 Processing 'f18a_gpu(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_gpu.vhd":86)
 Extracting RAM for identifier 'gpuram'("D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_gpu.vhd":135)

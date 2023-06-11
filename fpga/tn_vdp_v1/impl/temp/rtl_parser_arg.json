@@ -57,6 +57,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/ram16k.v",
+   "Type" : "verilog"
+  },
+  {
    "Library" : "work",
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/f18a/f18a_color.vhd",
    "Type" : "vhdl"

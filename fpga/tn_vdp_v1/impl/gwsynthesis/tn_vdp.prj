@@ -18,6 +18,7 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\hdmi\source_product_description_info_frame.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\hdmi\tmds_channel.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\top.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\ram16k.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_color.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_core.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v1\src\f18a\f18a_counters.vhd" type="vhdl"/>
