@@ -97,7 +97,9 @@ The Tang Nano 9K board can be purchased on AliExpress or ebay.
 
 The boards gerber files are inside each kicad project gerber folders.
 
-The BOM for the NABU and FAT variants can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
+## V1 BOM
+
+The BOM for the NABU and FAT v1 variants can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
 
 Or transcribed here
 ```
@@ -127,6 +129,28 @@ Qty | Part Number                | Description
 2) GPIO RIBBON CABLE 2X10 IDC CABLE : It was supposed to be 2x8 but is out of stock. The 2x10 just works. Or build your own.
 3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference under images folder.
 4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the tn_vdp pins.
+
+# V2 BOM
+```
+Qty | Part Number                | Description
+----+----------------------------+----------------------------------
+3x  | 123-AR20-HZL-TT-ND         | CONN IC DIP SOCKET 20POS TIN
+1x  | 2057-ICM-308-1-GT-HT-ND    | MACHINE PIN SOCKET, IC, DIP, 8P
+3x  | 296-8503-5-ND              | IC TXRX NON-INVERT 3.6V 20DIP
+4x  | BC1084CT-ND                | CAP CER 0.1UF 50V X7R RADIAL
+1x  | 1528-5294-ND               | GPIO RIBBON CABLE 2X10 IDC CABLE
+1x  | 497-4547-1-ND              | DIODE SCHOTTKY 20V 1A DO41
+1x  | MCP3202-CI/P-ND            | IC ADC 12BIT SAR 8DIP
+2x  | S7022-ND                   | CONN HDR 24POS 0.1 TIN PCB
+2x  | A835AR-ND                  | CONN HDR DIP POST 20POS GOLD
+4x  | 732-5301-ND                | CONN HEADER VERT 20POS 2.54MM 
+1x  | 10129379-920001BLF-ND      | CONN HEADER R/A 20POS 2.54MM
+4x  | S9000-ND                   | CONN JUMPER SHORTING TIN
+```
+**Notes:**
+
+I find these header pins 2.54mm too expensive on DigiKey. I'd advise you to procure them on AliExpress, longer wait time but way cheaper. 
+
 
 ## Jumper Settings
 
