@@ -1,4 +1,6 @@
 # TN VDP 
+
+![logo](images/tn-vdp_splash.png)
  
 ## Tang Nano 9K TMS9118A VDP
 
@@ -15,10 +17,15 @@ adds
 
 The bitstream file is [here](fpga/tn_vdp_v1/impl/pnr/tn_vdp.fs)
 
-## Bugfix v1.01
+## Version 2.0
 
-Thanks to the help of AtariAge community a diode connecting the TMS VCC and the Tang board is needed to avoid the HDMI EDID power moving the Z80 or TI9900 before the boot.
-BOM list updated, schematics and gerber for FAT files and compact SMD (Hans Hübner contribution).
+The new version supports audio over HDMI. This requires the v2 board sets as well the v2 bitstream (socket board + mainboard).
+
+You'll need to pull the pre-amplified audio from somewhere in the computer and connect the **audio** pin on the tn-vdp socket.
+
+## V9958
+
+There is a new core for the version 2
 
 ## Floppy images
 
