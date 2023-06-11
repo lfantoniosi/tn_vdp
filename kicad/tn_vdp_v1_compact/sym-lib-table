@@ -1,0 +1,8 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "f18a_tn9k")(type "KiCad")(uri "${KIPRJMOD}/f18a_tn9k.kicad_sym")(options "")(descr ""))
+  (lib (name "tms9118a_sym")(type "KiCad")(uri "${KIPRJMOD}/tms9118a_sym.kicad_sym")(options "")(descr ""))
+  (lib (name "z80cpu")(type "KiCad")(uri "${KIPRJMOD}/z80cpu.kicad_sym")(options "")(descr ""))
+  (lib (name "74ls245")(type "KiCad")(uri "${KIPRJMOD}/74ls245.kicad_sym")(options "")(descr ""))
+  (lib (name "f18a_parts")(type "KiCad")(uri "${KIPRJMOD}/f18a_parts.kicad_sym")(options "")(descr ""))
+)
