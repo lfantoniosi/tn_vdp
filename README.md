@@ -180,7 +180,7 @@ You shouldn't have problem assembling it as all components are labeled. Just rem
 
 ## DIP switches
 ```
-USR1 - 32 sprite max
+USR1 - 32 sprite per line (TMS9918), 8 sprites per line (V9958)
 USR2 - scanlines
 USR3 - pin 37: gromclk (on), cpuclk (off)
 USR4 - pin 38: cpuclk (on), NC (off)
