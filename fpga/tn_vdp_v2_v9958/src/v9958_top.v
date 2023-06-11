@@ -413,7 +413,7 @@ module v9958_top(
 
     always @(posedge clk_67_w) begin     
         if (sample_valid)
-            sample <= { 2'b0, audio_sample[11:3], 5'b0 };
+            sample <= { 2'b0, audio_sample[11:2], 4'b0 };
     end
 
     assign sample_w = sample;

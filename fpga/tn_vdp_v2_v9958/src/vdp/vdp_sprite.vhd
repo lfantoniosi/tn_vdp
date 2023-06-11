@@ -488,7 +488,7 @@ BEGIN
     END PROCESS;
 
     -- detect a split screen
-    SPLIT_SCRN <= '0' WHEN (FF_CUR_Y = (FF_PREV_CUR_Y + 1)) ELSE '1';
+    SPLIT_SCRN <= '0' WHEN (FF_CUR_Y = (FF_PREV_CUR_Y + 1))  ELSE '1';
 
     -----------------------------------------------------------------------------
     -- VRAM ADDRESS GENERATOR
@@ -960,7 +960,7 @@ BEGIN
                         --
                         IF( DOTCOUNTERX = 0 ) THEN
                             SPPREDRAWLOCALPLANENUM <= (OTHERS => '0');
-                            SPPREDRAWEND <= SPLIT_SCRN; --'0';
+                            SPPREDRAWEND <= SPLIT_SCRN OR REG_R8_SP_OFF;
                             LASTCC0LOCALPLANENUMV := (OTHERS => '0');
                             SPCC0FOUNDV := '0';
                         ELSIF( DOTCOUNTERX(4 DOWNTO 0) = 0 ) THEN
