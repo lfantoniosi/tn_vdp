@@ -19,13 +19,21 @@ The bitstream file is [here](fpga/tn_vdp_v1/impl/pnr/tn_vdp.fs)
 
 ## Version 2.0
 
-The new version supports audio over HDMI. This requires the v2 board sets as well the v2 bitstream (socket board + mainboard).
+The new version supports audio over HDMI. There is no more VGA output. You'll need to pull the pre-amplified audio from somewhere in the computer and connect the **AUDIO** pin on the tn-vdp socket. **MODE1** is not used for TMS9918 cores.
 
-You'll need to pull the pre-amplified audio from somewhere in the computer and connect the **audio** pin on the tn-vdp socket.
+This requires the v2 board sets as well the v2 bitstream (socket board + mainboard). See below gerber files.
 
-## V9958
+There are 2 bitstreams for v2:
 
-There is a new core for the version 2
+[TMS9918](fpga/tn_vdp_v2_v9918/impl/pnr/tn_vdp.fs)
+
+## V9958 32KB VRAM
+
+There is a new core for the v2 boards implemented from ESE-MSX3. The bitstream can be used on the same v2 board sets for the TMS9918:
+
+[V9958](fpga/tn_vdp_v2_v9958/impl/pnr/tn_vdp_v9958.fs)
+
+But for the V9958 you need to pull the A1 address line from somewhere in the computer and connect to pin **MODE1** on the socket to use the full capabilites of the V9958.
 
 ## Floppy images
 
@@ -37,16 +45,23 @@ Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and Hx
 
 The gerber files can be located inside each KiCad project:
 
-[MainBoard for NABU](KiCad/tn_vdp_v1_slim/gerber.zip)
+### V1 Boards
+[MainBoard for NABU](kicad/tn_vdp_v1_slim/gerber.zip)
 
-[MainBoard for TI-99/4A (FAT)](KiCad/tn_vdp_v1_fat/gerber.zip)
+[MainBoard for TI-99/4A (FAT)](kicad/tn_vdp_v1_fat/gerber.zip)
 
-[VGA breakout](KiCad/tn_vdp_v1_vga/gerber)
+[VGA breakout](kicad/tn_vdp_v1_vga/gerber)
 
-[Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
-See the [separate README](KiCad/tn9k_f18a_compact/README.md) for BOM ipand additional information.
+[Compact board using SMD components](kicad/tn9k_f18a_compact/gerber.zip)
+See the [separate README](kicad/tn9k_f18a_compact/README.md) for BOM ipand additional information.
 
 The VGA module is optional, only if you want VGA output.
+
+### V2 Boards
+
+[MainBoard v2](kicad/tn_vdp_v2_board/gerber.zip)
+
+[Socket v2](kicad/tn_vdp_v2_socket/gerber.zip)
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
