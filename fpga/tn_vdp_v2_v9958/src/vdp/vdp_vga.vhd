@@ -161,7 +161,7 @@ ARCHITECTURE RTL OF VDP_VGA IS
     SIGNAL DATABOUT     : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
 
     -- DISP_START_X + DISP_WIDTH < CLOCKS_PER_LINE/2 = 684
-    CONSTANT DISP_WIDTH             : INTEGER := 792; --576;
+    CONSTANT DISP_WIDTH             : INTEGER := 792; 
     SHARED VARIABLE DISP_START_X    : INTEGER := 0;
 
 BEGIN
@@ -263,9 +263,9 @@ BEGIN
                 END IF;
             ELSE
                 IF( INTERLACEMODE = '0' )THEN
-                    IF( (VCOUNTERIN = 3*2 + CENTER_Y + 6) OR (VCOUNTERIN = 626 + 3*2 + CENTER_Y + 6) )THEN
+                    IF( (VCOUNTERIN = 3*2 + CENTER_Y + 6) OR (VCOUNTERIN = 624 + 3*2 + CENTER_Y + 6) )THEN
                         FF_VSYNC_N <= '0';
-                    ELSIF( (VCOUNTERIN = 6*2 + CENTER_Y + 6) OR (VCOUNTERIN = 626 + 6*2 + CENTER_Y + 6) )THEN
+                    ELSIF( (VCOUNTERIN = 6*2 + CENTER_Y + 6) OR (VCOUNTERIN = 624 + 6*2 + CENTER_Y + 6) )THEN
                         FF_VSYNC_N <= '1';
                     END IF;
                 ELSE

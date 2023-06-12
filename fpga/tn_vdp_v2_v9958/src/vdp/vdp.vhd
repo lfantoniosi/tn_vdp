@@ -860,6 +860,7 @@ ARCHITECTURE RTL OF VDP IS
     SIGNAL VDPVRAMRDREQ                 : STD_LOGIC;
     SIGNAL VDPVRAMRDACK                 : STD_LOGIC;
     SIGNAL VDPR9PALMODE                 : STD_LOGIC;
+    SIGNAL FF_VDPR9PALMODE              : STD_LOGIC;
 
     SIGNAL REG_R0_HSYNC_INT_EN          : STD_LOGIC;
     SIGNAL REG_R1_SP_SIZE               : STD_LOGIC;
@@ -1027,8 +1028,37 @@ BEGIN
     DISPMODEVGA     <=  DISPRESO;   -- DISPLAY RESOLUTION (0=15kHz, 1=31kHz)
 
 --  VDPR9PALMODE    <=  REG_R9_PAL_MODE     WHEN( NTSC_PAL_TYPE = '1' AND LEGACY_VGA = '0' )ELSE
-    VDPR9PALMODE    <=  REG_R9_PAL_MODE     WHEN( NTSC_PAL_TYPE = '1' )ELSE
-                        FORCED_V_MODE;
+--    VDPR9PALMODE    <=  REG_R9_PAL_MODE     WHEN( NTSC_PAL_TYPE = '1' )ELSE
+--                        FORCED_V_MODE;
+
+    VDPR9PALMODE    <=  FF_VDPR9PALMODE;
+    PAL_MODE        <=  FF_VDPR9PALMODE;
+
+    --CLOCKS_PER_LINE := 1716 WHEN PAL_MODE = '0' ELSE 1728;
+
+    PROCESS( CLK21M )
+    BEGIN
+        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
+            IF (PAL_MODE) THEN  
+                CLOCKS_PER_LINE := 1728;
+            ELSE
+                CLOCKS_PER_LINE := 1716; 
+            END IF;
+        END IF;
+    END PROCESS;
+
+    PROCESS( RESET, CLK21M )
+    BEGIN
+        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
+            IF (H_CNT = 0 AND V_CNT = 0) THEN  
+                IF (NTSC_PAL_TYPE = '1') THEN
+                    FF_VDPR9PALMODE <= REG_R9_PAL_MODE;
+                ELSE
+                    FF_VDPR9PALMODE <= FORCED_V_MODE;                
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
 
 
     IVIDEOR <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
@@ -1178,7 +1208,7 @@ BEGIN
         REG_R27_H_SCROLL        => REG_R27_H_SCROLL         ,
         REG_R25_YJK             => REG_R25_YJK              ,
         CENTERYJK_R25_N         => CENTERYJK_R25_N          ,
-        OFFSET_Y                => OFFSET_Y                 
+        OFFSET_Y                => OFFSET_Y
     );  
 
     -- GENERATE BWINDOW
@@ -1204,11 +1234,11 @@ BEGIN
                 -- NON-INTERLACE
                 -- 3+3+16 = 19
                 IF( (V_CNT = 20*2) OR
-                        ((V_CNT = 524+20*2) AND (VDPR9PALMODE = '0')) OR
-                        ((V_CNT = 626+20*2) AND (VDPR9PALMODE = '1')) ) THEN
+                        ((V_CNT = 525+20*2) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 625+20*2) AND (VDPR9PALMODE = '1')) ) THEN
                     BWINDOW_Y <= '1';
-                ELSIF(  ((V_CNT = 524) AND (VDPR9PALMODE = '0')) OR
-                        ((V_CNT = 626) AND (VDPR9PALMODE = '1')) OR
+                ELSIF(  ((V_CNT = 525) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 625) AND (VDPR9PALMODE = '1')) OR
                          (V_CNT = 0) ) THEN
                     BWINDOW_Y <= '0';
                 END IF;

@@ -125,10 +125,11 @@ BEGIN
             FF_PAL_MODE         <= '0';
             FF_INTERLACE_MODE   <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( ((W_H_CNT_HALF OR W_H_CNT_END) AND W_FIELD_END AND FF_FIELD) = '1' )THEN
+    --        IF( ((W_H_CNT_HALF OR W_H_CNT_END) AND W_FIELD_END AND FF_FIELD) = '1' )THEN
+    --          IF (FF_H_CNT = 0 AND FF_V_CNT_IN_FIELD = 0) THEN
                 FF_PAL_MODE         <= PAL_MODE;
                 FF_INTERLACE_MODE   <= INTERLACE_MODE;
-            END IF;
+    --        END IF;
         END IF;
     END PROCESS;
 
@@ -161,7 +162,7 @@ BEGIN
     WITH( W_DISPLAY_MODE )SELECT W_FIELD_END_CNT <=
         CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "00",
         CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "10",
-        CONV_STD_LOGIC_VECTOR( 625, 10 )    WHEN "01",
+        CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "01",
         CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "11",
         (OTHERS=>'X')                       WHEN OTHERS;
 

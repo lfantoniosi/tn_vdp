@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="v9958_top" Register="97" Alu="39" Lut="84">
+<Module name="v9958_top" Register="75" Alu="15" Lut="110">
     <SubModule name="clk_135_3_inst"/>
     <SubModule name="vram32k_inst" Register="1" Lut="8" Bsram="16"/>
-    <SubModule name="u_v9958" Register="70" Lut="309">
-        <SubModule name="U_VDP_VGA" Register="11" Lut="28">
+    <SubModule name="u_v9958" Register="73" Lut="335">
+        <SubModule name="U_VDP_VGA" Register="11" Lut="26">
             <SubModule name="DBUF" Lut="21">
                 <SubModule name="U_BUF_BE" Bsram="1"/>
                 <SubModule name="U_BUF_BO" Bsram="1"/>
             </SubModule>
         </SubModule>
-        <SubModule name="U_INTERRUPT" Register="2" Alu="8" Lut="5"/>
-        <SubModule name="U_SSG" Register="64" Alu="27" Lut="103">
-            <SubModule name="U_HVCOUNTER" Register="35" Lut="67"/>
+        <SubModule name="U_INTERRUPT" Register="2" Alu="8" Lut="8"/>
+        <SubModule name="U_SSG" Register="64" Alu="29" Lut="103">
+            <SubModule name="U_HVCOUNTER" Register="36" Lut="80"/>
         </SubModule>
-        <SubModule name="U_VDP_COLORDEC" Register="57" Lut="89"/>
-        <SubModule name="U_VDP_TEXT12" Register="93" Alu="12" Lut="153"/>
+        <SubModule name="U_VDP_COLORDEC" Register="57" Lut="90"/>
+        <SubModule name="U_VDP_TEXT12" Register="93" Alu="12" Lut="152"/>
         <SubModule name="U_VDP_GRAPHIC123M" Register="59" Alu="5" Lut="62"/>
-        <SubModule name="U_VDP_GRAPHIC4567" Register="136" Alu="40" Lut="118">
+        <SubModule name="U_VDP_GRAPHIC4567" Register="136" Alu="40" Lut="119">
             <SubModule name="U_FIFOMEM" Bsram="1"/>
         </SubModule>
-        <SubModule name="U_SPRITE" Register="285" Alu="23" Lut="381">
+        <SubModule name="U_SPRITE" Register="285" Alu="23" Lut="383">
             <SubModule name="ISPINFORAM" Register="3" Ssram="8"/>
             <SubModule name="U_EVEN_LINE_BUF" Bsram="1"/>
             <SubModule name="U_ODD_LINE_BUF" Bsram="1"/>
         </SubModule>
-        <SubModule name="U_VDP_REGISTER" Register="224" Lut="162">
+        <SubModule name="U_VDP_REGISTER" Register="225" Lut="164">
             <SubModule name="U_PALETTEMEMRB" Register="5" Bsram="1"/>
         </SubModule>
-        <SubModule name="U_VDP_COMMAND" Register="177" Alu="77" Lut="589"/>
+        <SubModule name="U_VDP_COMMAND" Register="177" Alu="77" Lut="601"/>
     </SubModule>
-    <SubModule name="hdmi_ntsc" Register="61" Alu="9" Lut="51">
-        <SubModule name="true_hdmi_output.packet_picker" Register="416" Lut="322">
+    <SubModule name="hdmi_ntsc" Register="61" Alu="9" Lut="52">
+        <SubModule name="true_hdmi_output.packet_picker" Register="415" Lut="321">
             <SubModule name="audio_clock_regeneration_packet" Register="42" Alu="20" Lut="8"/>
         </SubModule>
-        <SubModule name="true_hdmi_output.packet_assembler" Register="45" Alu="4" Lut="366"/>
-        <SubModule name="tmds_gen[0].tmds_channel" Register="14" Alu="16" Lut="104"/>
-        <SubModule name="tmds_gen[1].tmds_channel" Register="14" Alu="16" Lut="87"/>
-        <SubModule name="tmds_gen[2].tmds_channel" Register="14" Alu="16" Lut="94"/>
-        <SubModule name="serializer"/>
+        <SubModule name="true_hdmi_output.packet_assembler" Register="45" Alu="4" Lut="364"/>
+        <SubModule name="tmds_gen[0].tmds_channel" Register="14" Alu="16" Lut="87"/>
+        <SubModule name="tmds_gen[1].tmds_channel" Register="14" Alu="16" Lut="79"/>
+        <SubModule name="tmds_gen[2].tmds_channel" Register="14" Alu="16" Lut="68"/>
     </SubModule>
-    <SubModule name="SPI_MCP3202" Register="36" Alu="7" Lut="93"/>
+    <SubModule name="hdmi_pal" Register="45" Alu="11" Lut="59">
+        <SubModule name="true_hdmi_output.packet_picker" Register="404" Lut="319">
+            <SubModule name="audio_clock_regeneration_packet" Register="42" Alu="20" Lut="8"/>
+        </SubModule>
+        <SubModule name="true_hdmi_output.packet_assembler" Register="45" Alu="4" Lut="369"/>
+        <SubModule name="tmds_gen[0].tmds_channel" Register="14" Alu="16" Lut="81"/>
+        <SubModule name="tmds_gen[1].tmds_channel" Register="14" Alu="16" Lut="73"/>
+        <SubModule name="tmds_gen[2].tmds_channel" Register="14" Alu="16" Lut="73"/>
+    </SubModule>
+    <SubModule name="serializer"/>
+    <SubModule name="SPI_MCP3202" Register="36" Alu="7" Lut="89"/>
 </Module>

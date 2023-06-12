@@ -60,7 +60,8 @@ module hdmi
     // generating a signal from scratch instead of processing an
     // external signal.
     parameter int START_X = 0,
-    parameter int START_Y = 0
+    parameter int START_Y = 0,
+    parameter int NUM_CHANNELS = 3
 )
 (
     input logic clk_pixel_x5,
@@ -72,8 +73,8 @@ module hdmi
     input logic [AUDIO_BIT_WIDTH-1:0] audio_sample_word [1:0],
 
     // These outputs go to your HDMI port
-    output logic [2:0] tmds,
-    output logic tmds_clock,
+    //output logic [2:0] tmds,
+    //output logic tmds_clock,
     
     // All outputs below this line stay inside the FPGA
     // They are used (by you) to pick the color each pixel should have
@@ -87,10 +88,13 @@ module hdmi
     output logic [BIT_WIDTH-1:0] frame_width,
     output logic [BIT_HEIGHT-1:0] frame_height,
     output logic [BIT_WIDTH-1:0] screen_width,
-    output logic [BIT_HEIGHT-1:0] screen_height
+    output logic [BIT_HEIGHT-1:0] screen_height,
+
+    output logic [9:0] tmds_internal [NUM_CHANNELS-1:0],
+    output logic vs_trigger
 );
 
-localparam int NUM_CHANNELS = 3;
+//localparam int NUM_CHANNELS = 3;
 logic hsync;
 logic vsync;
 
@@ -188,6 +192,27 @@ generate
     endcase
 endgenerate
 
+reg [1:0] vsync_r;
+reg vs_trigger_r;
+logic vs_trigger_next;
+
+always_ff @(posedge clk_pixel)
+begin
+    if (reset) begin
+        vsync_r = 2'b11;
+        vs_trigger_r = 1'b1;
+    end
+    else begin
+        // one clock pulse to synchronize external video
+        vsync_r = { vsync_r[0], vsync };
+        vs_trigger_r = vs_trigger_next;
+    end
+end
+
+assign vs_trigger_next = (vsync_r == 2'b10) ? 1'b1 : 1'b0;
+assign vs_trigger = vs_trigger_r;
+
+
 always_comb begin
     hsync <= invert ^ (cx >= screen_width + hsync_pulse_start && cx < screen_width + hsync_pulse_start + hsync_pulse_size);
     // vsync pulses should begin and end at the start of hsync, so special
@@ -220,8 +245,6 @@ begin
     end
     else
     begin
-//        cx <= hs_trigger ? screen_width + hsync_pulse_start : (cx == frame_width-1'b1 ? BIT_WIDTH'(0) : cx + 1'b1);
-//        cy <= vs_trigger ? screen_height + vsync_pulse_start : (cx == frame_width-1'b1 ? cy == frame_height-1'b1 ? BIT_HEIGHT'(0) : cy + 1'b1 : cy);
         cx <= cx == frame_width-1'b1 ? BIT_WIDTH'(0) : cx + 1'b1;
         cy <= cx == frame_width-1'b1 ? cy == frame_height-1'b1 ? BIT_HEIGHT'(0) : cy + 1'b1 : cy;
     end
@@ -369,6 +392,6 @@ generate
     end
 endgenerate
 
-serializer #(.NUM_CHANNELS(NUM_CHANNELS), .VIDEO_RATE(VIDEO_RATE)) serializer(.clk_pixel(clk_pixel), .clk_pixel_x5(clk_pixel_x5), .reset(reset), .tmds_internal(tmds_internal), .tmds(tmds), .tmds_clock(tmds_clock));
+//serializer #(.NUM_CHANNELS(NUM_CHANNELS), .VIDEO_RATE(VIDEO_RATE)) serializer(.clk_pixel(clk_pixel), .clk_pixel_x5(clk_pixel_x5), .reset(reset), .tmds_internal(tmds_internal), .tmds(tmds), .tmds_clock(tmds_clock));
 
 endmodule

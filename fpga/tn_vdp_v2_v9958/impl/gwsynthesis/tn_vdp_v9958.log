@@ -6,8 +6,9 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_info_frame
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_sample_packet.sv'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\auxiliary_video_information_info_frame.sv'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv'
-WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":81)
-WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":82)
+WARN  (EX3628) : Redeclaration of ANSI port 'tmds_internal' is not allowed("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":385)
+WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":82)
+WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":83)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_assembler.sv'
 WARN  (EX2478) : Non-net output port 'counter' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_assembler.sv":11)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv'
@@ -22,8 +23,7 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_126.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v'
-Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":385)
-Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":411)
+Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":440)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd'
 Analyzing entity 'ram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":37)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":47)
@@ -33,9 +33,10 @@ Analyzing entity 'palette_g'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":12
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":138)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_package.vhd'
 Analyzing package 'vdp_package'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_package.vhd":82)
+WARN  (EX4319) : Shared variables must be of a protected type("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_package.vhd":116)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd'
 Analyzing entity 'vdp'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":254)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":308)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":310)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_colordec.vhd'
 Analyzing entity 'vdp_colordec'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_colordec.vhd":68)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_colordec.vhd":114)
@@ -88,14 +89,16 @@ Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_wai
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vencode.vhd'
 Analyzing entity 'vencode'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vencode.vhd":38)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vencode.vhd":62)
-WARN  (EX3073) : Port 'frame_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":388)
+WARN  (EX3073) : Port 'frame_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":379)
+WARN  (EX3073) : Port 'frame_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":407)
+WARN  (EX3073) : Port 'tmds_clock' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":417)
 Compiling module 'v9958_top'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":3)
 Compiling module 'CLK_135_3'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v":10)
 Compiling module 'ram32k'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v":1)
 Extracting RAM for identifier 'mem_r'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v":9)
-WARN  (EX2420) : Latch inferred for net 'csr_next'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":211)
-WARN  (EX2420) : Latch inferred for net 'csw_next'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":214)
-Switching to VHDL mode to elaborate design unit 'VDP'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":297)
+WARN  (EX2420) : Latch inferred for net 'csr_next'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":185)
+WARN  (EX2420) : Latch inferred for net 'csw_next'; We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":188)
+Switching to VHDL mode to elaborate design unit 'VDP'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":272)
 Processing 'VDP(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":254)
 Processing 'VDP_NTSC_PAL(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_ntsc_pal.vhd":96)
 Processing 'VDP_VGA(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_vga.vhd":102)
@@ -133,7 +136,7 @@ Extracting RAM for identifier 'blkram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\r
 Processing 'VDP_COMMAND(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_command.vhd":67)
 WARN  (EX4160) : Latch inferred for net 'NXCOUNT[9]'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_command.vhd":783)
 Processing 'VDP_WAIT_CONTROL(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_wait_control.vhd":59)
-Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":297)
+Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":272)
 Compiling module 'hdmi(VIDEO_ID_CODE=2,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,START_Y=476)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":4)
 Compiling module 'packet_picker(VIDEO_ID_CODE=2,VIDEO_RATE=27000000.0,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=44100,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":4)
 Extracting RAM for identifier 'audio_sample_word_buffer'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":80)
@@ -150,10 +153,18 @@ Compiling module 'packet_assembler'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\pac
 Compiling module 'tmds_channel'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\tmds_channel.sv":4)
 Compiling module 'tmds_channel(CN=1)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\tmds_channel.sv":4)
 Compiling module 'tmds_channel(CN=2)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\tmds_channel.sv":4)
-Compiling module 'serializer(VIDEO_RATE=27000000.0)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\serializer.sv":3)
+Compiling module 'hdmi(VIDEO_ID_CODE=17,VIDEO_REFRESH_RATE=50,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,START_Y=570)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":4)
+Compiling module 'packet_picker(VIDEO_ID_CODE=17,VIDEO_RATE=27000000.0,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=44100,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":4)
+Extracting RAM for identifier 'audio_sample_word_buffer'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":80)
+Compiling module 'auxiliary_video_information_info_frame(IT_CONTENT=1'b1,VIDEO_ID_CODE=32'sb00000000000000000000000000010001)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\auxiliary_video_information_info_frame.sv":5)
+WARN  (EX1998) : Net 'headers[255][23]' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":29)
+WARN  (EX1998) : Net 'subs[255][3][55]' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":30)
+WARN  (EX3670) : Actual bit length 10 differs from formal bit length 12 for port 'cx'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":404)
+Compiling module 'serializer(VIDEO_RATE=0)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\serializer.sv":3)
 Compiling module 'SPI_MCP3202'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":20)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":63)
 WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":77)
+WARN  (EX2565) : Input 'VS_TRIGGER' on this instance is undriven. Assigning to 0, simulation mismatch possible. Please assign the input or remove the declaration("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":237)
 NOTE  (EX0101) : Current top module is "v9958_top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
@@ -175,13 +186,17 @@ WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame
 WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":131)
 WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":137)
 WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":140)
-WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1041)
+WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":143)
+WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":131)
+WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":137)
+WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_picker.sv":140)
+WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1073)
 WARN  (NL0002) : The module "palette_g" instantiated to "U_PALETTEMEMG" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_register.vhd":394)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":128)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":155)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_RE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":119)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_RO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp_doublebuf.vhd":146)
-WARN  (NL0002) : The module "VDP_WAIT_CONTROL" instantiated to "U_VDP_WAIT_CONTROL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1829)
+WARN  (NL0002) : The module "VDP_WAIT_CONTROL" instantiated to "U_VDP_WAIT_CONTROL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\vdp\vdp.vhd":1861)
 [95%] Generate netlist file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958.vg" completed
 [100%] Generate report file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\impl\gwsynthesis\tn_vdp_v9958_syn.rpt.html" completed
 GowinSynthesis finish

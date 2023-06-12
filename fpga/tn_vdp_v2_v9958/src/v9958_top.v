@@ -62,16 +62,15 @@ module v9958_top(
     wire            scanlin;
     wire            reset_n_w;
 
+    wire            pal_mode;
+
     wire clk_w;
     wire clk_3_w;
-    //wire clk_21_w;
+
     wire clk_135_w;
     wire clk_135_lock_w;
     wire clk_67_w;
 
-//    wire clk_25_w;
-//    wire clk_126_w;
-//    wire clk_126_lock_w;
 
     BUFG clk_bufg_inst(
     .O(clk_w),
@@ -96,48 +95,24 @@ module v9958_top(
     defparam clk_67_inst.GSREN = "false"; 
 
 
-//    CLKDIV clk_21_inst (
-//        .CLKOUT(clk_21_w), 
-//        .HCLKIN(clk_108_w), 
-//        .RESETN(clk_108_lock_w),
-//        .CALIB(1'b1)
-//    );
-//    defparam clk_21_inst.DIV_MODE = "5";
-//    defparam clk_21_inst.GSREN = "false"; 
-
-//    CLK_126 clk_126_inst(
-//        .clkout(clk_126_w), //output clkout
-//        .lock(clk_126_lock_w), //output lock
-//        .reset(~rst_n), //input reset
-//        .clkin(clk) //input clkin
-//    );
-
-//    CLKDIV clk_25_inst (
-//        .CLKOUT(clk_25_w), 
-//        .HCLKIN(clk_126_w), 
-//        .RESETN(clk_126_lock_w),
-//        .CALIB(1'b1)
-//    );
-//    defparam clk_25_inst.DIV_MODE = "5";
-//    defparam clk_25_inst.GSREN = "false"; 
 
     wire rst_n_w;
     assign rst_n_w = rst_n & clk_135_lock_w; // & clk_126_lock_w;
 
-    reg  [31:0] pwr_cnt;
+    reg  [7:0] pwr_cnt;
     reg  pwr_on_r;
 
     always @(posedge clk_w or negedge rst_n_w) begin
         if(rst_n_w == 0) begin
-            pwr_cnt = 7'b0;
-            pwr_on_r = 32'b0;
+            pwr_cnt = 7'd0;
+            pwr_on_r = 1'd0;
         end
         else begin
-            if (pwr_cnt == 32'd8) begin
+            if (pwr_cnt == 7'd8) begin
                 pwr_on_r = 1'b1;
             end else
             begin
-                pwr_cnt = pwr_cnt + 32'd1;
+                pwr_cnt = pwr_cnt + 7'd1;
             end
         end
     end
@@ -288,12 +263,13 @@ module v9958_top(
 		.PVIDEODLCLK		( VideoDLClk						),
 		.BLANK_o			( blank_o							),
 		.DISPRESO			( 1'b1      				        ),  // VGA 31Khz
-		.NTSC_PAL_TYPE		( 1'b0      						),
+		.NTSC_PAL_TYPE		( 1'b1      						),
 		.FORCED_V_MODE		( 1'b0      						),
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
 		.OFFSET_Y			( OFFSET_Y							),
-        .SPMAXSPR           ( ~maxspr_n                         )
+        .SPMAXSPR           ( ~maxspr_n                         ),
+        .PAL_MODE           ( pal_mode                          )
 	);
 
 
@@ -301,7 +277,6 @@ module v9958_top(
 	// Video output
 	//--------------------------------------------------------------
 
-    logic[2:0] tmds;
     logic [9:0] cy;
     logic [9:0] cx;
 
@@ -335,10 +310,23 @@ module v9958_top(
 
 ////////////
 
+    logic v_reset_w;
+    reg ff_pal_mode;
+    
+    always_ff@(posedge clk_w) 
+    begin
+        if (ff_pal_mode != pal_mode) begin
+            v_reset_w <= 1'b1;
+            ff_pal_mode <= pal_mode;
+        end else
+            v_reset_w <= 1'b0;
+    end
+
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
     localparam AUDIO_BIT_WIDTH = 16;
     localparam AUDIO_CLK_DELAY = CLKFRQ * 1000 / AUDIO_RATE / 2;
+    localparam NUM_CHANNELS = 3;
     logic [$clog2(AUDIO_CLK_DELAY)-1:0] audio_divider;
     logic clk_audio_w;
 
@@ -363,6 +351,9 @@ module v9958_top(
         audio_sample_word[1] <= audio_sample_word0[1];
     end
 
+    logic [9:0] cy_ntsc;
+    logic [9:0] cx_ntsc;
+    logic [9:0] tmds_ntsc [NUM_CHANNELS-1:0];
     hdmi #( .VIDEO_ID_CODE(2), 
             .DVI_OUTPUT(0), 
             .VIDEO_REFRESH_RATE(59.94),
@@ -372,20 +363,59 @@ module v9958_top(
             .VENDOR_NAME({"Unknown", 8'd0}), // Must be 8 bytes null-padded 7-bit ASCII
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
-            .START_X(0), //788), //756),
-            .START_Y(476) )
+            .START_X(0),
+            .START_Y(525-49), //(525-49),
+            .NUM_CHANNELS(NUM_CHANNELS)
+            )
 
     hdmi_ntsc ( .clk_pixel_x5(clk_135_w), 
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( reset_w ),
+          .reset( reset_w | v_reset_w ),
           .audio_sample_word(audio_sample_word),
-          .tmds(tmds), 
-          .tmds_clock(tmdsClk), 
-          .cx(cx), 
-          .cy(cy)
+          .cx(cx_ntsc), 
+          .cy(cy_ntsc),
+          .tmds_internal(tmds_ntsc)
         );
+
+    logic [9:0] cy_pal;
+    logic [9:0] cx_pal;
+    logic [9:0] tmds_pal [NUM_CHANNELS-1:0];
+    hdmi #( .VIDEO_ID_CODE(17), 
+            .DVI_OUTPUT(0), 
+            .VIDEO_REFRESH_RATE(50),
+            .IT_CONTENT(1),
+            .AUDIO_RATE(AUDIO_RATE), 
+            .AUDIO_BIT_WIDTH(AUDIO_BIT_WIDTH),
+            .VENDOR_NAME({"Unknown", 8'd0}), // Must be 8 bytes null-padded 7-bit ASCII
+            .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
+            .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
+            .START_X(0), //(0),
+            .START_Y(625-55), //(147),
+            .NUM_CHANNELS(NUM_CHANNELS)
+            )
+
+    hdmi_pal ( .clk_pixel_x5(clk_135_w), 
+          .clk_pixel(clk_w), 
+          .clk_audio(clk_audio_w),
+          .rgb({dvi_r, dvi_g, dvi_b}), 
+          .reset( reset_w | v_reset_w ),
+          .audio_sample_word(audio_sample_word),
+          .cx(cx_pal), 
+          .cy(cy_pal),
+          .tmds_internal(tmds_pal)
+        );
+
+    assign cx = pal_mode ? cx_pal : cx_ntsc;
+    assign cy = pal_mode ? cy_pal : cy_ntsc;
+
+    logic[2:0] tmds;
+    logic [9:0] tmds_internal [NUM_CHANNELS-1:0];
+
+    assign tmds_internal = pal_mode ? tmds_pal : tmds_ntsc;
+    
+    serializer #(.NUM_CHANNELS(NUM_CHANNELS), .VIDEO_RATE(0)) serializer(.clk_pixel(clk_w), .clk_pixel_x5(clk_135_w), .reset(reset_w), .tmds_internal(tmds_internal), .tmds(tmds) ); 
 
     // Gowin LVDS output buffer
     ELVDS_OBUF tmds_bufds [3:0] (

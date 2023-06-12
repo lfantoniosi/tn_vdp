@@ -113,7 +113,7 @@ PACKAGE VDP_PACKAGE IS
     --
 
     -- NUMBER OF CLOCKS PER LINE, MUST BE A MULTIPLE OF 4
-    CONSTANT CLOCKS_PER_LINE             : INTEGER := 1716; --1600; 
+    SHARED VARIABLE CLOCKS_PER_LINE             : INTEGER := 1716;
 
     -- LEFT-TOP POSITION OF VISIBLE AREA
     CONSTANT OFFSET_X                           : STD_LOGIC_VECTOR(  6 DOWNTO 0 ) := "0110101"; --"1000000"; --"0110001"; -- 49
@@ -122,7 +122,7 @@ PACKAGE VDP_PACKAGE IS
 
     CONSTANT LED_TV_X_NTSC                      : INTEGER := -20;
     CONSTANT LED_TV_Y_NTSC                      : INTEGER := 1;
-    CONSTANT LED_TV_X_PAL                       : INTEGER := -2;
+    CONSTANT LED_TV_X_PAL                       : INTEGER := -20;
     CONSTANT LED_TV_Y_PAL                       : INTEGER := 3;
 
 --  CONSTANT DISPLAY_OFFSET_NTSC                : INTEGER := 0;
