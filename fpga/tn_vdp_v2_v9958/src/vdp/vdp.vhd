@@ -298,7 +298,9 @@ ENTITY VDP IS
 
         VDP_ID              : IN    STD_LOGIC_VECTOR(  4 DOWNTO 0 );
         OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-        SPMAXSPR            : IN    STD_LOGIC
+        SPMAXSPR            : IN    STD_LOGIC;
+        PAL_MODE            : OUT   STD_LOGIC;
+        VS_TRIGGER          : IN    STD_LOGIC
 
         -- DEBUG OUTPUT
     --  DEBUG_OUTPUT        : OUT   STD_LOGIC_VECTOR( 15 DOWNTO 0 ) -- ★

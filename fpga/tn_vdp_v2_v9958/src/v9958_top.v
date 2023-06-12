@@ -95,9 +95,8 @@ module v9958_top(
     defparam clk_67_inst.GSREN = "false"; 
 
 
-
     wire rst_n_w;
-    assign rst_n_w = rst_n & clk_135_lock_w; // & clk_126_lock_w;
+    assign rst_n_w = rst_n & clk_135_lock_w; 
 
     reg  [7:0] pwr_cnt;
     reg  pwr_on_r;
