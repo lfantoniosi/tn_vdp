@@ -19,13 +19,21 @@ The bitstream file is [here](fpga/tn_vdp_v1/impl/pnr/tn_vdp.fs)
 
 ## Version 2.0
 
-The new version supports audio over HDMI. This requires the v2 board sets as well the v2 bitstream (socket board + mainboard).
+The new version supports audio over HDMI. There is no more VGA output. You'll need to pull the pre-amplified audio from somewhere in the computer and connect the **AUDIO** pin on the tn-vdp socket. **MODE1** is not used for TMS9918 cores.
 
-You'll need to pull the pre-amplified audio from somewhere in the computer and connect the **audio** pin on the tn-vdp socket.
+This requires the v2 board sets as well the v2 bitstream (socket board + mainboard). See below gerber files.
 
-## V9958
+There are 2 bitstreams for v2:
 
-There is a new core for the version 2
+[TMS9918](fpga/tn_vdp_v2_v9918/impl/pnr/tn_vdp.fs)
+
+## V9958 32KB VRAM
+
+There is a new core for the v2 boards implemented from ESE-MSX3. The bitstream can be used on the same v2 board sets for the TMS9918:
+
+[V9958](fpga/tn_vdp_v2_v9958/impl/pnr/tn_vdp_v9958.fs)
+
+But for the V9958 you need to pull the A1 address line from somewhere in the computer and connect to pin **MODE1** on the socket to use the full capabilites of the V9958.
 
 ## Floppy images
 
@@ -37,16 +45,23 @@ Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and Hx
 
 The gerber files can be located inside each KiCad project:
 
-[MainBoard for NABU](KiCad/tn_vdp_v1_slim/gerber.zip)
+### V1 Boards
+[MainBoard for NABU](kicad/tn_vdp_v1_slim/gerber.zip)
 
-[MainBoard for TI-99/4A (FAT)](KiCad/tn_vdp_v1_fat/gerber.zip)
+[MainBoard for TI-99/4A (FAT)](kicad/tn_vdp_v1_fat/gerber.zip)
 
-[VGA breakout](KiCad/tn_vdp_v1_vga/gerber)
+[VGA breakout](kicad/tn_vdp_v1_vga/gerber)
 
-[Compact board using SMD components](KiCad/tn9k_f18a_compact/gerber.zip)
-See the [separate README](KiCad/tn9k_f18a_compact/README.md) for BOM ipand additional information.
+[Compact board using SMD components](kicad/tn9k_f18a_compact/gerber.zip)
+See the [separate README](kicad/tn9k_f18a_compact/README.md) for BOM ipand additional information.
 
 The VGA module is optional, only if you want VGA output.
+
+### V2 Boards
+
+[MainBoard v2](kicad/tn_vdp_v2_board/gerber.zip)
+
+[Socket v2](kicad/tn_vdp_v2_socket/gerber.zip)
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
@@ -82,7 +97,9 @@ The Tang Nano 9K board can be purchased on AliExpress or ebay.
 
 The boards gerber files are inside each kicad project gerber folders.
 
-The BOM for the NABU and FAT variants can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
+## V1 BOM
+
+The BOM for the NABU and FAT v1 variants can be found here [DigiKey BOM](https://www.digikey.ca/short/2t98zrjw)
 
 Or transcribed here
 ```
@@ -113,6 +130,28 @@ Qty | Part Number                | Description
 3) The capacitors need to be soldered manually on the bottom of each IC's. There are no pads for them to reduce the size of the board. See back.jpg photo for reference under images folder.
 4) There are 2 DIP 40 sockets in this list: one machined other normal. The machined socket you will use to connect the board on top, thus protecting the pins. The machined pins for the board will connect easily to a machined socket. Then you stack this machined socked over the normal one (notice little force is necessary), and then finally you stack them at the NABU PC's TMS9118 socket. This will protect both the NABU and the tn_vdp pins.
 
+# V2 BOM
+```
+Qty | Part Number                | Description
+----+----------------------------+----------------------------------
+3x  | 123-AR20-HZL-TT-ND         | CONN IC DIP SOCKET 20POS TIN
+1x  | 2057-ICM-308-1-GT-HT-ND    | MACHINE PIN SOCKET, IC, DIP, 8P
+3x  | 296-8503-5-ND              | IC TXRX NON-INVERT 3.6V 20DIP
+4x  | BC1084CT-ND                | CAP CER 0.1UF 50V X7R RADIAL
+1x  | 1528-5294-ND               | GPIO RIBBON CABLE 2X10 IDC CABLE
+1x  | 497-4547-1-ND              | DIODE SCHOTTKY 20V 1A DO41
+1x  | MCP3202-CI/P-ND            | IC ADC 12BIT SAR 8DIP
+2x  | S7022-ND                   | CONN HDR 24POS 0.1 TIN PCB
+2x  | A835AR-ND                  | CONN HDR DIP POST 20POS GOLD
+4x  | 732-5301-ND                | CONN HEADER VERT 20POS 2.54MM 
+1x  | 10129379-920001BLF-ND      | CONN HEADER R/A 20POS 2.54MM
+4x  | S9000-ND                   | CONN JUMPER SHORTING TIN
+```
+**Notes:**
+
+I find these header pins 2.54mm too expensive on DigiKey. I'd advise you to procure them on AliExpress, longer wait time but way cheaper. 
+
+
 ## Jumper Settings
 
 These are the jumper. Closed means ON:
@@ -141,7 +180,7 @@ You shouldn't have problem assembling it as all components are labeled. Just rem
 
 ## DIP switches
 ```
-USR1 - 32 sprite max
+USR1 - 32 sprite per line (TMS9918), 8 sprites per line (V9958)
 USR2 - scanlines
 USR3 - pin 37: gromclk (on), cpuclk (off)
 USR4 - pin 38: cpuclk (on), NC (off)
