@@ -6,7 +6,7 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_info_frame
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\audio_sample_packet.sv'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\auxiliary_video_information_info_frame.sv'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv'
-WARN  (EX3628) : Redeclaration of ANSI port 'tmds_internal' is not allowed("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":385)
+WARN  (EX3628) : Redeclaration of ANSI port 'tmds_internal' is not allowed("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":363)
 WARN  (EX2478) : Non-net output port 'cx' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":82)
 WARN  (EX2478) : Non-net output port 'cy' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\hdmi.sv":83)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\hdmi\packet_assembler.sv'

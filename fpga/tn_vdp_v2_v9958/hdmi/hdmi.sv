@@ -90,8 +90,7 @@ module hdmi
     output logic [BIT_WIDTH-1:0] screen_width,
     output logic [BIT_HEIGHT-1:0] screen_height,
 
-    output logic [9:0] tmds_internal [NUM_CHANNELS-1:0],
-    output logic vs_trigger
+    output logic [9:0] tmds_internal [NUM_CHANNELS-1:0]
 );
 
 //localparam int NUM_CHANNELS = 3;
@@ -191,27 +190,6 @@ generate
         end
     endcase
 endgenerate
-
-reg [1:0] vsync_r;
-reg vs_trigger_r;
-logic vs_trigger_next;
-
-always_ff @(posedge clk_pixel)
-begin
-    if (reset) begin
-        vsync_r = 2'b11;
-        vs_trigger_r = 1'b1;
-    end
-    else begin
-        // one clock pulse to synchronize external video
-        vsync_r = { vsync_r[0], vsync };
-        vs_trigger_r = vs_trigger_next;
-    end
-end
-
-assign vs_trigger_next = (vsync_r == 2'b10) ? 1'b1 : 1'b0;
-assign vs_trigger = vs_trigger_r;
-
 
 always_comb begin
     hsync <= invert ^ (cx >= screen_width + hsync_pulse_start && cx < screen_width + hsync_pulse_start + hsync_pulse_size);
