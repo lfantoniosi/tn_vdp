@@ -442,11 +442,18 @@ BEGIN
         CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_PAL, 9 )    WHEN "11",
         (OTHERS => 'X')                                         WHEN OTHERS;
 
-    W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
-                                      (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
+    -- W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
+    --                                   (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
+    --                         '0';
+    -- W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
+    --                                   (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
+    --                         '0';
+
+    W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & '0') AND VDPR9PALMODE = '0') OR
+                                      (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & '0') AND VDPR9PALMODE = '1') )ELSE
                             '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
-                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
+    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & '0') AND VDPR9PALMODE = '0') OR
+                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & '0') AND VDPR9PALMODE = '1') )ELSE
                             '0';
 
 END RTL;

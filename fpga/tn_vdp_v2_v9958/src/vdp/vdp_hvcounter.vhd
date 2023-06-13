@@ -100,7 +100,7 @@ ARCHITECTURE RTL OF VDP_HVCOUNTER IS
     SIGNAL W_H_CNT_END              : STD_LOGIC;
     SIGNAL W_FIELD_END_CNT          : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
     SIGNAL W_FIELD_END              : STD_LOGIC;
-    SIGNAL W_DISPLAY_MODE           : STD_LOGIC_VECTOR(  1 DOWNTO 0 );
+    SIGNAL W_DISPLAY_MODE           : STD_LOGIC_VECTOR(  2 DOWNTO 0 );
     SIGNAL W_LINE_MODE              : STD_LOGIC_VECTOR(  1 DOWNTO 0 );
     SIGNAL W_H_BLANK_START          : STD_LOGIC;
     SIGNAL W_H_BLANK_END            : STD_LOGIC;
@@ -125,11 +125,8 @@ BEGIN
             FF_PAL_MODE         <= '0';
             FF_INTERLACE_MODE   <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-    --        IF( ((W_H_CNT_HALF OR W_H_CNT_END) AND W_FIELD_END AND FF_FIELD) = '1' )THEN
-    --          IF (FF_H_CNT = 0 AND FF_V_CNT_IN_FIELD = 0) THEN
-                FF_PAL_MODE         <= PAL_MODE;
-                FF_INTERLACE_MODE   <= INTERLACE_MODE;
-    --        END IF;
+            FF_PAL_MODE         <= PAL_MODE;
+            FF_INTERLACE_MODE   <= INTERLACE_MODE;
         END IF;
     END PROCESS;
 
@@ -146,7 +143,7 @@ BEGIN
         IF( RESET = '1' )THEN
             FF_H_CNT <= (OTHERS => '0');
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( W_H_CNT_END = '1' OR (W_FIELD_END = '1' AND W_H_CNT_HALF ='1'))THEN
+            IF( W_H_CNT_END = '1' OR (W_FIELD_END = '1' AND W_H_CNT_HALF ='1' AND INTERLACE_MODE = '0'))THEN
                 FF_H_CNT <= (OTHERS => '0' );
             ELSE
                 FF_H_CNT <= FF_H_CNT + 1;
@@ -157,13 +154,20 @@ BEGIN
     --------------------------------------------------------------------------
     --  VERTICAL COUNTER
     --------------------------------------------------------------------------
-    W_DISPLAY_MODE  <=  FF_INTERLACE_MODE & FF_PAL_MODE;
+    W_DISPLAY_MODE  <=  FF_INTERLACE_MODE & FF_PAL_MODE & FF_FIELD;
 
     WITH( W_DISPLAY_MODE )SELECT W_FIELD_END_CNT <=
-        CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "00",
-        CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "10",
-        CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "01",
-        CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "11",
+        CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "000",
+        CONV_STD_LOGIC_VECTOR( 524, 10 )    WHEN "001",
+
+        CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "010",
+        CONV_STD_LOGIC_VECTOR( 624, 10 )    WHEN "011",
+
+        CONV_STD_LOGIC_VECTOR( 523, 10 )    WHEN "100",
+        CONV_STD_LOGIC_VECTOR( 525, 10 )    WHEN "101",
+
+        CONV_STD_LOGIC_VECTOR( 623, 10 )    WHEN "110",
+        CONV_STD_LOGIC_VECTOR( 625, 10 )    WHEN "111",
         (OTHERS=>'X')                       WHEN OTHERS;
 
     W_FIELD_END <=  '1' WHEN( FF_V_CNT_IN_FIELD = W_FIELD_END_CNT )ELSE
@@ -210,8 +214,8 @@ BEGIN
             FF_V_CNT_IN_FRAME   <= (OTHERS => '0');
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( (W_H_CNT_HALF OR W_H_CNT_END) = '1' )THEN
-                IF( W_FIELD_END = '1') THEN -- AND FF_FIELD = '1' )THEN
-                        FF_V_CNT_IN_FRAME   <= (OTHERS => '0');
+                IF( W_FIELD_END = '1' AND (FF_FIELD = '1' OR FF_INTERLACE_MODE = '0') )THEN
+                    FF_V_CNT_IN_FRAME   <= (OTHERS => '0');
                 ELSE
                     FF_V_CNT_IN_FRAME   <= FF_V_CNT_IN_FRAME + 1;
                 END IF;
@@ -251,11 +255,17 @@ BEGIN
         CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_PAL, 9 )    WHEN "11",
         (OTHERS => 'X')                                         WHEN OTHERS;
 
-    W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
-                                      (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+    -- W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
+    --                                   (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+    --                         '0';
+    -- W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
+    --                                   (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+    --                         '0';
+    W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & '0') AND FF_PAL_MODE = '0') OR
+                                      (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & '0') AND FF_PAL_MODE = '1') )ELSE
                             '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
-                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & '0') AND FF_PAL_MODE = '0') OR
+                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & '0') AND FF_PAL_MODE = '1') )ELSE
                             '0';
 
     PROCESS( RESET, CLK21M )
