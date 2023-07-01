@@ -1,0 +1,16 @@
+-d D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\gwsynthesis\tn_vdp_v3_v9958.vg
+-p GW2AR-18C-QFN88-8
+-pn GW2AR-LV18QN88C8/I7
+-cst D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958.cst
+-cfg D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\device.cfg
+-sdc D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958.sdc
+-bit
+-tr
+-ph
+-tt
+-timing
+-cst_error
+-place_option 1
+-route_option 1
+-correct_hold 1
+-route_maxfan 23

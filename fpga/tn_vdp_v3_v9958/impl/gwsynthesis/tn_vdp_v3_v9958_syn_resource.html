@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Hierarchy Module Resource</title>
+<style type="text/css">
+body { font-family: Verdana, Arial, sans-serif; font-size: 14px; }
+div#main_wrapper{ width: 100%; }
+h1 {text-align: center; }
+h1 {margin-top: 36px; }
+table, th, td { border: 1px solid #aaa; }
+table { border-collapse:collapse; margin-top: 10px; margin-bottom: 20px; width: 100%; }
+th, td { align = "center"; padding: 5px 2px 5px 5px; }
+th { color: #fff; font-weight: bold; background-color: #0084ff; }
+table td.label { width: 20%; white-space: nowrap; min-width: 20px; background-color: #dee8f4; }
+</style>
+</head>
+<body>
+<div id="main_wrapper">
+<div id="content">
+<h1>Hierarchy Module Resource</h1>
+<table>
+<tr>
+<th class="label">MODULE NAME</th>
+<th class="label">REG NUMBER</th>
+<th class="label">ALU NUMBER</th>
+<th class="label">LUT NUMBER</th>
+<th class="label">DSP NUMBER</th>
+<th class="label">BSRAM NUMBER</th>
+<th class="label">SSRAM NUMBER</th>
+</tr>
+<tr>
+<td class="label">v9958_top (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">91</td>
+<td align = "center">19</td>
+<td align = "center">107</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--clk_135_inst
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--clk_sdramp_inst
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--vram
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">49</td>
+<td align = "center">-</td>
+<td align = "center">23</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--u_sdram
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/memory_controller.v)</td>
+<td align = "center">52</td>
+<td align = "center">14</td>
+<td align = "center">95</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--u_v9958
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">73</td>
+<td align = "center">-</td>
+<td align = "center">340</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_VGA
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">10</td>
+<td align = "center">-</td>
+<td align = "center">21</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--DBUF
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_vga.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">21</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_BUF_BE
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_doublebuf.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_BUF_BO
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_doublebuf.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_INTERRUPT
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">2</td>
+<td align = "center">8</td>
+<td align = "center">10</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_SSG
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">66</td>
+<td align = "center">30</td>
+<td align = "center">102</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_HVCOUNTER
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_ssg.vhd)</td>
+<td align = "center">32</td>
+<td align = "center">-</td>
+<td align = "center">63</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_COLORDEC
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">57</td>
+<td align = "center">-</td>
+<td align = "center">94</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_TEXT12
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">95</td>
+<td align = "center">12</td>
+<td align = "center">152</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_GRAPHIC123M
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">61</td>
+<td align = "center">5</td>
+<td align = "center">66</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_GRAPHIC4567
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">150</td>
+<td align = "center">41</td>
+<td align = "center">164</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_FIFOMEM
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_graphic4567.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_SPRITE
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">289</td>
+<td align = "center">14</td>
+<td align = "center">388</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--ISPINFORAM
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_sprite.vhd)</td>
+<td align = "center">3</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">8</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_EVEN_LINE_BUF
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_sprite.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_ODD_LINE_BUF
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_sprite.vhd)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_REGISTER
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">241</td>
+<td align = "center">-</td>
+<td align = "center">167</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_PALETTEMEMRB
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp_register.vhd)</td>
+<td align = "center">5</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">1</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_COMMAND
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">179</td>
+<td align = "center">77</td>
+<td align = "center">586</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--U_VDP_WAIT_CONTROL
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd)</td>
+<td align = "center">16</td>
+<td align = "center">152</td>
+<td align = "center">176</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--hdmi_ntsc
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">61</td>
+<td align = "center">9</td>
+<td align = "center">53</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--true_hdmi_output.packet_picker
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">414</td>
+<td align = "center">-</td>
+<td align = "center">319</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--audio_clock_regeneration_packet
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/packet_picker.sv)</td>
+<td align = "center">42</td>
+<td align = "center">20</td>
+<td align = "center">8</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--true_hdmi_output.packet_assembler
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">45</td>
+<td align = "center">4</td>
+<td align = "center">362</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[0].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">90</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[1].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">68</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[2].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">68</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--hdmi_pal
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">45</td>
+<td align = "center">11</td>
+<td align = "center">57</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--true_hdmi_output.packet_picker
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">404</td>
+<td align = "center">-</td>
+<td align = "center">318</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--audio_clock_regeneration_packet
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/packet_picker.sv)</td>
+<td align = "center">42</td>
+<td align = "center">20</td>
+<td align = "center">8</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--true_hdmi_output.packet_assembler
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">45</td>
+<td align = "center">4</td>
+<td align = "center">348</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[0].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">75</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[1].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">73</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|--tmds_gen[2].tmds_channel
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv)</td>
+<td align = "center">14</td>
+<td align = "center">16</td>
+<td align = "center">73</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--serializer
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsp|--SPI_MCP3202
+ (D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v)</td>
+<td align = "center">27</td>
+<td align = "center">-</td>
+<td align = "center">81</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+<td align = "center">-</td>
+</tr>
+</table>
+</div><!-- content -->
+</div><!-- main_wrapper -->
+</body>
+</html>
