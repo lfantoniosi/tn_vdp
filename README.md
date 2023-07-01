@@ -35,7 +35,13 @@ There is a new core for the v2 boards implemented from ESE-MSX3. The bitstream c
 
 But for the V9958 you need to pull the A1 address line from somewhere in the computer and connect to pin **MODE1** on the socket to use the full capabilites of the V9958.
 
-## Floppy images
+## V9958 128KB VRAM: Tang Nano 20K
+
+The v3 of the fpga code and mainboard is for use on a Tang Nano 20K only. There are no other versions for Tang Nano 20K other than V9958 128K. If you need a 9918 use the Tang Nano 9K instead. The socket for the TMS9118 is the same from v2. A socket for a V9958 replacement is in the works.
+
+See instructions below for programming it.
+
+## NABU PC Floppy images
 
 Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and HxC2001): 
 
@@ -62,6 +68,13 @@ The VGA module is optional, only if you want VGA output.
 [MainBoard v2](kicad/tn_vdp_v2_board/gerber.zip)
 
 [Socket v2](kicad/tn_vdp_v2_socket/gerber.zip)
+
+### V3 Boards: Tang Nano 20K ONLY!
+
+[MainBoard v3](kicad/tn_vdp_v3_board/gerber.zip)
+
+[Socket v2](kicad/tn_vdp_v2_socket/gerber.zip) (same TMS9918 socket as v2)
+
 
 ## Gowin IDE
 Follow this link to install the Gowin's IDE:
@@ -90,6 +103,8 @@ sudo openFPGALoader -b tangnano9k tn_vdp.fs
 ## Standalone test
 
 The board has a standalone boot screen when you connect it to the USB-C and HDMI only. This will tell the FPGA has been programmed with success.
+
+The v3 Tang Nano 20K has no standalone boot screen.
 
 ## Building:
 
@@ -151,6 +166,16 @@ Qty | Part Number                | Description
 
 I find these header pins 2.54mm too expensive on DigiKey. I'd advise you to procure them on AliExpress, longer wait time but way cheaper. 
 
+# V3 BOM
+
+The V3 BOM is almost identically to V2 except that I added a trimmer for the audio and I returned with the DIP switch 4 pos:
+
+```
+Qty | Part Number                | Description
+----+----------------------------+----------------------------------
+1x  | 3339P-1-103LF              | TRIMMER 10K OHM 0.5W PC PIN TOP
+1x  | 449-KT04RTH-ND             | SWITCH SLIDE DIP 4POS 25MA 24V
+```
 
 ## Jumper Settings
 
@@ -201,6 +226,36 @@ TMS9128/29
 USR3 - off
 USR4 - off
 ```
+
+## V3 Programming
+
+The Tang Nano 20K version is a bit more convoluted to install. We need to reconfigure the PLL nets.
+
+First using the programmer flash this LITEX on the board:
+
+[Tang Nano 20K LITEX](fpga/tn_vdp_v3_v9958/res/pnr/tang_nano_20k_litex.fs)
+
+Disconnect and re-connect to your PC.
+
+Go to device manager and change the properties for the USB Serial Port (COMxx) for your Tang Nano 20K (disconnect/reconnect the board and see wich one disappear to identify it). Change the Port Settings: Bits per second to 115200 and Apply.
+
+Now you need a terminal application like Tera Term to connect to serial port.
+
+Pressione Control-X Control-C and ENTER
+
+You should see the LITE terminal, type:
+
+```
+pll_clk O1=50M
+pll_clk O2=125M
+pll_clk -s
+```
+
+After that you can just flash the v3 core from here:
+
+[V9958 128K](fpga/tn_vdp_v3_v9918/impl/pnr/tn_vdp_v3_v9958.fs)
+
+Now the board is ready to use.
 
 ## Images
 
