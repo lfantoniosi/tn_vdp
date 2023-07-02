@@ -181,7 +181,7 @@ Qty | Part Number                | Description
 
 These are the jumper. Closed means ON:
 ```
-USR1 : SPR MAX - Turn it on for 32 sprites per line
+USR1 : SPR MAX - Turn it on for 32 sprites per line (9958 this puts 8 sprites for mode 0)
 USR2 : SCANLIN - Turn it on for scanlines
 USR3 : GROMCLK - Turn it on to have GROM CLOCK enabled, Disabling it puts CPUCLK on pin 37 (9128/29)
 USR4 : CPUCLK  - Turn if on to have CPU CLOCK on pin 38 (9929/29 and 9128/29)
@@ -246,8 +246,8 @@ Pressione Control-X Control-C and ENTER
 You should see the LITE terminal, type:
 
 ```
-pll_clk O1=50M
-pll_clk O2=125M
+pll_clk O0=50M
+pll_clk O1=125M
 pll_clk -s
 ```
 
