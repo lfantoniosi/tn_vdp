@@ -53,11 +53,11 @@
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/top.v",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/ram16k.v",
    "Type" : "verilog"
   },
   {
-   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/ram16k.v",
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v1/src/top.v",
    "Type" : "verilog"
   },
   {

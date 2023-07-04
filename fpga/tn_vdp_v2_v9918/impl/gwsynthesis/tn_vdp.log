@@ -19,11 +19,11 @@ WARN  (EX3182) : Initial value of parameter 'VIDEO_RATE' is omitted("D:\src\tn_v
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\source_product_description_info_frame.sv'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\tmds_channel.sv'
 WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\tmds_channel.sv":16)
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\ram16k.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v'
 Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":161)
 Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":271)
 Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":298)
-Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\ram16k.v'
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd'
 Analyzing entity 'f18a_color'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":56)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":75)
