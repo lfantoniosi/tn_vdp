@@ -7,6 +7,7 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_100.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_125.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_50_25.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_clock_regeneration_packet.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_info_frame.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_sample_packet.sv" type="verilog"/>
@@ -29,7 +30,6 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_sprites.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tile_linebuf.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tiles.vhd" type="vhdl"/>
-        <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_top.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_version.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vga_cont_640_60.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd" type="vhdl"/>

@@ -58,6 +58,7 @@ table.detail_table td.label { min-width: 100px; width: 8%;}
 <td>D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_100.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_125.v<br>
+D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_50_25.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_clock_regeneration_packet.sv<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_info_frame.sv<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_sample_packet.sv<br>
@@ -80,7 +81,6 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_single_port_ram.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_sprites.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tile_linebuf.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tiles.vhd<br>
-D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_top.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_version.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vga_cont_640_60.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
@@ -108,7 +108,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Mon Jul 03 16:45:11 2023
+<td>Mon Jul 10 18:58:32 2023
 </td>
 </tr>
 <tr>
@@ -124,11 +124,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Synthesis Process</td>
-<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.234s, Elapsed time = 0h 0m 0.742s, Peak memory usage = 161.445MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 0.453s, Elapsed time = 0h 0m 1s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.165s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 0.14s, Elapsed time = 0h 0m 0.469s, Peak memory usage = 184.734MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.145s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.059s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.026s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.023s, Peak memory usage = 184.734MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0.25s, Elapsed time = 0h 0m 0.591s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.099s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.12s, Peak memory usage = 184.734MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 14s, Peak memory usage = 184.895MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.203s, Elapsed time = 0h 0m 0.382s, Peak memory usage = 184.895MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.093s, Elapsed time = 0h 0m 0.354s, Peak memory usage = 184.895MB<br/></td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.406s, Elapsed time = 0h 0m 0.616s, Peak memory usage = 290.426MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 0.75s, Elapsed time = 0h 0m 1s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.125s, Elapsed time = 0h 0m 0.154s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 0.375s, Elapsed time = 0h 0m 0.443s, Peak memory usage = 290.426MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.093s, Elapsed time = 0h 0m 0.135s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.054s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.024s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.02s, Peak memory usage = 290.426MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0.468s, Elapsed time = 0h 0m 0.533s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.096s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.093s, Elapsed time = 0h 0m 0.113s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 13s, Peak memory usage = 290.426MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.125s, Elapsed time = 0h 0m 0.382s, Peak memory usage = 290.426MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.093s, Elapsed time = 0h 0m 0.306s, Peak memory usage = 290.426MB<br/></td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 7s, Elapsed time = 0h 0m 18s, Peak memory usage = 184.895MB</td>
+<td>CPU time = 0h 0m 11s, Elapsed time = 0h 0m 16s, Peak memory usage = 290.426MB</td>
 </tr>
 </table>
 <h1><a name="resource">Resource</a></h1>
@@ -144,7 +144,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label"><b>I/O Buf </b></td>
-<td>39</td>
+<td>45</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspIBUF</td>
@@ -163,20 +163,24 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>8</td>
 </tr>
 <tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspBUFG</td>
+<td>6</td>
+</tr>
+<tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspELVDS_OBUF</td>
 <td>4</td>
 </tr>
 <tr>
 <td class="label"><b>Register </b></td>
-<td>2249</td>
+<td>2258</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFF</td>
-<td>208</td>
+<td>211</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFE</td>
-<td>1235</td>
+<td>1234</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFS</td>
@@ -188,39 +192,35 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFR</td>
-<td>277</td>
+<td>287</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
 <td>448</td>
 </tr>
 <tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
-<td>3</td>
-</tr>
-<tr>
 <td class="label"><b>LUT </b></td>
-<td>4581</td>
+<td>4527</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
-<td>385</td>
+<td>381</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
-<td>1733</td>
+<td>1677</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
-<td>2463</td>
+<td>2469</td>
 </tr>
 <tr>
 <td class="label"><b>ALU </b></td>
-<td>552</td>
+<td>555</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
-<td>552</td>
+<td>555</td>
 </tr>
 <tr>
 <td class="label"><b>SSRAM </b></td>
@@ -236,11 +236,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label"><b>INV </b></td>
-<td>47</td>
+<td>48</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspINV</td>
-<td>47</td>
+<td>48</td>
 </tr>
 <tr>
 <td class="label"><b>IOLOGIC </b></td>
@@ -280,11 +280,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label"><b>CLOCK </b></td>
-<td>6</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspCLKDIV</td>
-<td>4</td>
+<td>2</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbsprPLL</td>
@@ -300,12 +296,12 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>5984(4628 LUTs, 552 ALUs, 134 SSRAMs) / 8640</td>
-<td>70%</td>
+<td>5934(4575 LUTs, 555 ALUs, 134 SSRAMs) / 8640</td>
+<td>69%</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>2249 / 6693</td>
+<td>2258 / 6693</td>
 <td>34%</td>
 </tr>
 <tr>
@@ -315,7 +311,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as FF</td>
-<td>2249 / 6693</td>
+<td>2258 / 6693</td>
 <td>34%</td>
 </tr>
 <tr>
@@ -350,6 +346,83 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>clk_ibuf/I </td>
 </tr>
 <tr>
+<td>clk_25_bufg_inst/I</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_25_bufg_inst/I </td>
+</tr>
+<tr>
+<td>clk_125_bufg_inst/I</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_125_bufg_inst/I </td>
+</tr>
+<tr>
+<td>clk_50_bufg_inst/I</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_50_bufg_inst/I </td>
+</tr>
+<tr>
+<td>clk_clock_bufg_inst/I</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_clock_bufg_inst/I </td>
+</tr>
+<tr>
+<td>clk_25_w</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_25_bufg_inst/O </td>
+</tr>
+<tr>
+<td>clk_125_w</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_125_bufg_inst/O </td>
+</tr>
+<tr>
+<td>clk_50_w</td>
+<td>Base</td>
+<td>20.000</td>
+<td>50.0</td>
+<td>0.000</td>
+<td>10.000</td>
+<td> </td>
+<td> </td>
+<td>clk_50_bufg_inst/O </td>
+</tr>
+<tr>
 <td>clk_audio_w</td>
 <td>Base</td>
 <td>20.000</td>
@@ -358,32 +431,10 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>10.000</td>
 <td> </td>
 <td> </td>
-<td>clk_audio_w_s0/Q </td>
+<td>clk_clock_bufg_inst/O </td>
 </tr>
 <tr>
-<td>clk_100_inst/rpll_inst/CLKOUT.default_gen_clk</td>
-<td>Generated</td>
-<td>9.972</td>
-<td>100.3</td>
-<td>0.000</td>
-<td>4.986</td>
-<td>clk_ibuf/I</td>
-<td>clk</td>
-<td>clk_100_inst/rpll_inst/CLKOUT </td>
-</tr>
-<tr>
-<td>clk_100_inst/rpll_inst/CLKOUTP.default_gen_clk</td>
-<td>Generated</td>
-<td>9.972</td>
-<td>100.3</td>
-<td>0.000</td>
-<td>4.986</td>
-<td>clk_ibuf/I</td>
-<td>clk</td>
-<td>clk_100_inst/rpll_inst/CLKOUTP </td>
-</tr>
-<tr>
-<td>clk_100_inst/rpll_inst/CLKOUTD.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUT.default_gen_clk</td>
 <td>Generated</td>
 <td>19.943</td>
 <td>50.1</td>
@@ -391,40 +442,40 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>9.972</td>
 <td>clk_ibuf/I</td>
 <td>clk</td>
-<td>clk_100_inst/rpll_inst/CLKOUTD </td>
+<td>clk_50_25/rpll_inst/CLKOUT </td>
 </tr>
 <tr>
-<td>clk_100_inst/rpll_inst/CLKOUTD3.default_gen_clk</td>
-<td>Generated</td>
-<td>29.915</td>
-<td>33.4</td>
-<td>0.000</td>
-<td>14.958</td>
-<td>clk_ibuf/I</td>
-<td>clk</td>
-<td>clk_100_inst/rpll_inst/CLKOUTD3 </td>
-</tr>
-<tr>
-<td>clk_50_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTP.default_gen_clk</td>
 <td>Generated</td>
 <td>19.943</td>
 <td>50.1</td>
 <td>0.000</td>
 <td>9.972</td>
-<td>clk_100_inst/rpll_inst/CLKOUT</td>
-<td>clk_100_inst/rpll_inst/CLKOUT.default_gen_clk</td>
-<td>clk_50_inst/CLKOUT </td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTP </td>
 </tr>
 <tr>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>Generated</td>
 <td>39.887</td>
 <td>25.1</td>
 <td>0.000</td>
 <td>19.943</td>
-<td>clk_100_inst/rpll_inst/CLKOUT</td>
-<td>clk_100_inst/rpll_inst/CLKOUT.default_gen_clk</td>
-<td>clk_25_inst/CLKOUT </td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD </td>
+</tr>
+<tr>
+<td>clk_50_25/rpll_inst/CLKOUTD3.default_gen_clk</td>
+<td>Generated</td>
+<td>59.830</td>
+<td>16.7</td>
+<td>0.000</td>
+<td>29.915</td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD3 </td>
 </tr>
 <tr>
 <td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
@@ -433,8 +484,8 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>125.4</td>
 <td>0.000</td>
 <td>3.989</td>
-<td>clk_25_inst/CLKOUT</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD</td>
+<td>clk_50_25/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>clk_125_inst/rpll_inst/CLKOUT </td>
 </tr>
 <tr>
@@ -444,8 +495,8 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>125.4</td>
 <td>0.000</td>
 <td>3.989</td>
-<td>clk_25_inst/CLKOUT</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD</td>
+<td>clk_50_25/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>clk_125_inst/rpll_inst/CLKOUTP </td>
 </tr>
 <tr>
@@ -455,8 +506,8 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>62.7</td>
 <td>0.000</td>
 <td>7.977</td>
-<td>clk_25_inst/CLKOUT</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD</td>
+<td>clk_50_25/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>clk_125_inst/rpll_inst/CLKOUTD </td>
 </tr>
 <tr>
@@ -466,31 +517,9 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td>41.8</td>
 <td>0.000</td>
 <td>11.966</td>
-<td>clk_25_inst/CLKOUT</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_25/rpll_inst/CLKOUTD</td>
+<td>clk_50_25/rpll_inst/CLKOUTD.default_gen_clk</td>
 <td>clk_125_inst/rpll_inst/CLKOUTD3 </td>
-</tr>
-<tr>
-<td>clk_7_inst/CLKOUT.default_gen_clk</td>
-<td>Generated</td>
-<td>139.604</td>
-<td>7.2</td>
-<td>0.000</td>
-<td>69.802</td>
-<td>clk_25_inst/CLKOUT</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
-<td>clk_7_inst/CLKOUT </td>
-</tr>
-<tr>
-<td>clk_3_inst/CLKOUT.default_gen_clk</td>
-<td>Generated</td>
-<td>279.207</td>
-<td>3.6</td>
-<td>0.000</td>
-<td>139.604</td>
-<td>clk_7_inst/CLKOUT</td>
-<td>clk_7_inst/CLKOUT.default_gen_clk</td>
-<td>clk_3_inst/CLKOUT </td>
 </tr>
 </table>
 <h2><a name="performance">Max Frequency Summary:</a></h2>
@@ -505,42 +534,34 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td>1</td>
-<td>clk_audio_w</td>
+<td>clk_25_w</td>
 <td>50.0(MHz)</td>
-<td>278.0(MHz)</td>
-<td>3</td>
+<td>73.4(MHz)</td>
+<td>9</td>
 <td>TOP</td>
 </tr>
 <tr>
 <td>2</td>
-<td>clk_50_inst/CLKOUT.default_gen_clk</td>
-<td>50.1(MHz)</td>
-<td>73.9(MHz)</td>
-<td>10</td>
+<td>clk_125_w</td>
+<td>50.0(MHz)</td>
+<td>116.4(MHz)</td>
+<td>6</td>
 <td>TOP</td>
 </tr>
 <tr>
 <td>3</td>
-<td>clk_25_inst/CLKOUT.default_gen_clk</td>
-<td>25.1(MHz)</td>
-<td>72.8(MHz)</td>
+<td>clk_50_w</td>
+<td>50.0(MHz)</td>
+<td>75.4(MHz)</td>
 <td>10</td>
 <td>TOP</td>
 </tr>
 <tr>
 <td>4</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
-<td>125.4(MHz)</td>
-<td>109.1(MHz)</td>
-<td>6</td>
-<td>TOP</td>
-</tr>
-<tr>
-<td>5</td>
-<td>clk_3_inst/CLKOUT.default_gen_clk</td>
-<td>3.6(MHz)</td>
-<td>342.8(MHz)</td>
-<td>2</td>
+<td>clk_audio_w</td>
+<td>50.0(MHz)</td>
+<td>278.0(MHz)</td>
+<td>3</td>
 <td>TOP</td>
 </tr>
 </table>
@@ -550,31 +571,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.189</td>
+<td>6.272</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>10.337</td>
+<td>13.661</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>9.148</td>
+<td>19.933</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>SPI_MCP3202/sample_counter_3_s0</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>SPI_MCP3202/sample_counter_9_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_5_s</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_50_w[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_25_w[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -593,119 +614,215 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_w</td>
 </tr>
 <tr>
-<td>1.208</td>
-<td>1.208</td>
+<td>0.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>1671</td>
+<td>clk_50_bufg_inst/O</td>
 </tr>
 <tr>
-<td>1.571</td>
+<td>0.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_3_s0/CLK</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/CLK</td>
 </tr>
 <tr>
-<td>2.029</td>
+<td>0.821</td>
 <td>0.458</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>13</td>
-<td>SPI_MCP3202/sample_counter_3_s0/Q</td>
+<td>5</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/Q</td>
 </tr>
 <tr>
-<td>2.509</td>
+<td>1.301</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n14_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/I1</td>
 </tr>
 <tr>
-<td>3.608</td>
+<td>2.400</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n14_s4/F</td>
+<td>128</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/F</td>
 </tr>
 <tr>
-<td>4.088</td>
+<td>2.880</td>
 <td>0.480</td>
 <td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n12_s6/I1</td>
-</tr>
-<tr>
-<td>5.187</td>
-<td>1.099</td>
-<td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>SPI_MCP3202/n12_s6/F</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/AD[2]</td>
 </tr>
 <tr>
-<td>5.667</td>
+<td>3.140</td>
+<td>0.259</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/DO[3]</td>
+</tr>
+<tr>
+<td>3.620</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n12_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/I1</td>
 </tr>
 <tr>
-<td>6.766</td>
+<td>4.719</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n12_s4/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/F</td>
 </tr>
 <tr>
-<td>7.246</td>
+<td>5.199</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n9_s5/I0</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/I1</td>
 </tr>
 <tr>
-<td>8.278</td>
+<td>5.348</td>
+<td>0.149</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/O</td>
+</tr>
+<tr>
+<td>5.828</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/I0</td>
+</tr>
+<tr>
+<td>5.991</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/O</td>
+</tr>
+<tr>
+<td>6.471</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/I0</td>
+</tr>
+<tr>
+<td>6.634</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/O</td>
+</tr>
+<tr>
+<td>7.114</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/I0</td>
+</tr>
+<tr>
+<td>7.277</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/O</td>
+</tr>
+<tr>
+<td>7.757</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/I1</td>
+</tr>
+<tr>
+<td>8.856</td>
+<td>1.099</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/F</td>
+</tr>
+<tr>
+<td>9.336</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/I0</td>
+</tr>
+<tr>
+<td>10.368</td>
 <td>1.032</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n9_s5/F</td>
+<td>6</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/F</td>
 </tr>
 <tr>
-<td>8.758</td>
+<td>10.847</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n9_s3/I1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s1/I2</td>
 </tr>
 <tr>
-<td>9.857</td>
-<td>1.099</td>
+<td>11.670</td>
+<td>0.822</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n9_s3/F</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s1/F</td>
 </tr>
 <tr>
-<td>10.337</td>
+<td>12.149</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_9_s0/D</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s0/I0</td>
+</tr>
+<tr>
+<td>13.181</td>
+<td>1.032</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s0/F</td>
+</tr>
+<tr>
+<td>13.661</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_5_s/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -719,36 +836,44 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>7.977</td>
+<td>20.000</td>
 <td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_25_w</td>
 </tr>
 <tr>
-<td>9.185</td>
-<td>1.208</td>
+<td>20.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>702</td>
+<td>clk_25_bufg_inst/O</td>
 </tr>
 <tr>
-<td>9.548</td>
+<td>20.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_9_s0/CLK</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_5_s/CLK</td>
 </tr>
 <tr>
-<td>9.148</td>
+<td>20.333</td>
+<td>-0.030</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_5_s</td>
+</tr>
+<tr>
+<td>19.933</td>
 <td>-0.400</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_9_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_5_s</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -759,16 +884,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>7.977</td>
+<td>20.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>9</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.428, 61.919%; route: 2.880, 32.853%; tC2Q: 0.458, 5.228%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 7.080, 53.240%; route: 5.760, 43.313%; tC2Q: 0.458, 3.447%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 </table>
@@ -778,31 +903,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-1.189</td>
+<td>6.272</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>10.337</td>
+<td>13.661</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>9.148</td>
+<td>19.933</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>SPI_MCP3202/sample_counter_3_s0</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>SPI_MCP3202/sample_counter_10_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_4_s</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_50_w[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_25_w[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -821,119 +946,215 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_w</td>
 </tr>
 <tr>
-<td>1.208</td>
-<td>1.208</td>
+<td>0.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>1671</td>
+<td>clk_50_bufg_inst/O</td>
 </tr>
 <tr>
-<td>1.571</td>
+<td>0.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_3_s0/CLK</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/CLK</td>
 </tr>
 <tr>
-<td>2.029</td>
+<td>0.821</td>
 <td>0.458</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>13</td>
-<td>SPI_MCP3202/sample_counter_3_s0/Q</td>
+<td>5</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/Q</td>
 </tr>
 <tr>
-<td>2.509</td>
+<td>1.301</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n14_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/I1</td>
 </tr>
 <tr>
-<td>3.608</td>
+<td>2.400</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n14_s4/F</td>
+<td>128</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/F</td>
 </tr>
 <tr>
-<td>4.088</td>
+<td>2.880</td>
 <td>0.480</td>
 <td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n12_s6/I1</td>
-</tr>
-<tr>
-<td>5.187</td>
-<td>1.099</td>
-<td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>SPI_MCP3202/n12_s6/F</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/AD[2]</td>
 </tr>
 <tr>
-<td>5.667</td>
+<td>3.140</td>
+<td>0.259</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/DO[3]</td>
+</tr>
+<tr>
+<td>3.620</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n12_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/I1</td>
 </tr>
 <tr>
-<td>6.766</td>
+<td>4.719</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n12_s4/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/F</td>
 </tr>
 <tr>
-<td>7.246</td>
+<td>5.199</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n9_s5/I0</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/I1</td>
 </tr>
 <tr>
-<td>8.278</td>
+<td>5.348</td>
+<td>0.149</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/O</td>
+</tr>
+<tr>
+<td>5.828</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/I0</td>
+</tr>
+<tr>
+<td>5.991</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/O</td>
+</tr>
+<tr>
+<td>6.471</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/I0</td>
+</tr>
+<tr>
+<td>6.634</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/O</td>
+</tr>
+<tr>
+<td>7.114</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/I0</td>
+</tr>
+<tr>
+<td>7.277</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/O</td>
+</tr>
+<tr>
+<td>7.757</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/I1</td>
+</tr>
+<tr>
+<td>8.856</td>
+<td>1.099</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/F</td>
+</tr>
+<tr>
+<td>9.336</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/I0</td>
+</tr>
+<tr>
+<td>10.368</td>
 <td>1.032</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n9_s5/F</td>
+<td>6</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/F</td>
 </tr>
 <tr>
-<td>8.758</td>
+<td>10.847</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n8_s3/I1</td>
+<td>f18a_core_inst/inst_color/addr2_next_1_s1/I2</td>
 </tr>
 <tr>
-<td>9.857</td>
-<td>1.099</td>
+<td>11.670</td>
+<td>0.822</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n8_s3/F</td>
+<td>f18a_core_inst/inst_color/addr2_next_1_s1/F</td>
 </tr>
 <tr>
-<td>10.337</td>
+<td>12.149</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_10_s0/D</td>
+<td>f18a_core_inst/inst_color/addr2_next_1_s0/I0</td>
+</tr>
+<tr>
+<td>13.181</td>
+<td>1.032</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_color/addr2_next_1_s0/F</td>
+</tr>
+<tr>
+<td>13.661</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_4_s/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -947,36 +1168,44 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>7.977</td>
+<td>20.000</td>
 <td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_25_w</td>
 </tr>
 <tr>
-<td>9.185</td>
-<td>1.208</td>
+<td>20.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>702</td>
+<td>clk_25_bufg_inst/O</td>
 </tr>
 <tr>
-<td>9.548</td>
+<td>20.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_10_s0/CLK</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_4_s/CLK</td>
 </tr>
 <tr>
-<td>9.148</td>
+<td>20.333</td>
+<td>-0.030</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_4_s</td>
+</tr>
+<tr>
+<td>19.933</td>
 <td>-0.400</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_10_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_4_s</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -987,16 +1216,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>7.977</td>
+<td>20.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>9</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.428, 61.919%; route: 2.880, 32.853%; tC2Q: 0.458, 5.228%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 7.080, 53.240%; route: 5.760, 43.313%; tC2Q: 0.458, 3.447%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 </table>
@@ -1006,31 +1235,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-0.912</td>
+<td>6.272</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>10.060</td>
+<td>13.661</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>9.148</td>
+<td>19.933</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>SPI_MCP3202/sample_counter_3_s0</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>SPI_MCP3202/r_STATE_1_s1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_3_s</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_50_w[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_25_w[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -1049,119 +1278,215 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_w</td>
 </tr>
 <tr>
-<td>1.208</td>
-<td>1.208</td>
+<td>0.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>1671</td>
+<td>clk_50_bufg_inst/O</td>
 </tr>
 <tr>
-<td>1.571</td>
+<td>0.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_3_s0/CLK</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/CLK</td>
 </tr>
 <tr>
-<td>2.029</td>
+<td>0.821</td>
 <td>0.458</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>13</td>
-<td>SPI_MCP3202/sample_counter_3_s0/Q</td>
+<td>5</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/Q</td>
 </tr>
 <tr>
-<td>2.509</td>
+<td>1.301</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n14_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/I1</td>
 </tr>
 <tr>
-<td>3.608</td>
+<td>2.400</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n14_s4/F</td>
+<td>128</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/F</td>
 </tr>
 <tr>
-<td>4.088</td>
+<td>2.880</td>
 <td>0.480</td>
 <td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n12_s6/I1</td>
-</tr>
-<tr>
-<td>5.187</td>
-<td>1.099</td>
-<td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>SPI_MCP3202/n12_s6/F</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/AD[2]</td>
 </tr>
 <tr>
-<td>5.667</td>
+<td>3.140</td>
+<td>0.259</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/DO[3]</td>
+</tr>
+<tr>
+<td>3.620</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n12_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/I1</td>
 </tr>
 <tr>
-<td>6.766</td>
+<td>4.719</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n12_s4/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/F</td>
 </tr>
 <tr>
-<td>7.246</td>
+<td>5.199</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n257_s6/I2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/I1</td>
 </tr>
 <tr>
-<td>8.068</td>
-<td>0.822</td>
+<td>5.348</td>
+<td>0.149</td>
 <td>tINS</td>
 <td>FF</td>
-<td>4</td>
-<td>SPI_MCP3202/n257_s6/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/O</td>
 </tr>
 <tr>
-<td>8.548</td>
+<td>5.828</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n303_s6/I0</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/I0</td>
 </tr>
 <tr>
-<td>9.580</td>
+<td>5.991</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/O</td>
+</tr>
+<tr>
+<td>6.471</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/I0</td>
+</tr>
+<tr>
+<td>6.634</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/O</td>
+</tr>
+<tr>
+<td>7.114</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/I0</td>
+</tr>
+<tr>
+<td>7.277</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/O</td>
+</tr>
+<tr>
+<td>7.757</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/I1</td>
+</tr>
+<tr>
+<td>8.856</td>
+<td>1.099</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/F</td>
+</tr>
+<tr>
+<td>9.336</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/I0</td>
+</tr>
+<tr>
+<td>10.368</td>
 <td>1.032</td>
 <td>tINS</td>
 <td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n303_s6/F</td>
+<td>6</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/F</td>
 </tr>
 <tr>
-<td>10.060</td>
+<td>10.847</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/r_STATE_1_s1/D</td>
+<td>f18a_core_inst/inst_color/addr2_next_2_s1/I2</td>
+</tr>
+<tr>
+<td>11.670</td>
+<td>0.822</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_2_s1/F</td>
+</tr>
+<tr>
+<td>12.149</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_2_s0/I0</td>
+</tr>
+<tr>
+<td>13.181</td>
+<td>1.032</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_color/addr2_next_2_s0/F</td>
+</tr>
+<tr>
+<td>13.661</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_3_s/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1175,36 +1500,44 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>7.977</td>
+<td>20.000</td>
 <td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_25_w</td>
 </tr>
 <tr>
-<td>9.185</td>
-<td>1.208</td>
+<td>20.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>702</td>
+<td>clk_25_bufg_inst/O</td>
 </tr>
 <tr>
-<td>9.548</td>
+<td>20.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/r_STATE_1_s1/CLK</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_3_s/CLK</td>
 </tr>
 <tr>
-<td>9.148</td>
+<td>20.333</td>
+<td>-0.030</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_3_s</td>
+</tr>
+<tr>
+<td>19.933</td>
 <td>-0.400</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>SPI_MCP3202/r_STATE_1_s1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_3_s</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1215,16 +1548,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>7.977</td>
+<td>20.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>9</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.151, 60.676%; route: 2.880, 33.925%; tC2Q: 0.458, 5.399%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 7.080, 53.240%; route: 5.760, 43.313%; tC2Q: 0.458, 3.447%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 </table>
@@ -1234,31 +1567,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-0.912</td>
+<td>6.272</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>10.060</td>
+<td>13.661</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>9.148</td>
+<td>19.933</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>SPI_MCP3202/sample_counter_3_s0</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>SPI_MCP3202/r_MOSI_s1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_2_s</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_50_w[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_25_w[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -1277,119 +1610,215 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_w</td>
 </tr>
 <tr>
-<td>1.208</td>
-<td>1.208</td>
+<td>0.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>1671</td>
+<td>clk_50_bufg_inst/O</td>
 </tr>
 <tr>
-<td>1.571</td>
+<td>0.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_3_s0/CLK</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/CLK</td>
 </tr>
 <tr>
-<td>2.029</td>
+<td>0.821</td>
 <td>0.458</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>13</td>
-<td>SPI_MCP3202/sample_counter_3_s0/Q</td>
+<td>5</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/Q</td>
 </tr>
 <tr>
-<td>2.509</td>
+<td>1.301</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n14_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/I1</td>
 </tr>
 <tr>
-<td>3.608</td>
+<td>2.400</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n14_s4/F</td>
+<td>128</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/F</td>
 </tr>
 <tr>
-<td>4.088</td>
+<td>2.880</td>
 <td>0.480</td>
 <td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n12_s6/I1</td>
-</tr>
-<tr>
-<td>5.187</td>
-<td>1.099</td>
-<td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>SPI_MCP3202/n12_s6/F</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/AD[2]</td>
 </tr>
 <tr>
-<td>5.667</td>
+<td>3.140</td>
+<td>0.259</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/DO[3]</td>
+</tr>
+<tr>
+<td>3.620</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n12_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/I1</td>
 </tr>
 <tr>
-<td>6.766</td>
+<td>4.719</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n12_s4/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/F</td>
 </tr>
 <tr>
-<td>7.246</td>
+<td>5.199</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n257_s6/I2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/I1</td>
 </tr>
 <tr>
-<td>8.068</td>
-<td>0.822</td>
+<td>5.348</td>
+<td>0.149</td>
 <td>tINS</td>
 <td>FF</td>
-<td>4</td>
-<td>SPI_MCP3202/n257_s6/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/O</td>
 </tr>
 <tr>
-<td>8.548</td>
+<td>5.828</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n257_s5/I0</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/I0</td>
 </tr>
 <tr>
-<td>9.580</td>
+<td>5.991</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/O</td>
+</tr>
+<tr>
+<td>6.471</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/I0</td>
+</tr>
+<tr>
+<td>6.634</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/O</td>
+</tr>
+<tr>
+<td>7.114</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/I0</td>
+</tr>
+<tr>
+<td>7.277</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/O</td>
+</tr>
+<tr>
+<td>7.757</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/I1</td>
+</tr>
+<tr>
+<td>8.856</td>
+<td>1.099</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/F</td>
+</tr>
+<tr>
+<td>9.336</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/I0</td>
+</tr>
+<tr>
+<td>10.368</td>
 <td>1.032</td>
 <td>tINS</td>
 <td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n257_s5/F</td>
+<td>6</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/F</td>
 </tr>
 <tr>
-<td>10.060</td>
+<td>10.847</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/r_MOSI_s1/D</td>
+<td>f18a_core_inst/inst_color/addr2_next_3_s1/I2</td>
+</tr>
+<tr>
+<td>11.670</td>
+<td>0.822</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_3_s1/F</td>
+</tr>
+<tr>
+<td>12.149</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_3_s0/I0</td>
+</tr>
+<tr>
+<td>13.181</td>
+<td>1.032</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_color/addr2_next_3_s0/F</td>
+</tr>
+<tr>
+<td>13.661</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_2_s/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1403,36 +1832,44 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>7.977</td>
+<td>20.000</td>
 <td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_25_w</td>
 </tr>
 <tr>
-<td>9.185</td>
-<td>1.208</td>
+<td>20.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>702</td>
+<td>clk_25_bufg_inst/O</td>
 </tr>
 <tr>
-<td>9.548</td>
+<td>20.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/r_MOSI_s1/CLK</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_2_s/CLK</td>
 </tr>
 <tr>
-<td>9.148</td>
+<td>20.333</td>
+<td>-0.030</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_2_s</td>
+</tr>
+<tr>
+<td>19.933</td>
 <td>-0.400</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>SPI_MCP3202/r_MOSI_s1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_2_s</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1443,16 +1880,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>7.977</td>
+<td>20.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>9</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.151, 60.676%; route: 2.880, 33.925%; tC2Q: 0.458, 5.399%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 7.080, 53.240%; route: 5.760, 43.313%; tC2Q: 0.458, 3.447%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 </table>
@@ -1462,31 +1899,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>-0.912</td>
+<td>6.272</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>10.060</td>
+<td>13.661</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
-<td>9.148</td>
+<td>19.933</td>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>SPI_MCP3202/sample_counter_3_s0</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>SPI_MCP3202/sample_counter_11_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_1_s</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_50_w[R]</td>
 </tr>
 <tr>
 <td class="label">Latch Clk</td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk[R]</td>
+<td>clk_25_w[R]</td>
 </tr>
 </table>
 <b>Data Arrival Path:</b>
@@ -1505,119 +1942,215 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_50_w</td>
 </tr>
 <tr>
-<td>1.208</td>
-<td>1.208</td>
+<td>0.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>1671</td>
+<td>clk_50_bufg_inst/O</td>
 </tr>
 <tr>
-<td>1.571</td>
+<td>0.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_3_s0/CLK</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/CLK</td>
 </tr>
 <tr>
-<td>2.029</td>
+<td>0.821</td>
 <td>0.458</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>13</td>
-<td>SPI_MCP3202/sample_counter_3_s0/Q</td>
+<td>5</td>
+<td>f18a_core_inst/inst_tiles/x_linebuf_r_6_s0/Q</td>
 </tr>
 <tr>
-<td>2.509</td>
+<td>1.301</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n14_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/I1</td>
 </tr>
 <tr>
-<td>3.608</td>
+<td>2.400</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n14_s4/F</td>
+<td>128</td>
+<td>f18a_core_inst/inst_tiles/addr2_6_s0/F</td>
 </tr>
 <tr>
-<td>4.088</td>
+<td>2.880</td>
 <td>0.480</td>
 <td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>SPI_MCP3202/n12_s6/I1</td>
-</tr>
-<tr>
-<td>5.187</td>
-<td>1.099</td>
-<td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>SPI_MCP3202/n12_s6/F</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/AD[2]</td>
 </tr>
 <tr>
-<td>5.667</td>
+<td>3.140</td>
+<td>0.259</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_linebuf2_24_1_s/DO[3]</td>
+</tr>
+<tr>
+<td>3.620</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n12_s4/I1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/I1</td>
 </tr>
 <tr>
-<td>6.766</td>
+<td>4.719</td>
 <td>1.099</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n12_s4/F</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s16/F</td>
 </tr>
 <tr>
-<td>7.246</td>
+<td>5.199</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n9_s5/I0</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/I1</td>
 </tr>
 <tr>
-<td>8.278</td>
+<td>5.348</td>
+<td>0.149</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s7/O</td>
+</tr>
+<tr>
+<td>5.828</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/I0</td>
+</tr>
+<tr>
+<td>5.991</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s3/O</td>
+</tr>
+<tr>
+<td>6.471</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/I0</td>
+</tr>
+<tr>
+<td>6.634</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s1/O</td>
+</tr>
+<tr>
+<td>7.114</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/I0</td>
+</tr>
+<tr>
+<td>7.277</td>
+<td>0.163</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_tiles/inst_linebuf/linebuf2_DOL_217_G[0]_s0/O</td>
+</tr>
+<tr>
+<td>7.757</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/I1</td>
+</tr>
+<tr>
+<td>8.856</td>
+<td>1.099</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s8/F</td>
+</tr>
+<tr>
+<td>9.336</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/I0</td>
+</tr>
+<tr>
+<td>10.368</td>
 <td>1.032</td>
 <td>tINS</td>
 <td>FF</td>
-<td>3</td>
-<td>SPI_MCP3202/n9_s5/F</td>
+<td>6</td>
+<td>f18a_core_inst/inst_color/addr2_next_0_s5/F</td>
 </tr>
 <tr>
-<td>8.758</td>
+<td>10.847</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n7_s2/I2</td>
+<td>f18a_core_inst/inst_color/addr2_next_4_s1/I2</td>
 </tr>
 <tr>
-<td>9.580</td>
+<td>11.670</td>
 <td>0.822</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/n7_s2/F</td>
+<td>f18a_core_inst/inst_color/addr2_next_4_s1/F</td>
 </tr>
 <tr>
-<td>10.060</td>
+<td>12.149</td>
 <td>0.480</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_11_s0/D</td>
+<td>f18a_core_inst/inst_color/addr2_next_4_s0/I0</td>
+</tr>
+<tr>
+<td>13.181</td>
+<td>1.032</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>f18a_core_inst/inst_color/addr2_next_4_s0/F</td>
+</tr>
+<tr>
+<td>13.661</td>
+<td>0.480</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_1_s/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1631,36 +2164,44 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 <th>NODE</th>
 </tr>
 <tr>
-<td>7.977</td>
+<td>20.000</td>
 <td>0.000</td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td>clk_125_inst/rpll_inst/CLKOUT.default_gen_clk</td>
+<td>clk_25_w</td>
 </tr>
 <tr>
-<td>9.185</td>
-<td>1.208</td>
+<td>20.000</td>
+<td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>38</td>
-<td>clk_125_inst/rpll_inst/CLKOUT</td>
+<td>702</td>
+<td>clk_25_bufg_inst/O</td>
 </tr>
 <tr>
-<td>9.548</td>
+<td>20.363</td>
 <td>0.363</td>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_11_s0/CLK</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_1_s/CLK</td>
 </tr>
 <tr>
-<td>9.148</td>
+<td>20.333</td>
+<td>-0.030</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_1_s</td>
+</tr>
+<tr>
+<td>19.933</td>
 <td>-0.400</td>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>SPI_MCP3202/sample_counter_11_s0</td>
+<td>f18a_core_inst/inst_color/colram_tile_b_s[3]_ADBREG_G_1_s</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1671,16 +2212,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd<br>
 </tr>
 <tr>
 <td class="label">Setup Relationship:</td>
-<td>7.977</td>
+<td>20.000</td>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>6</td>
+<td>9</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.151, 60.676%; route: 2.880, 33.925%; tC2Q: 0.458, 5.399%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 7.080, 53.240%; route: 5.760, 43.313%; tC2Q: 0.458, 3.447%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.363, 100.000%</td></tr>
 </table>

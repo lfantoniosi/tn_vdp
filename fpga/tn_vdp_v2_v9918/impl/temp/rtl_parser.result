@@ -1,5 +1,13 @@
 [
  {
+  "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_100.v",
+  "InstLine" : 10,
+  "InstName" : "CLK_100",
+  "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_100.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "CLK_100"
+ },
+ {
   "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
   "InstLine" : 44,
   "InstName" : "top",
@@ -9,15 +17,15 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
-    "InstLine" : 106,
-    "InstName" : "clk_100_inst",
-    "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_100.v",
+    "InstLine" : 100,
+    "InstName" : "clk_50_25",
+    "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_50_25.v",
     "ModuleLine" : 10,
-    "ModuleName" : "CLK_100"
+    "ModuleName" : "CLK_50_25"
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
-    "InstLine" : 131,
+    "InstLine" : 108,
     "InstName" : "clk_125_inst",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_125.v",
     "ModuleLine" : 10,
@@ -25,7 +33,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
-    "InstLine" : 179,
+    "InstLine" : 155,
     "InstName" : "f18a_core_inst",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
     "ModuleLine" : 63,
@@ -33,7 +41,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 259,
+      "InstLine" : 266,
       "InstName" : "inst_vram",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vram.vhd",
       "ModuleLine" : 56,
@@ -51,7 +59,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 278,
+      "InstLine" : 285,
       "InstName" : "inst_cpu",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_cpu.vhd",
       "ModuleLine" : 56,
@@ -79,7 +87,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 369,
+      "InstLine" : 376,
       "InstName" : "inst_vga_cont",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vga_cont_640_60.vhd",
       "ModuleLine" : 53,
@@ -87,7 +95,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 384,
+      "InstLine" : 391,
       "InstName" : "inst_counters",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_counters.vhd",
       "ModuleLine" : 57,
@@ -95,7 +103,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 414,
+      "InstLine" : 421,
       "InstName" : "inst_tiles",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_tiles.vhd",
       "ModuleLine" : 55,
@@ -113,7 +121,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 473,
+      "InstLine" : 480,
       "InstName" : "inst_sprites",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_sprites.vhd",
       "ModuleLine" : 58,
@@ -121,7 +129,7 @@
      },
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 510,
+      "InstLine" : 517,
       "InstName" : "inst_color",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_color.vhd",
       "ModuleLine" : 56,
@@ -131,7 +139,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
-    "InstLine" : 264,
+    "InstLine" : 285,
     "InstName" : "hdmi",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/hdmi/hdmi.sv",
     "ModuleLine" : 4,
@@ -231,7 +239,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/top.v",
-    "InstLine" : 290,
+    "InstLine" : 311,
     "InstName" : "SPI_MCP3202",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/SPI_MCP3202.v",
     "ModuleLine" : 20,
@@ -246,122 +254,6 @@
   "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_single_port_ram.vhd",
   "ModuleLine" : 55,
   "ModuleName" : "f18a_single_port_ram"
- },
- {
-  "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_top.vhd",
-  "InstLine" : 54,
-  "InstName" : "f18a_top",
-  "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_top.vhd",
-  "ModuleLine" : 54,
-  "ModuleName" : "f18a_top",
-  "SubInsts" : [
-   {
-    "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_top.vhd",
-    "InstLine" : 165,
-    "InstName" : "inst_f18a",
-    "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-    "ModuleLine" : 63,
-    "ModuleName" : "f18a_core",
-    "SubInsts" : [
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 259,
-      "InstName" : "inst_vram",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vram.vhd",
-      "ModuleLine" : 56,
-      "ModuleName" : "f18a_vram",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vram.vhd",
-        "InstLine" : 81,
-        "InstName" : "inst_ram",
-        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/ram16k.v",
-        "ModuleLine" : 1,
-        "ModuleName" : "ram16k"
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 278,
-      "InstName" : "inst_cpu",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_cpu.vhd",
-      "ModuleLine" : 56,
-      "ModuleName" : "f18a_cpu",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_cpu.vhd",
-        "InstLine" : 1078,
-        "InstName" : "inst_gpu",
-        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_gpu.vhd",
-        "ModuleLine" : 86,
-        "ModuleName" : "f18a_gpu",
-        "SubInsts" : [
-         {
-          "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_gpu.vhd",
-          "InstLine" : 1527,
-          "InstName" : "inst_divide",
-          "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_div32x16.vhd",
-          "ModuleLine" : 57,
-          "ModuleName" : "f18a_div32x16"
-         }
-        ]
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 369,
-      "InstName" : "inst_vga_cont",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_vga_cont_640_60.vhd",
-      "ModuleLine" : 53,
-      "ModuleName" : "f18a_vga_cont_640_60"
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 384,
-      "InstName" : "inst_counters",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_counters.vhd",
-      "ModuleLine" : 57,
-      "ModuleName" : "f18a_counters"
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 414,
-      "InstName" : "inst_tiles",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_tiles.vhd",
-      "ModuleLine" : 55,
-      "ModuleName" : "f18a_tiles",
-      "SubInsts" : [
-       {
-        "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_tiles.vhd",
-        "InstLine" : 336,
-        "InstName" : "inst_linebuf",
-        "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_tile_linebuf.vhd",
-        "ModuleLine" : 84,
-        "ModuleName" : "f18a_tile_linebuf"
-       }
-      ]
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 473,
-      "InstName" : "inst_sprites",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_sprites.vhd",
-      "ModuleLine" : 58,
-      "ModuleName" : "f18a_sprites"
-     },
-     {
-      "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_core.vhd",
-      "InstLine" : 510,
-      "InstName" : "inst_color",
-      "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_color.vhd",
-      "ModuleLine" : 56,
-      "ModuleName" : "f18a_color"
-     }
-    ]
-   }
-  ]
  },
  {
   "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_version.vhd",

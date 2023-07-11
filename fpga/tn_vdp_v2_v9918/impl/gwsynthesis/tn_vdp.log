@@ -3,6 +3,7 @@ Running parser ...
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_100.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_125.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_50_25.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_clock_regeneration_packet.sv'
 WARN  (EX2478) : Non-net output port 'clk_audio_counter_wrap' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_clock_regeneration_packet.sv":13)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\audio_info_frame.sv'
@@ -21,9 +22,23 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\tmds_channel
 WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\tmds_channel.sv":16)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\ram16k.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v'
-Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":161)
-Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":271)
-Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":298)
+Undeclared symbol 'clk_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":96)
+Undeclared symbol 'clk_50', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":101)
+Undeclared symbol 'clk_50_lock_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":102)
+Undeclared symbol 'clk_25', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":103)
+Undeclared symbol 'clk_125', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":109)
+Undeclared symbol 'clk_125_lock_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":110)
+Undeclared symbol 'clk_50_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":116)
+Undeclared symbol 'clk_25_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":121)
+Undeclared symbol 'clk_125_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":126)
+Undeclared symbol 'reset_n_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":133)
+Undeclared symbol 'cpuclk_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":199)
+Undeclared symbol 'gromclk_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":220)
+Undeclared symbol 'clk_audio_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":246)
+Undeclared symbol 'tmdsClk', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":292)
+Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":319)
+WARN  (EX2650) : Illegal argument of type real in math function 'clog2()', expected integral type("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":186)
+WARN  (EX2650) : Illegal argument of type real in math function 'clog2()', expected integral type("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":207)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd'
 Analyzing entity 'f18a_color'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":56)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":75)
@@ -53,24 +68,21 @@ Analyzing entity 'f18a_sprites'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_sprites.vhd":94)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_core.vhd'
 Analyzing entity 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_core.vhd":63)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_core.vhd":97)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_core.vhd":101)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_single_port_ram.vhd'
 Analyzing entity 'f18a_single_port_ram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_single_port_ram.vhd":55)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_single_port_ram.vhd":67)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tile_linebuf.vhd'
 Analyzing entity 'f18a_tile_linebuf'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tile_linebuf.vhd":84)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_tile_linebuf.vhd":102)
-Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_top.vhd'
-Analyzing entity 'f18a_top'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_top.vhd":54)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_top.vhd":92)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_version.vhd'
 Analyzing entity 'f18a_version'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_version.vhd":51)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_version.vhd":68)
-WARN  (EX3073) : Port 'screen_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":275)
+WARN  (EX3073) : Port 'screen_width' remains unconnected for this instance("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":296)
 Compiling module 'top'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":44)
-Compiling module 'CLK_100'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_100.v":10)
+Compiling module 'CLK_50_25'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_50_25.v":10)
 Compiling module 'CLK_125'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\gowin\clk_125.v":10)
-Switching to VHDL mode to elaborate design unit 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":198)
+Switching to VHDL mode to elaborate design unit 'f18a_core'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":176)
 Processing 'f18a_core(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_core.vhd":63)
 Processing 'f18a_vram(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd":56)
 Switching to Verilog mode to elaborate module 'ram16k'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_vram.vhd":90)
@@ -105,7 +117,7 @@ Extracting RAM for identifier 'linebuf2'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src
 'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_sprites.vhd":808)
 Processing 'f18a_color(rtl)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":56)
 Extracting RAM for identifier 'colram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\f18a\f18a_color.vhd":81)
-Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":198)
+Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":176)
 Compiling module 'hdmi(VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\hdmi.sv":4)
 Compiling module 'packet_picker(VIDEO_ID_CODE=1,VIDEO_RATE=25174825.1748252,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=44100,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\packet_picker.sv":4)
 Extracting RAM for identifier 'audio_sample_word_buffer'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\packet_picker.sv":80)
@@ -126,9 +138,9 @@ Compiling module 'serializer(VIDEO_RATE=25174825.1748252)'("D:\src\tn_vdp\fpga\t
 Compiling module 'SPI_MCP3202'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v":20)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v":63)
 WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\SPI_MCP3202.v":77)
-WARN  (EX1998) : Net 'blank_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":163)
-WARN  (EX1998) : Net 'hs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":164)
-WARN  (EX1998) : Net 'vs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":165)
+WARN  (EX1998) : Net 'blank_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":135)
+WARN  (EX1998) : Net 'hs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":136)
+WARN  (EX1998) : Net 'vs_w' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\top.v":137)
 NOTE  (EX0101) : Current top module is "top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
@@ -151,7 +163,5 @@ WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_
 WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\packet_picker.sv":137)
 WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\src\hdmi\packet_picker.sv":140)
 [95%] Generate netlist file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\impl\gwsynthesis\tn_vdp.vg" completed
-WARN  (CK3000) : Can't calculate clocks' relationship between: "clk_audio_w" and "clk_25_inst/CLKOUT.default_gen_clk"
-WARN  (CK3000) : Can't calculate clocks' relationship between: "clk_25_inst/CLKOUT.default_gen_clk" and "clk_audio_w"
 [100%] Generate report file "D:\src\tn_vdp\fpga\tn_vdp_v2_v9918\impl\gwsynthesis\tn_vdp_syn.rpt.html" completed
 GowinSynthesis finish

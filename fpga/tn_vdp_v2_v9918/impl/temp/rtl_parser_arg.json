@@ -13,6 +13,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/gowin/clk_50_25.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/hdmi/audio_clock_regeneration_packet.sv",
    "Type" : "verilog"
   },
@@ -108,11 +112,6 @@
   {
    "Library" : "work",
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_tiles.vhd",
-   "Type" : "vhdl"
-  },
-  {
-   "Library" : "work",
-   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v2_v9918/src/f18a/f18a_top.vhd",
    "Type" : "vhdl"
   },
   {

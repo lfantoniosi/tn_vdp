@@ -86,6 +86,7 @@ entity f18a_top is
       spi_mosi_net   : out std_logic;
       spi_miso_net   : in  std_logic;
       spi_clk_net    : out std_logic
+
    );
 end f18a_top;
 

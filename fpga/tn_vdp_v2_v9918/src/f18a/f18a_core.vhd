@@ -90,7 +90,11 @@ entity f18a_core is
       spi_clk_o            : out std_logic;
       spi_cs_o             : out std_logic;
       spi_mosi_o           : out std_logic;
-      spi_miso_i           : in  std_logic
+      spi_miso_i           : in  std_logic;
+
+      cx                   : out std_logic_vector(9 downto 0);
+      cy                   : out std_logic_vector(9 downto 0)
+
    );
 end f18a_core;
 
@@ -237,6 +241,9 @@ architecture rtl of f18a_core is
    signal sprite_max_r     : std_logic_vector(0 to 4) := "11111";
 
 begin
+
+   cx <= std_logic_vector(raster_x_s);
+   cy <= std_logic_vector(raster_y_s);
 
    -- Register external inputs other than those associated with data (which
    -- are registered in the host interface).

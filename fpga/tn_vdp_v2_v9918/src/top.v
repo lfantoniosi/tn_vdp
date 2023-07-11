@@ -82,17 +82,7 @@ module top(
     output  [2:0] tmds_d_n
 );
 
-// clocks
-wire clk_100_w;
-wire clk_100_lock_w;
-wire clk_25_w;
-wire clk_125_w;
-wire clk_125_lock_w;
 wire hdmi_rst_n_w;
-wire clk_50_w;
-
-wire clk_7_w;
-wire clk_3_w;
 
 // hdmi
 wire rgb_vs_w;
@@ -102,61 +92,43 @@ wire [7:0] rgb_r_w;
 wire [7:0] rgb_g_w;
 wire [7:0] rgb_b_w;
 
-
-    CLK_100 clk_100_inst(
-        .clkout(clk_100_w), 
-        .lock(clk_100_lock_w),
-        .reset(~rst_n), 
-        .clkin(clk) 
+    BUFG clk_bufg_inst(
+    .O(clk_w),
+    .I(clk)
     );
 
-    CLKDIV clk_50_inst (
-        .CLKOUT(clk_50_w), 
-        .HCLKIN(clk_100_w), 
-        .RESETN(clk_100_lock_w),
-        .CALIB(1'b1)
+    CLK_50_25 clk_50_25 (
+        .clkout(clk_50), //output clkout
+        .lock(clk_50_lock_w), //output lock
+        .clkoutd(clk_25), //output clkoutd
+        .reset(~rst_n), //input reset
+        .clkin(clk) //input clkin
     );
-    defparam clk_50_inst.DIV_MODE = "2";
-    defparam clk_50_inst.GSREN = "false"; 
-
-    CLKDIV clk_25_inst (
-        .CLKOUT(clk_25_w),
-        .HCLKIN(clk_100_w), 
-        .RESETN(clk_100_lock_w),
-        .CALIB(1'b1)
-    );
-    defparam clk_25_inst.DIV_MODE = "4";
-    defparam clk_25_inst.GSREN = "false"; 
 
     CLK_125 clk_125_inst(
-        .clkout(clk_125_w), //output clkout
+        .clkout(clk_125), //output clkout
         .lock(clk_125_lock_w), //output lock
-        .reset(~clk_100_lock_w), //input reset
-        .clkin(clk_25_w) //input clkin
+        .reset(~clk_50_lock_w), //input reset
+        .clkin(clk_25) //input clkin
     );
 
-
-    CLKDIV clk_7_inst (
-        .CLKOUT(clk_7_w),
-        .HCLKIN(clk_25_w), 
-        .RESETN(clk_100_lock_w),
-        .CALIB(1'b1)
+    BUFG clk_50_bufg_inst(
+    .O(clk_50_w),
+    .I(clk_50)
     );
-    defparam clk_7_inst.DIV_MODE = "3.5";
-    defparam clk_7_inst.GSREN = "false"; 
 
-    CLKDIV clk_3_inst (
-        .CLKOUT(clk_3_w),
-        .HCLKIN(clk_7_w), 
-        .RESETN(clk_100_lock_w),
-        .CALIB(1'b1)
+    BUFG clk_25_bufg_inst(
+    .O(clk_25_w),
+    .I(clk_25)
     );
-    defparam clk_3_inst.DIV_MODE = "2";
-    defparam clk_3_inst.GSREN = "false"; 
 
+    BUFG clk_125_bufg_inst(
+    .O(clk_125_w),
+    .I(clk_125)
+    );
 
 wire rst_n_w;
-assign rst_n_w = rst_n & clk_100_lock_w & clk_125_lock_w;
+assign rst_n_w = rst_n & clk_50_lock_w & clk_125_lock_w;
 
 assign reset_n_w = rst_n_w & reset_n;
 
@@ -176,6 +148,10 @@ assign rgb_de_w = ~blank_w;
 
 wire [0:7] cd_out_s;
 
+wire [9:0] vdp_cx;
+wire [9:0] vdp_cy;
+
+
    f18a_core f18a_core_inst (
       .clk_100m0_i(clk_50_w),
       .clk_25m0_i(clk_25_w),
@@ -194,51 +170,96 @@ wire [0:7] cd_out_s;
       .spi_clk_o(flash_clk),
       .spi_cs_o(flash_cs),
       .spi_mosi_o(flash_mosi),
-      .spi_miso_i(flash_miso)
+      .spi_miso_i(flash_miso),
+      .cx(vdp_cx),
+      .cy(vdp_cy)
    );
 
    assign cd = csr_n ? 8'bzzzzzzzz : cd_out_s;
 
 
-reg [2:0] gromtick;
-always @(posedge clk_3_w or negedge rst_n_w) begin
-    if (rst_n_w == 0) begin
-        gromtick = 3'b0;
-    end 
-    else begin
-        gromtick = gromtick + 3'b1;
+///////////
+
+    localparam CPUCLK_SRCFRQ = 50.0;
+    localparam CPUCLK_FRQ = 315.0/88.0;
+    localparam CPUCLK_DELAY = CPUCLK_SRCFRQ / CPUCLK_FRQ / 2;
+    logic [$clog2(CPUCLK_DELAY)-1:0] cpuclk_divider;
+    logic clk_cpu;
+
+    always_ff@(posedge clk_50_w) 
+    begin
+        if (cpuclk_divider != CPUCLK_DELAY - 1) 
+            cpuclk_divider++;
+        else begin 
+            clk_cpu <= ~clk_cpu; 
+            cpuclk_divider <= 0; 
+        end
     end
-end
+    BUFG clk_cpuclk_bufg_inst(
+    .O(cpuclk_w),
+    .I(clk_cpu)
+    );
 
-wire cpuclk_w;
-assign cpuclk_w = clk_3_w & rst_n_w;
-wire gromclk_w;
-assign gromclk_w = ~gromtick[2];
 
-assign gromclk = gromclk_n ? cpuclk_w: gromclk_w; 
-assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
+    localparam GROMCLK_SRCFRQ = 50.0;
+    localparam GROMCLK_FRQ = 315.0/88.0 / 8.0;
+    localparam GROMCLK_DELAY = GROMCLK_SRCFRQ / GROMCLK_FRQ / 2;
+    logic [$clog2(GROMCLK_DELAY)-1:0] gromclk_divider;
+    logic clk_grom;
 
-    localparam CLKFRQ = 25200;
+    always_ff@(posedge clk_50_w) 
+    begin
+        if (gromclk_divider != GROMCLK_DELAY - 1) 
+            gromclk_divider++;
+        else begin 
+            clk_grom <= ~clk_grom;
+            gromclk_divider <= 0; 
+        end
+    end
+    BUFG clk_gromclk_bufg_inst(
+    .O(gromclk_w),
+    .I(clk_grom)
+    );
+
+    assign gromclk = (gromclk_n ? cpuclk_w: gromclk_w); 
+    assign cpuclk = (cpuclk_n ? 1'bz : cpuclk_w);
+//////////
+
+
+    localparam CLKFRQ = 25071;
     localparam AUDIO_RATE=44100;
     localparam AUDIO_BIT_WIDTH = 16;
     localparam AUDIO_CLK_DELAY = CLKFRQ * 1000 / AUDIO_RATE / 2;
     logic [$clog2(AUDIO_CLK_DELAY)-1:0] audio_divider;
-    logic clk_audio_w;
+    logic clk_audio;
 
     always_ff@(posedge clk_25_w) 
     begin
         if (audio_divider != AUDIO_CLK_DELAY - 1) 
             audio_divider++;
         else begin 
-            clk_audio_w <= ~clk_audio_w; 
+            clk_audio <= ~clk_audio; 
             audio_divider <= 0; 
         end
     end
+    BUFG clk_clock_bufg_inst(
+    .O(clk_audio_w),
+    .I(clk_audio)
+    );
 
     ////
     logic[2:0] tmds;
     wire [9:0] cy, frameHeight;
     wire [9:0] cx, frameWidth;
+    
+    logic hdmi_reset = 1'b0;
+    always @(posedge clk_25_w) begin
+        hdmi_reset <= 1'b0;
+        if (vdp_cx == 9'b0 && vdp_cy == 9'b0) begin
+            if (vdp_cx != cx || vdp_cy != cy) 
+                hdmi_reset <= 1'b1;
+        end
+    end
 
     reg [15:0] sample; 
     reg [15:0] audio_sample_word [1:0], audio_sample_word0 [1:0];
@@ -265,7 +286,7 @@ assign cpuclk = cpuclk_n ? 1'bz : cpuclk_w;
           .clk_pixel(clk_25_w), 
           .clk_audio(clk_audio_w),
           .rgb({rgb_r_w, rgb_g_w, rgb_b_w}), 
-          .reset( ~reset_n_w ),
+          .reset( ~reset_n_w | hdmi_reset ),
           .audio_sample_word(audio_sample_word),
           .tmds(tmds), 
           .tmds_clock(tmdsClk), 

@@ -1,8 +1,8 @@
-//Copyright (C)2014-2022 Gowin Semiconductor Corporation.
+//Copyright (C)2014-2023 Gowin Semiconductor Corporation.
 //All rights reserved.
 //File Title: Post-PnR Simulation Model file
-//GOWIN Version: V1.9.8.10
-//Created Time: Fri Apr 14 18:50:34 2023
+//GOWIN Version: V1.9.8.11 Education
+//Created Time: Mon Jul 10 00:27:47 2023
 
 `timescale 100 ps/100 ps
 module DVI_TX(
