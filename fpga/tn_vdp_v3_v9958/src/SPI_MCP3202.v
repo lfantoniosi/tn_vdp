@@ -25,9 +25,8 @@ module SPI_MCP3202 #( // set up bits for MOSI (DIN on datasheet)
 	input EN,                  // Enable the SPI core (ACTIVE HIGH)
 	input MISO,                // data out of ADC (Dout pin)
 	output MOSI,               // Data into ADC (Din pin)
-//	output SCK, 	           // SPI clock
-	output SCK_ENA,
-    output [11:0] o_DATA,      // 12 bit word (for other modules)
+	output SCK, 	           // SPI clock
+	output [11:0] o_DATA,      // 12 bit word (for other modules)
 	output CS,                 // Chip Select
 	output DATA_VALID          // is high when there is a full 12 bit word. 
 	);
@@ -43,7 +42,7 @@ module SPI_MCP3202 #( // set up bits for MOSI (DIN on datasheet)
 	
 	integer i = 0;                  // for the for loop in the TRANSMITTING state (used to condense code)
 	
-//	reg [7:0] SCK_counter = 0;       // for the output SPI clock
+	reg [7:0] SCK_counter = 0;       // for the output SPI clock
 	reg r_MOSI = 0; 
 	reg [11:0] r_DATA;
 	reg [1:0] r_STATE = DISABLE;     // state machine (init to disable state)
@@ -70,19 +69,17 @@ module SPI_MCP3202 #( // set up bits for MOSI (DIN on datasheet)
 		end   // end sample_counter
 		
 	// SPI_CLK
-//	always @ (posedge clk)
-//		begin 
-//		  	if (r_SCK_enable && SCK_counter <= 148)              /* 140 counts (0-139) @ 8ns system clock period 
-//													                is 893 KHz, < SCK max frequency of 0.9 MHz (datasheet) */
+	always @ (posedge clk)
+		begin 
+		  	if (r_SCK_enable && SCK_counter <= 138)              /* 140 counts (0-139) @ 8ns system clock period 
+													                is 893 KHz, < SCK max frequency of 0.9 MHz (datasheet) */
 
-//				SCK_counter <= SCK_counter + 1;
-//			else  
-//				SCK_counter <= 0;
-//		end  // SPI_CLK                                                          	
-//	assign SCK = (SCK_counter <= 74 && r_SCK_enable) ? 1:0;      // 50% duty cycle PWM/SPI clock   
-    assign SCK_ENA = r_SCK_enable;
-
-
+				SCK_counter <= SCK_counter + 1;
+			else  
+				SCK_counter <= 0;
+		end  // SPI_CLK                                                          	
+	assign SCK = (SCK_counter <= 69 && r_SCK_enable) ? 1:0;      // 50% duty cycle PWM/SPI clock   
+		
 	// State machine	
 	always @ (posedge clk)
 		begin 

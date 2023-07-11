@@ -271,7 +271,7 @@ module v9958_top(
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
 		.OFFSET_Y			( OFFSET_Y							),
-        .HDMI_RESET         ( hdmi_reset                        ),
+        .HDMI_RESET         ( vdp_hdmi_reset                    ),
         .PAL_MODE           ( vdp_pal_mode                      ),
         .SPMAXSPR           ( ~maxspr_n                         ),
         .CX                 ( vdp_cx                            ),
@@ -340,14 +340,14 @@ module v9958_top(
     end
 
     wire hdmi_reset;
-    assign hdmi_rest = ff_hdmi_reset;
+    assign hdmi_reset = ff_hdmi_reset;
 
     always_ff@(posedge clk_w) 
     begin        
         if (hdmi_reset)
             ff_pal_mode <= vdp_pal_mode;
     end
-    assign pal_mode = vdp_pal_mode;
+    assign pal_mode = ff_pal_mode;
 
 
     localparam CLKFRQ = 27000;

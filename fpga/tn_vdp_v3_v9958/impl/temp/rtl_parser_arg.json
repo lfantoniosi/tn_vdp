@@ -5,6 +5,10 @@
    "Type" : "verilog"
   },
   {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_135.v",
+   "Type" : "verilog"
+  },
+  {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_81p.v",
    "Type" : "verilog"
   },
@@ -62,10 +66,6 @@
   },
   {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vram.v",
-   "Type" : "verilog"
-  },
-  {
-   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_135.v",
    "Type" : "verilog"
   },
   {

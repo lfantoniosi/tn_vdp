@@ -209,8 +209,8 @@ module v9958_top(
 
       wire [19:0] ram_total_written;
       memory_controller #(.FREQ(67_500_000) )
-       vram(.clk(clk_sdramp_w), 
-            .clk_sdram(clk_sdram_w), 
+       vram(.clk(clk_sdram_w), 
+            .clk_sdram(clk_sdramp_w), 
             .resetn(reset_n_w),
             .read(VrmRde_w), 
             .write(VrmWre_w),
@@ -339,7 +339,9 @@ module v9958_top(
     end
 
     wire vdp_pal_mode;
-    wire hdmi_reset;
+    wire vdp_hdmi_reset;
+    wire [10:0] vdp_cx;
+    wire [10:0] vdp_cy;
     VDP u_v9958 (
 		.CLK21M				( clk_w         						),
 		.RESET				( reset_w        					),
@@ -373,9 +375,11 @@ module v9958_top(
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
 		.OFFSET_Y			( OFFSET_Y							),
-        .HDMI_RESET         ( hdmi_reset                        ),
+        .HDMI_RESET         ( vdp_hdmi_reset                    ),
         .PAL_MODE           ( vdp_pal_mode                      ),
-        .SPMAXSPR           ( ~maxspr_n                         )
+        .SPMAXSPR           ( ~maxspr_n                         ),  
+        .CX                 ( vdp_cx                            ),
+        .CY                 ( vdp_cy                            )
 	);
 
 	//--------------------------------------------------------------
@@ -427,7 +431,7 @@ module v9958_top(
         if (gromclk_divider != GROMCLK_DELAY - 1) 
             gromclk_divider++;
         else begin 
-            clk_grom <= ~clk_grom; 
+            clk_grom <= ~clk_grom;
             gromclk_divider <= 0; 
         end
     end
@@ -436,19 +440,42 @@ module v9958_top(
     .I(clk_grom)
     );
 
-    assign gromclk = gromclk_ena_n ? cpuclk_w: gromclk_w; 
-    assign cpuclk = cpuclk_ena_n ? 1'bz : cpuclk_w;
+    assign gromclk = (gromclk_ena_n ? cpuclk_w: gromclk_w); 
+    assign cpuclk = (cpuclk_ena_n ? 1'bz : cpuclk_w);
 //////////
 
     reg ff_pal_mode;
     wire pal_mode;
+    reg ff_hdmi_reset;
+
+    localparam NTSC_Y = 525-49;
+    localparam PAL_Y  = 625-55;
+    logic [9:0] cy_ntsc;
+    logic [9:0] cx_ntsc;
+    logic [9:0] cy_pal;
+    logic [9:0] cx_pal;
 
     always_ff@(posedge clk_w) 
     begin
+        
+        ff_hdmi_reset <= vdp_hdmi_reset;
+
+        if (vdp_cx == 11'b0 && vdp_cy == 11'b0) begin
+            if ((pal_mode == 1'b0 && (vdp_cx != cx_ntsc || vdp_cy != cy_ntsc)) ||
+                (pal_mode == 1'b0 && (vdp_cx != cx_pal || vdp_cy != cy_pal)))
+                ff_hdmi_reset <= 1'b1;
+        end
+    end
+
+    wire hdmi_reset;
+    assign hdmi_reset = ff_hdmi_reset;
+
+    always_ff@(posedge clk_w) 
+    begin        
         if (hdmi_reset)
             ff_pal_mode <= vdp_pal_mode;
     end
-    assign pal_mode = vdp_pal_mode;
+    assign pal_mode = ff_pal_mode;
 
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
@@ -497,7 +524,7 @@ module v9958_top(
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
             .START_X(0),
-            .START_Y(525-50), //(525-49),
+            .START_Y(NTSC_Y), //(525-49),
             .NUM_CHANNELS(NUM_CHANNELS)
             )
 
@@ -525,7 +552,7 @@ module v9958_top(
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
             .START_X(0), //(0),
-            .START_Y(625-55), //(147),
+            .START_Y(PAL_Y), //(147),
             .NUM_CHANNELS(NUM_CHANNELS)
             )
 
@@ -570,40 +597,39 @@ module v9958_top(
 	.EN(reset_n_w),                  // Enable the SPI core (ACTIVE HIGH)
 	.MISO(adc_miso),                // data out of ADC (Dout pin)
 	.MOSI(adc_mosi),               // Data into ADC (Din pin)
-//	.SCK(adc_clk), 	           // SPI clock
-    .SCK_ENA(w_SCK_enable),
+	.SCK(adc_clk), 	           // SPI clock
 	.o_DATA(audio_sample),      // 12 bit word (for other modules)
     .CS(adc_cs),                 // Chip Select
 	.DATA_VALID(sample_valid)          // is high when there is a full 12 bit word. 
 	); 
 
-    always @(posedge clk_125_w) begin     
+    always @(posedge clk_w) begin     
         if (sample_valid)
-            sample <= { 2'b0, audio_sample[11:3], 5'b0 };
+            sample <= { 2'b0, audio_sample[11:2], 4'b0 };
     end
     assign sample_w = sample;
 
 
-    localparam SCKCLK_DELAY = 68;
-    logic [$clog2(SCKCLK_DELAY)-1:0] SCK_divider;
-    logic clk_SCK;
-    always_ff@(posedge clk_125_w) 
-    begin
-        if (SCK_divider != SCKCLK_DELAY - 1) 
-            SCK_divider++;
-        else begin 
-            clk_SCK <= ~clk_SCK; 
-            SCK_divider <= 0; 
-        end
-    end
-    wire clk_SCK_w;
-    wire w_SCK_enable;
-    BUFG clk_sck_bufg_inst(
-    .O(clk_SCK_w),
-    .I(clk_SCK)
-    );
+//    localparam SCKCLK_DELAY = 69;
+//    logic [$clog2(SCKCLK_DELAY)-1:0] SCK_divider;
+//    logic clk_SCK;
+//    always_ff@(posedge clk_125_w) 
+//    begin
+//        if (SCK_divider != SCKCLK_DELAY - 1) 
+//            SCK_divider++;
+//        else begin 
+//            clk_SCK <= ~clk_SCK; 
+//            SCK_divider <= 0; 
+//        end
+//    end
+//    wire clk_SCK_w;
+//    wire w_SCK_enable;
+//    BUFG clk_sck_bufg_inst(
+//    .O(clk_SCK_w),
+//    .I(clk_SCK)
+//    );
 
-	assign adc_clk = clk_SCK_w & w_SCK_enable;
+//	assign adc_clk = clk_SCK_w & w_SCK_enable;
 
     ////
     //assign led[1:0] = { cpuclk_w, gromclk_w };

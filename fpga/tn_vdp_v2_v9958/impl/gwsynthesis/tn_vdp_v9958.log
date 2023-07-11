@@ -23,12 +23,9 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_126.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\gowin\clk_135_3.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram32k.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v'
-Undeclared symbol 'hdmi_reset', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":274)
 WARN  (EX2830) : Data object 'pal_mode' is already declared("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":320)
 Previous declaration of 'pal_mode' is from here("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":65)
 WARN  (EX3671) : Second declaration of 'pal_mode' is ignored("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":320)
-WARN  (EX3638) : 'hdmi_reset' is already implicitly declared on line 274("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":342)
-Undeclared symbol 'hdmi_rest', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":343)
 Undeclared symbol 'sample_valid', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":467)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd'
 Analyzing entity 'ram'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\ram.vhd":37)
@@ -170,7 +167,6 @@ Compiling module 'serializer(VIDEO_RATE=0)'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\
 Compiling module 'SPI_MCP3202'("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":20)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":63)
 WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\SPI_MCP3202.v":77)
-WARN  (EX1998) : Net 'vdp_hdmi_reset' does not have a driver("D:\src\tn_vdp\fpga\tn_vdp_v2_v9958\src\v9958_top.v":238)
 NOTE  (EX0101) : Current top module is "v9958_top"
 [5%] Running netlist conversion ...
 Running device independent optimization ...

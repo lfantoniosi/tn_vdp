@@ -301,7 +301,9 @@ ENTITY VDP IS
 
         HDMI_RESET          : OUT   STD_LOGIC;
         PAL_MODE            : OUT   STD_LOGIC;
-        SPMAXSPR            : IN    STD_LOGIC
+        SPMAXSPR            : IN    STD_LOGIC;
+        CX                  : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0);
+        CY                  : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0)
         -- DEBUG OUTPUT
     --  DEBUG_OUTPUT        : OUT   STD_LOGIC_VECTOR( 15 DOWNTO 0 ) -- ★
     );
@@ -1019,6 +1021,8 @@ ARCHITECTURE RTL OF VDP IS
     CONSTANT VRAM_ACCESS_VDPS           : INTEGER := 7;
 BEGIN
 
+    CX          <=  H_CNT;
+    CY          <=  V_CNT;
     PAL_MODE    <=  VDPR9PALMODE;
 
     PRAMADR     <=  IRAMADR;
