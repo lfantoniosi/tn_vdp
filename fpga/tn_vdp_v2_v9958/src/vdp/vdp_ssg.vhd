@@ -72,6 +72,7 @@ ENTITY VDP_SSG IS
         CLK21M                  : IN    STD_LOGIC;
 
         H_CNT                   : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
+        H_CNT_IN_FIELD          : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
         V_CNT                   : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
         DOTSTATE                : OUT   STD_LOGIC_VECTOR(  1 DOWNTO 0 );
         EIGHTDOTSTATE           : OUT   STD_LOGIC_VECTOR(  2 DOWNTO 0 );
@@ -102,7 +103,8 @@ ENTITY VDP_SSG IS
         REG_R27_H_SCROLL        : IN    STD_LOGIC_VECTOR(  2 DOWNTO 0 );
         REG_R25_YJK             : IN    STD_LOGIC;
         CENTERYJK_R25_N         : IN    STD_LOGIC;
-        OFFSET_Y                : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 )
+        OFFSET_Y                : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
+        HDMI_RESET              : OUT   STD_LOGIC
     );
 END VDP_SSG;
 
@@ -114,6 +116,7 @@ ARCHITECTURE RTL OF VDP_SSG IS
             CLK21M              : IN    STD_LOGIC;
 
             H_CNT               : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
+            H_CNT_IN_FIELD      : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
             V_CNT_IN_FIELD      : OUT   STD_LOGIC_VECTOR(  9 DOWNTO 0 );
             V_CNT_IN_FRAME      : OUT   STD_LOGIC_VECTOR( 10 DOWNTO 0 );
             FIELD               : OUT   STD_LOGIC;
@@ -123,7 +126,8 @@ ARCHITECTURE RTL OF VDP_SSG IS
             PAL_MODE            : IN    STD_LOGIC;
             INTERLACE_MODE      : IN    STD_LOGIC;
             Y212_MODE           : IN    STD_LOGIC;
-            OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 )
+            OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
+            HDMI_RESET          : OUT   STD_LOGIC    
         );
     END COMPONENT;
 
@@ -142,6 +146,7 @@ ARCHITECTURE RTL OF VDP_SSG IS
 
     -- WIRE
     SIGNAL W_H_CNT                  : STD_LOGIC_VECTOR( 10 DOWNTO 0 );
+    SIGNAL W_H_CNT_IN_FIELD         : STD_LOGIC_VECTOR( 10 DOWNTO 0 );
     SIGNAL W_V_CNT_IN_FRAME         : STD_LOGIC_VECTOR( 10 DOWNTO 0 );
     SIGNAL W_V_CNT_IN_FIELD         : STD_LOGIC_VECTOR(  9 DOWNTO 0 );
     SIGNAL W_FIELD                  : STD_LOGIC;
@@ -161,6 +166,7 @@ BEGIN
     --  PORT ASSIGNMENT
     -----------------------------------------------------------------------------
     H_CNT               <= W_H_CNT;
+    H_CNT_IN_FIELD      <= W_H_CNT_IN_FIELD;
     V_CNT               <= W_V_CNT_IN_FRAME;
     DOTSTATE            <= FF_DOTSTATE;
     EIGHTDOTSTATE       <= FF_EIGHTDOTSTATE;
@@ -185,6 +191,7 @@ BEGIN
         CLK21M              => CLK21M               ,
 
         H_CNT               => W_H_CNT              ,
+        H_CNT_IN_FIELD      => W_H_CNT_IN_FIELD     ,
         V_CNT_IN_FIELD      => W_V_CNT_IN_FIELD     ,
         V_CNT_IN_FRAME      => W_V_CNT_IN_FRAME     ,
         FIELD               => W_FIELD              ,
@@ -194,7 +201,8 @@ BEGIN
         PAL_MODE            => VDPR9PALMODE         ,
         INTERLACE_MODE      => REG_R9_INTERLACE_MODE,
         Y212_MODE           => REG_R9_Y_DOTS        ,
-        OFFSET_Y            => OFFSET_Y             
+        OFFSET_Y            => OFFSET_Y             ,
+        HDMI_RESET          => HDMI_RESET
     );
 
     -----------------------------------------------------------------------------
@@ -442,18 +450,11 @@ BEGIN
         CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_PAL, 9 )    WHEN "11",
         (OTHERS => 'X')                                         WHEN OTHERS;
 
-    -- W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
-    --                                   (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
-    --                         '0';
-    -- W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
-    --                                   (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
-    --                         '0';
-
-    W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & '0') AND VDPR9PALMODE = '0') OR
-                                      (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & '0') AND VDPR9PALMODE = '1') )ELSE
+    W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
+                                      (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
                             '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & '0') AND VDPR9PALMODE = '0') OR
-                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & '0') AND VDPR9PALMODE = '1') )ELSE
+    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
+                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
                             '0';
 
 END RTL;

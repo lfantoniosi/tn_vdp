@@ -32,7 +32,6 @@
 
 LIBRARY IEEE;
     USE IEEE.STD_LOGIC_1164.ALL;
-    use IEEE.numeric_std.all;
     USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY VENCODE IS
@@ -51,11 +50,7 @@ ENTITY VENCODE IS
         -- VIDEO OUTPUT
         VIDEOY          : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 );
         VIDEOC          : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 );
-        VIDEOV          : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 );
-
-        VIDEOY_B         : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 );
-        VIDEOY_R         : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 )
-
+        VIDEOV          : OUT   STD_LOGIC_VECTOR(  5 DOWNTO 0 )
     );
 END VENCODE;
 
@@ -100,23 +95,11 @@ ARCHITECTURE RTL OF VENCODE IS
     SIGNAL W2               : STD_LOGIC_VECTOR( 13 DOWNTO 0 );
     SIGNAL W3               : STD_LOGIC_VECTOR( 13 DOWNTO 0 );
 
-    SIGNAL Y_B              : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL Y_R              : STD_LOGIC_VECTOR(  7 DOWNTO 0 );
-    SIGNAL FF_VIDEOY_B      : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
-    SIGNAL FF_VIDEOY_R      : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
-
-
     SIGNAL FF_IVIDEOVS_N    : STD_LOGIC;
     SIGNAL FF_IVIDEOHS_N    : STD_LOGIC;
 
-    CONSTANT CENT           : STD_LOGIC_VECTOR(  7 DOWNTO 0 ) := X"80";
-
     CONSTANT VREF           : STD_LOGIC_VECTOR(  7 DOWNTO 0 ) := X"3B";
-
-    SIGNAL YCRCB0           : STD_LOGIC_VECTOR(15 downto 0);
-    SIGNAL CR0              : STD_LOGIC_VECTOR(15 downto 0);
-    SIGNAL CB0              : STD_LOGIC_VECTOR(15 downto 0);
-
+    CONSTANT CENT           : STD_LOGIC_VECTOR(  7 DOWNTO 0 ) := X"80";
 
     TYPE TYPTABLE IS ARRAY (0 TO 31) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
     CONSTANT TABLE : TYPTABLE :=(
@@ -125,35 +108,12 @@ ARCHITECTURE RTL OF VENCODE IS
         X"18", X"E7", X"18", X"EE", X"0C", X"FA", X"00", X"00",
         X"00", X"00", X"00", X"00", X"00", X"00", X"00", X"00"
     );
-    -- de-gamma: level^1/2.22 
-    TYPE GAMMA_TBL IS ARRAY (0 TO 255) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
-    CONSTANT GAMMA : GAMMA_TBL :=(
-    x"00", x"15", x"1C", x"22", x"27", x"2B", x"2E", x"32", x"35", x"38", x"3B", x"3D", x"40", x"42", x"44", x"46", 
-    x"48", x"4A", x"4C", x"4E", x"50", x"52", x"54", x"55", x"57", x"59", x"5A", x"5C", x"5D", x"5F", x"60", x"62", 
-    x"63", x"65", x"66", x"67", x"69", x"6A", x"6B", x"6D", x"6E", x"6F", x"70", x"72", x"73", x"74", x"75", x"76", 
-    x"77", x"78", x"7A", x"7B", x"7C", x"7D", x"7E", x"7F", x"80", x"81", x"82", x"83", x"84", x"85", x"86", x"87", 
-    x"88", x"89", x"8A", x"8B", x"8C", x"8D", x"8E", x"8F", x"90", x"90", x"91", x"92", x"93", x"94", x"95", x"96", 
-    x"97", x"97", x"98", x"99", x"9A", x"9B", x"9C", x"9C", x"9D", x"9E", x"9F", x"A0", x"A0", x"A1", x"A2", x"A3", 
-    x"A4", x"A4", x"A5", x"A6", x"A7", x"A7", x"A8", x"A9", x"AA", x"AA", x"AB", x"AC", x"AD", x"AD", x"AE", x"AF", 
-    x"AF", x"B0", x"B1", x"B2", x"B2", x"B3", x"B4", x"B4", x"B5", x"B6", x"B6", x"B7", x"B8", x"B8", x"B9", x"BA", 
-    x"BA", x"BB", x"BC", x"BC", x"BD", x"BE", x"BE", x"BF", x"C0", x"C0", x"C1", x"C2", x"C2", x"C3", x"C3", x"C4", 
-    x"C5", x"C5", x"C6", x"C7", x"C7", x"C8", x"C8", x"C9", x"CA", x"CA", x"CB", x"CB", x"CC", x"CD", x"CD", x"CE", 
-    x"CE", x"CF", x"CF", x"D0", x"D1", x"D1", x"D2", x"D2", x"D3", x"D4", x"D4", x"D5", x"D5", x"D6", x"D6", x"D7", 
-    x"D7", x"D8", x"D9", x"D9", x"DA", x"DA", x"DB", x"DB", x"DC", x"DC", x"DD", x"DD", x"DE", x"DF", x"DF", x"E0", 
-    x"E0", x"E1", x"E1", x"E2", x"E2", x"E3", x"E3", x"E4", x"E4", x"E5", x"E5", x"E6", x"E6", x"E7", x"E7", x"E8", 
-    x"E8", x"E9", x"E9", x"EA", x"EA", x"EB", x"EB", x"EC", x"EC", x"ED", x"ED", x"EE", x"EE", x"EF", x"EF", x"F0", 
-    x"F0", x"F1", x"F1", x"F2", x"F2", x"F3", x"F3", x"F4", x"F4", x"F5", x"F5", x"F6", x"F6", x"F7", x"F7", x"F8", 
-    x"F8", x"F9", x"F9", x"F9", x"FA", x"FA", x"FB", x"FB", x"FC", x"FC", x"FD", x"FD", x"FE", x"FE", x"FF", x"FF"
- );
 
 BEGIN
 
     VIDEOY <= FF_VIDEOY;
     VIDEOC <= FF_VIDEOC;
     VIDEOV <= FF_VIDEOV;
-
-    VIDEOY_B <= FF_VIDEOY_B;
-    VIDEOY_R <= FF_VIDEOY_R;
 
     --  Y = +0.299R +0.587G +0.114B
     -- +U = +0.615R -0.518G -0.097B (  0)
@@ -163,7 +123,7 @@ BEGIN
     -- -V = -0.179R +0.510G -0.331B (240)
     -- -W = +0.435R -0.007G -0.428B (300)
 
- --   Y <=    (('0' & Y1(11 DOWNTO 5)) + (('0' & Y2(11 DOWNTO 5)) + ('0' & Y3(11 DOWNTO 5))) + VREF);
+    Y <=    (('0' & Y1(11 DOWNTO 5)) + (('0' & Y2(11 DOWNTO 5)) + ('0' & Y3(11 DOWNTO 5))) + VREF);
 
     V <=    Y(7 DOWNTO 0)   + C0(7 DOWNTO 0) WHEN FF_SEQ = "110" ELSE   --  +U
             Y(7 DOWNTO 0)   + C0(7 DOWNTO 0) WHEN FF_SEQ = "101" ELSE   --  +V
@@ -184,9 +144,6 @@ BEGIN
             (X"00" + ('0' & V1(11 DOWNTO 5)) - ('0' & V2(11 DOWNTO 5)) + ('0' & V3(11 DOWNTO 5))) WHEN FF_SEQ(0) = '1' ELSE
             (X"00" - ('0' & W1(11 DOWNTO 5)) + ('0' & W2(11 DOWNTO 5)) + ('0' & W3(11 DOWNTO 5)));
 
---    Y_B <= (X"00" + ('0' & U1(11 DOWNTO 5)) + ('0' & U2(11 DOWNTO 5)) + ('0' & U3(11 DOWNTO 5))) ;
---    Y_R <= (X"00" + ('0' & V1(11 DOWNTO 5)) + ('0' & V2(11 DOWNTO 5)) + ('0' & V3(11 DOWNTO 5))) ;
-
     Y1 <= (X"18" * FF_IVIDEOR); -- HEX(0.299*(2*0.714*256/3.3)*0.72*16) = $17.D
     Y2 <= (X"2F" * FF_IVIDEOG); -- HEX(0.587*(2*0.714*256/3.3)*0.72*16) = $2E.D
     Y3 <= (X"09" * FF_IVIDEOB); -- HEX(0.114*(2*0.714*256/3.3)*0.72*16) = $09.1
@@ -203,15 +160,7 @@ BEGIN
     W2 <= (X"01" * FF_IVIDEOG); -- HEX(0.007*(2*0.714*256/3.3)*0.72*16) = $00.8
     W3 <= (X"22" * FF_IVIDEOB); -- HEX(0.428*(2*0.714*256/3.3)*0.72*16) = $22.2
 
-    YCRCB0 <= (128 + (X"42" * FF_IVIDEOR & "00") + (X"81" * FF_IVIDEOG & "00") + (X"19" * FF_IVIDEOB & "00"));
-    CB0    <= (128 - (X"26" * FF_IVIDEOR & "00") - (X"4A" * FF_IVIDEOG & "00") + (X"70" * FF_IVIDEOB & "00"));
-    CR0    <= (128 + (X"70" * FF_IVIDEOR & "00") - (X"5E" * FF_IVIDEOG & "00") - (X"12" * FF_IVIDEOB & "00"));
-
-    Y   <= (GAMMA(conv_integer(YCRCB0(15 downto 8) +  16)));
-    Y_B <= (CB0(15 downto 8) + 128); 
-    Y_R <= (CR0(15 downto 8) + 128); 
-
-   PROCESS( CLK21M )
+    PROCESS( CLK21M )
     BEGIN
         IF( CLK21M'EVENT AND CLK21M = '1' )THEN
             FF_IVIDEOVS_N <= VIDEOVS_N;
@@ -227,9 +176,9 @@ BEGIN
     BEGIN
         IF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( (VIDEOHS_N = '0' AND FF_IVIDEOHS_N = '1') )THEN
-                FF_SEQ <= "111";
---            ELSIF( FF_SEQ(1 DOWNTO 0) = "00" )THEN
---                FF_SEQ <= FF_SEQ - 1;
+                FF_SEQ <= "110";
+            ELSIF( FF_SEQ(1 DOWNTO 0) = "00" )THEN
+                FF_SEQ <= FF_SEQ - 2;
             ELSE
                 FF_SEQ <= FF_SEQ - 1;
             END IF;
@@ -347,23 +296,12 @@ BEGIN
                 FF_VIDEOY <= (OTHERS => '0');
                 FF_VIDEOC <= CENT(7 DOWNTO 2);
                 FF_VIDEOV <= (OTHERS => '0');
-
-                FF_VIDEOY_B <= (OTHERS => '0');
-                FF_VIDEOY_R <= (OTHERS => '0');
-
             ELSIF( FF_WINDOW_V = '1' AND FF_WINDOW_H = '1' )THEN
                 FF_VIDEOY <= Y(7 DOWNTO 2);
                 FF_VIDEOC <= C(7 DOWNTO 2);
                 FF_VIDEOV <= V(7 DOWNTO 2);
-
-                FF_VIDEOY_B <= Y_B(7 DOWNTO 2);
-                FF_VIDEOY_R <= Y_R(7 DOWNTO 2);
             ELSE
                 FF_VIDEOY <= VREF(7 DOWNTO 2);
-
-                FF_VIDEOY_B <= CENT(7 DOWNTO 2); 
-                FF_VIDEOY_R <= CENT(7 DOWNTO 2); 
-
                 IF( FF_SEQ(1 DOWNTO 0) = "10" )THEN
                     FF_VIDEOC <= CENT(7 DOWNTO 2);
                     FF_VIDEOV <= VREF(7 DOWNTO 2);

@@ -311,9 +311,9 @@ BEGIN
     PROCESS( RESET, CLK21M )
     BEGIN
         IF( RESET = '1' )THEN
-            REG_R1_DISP_ON      <= '1'; --'0';
-            REG_R0_DISP_MODE    <= "000"; --"000";
-            REG_R1_DISP_MODE    <= "10"; --"00";
+            REG_R1_DISP_ON      <= '0';
+            REG_R0_DISP_MODE    <= "000";
+            REG_R1_DISP_MODE    <= "00";
             REG_R25_SP2         <= '0';
             REG_R26_H_SCROLL    <= (OTHERS => '0');
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
@@ -514,19 +514,19 @@ BEGIN
             VDPVRAMADDRSETREQ       <= '0';
             VDPVRAMACCESSADDRTMP    <= (OTHERS => '0');
             VDPVRAMACCESSDATA       <= (OTHERS => '0');
-            FF_R0_DISP_MODE         <= "001"; --(OTHERS => '0');
+            FF_R0_DISP_MODE         <= (OTHERS => '0');
 
             REG_R0_HSYNC_INT_EN     <= '0';
-            FF_R1_DISP_MODE         <= "00"; --(OTHERS => '0');
+            FF_R1_DISP_MODE         <= (OTHERS => '0');
             REG_R1_SP_SIZE          <= '0';
             REG_R1_SP_ZOOM          <= '0';
             REG_R1_BL_CLKS          <= '0';
             REG_R1_VSYNC_INT_EN     <= '0';
-            FF_R1_DISP_ON           <= '1'; --'0';
-            FF_R2_PT_NAM_ADDR       <= "0000110"; --"0000011"; --(OTHERS => '0');
+            FF_R1_DISP_ON           <= '0';
+            FF_R2_PT_NAM_ADDR       <= (OTHERS => '0');
             REG_R12_BLINK_MODE      <= (OTHERS => '0');
             REG_R13_BLINK_PERIOD    <= (OTHERS => '0');
-            REG_R7_FRAME_COL        <= "11110000"; --(OTHERS => '0');
+            REG_R7_FRAME_COL        <= (OTHERS => '0');
             REG_R8_SP_OFF           <= '0';
             REG_R8_COL0_ON          <= '0';
             REG_R9_PAL_MODE         <= FORCED_V_MODE;
@@ -558,14 +558,6 @@ BEGIN
             PALETTEDATAG_IN         <= (OTHERS => '0');
             FF_PALETTE_WR_REQ       <= '0';
             PALETTEWRNUM            <= (OTHERS => '0');
-
-            -- new debug shit
-            REG_R10R3_COL_ADDR      <= "00011111111";
-            REG_R4_PT_GEN_ADDR      <= "000011"; --"000010";
-            REG_R11R5_SP_ATR_ADDR   <= "0000110110"; --"0000110110";
-            REG_R6_SP_GEN_ADDR      <= "000111"; --"000111";
-            
-
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF (REQ = '1' AND WRT = '0') THEN
                 -- READ REQUEST

@@ -234,6 +234,10 @@ module v9958_top(
         end
     end
 
+    wire vdp_pal_mode;
+    wire vdp_hdmi_reset;
+    wire [10:0] vdp_cx;
+    wire [10:0] vdp_cy;
     VDP u_v9958 (
 		.CLK21M				( clk_w   							),
 		.RESET				( reset_w        					),
@@ -267,8 +271,11 @@ module v9958_top(
 		.LEGACY_VGA			( 1'b0      						),
 		.VDP_ID				( VDP_ID							),
 		.OFFSET_Y			( OFFSET_Y							),
+        .HDMI_RESET         ( hdmi_reset                        ),
+        .PAL_MODE           ( vdp_pal_mode                      ),
         .SPMAXSPR           ( ~maxspr_n                         ),
-        .PAL_MODE           ( pal_mode                          )
+        .CX                 ( vdp_cx                            ),
+        .CY                 ( vdp_cy                            )
 	);
 
 
@@ -309,17 +316,39 @@ module v9958_top(
 
 ////////////
 
-    logic v_reset_w;
     reg ff_pal_mode;
-    
+    wire pal_mode;
+    reg ff_hdmi_reset;
+
+    localparam NTSC_Y = 525-49;
+    localparam PAL_Y  = 625-55;
+    logic [9:0] cy_ntsc;
+    logic [9:0] cx_ntsc;
+    logic [9:0] cy_pal;
+    logic [9:0] cx_pal;
+
     always_ff@(posedge clk_w) 
     begin
-        if (ff_pal_mode != pal_mode) begin
-            v_reset_w <= 1'b1;
-            ff_pal_mode <= pal_mode;
-        end else
-            v_reset_w <= 1'b0;
+        
+        ff_hdmi_reset <= vdp_hdmi_reset;
+
+        if (vdp_cx == 11'b0 && vdp_cy == 11'b0) begin
+            if ((pal_mode == 1'b0 && (vdp_cx != cx_ntsc || vdp_cy != cy_ntsc)) ||
+                (pal_mode == 1'b0 && (vdp_cx != cx_pal || vdp_cy != cy_pal)))
+                ff_hdmi_reset <= 1'b1;
+        end
     end
+
+    wire hdmi_reset;
+    assign hdmi_rest = ff_hdmi_reset;
+
+    always_ff@(posedge clk_w) 
+    begin        
+        if (hdmi_reset)
+            ff_pal_mode <= vdp_pal_mode;
+    end
+    assign pal_mode = vdp_pal_mode;
+
 
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
@@ -350,8 +379,7 @@ module v9958_top(
         audio_sample_word[1] <= audio_sample_word0[1];
     end
 
-    logic [9:0] cy_ntsc;
-    logic [9:0] cx_ntsc;
+
     logic [9:0] tmds_ntsc [NUM_CHANNELS-1:0];
     hdmi #( .VIDEO_ID_CODE(2), 
             .DVI_OUTPUT(0), 
@@ -363,7 +391,7 @@ module v9958_top(
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
             .START_X(0),
-            .START_Y(525-49), //(525-49),
+            .START_Y(NTSC_Y), //(525-49),
             .NUM_CHANNELS(NUM_CHANNELS)
             )
 
@@ -371,15 +399,14 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( reset_w | v_reset_w ),
+          .reset( hdmi_reset | reset_w ),
           .audio_sample_word(audio_sample_word),
           .cx(cx_ntsc), 
           .cy(cy_ntsc),
           .tmds_internal(tmds_ntsc)
         );
 
-    logic [9:0] cy_pal;
-    logic [9:0] cx_pal;
+
     logic [9:0] tmds_pal [NUM_CHANNELS-1:0];
     hdmi #( .VIDEO_ID_CODE(17), 
             .DVI_OUTPUT(0), 
@@ -391,7 +418,7 @@ module v9958_top(
             .PRODUCT_DESCRIPTION({"FPGA", 96'd0}), // Must be 16 bytes null-padded 7-bit ASCII
             .SOURCE_DEVICE_INFORMATION(8'h00), // See README.md or CTA-861-G for the list of valid codes
             .START_X(0), //(0),
-            .START_Y(625-55), //(147),
+            .START_Y(PAL_Y), //(147),
             .NUM_CHANNELS(NUM_CHANNELS)
             )
 
@@ -399,7 +426,7 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( reset_w | v_reset_w ),
+          .reset( hdmi_reset | reset_w ),
           .audio_sample_word(audio_sample_word),
           .cx(cx_pal), 
           .cy(cy_pal),
@@ -447,7 +474,17 @@ module v9958_top(
 
     assign sample_w = sample;
 
-    assign led[5:0] = ~sample[14:9];
+    reg [31:0] reset_cnt = 0;
+    
+    always_ff@(posedge clk_w) 
+    begin
+        if (hdmi_reset == 1'b1) 
+            reset_cnt <= 27_000_000;
+        else
+            if (reset_cnt > 0) reset_cnt <= reset_cnt - 1;
+    end
+
+    assign led[5:0] = reset_cnt != 32'b0 ? 6'b000000 : 6'b111111;
 
 
 endmodule

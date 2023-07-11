@@ -63,7 +63,7 @@
 -------------------------------------------------------------------------------
 -- Revision History
 --
--- 13rd,October,2003 created by Kunihiko Ohnaka
+-- 13th,October,2003 created by Kunihiko Ohnaka
 -- JP: VDPのコアの実装と表示デバイスへの出力を別ソースにした．
 --
 -- ??th,August,2006 modified by Kunihiko Ohnaka
@@ -186,15 +186,15 @@ BEGIN
             FF_HSYNC_N <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( FF_SSTATE = SSTATE_A )THEN
-                IF( (HCOUNTERIN = 1) OR (HCOUNTERIN = CLOCKS_PER_LINE/2+1) ) THEN
+                IF( (HCOUNTERIN = 1) OR (HCOUNTERIN = CLOCKS_PER_HALF_LINE+1) ) THEN
                     FF_HSYNC_N <= '0';                       -- PULSE ON
-                ELSIF( (HCOUNTERIN = 51) OR (HCOUNTERIN = CLOCKS_PER_LINE/2+51) ) THEN
+                ELSIF( (HCOUNTERIN = 51) OR (HCOUNTERIN = CLOCKS_PER_HALF_LINE+51) ) THEN
                     FF_HSYNC_N <= '1';                       -- PULSE OFF
                 END IF;
             ELSIF( FF_SSTATE = SSTATE_B )THEN
-                IF( (HCOUNTERIN = CLOCKS_PER_LINE-100+1 ) OR (HCOUNTERIN = CLOCKS_PER_LINE/2-100+1) ) THEN
+                IF( (HCOUNTERIN = CLOCKS_PER_LINE-100+1 ) OR (HCOUNTERIN = CLOCKS_PER_HALF_LINE-100+1) ) THEN
                     FF_HSYNC_N <= '0';                       -- PULSE ON
-                ELSIF( (HCOUNTERIN = 1) OR (HCOUNTERIN = CLOCKS_PER_LINE/2+1) ) THEN
+                ELSIF( (HCOUNTERIN = 1) OR (HCOUNTERIN = CLOCKS_PER_HALF_LINE+1) ) THEN
                     FF_HSYNC_N <= '1';                       -- PULSE OFF
                 END IF;
             ELSIF( FF_SSTATE = SSTATE_C )THEN

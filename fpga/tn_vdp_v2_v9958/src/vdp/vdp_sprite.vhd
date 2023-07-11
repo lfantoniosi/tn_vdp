@@ -225,7 +225,7 @@ ENTITY VDP_SPRITE IS
         SPCOLOROUT                  : OUT   STD_LOGIC;
         -- OUTPUT COLOR
         SPCOLORCODE                 : OUT   STD_LOGIC_VECTOR(  3 DOWNTO 0 );
-        REG_R9_Y_DOTS               : IN    STD_LOGIC;
+		REG_R9_Y_DOTS               : IN    STD_LOGIC;
         SPMAXSPR                    : IN    STD_LOGIC
     );
 END VDP_SPRITE;
@@ -365,7 +365,7 @@ BEGIN
             FF_SP_EN <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( DOTSTATE = "01" AND DOTCOUNTERX = 0 )THEN
-                FF_SP_EN <= W_ACTIVE;
+                FF_SP_EN <= (NOT REG_R8_SP_OFF) AND W_ACTIVE;
             END IF;
         END IF;
     END PROCESS;
@@ -488,7 +488,7 @@ BEGIN
     END PROCESS;
 
     -- detect a split screen
-    SPLIT_SCRN <= '0' WHEN (FF_CUR_Y = (FF_PREV_CUR_Y + 1))  ELSE '1';
+    SPLIT_SCRN <= '0' WHEN (FF_CUR_Y = (FF_PREV_CUR_Y + 1)) ELSE '1';
 
     -----------------------------------------------------------------------------
     -- VRAM ADDRESS GENERATOR
@@ -524,7 +524,7 @@ BEGIN
                     END IF;
                 WHEN SPSTATE_YTEST_DRAW =>
                     IF( DOTCOUNTERX = 256+8 )THEN
-                        SPVRAMACCESSING <= (NOT REG_R8_SP_OFF) AND FF_SP_EN;
+                        SPVRAMACCESSING <= FF_SP_EN;
                     END IF;
                 WHEN SPSTATE_PREPARE =>
                     IF( SPPREPAREEND = '1' )THEN

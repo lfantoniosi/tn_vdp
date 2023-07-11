@@ -79,7 +79,7 @@
 --        even field  -> even line (odd  line is black)
 --        odd  field  -> odd line  (even line is black)
 --
--- 13rd,October,2003 created by Kunihiko Ohnaka
+-- 13th,October,2003 created by Kunihiko Ohnaka
 -- JP: VDPのコアの実装と表示デバイスへの出力を別ソースにした．
 --
 -------------------------------------------------------------------------------
@@ -160,10 +160,10 @@ ARCHITECTURE RTL OF VDP_VGA IS
     SIGNAL DATAGOUT     : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
     SIGNAL DATABOUT     : STD_LOGIC_VECTOR(  5 DOWNTO 0 );
 
-    -- DISP_START_X + DISP_WIDTH < CLOCKS_PER_LINE/2 = 684
-    CONSTANT DISP_WIDTH             : INTEGER := 792; 
-    SHARED VARIABLE DISP_START_X    : INTEGER := 0;
-
+    -- DISP_START_X + DISP_WIDTH < CLOCKS_PER_HALF_LINE = 684
+    CONSTANT DISP_WIDTH             : INTEGER := 720;
+--    SHARED VARIABLE DISP_START_X    : INTEGER := 0; --684 - DISP_WIDTH - 2;          -- 106
+    CONSTANT DISP_START_X    : INTEGER := 0;          -- 106
 BEGIN
 
     VIDEOROUT <= DATAROUT WHEN( VIDEOOUTX = '1' )ELSE (OTHERS => '0');
@@ -185,45 +185,46 @@ BEGIN
         DATABOUT    => DATABOUT
     );
 
-    XPOSITIONW  <=  HCOUNTERIN(10 DOWNTO 1); -- - (CLOCKS_PER_LINE/2 - DISP_WIDTH - 10);
+    XPOSITIONW  <=  HCOUNTERIN(10 DOWNTO 1); -- - (CLOCKS_PER_HALF_LINE - DISP_WIDTH - 10);
     EVENODD     <=  VCOUNTERIN(1);
     WE_BUF      <=  '1';
 
-    -- PIXEL RATIO 1:1 FOR LED DISPLAY
-    PROCESS( CLK21M )
+--    -- PIXEL RATIO 1:1 FOR LED DISPLAY
+--    PROCESS( CLK21M )
 --        CONSTANT DISP_START_Y   : INTEGER := 3;
 --        CONSTANT PRB_HEIGHT     : INTEGER := 25;
 --        CONSTANT RIGHT_X        : INTEGER := 684 - DISP_WIDTH - 2;              -- 106
 --        CONSTANT PAL_RIGHT_X    : INTEGER := 87;                                -- 87
 --        CONSTANT CENTER_X       : INTEGER := RIGHT_X - 32 - 2;                  -- 72
 --        CONSTANT BASE_LEFT_X    : INTEGER := CENTER_X - 32 - 2 - 3;             -- 35
-    BEGIN
-        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
---             IF( (RATIOMODE = "000" OR INTERLACEMODE = '1' OR PALMODE = '1') AND LEGACY_VGA = '1' )THEN
--- --                -- LEGACY OUTPUT
---                 DISP_START_X := RIGHT_X;                                        -- 106
---             ELSIF( PALMODE = '1' )THEN
--- --                -- 50HZ
---                 DISP_START_X := PAL_RIGHT_X;                                    -- 87
---             ELSIF( RATIOMODE = "000" OR INTERLACEMODE = '1' )THEN
--- --                -- 60HZ
---                 DISP_START_X := CENTER_X;                                       -- 72
---             ELSIF( (VCOUNTERIN < 38 + DISP_START_Y + PRB_HEIGHT) OR
---                    (VCOUNTERIN > 526 - PRB_HEIGHT AND VCOUNTERIN < 526 ) OR
---                    (VCOUNTERIN > 524 + 38 + DISP_START_Y AND VCOUNTERIN < 524 + 38 + DISP_START_Y + PRB_HEIGHT) OR
---                    (VCOUNTERIN > 524 + 526 - PRB_HEIGHT) )THEN
--- --                -- PIXEL RATIO 1:1 (VGA MODE, 60HZ, NOT INTERLACED)
--- --              --IF( EVENODD = '0' )THEN                                         -- PLOT FROM TOP-RIGHT
---                 IF( EVENODD = '1' )THEN                                         -- PLOT FROM TOP-LEFT
---                     DISP_START_X := BASE_LEFT_X + CONV_INTEGER(NOT RATIOMODE);  -- 35 TO 41
---                 ELSE
---                     DISP_START_X := RIGHT_X;                                    -- 106
---                 END IF;
---             ELSE
-                DISP_START_X := 0;
+--    BEGIN
+--        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
+--            IF( (RATIOMODE = "000" OR INTERLACEMODE = '1' OR PALMODE = '1') AND LEGACY_VGA = '1' )THEN
+----                 LEGACY OUTPUT
+--                DISP_START_X := RIGHT_X;                                        -- 106
+--            ELSIF( PALMODE = '1' )THEN
+----                 50HZ
+--                DISP_START_X := PAL_RIGHT_X;                                    -- 87
+--            ELSIF( RATIOMODE = "000" OR INTERLACEMODE = '1' )THEN
+----                 60HZ
+--                DISP_START_X := CENTER_X;                                       -- 72
+--            ELSIF( (VCOUNTERIN < 38 + DISP_START_Y + PRB_HEIGHT) OR
+--                   (VCOUNTERIN > 526 - PRB_HEIGHT AND VCOUNTERIN < 526 ) OR
+--                   (VCOUNTERIN > 524 + 38 + DISP_START_Y AND VCOUNTERIN < 524 + 38 + DISP_START_Y + PRB_HEIGHT) OR
+--                   (VCOUNTERIN > 524 + 526 - PRB_HEIGHT) )THEN
+--                -- PIXEL RATIO 1:1 (VGA MODE, 60HZ, NOT INTERLACED)
+----              IF( EVENODD = '0' )THEN                                         -- PLOT FROM TOP-RIGHT
+--                IF( EVENODD = '1' )THEN                                         -- PLOT FROM TOP-LEFT
+--                    DISP_START_X := BASE_LEFT_X + CONV_INTEGER(NOT RATIOMODE);  -- 35 TO 41
+--                ELSE
+--                    DISP_START_X := RIGHT_X;                                    -- 106
+--                END IF;
+--            ELSE
+--                DISP_START_X := CENTER_X;                                       -- 72
+--                  DISP_START_X := 0;
 --            END IF;
-        END IF;
-    END PROCESS;
+--        END IF;
+--    END PROCESS;
 
     -- GENERATE H-SYNC SIGNAL
     PROCESS( RESET, CLK21M )
@@ -231,9 +232,9 @@ BEGIN
         IF( RESET = '1' )THEN
             FF_HSYNC_N <= '1';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( (HCOUNTERIN = 0) OR (HCOUNTERIN = (CLOCKS_PER_LINE/2)) )THEN
+            IF( (HCOUNTERIN = 0) OR (HCOUNTERIN = (CLOCKS_PER_HALF_LINE)) )THEN
                 FF_HSYNC_N <= '0';
-            ELSIF( (HCOUNTERIN = 40) OR (HCOUNTERIN = (CLOCKS_PER_LINE/2) + 40) )THEN
+            ELSIF( (HCOUNTERIN = 40) OR (HCOUNTERIN = (CLOCKS_PER_HALF_LINE) + 40) )THEN
                 FF_HSYNC_N <= '1';
             END IF;
         END IF;
@@ -263,9 +264,9 @@ BEGIN
                 END IF;
             ELSE
                 IF( INTERLACEMODE = '0' )THEN
-                    IF( (VCOUNTERIN = 3*2 + CENTER_Y + 6) OR (VCOUNTERIN = 624 + 3*2 + CENTER_Y + 6) )THEN
+                    IF( (VCOUNTERIN = 3*2 + CENTER_Y + 6) OR (VCOUNTERIN = 626 + 3*2 + CENTER_Y + 6) )THEN
                         FF_VSYNC_N <= '0';
-                    ELSIF( (VCOUNTERIN = 6*2 + CENTER_Y + 6) OR (VCOUNTERIN = 624 + 6*2 + CENTER_Y + 6) )THEN
+                    ELSIF( (VCOUNTERIN = 6*2 + CENTER_Y + 6) OR (VCOUNTERIN = 626 + 6*2 + CENTER_Y + 6) )THEN
                         FF_VSYNC_N <= '1';
                     END IF;
                 ELSE
@@ -286,7 +287,7 @@ BEGIN
             XPOSITIONR <= (OTHERS => '0');
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( (HCOUNTERIN = DISP_START_X) OR
-                    (HCOUNTERIN = DISP_START_X + (CLOCKS_PER_LINE/2)) )THEN
+                    (HCOUNTERIN = DISP_START_X + (CLOCKS_PER_HALF_LINE)) )THEN
                 XPOSITIONR <= (OTHERS => '0');
             ELSE
                 XPOSITIONR <= XPOSITIONR + 1;
@@ -300,13 +301,13 @@ BEGIN
         IF( RESET = '1' )THEN
             VIDEOOUTX <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( (HCOUNTERIN = DISP_START_X) OR
-                    ((HCOUNTERIN = DISP_START_X + (CLOCKS_PER_LINE/2)) AND INTERLACEMODE = '0') )THEN
+--            IF( (HCOUNTERIN = DISP_START_X) OR
+--                    ((HCOUNTERIN = DISP_START_X + (CLOCKS_PER_HALF_LINE)) AND INTERLACEMODE = '0') )THEN
                 VIDEOOUTX <= '1';
-            ELSIF( (HCOUNTERIN = DISP_START_X + DISP_WIDTH) OR
-                    (HCOUNTERIN = DISP_START_X + DISP_WIDTH + (CLOCKS_PER_LINE/2)) )THEN
-                VIDEOOUTX <= '0';
-            END IF;
+--            ELSIF( (HCOUNTERIN = DISP_START_X + DISP_WIDTH) OR
+--                    (HCOUNTERIN = DISP_START_X + DISP_WIDTH + (CLOCKS_PER_HALF_LINE)) )THEN
+--                VIDEOOUTX <= '0';
+--            END IF;
         END IF;
     END PROCESS;
 
