@@ -189,7 +189,7 @@ module v9958_top(
                 VrmWre_r <= ~WeVdp_n;
                 VrmRde_r <= ~ReVdp_n;
                 VrmDbo_r <= VrmDbo;
-                SdSeq = 7'd1;
+                SdSeq <= SdSeq + 7'd1;
             end
             else if (SdSeq == 7'd1 && ~ram_busy) 
             begin
@@ -399,13 +399,13 @@ module v9958_top(
 
 ///////////
 
-    localparam CPUCLK_SRCFRQ = 50.0;
+    localparam CPUCLK_SRCFRQ = 81.0;
     localparam CPUCLK_FRQ = 315.0/88.0;
-    localparam CPUCLK_DELAY = CPUCLK_SRCFRQ / CPUCLK_FRQ / 2;
+    localparam integer CPUCLK_DELAY = $floor(CPUCLK_SRCFRQ / CPUCLK_FRQ / 2 + 0.5);
     logic [$clog2(CPUCLK_DELAY)-1:0] cpuclk_divider;
     logic clk_cpu;
 
-    always_ff@(posedge clk_50_w) 
+    always_ff@(posedge clk_sdram_w) 
     begin
         if (cpuclk_divider != CPUCLK_DELAY - 1) 
             cpuclk_divider++;
@@ -420,13 +420,13 @@ module v9958_top(
     );
 
 
-    localparam GROMCLK_SRCFRQ = 50.0;
+    localparam GROMCLK_SRCFRQ = 81.0;
     localparam GROMCLK_FRQ = 315.0/88.0 / 8.0;
-    localparam GROMCLK_DELAY = GROMCLK_SRCFRQ / GROMCLK_FRQ / 2;
+    localparam integer GROMCLK_DELAY = $floor(GROMCLK_SRCFRQ / GROMCLK_FRQ / 2.0 + 0.5);
     logic [$clog2(GROMCLK_DELAY)-1:0] gromclk_divider;
     logic clk_grom;
 
-    always_ff@(posedge clk_50_w) 
+    always_ff@(posedge clk_sdram_w) 
     begin
         if (gromclk_divider != GROMCLK_DELAY - 1) 
             gromclk_divider++;
@@ -448,7 +448,7 @@ module v9958_top(
     wire pal_mode;
     reg ff_hdmi_reset;
 
-    localparam NTSC_Y = 525-49;
+    localparam NTSC_Y = 525-40;
     localparam PAL_Y  = 625-55;
     logic [9:0] cy_ntsc;
     logic [9:0] cx_ntsc;
@@ -480,7 +480,7 @@ module v9958_top(
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
     localparam AUDIO_BIT_WIDTH = 16;
-    localparam AUDIO_CLK_DELAY = CLKFRQ * 1000 / AUDIO_RATE / 2;
+    localparam integer AUDIO_CLK_DELAY = $floor(CLKFRQ * 1000.0 / AUDIO_RATE / 2.0 + 0.5);
     localparam NUM_CHANNELS = 3;
     logic [$clog2(AUDIO_CLK_DELAY)-1:0] audio_divider;
     logic clk_audio;
@@ -608,31 +608,6 @@ module v9958_top(
             sample <= { 2'b0, audio_sample[11:2], 4'b0 };
     end
     assign sample_w = sample;
-
-
-//    localparam SCKCLK_DELAY = 69;
-//    logic [$clog2(SCKCLK_DELAY)-1:0] SCK_divider;
-//    logic clk_SCK;
-//    always_ff@(posedge clk_125_w) 
-//    begin
-//        if (SCK_divider != SCKCLK_DELAY - 1) 
-//            SCK_divider++;
-//        else begin 
-//            clk_SCK <= ~clk_SCK; 
-//            SCK_divider <= 0; 
-//        end
-//    end
-//    wire clk_SCK_w;
-//    wire w_SCK_enable;
-//    BUFG clk_sck_bufg_inst(
-//    .O(clk_SCK_w),
-//    .I(clk_SCK)
-//    );
-
-//	assign adc_clk = clk_SCK_w & w_SCK_enable;
-
-    ////
-    //assign led[1:0] = { cpuclk_w, gromclk_w };
 
 endmodule
 

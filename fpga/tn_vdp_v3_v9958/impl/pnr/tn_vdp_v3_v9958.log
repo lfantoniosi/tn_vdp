@@ -7,6 +7,7 @@ Running placement......
 [10%] Placement Phase 0 completed
 [20%] Placement Phase 1 completed
 [30%] Placement Phase 2 completed
+WARN  (TA1117) : Can't calculate clocks' relationship between: "clk_grom" and "clk_sdram"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "clk_audio" and "clk"
 WARN  (TA1117) : Can't calculate clocks' relationship between: "clk" and "clk_audio"
 [50%] Placement Phase 3 completed
@@ -30,5 +31,5 @@ Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.rpt.h
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.rpt.txt" completed
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.tr.html" completed
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.tr" completed
-Mon Jul 10 21:21:13 2023
+Wed Jul 12 02:45:34 2023
 

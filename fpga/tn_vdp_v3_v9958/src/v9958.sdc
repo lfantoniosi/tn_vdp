@@ -13,7 +13,11 @@ create_generated_clock -name clk_audio -source [get_ports {clk}] -master_clock c
 create_generated_clock -name clk_sdramp -source [get_ports {clk}] -master_clock clk -divide_by 1 -multiply_by 3 -duty_cycle 50 -phase 180 -add [get_nets {clk_sdramp}]
 create_generated_clock -name clk_sdram -source [get_ports {clk}] -master_clock clk -divide_by 1 -multiply_by 3 -add [get_nets {clk_sdram}]
 
-create_generated_clock -name clk_cpu -source [get_ports {clk_50}] -master_clock clk_50 -divide_by 14 -multiply_by 1 -add [get_nets {clk_cpu}]
-create_generated_clock -name clk_grom -source [get_ports {clk_50}] -master_clock clk_50 -divide_by 112 -multiply_by 1 -add [get_nets {clk_grom}]
+//create_generated_clock -name clk_cpu -source [get_ports {clk_50}] -master_clock clk_50 -divide_by 14 -multiply_by 1 -add [get_nets {clk_cpu}]
+//create_generated_clock -name clk_grom -source [get_ports {clk_50}] -master_clock clk_50 -divide_by 112 -multiply_by 1 -add [get_nets {clk_grom}]
+
+create_generated_clock -name clk_cpu -source [get_ports {clk}] -master_clock clk -divide_by 23 -multiply_by 3 -add [get_nets {clk_cpu}]
+create_generated_clock -name clk_grom -source [get_ports {clk}] -master_clock clk -divide_by 181 -multiply_by 3 -add [get_nets {clk_grom}]
+
 
 //create_generated_clock -name clk_SCK -source [get_ports {clk_125}] -master_clock clk_125 -divide_by 138 -multiply_by 1 -add [get_nets {clk_SCK}]
