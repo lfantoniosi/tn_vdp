@@ -540,7 +540,7 @@ module v9958_top(
 	.DATA_VALID(sample_valid)          // is high when there is a full 12 bit word. 
 	); 
 
-    always @(posedge clk_w) begin     
+    always @(posedge clk_125_w) begin     
         if (sample_valid)
             sample <= { 1'b0, audio_sample[11:2], 5'b0 };
     end

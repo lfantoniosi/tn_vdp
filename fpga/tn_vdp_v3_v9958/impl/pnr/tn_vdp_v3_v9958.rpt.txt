@@ -12,20 +12,20 @@
   <Part Number>: GW2AR-LV18QN88C8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Fri Jul 14 02:16:45 2023
+  <Created Time>:Fri Jul 14 08:58:04 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.703s, Elapsed time = 0h 0m 0.704s
-    Placement Phase 1: CPU time = 0h 0m 0.243s, Elapsed time = 0h 0m 0.243s
+    Placement Phase 0: CPU time = 0h 0m 0.707s, Elapsed time = 0h 0m 0.707s
+    Placement Phase 1: CPU time = 0h 0m 0.253s, Elapsed time = 0h 0m 0.253s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
-    Total Placement: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
+    Placement Phase 3: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
+    Total Placement: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.002s
-    Routing Phase 1: CPU time = 0h 0m 0.293s, Elapsed time = 0h 0m 0.292s
+    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
+    Routing Phase 1: CPU time = 0h 0m 0.289s, Elapsed time = 0h 0m 0.29s
     Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
@@ -48,7 +48,7 @@
     --Logic Register as FF    | 2655/15552  18%
     --I/O Register as Latch   | 0/363  0%
     --I/O Register as FF      | 27/363  8%
-  CLS                         | 3703/10368  36%
+  CLS                         | 3704/10368  36%
   I/O Port                    | 37
   I/O Buf                     | 32
     --Input Buf               | 14
