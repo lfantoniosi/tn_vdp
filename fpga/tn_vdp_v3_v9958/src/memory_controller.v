@@ -13,6 +13,7 @@ module memory_controller
     input [1:0] wdm,
     output [15:0] dout,        // Last read data available 4 cycles after read is set
     output reg busy,          // 1 while an operation is in progress
+    output enabled,
 
     // debug interface
     output reg fail,          // timing mistake or sdram malfunction detected
@@ -50,6 +51,7 @@ sdram #(
 	.addr(busy ? MemAddr : {1'b0, addr}), .rd(busy ? MemRD : read), 
     .wr(busy ? MemWR : write), .refresh(busy ? MemRefresh : refresh),
 	.din(busy ? MemDin : din), .wdm(wdm), .dout(MemDout), .busy(MemBusy), .data_ready(MemDataReady),
+    .enabled(enabled),
 
     .SDRAM_DQ(SDRAM_DQ), .SDRAM_A(SDRAM_A), .SDRAM_BA(SDRAM_BA), 
     .SDRAM_nCS(SDRAM_nCS), .SDRAM_nWE(SDRAM_nWE), .SDRAM_nRAS(SDRAM_nRAS),
@@ -57,49 +59,51 @@ sdram #(
     .SDRAM_DQM(SDRAM_DQM)
 );
 
-always @(posedge clk) begin
-    MemWR <= 1'b0; MemRD <= 1'b0; MemRefresh <= 1'b0;
-    cycles <= cycles == 3'd7 ? 3'd7 : cycles + 3'd1;
-    
-    // Initiate read or write
-    if (!busy) begin
-        if (read || write || refresh) begin
-            MemAddr <= {1'b0, addr};
-            MemWR <= write;
-            MemRD <= read;
-            MemRefresh <= refresh;
-            busy <= 1'b1;
-            MemDin <= din;
-            cycles <= 3'd1;
-            r_read <= read;
-
-            if (write) total_written <= total_written + 1;
-        end 
-    end else if (MemInitializing) begin
-        if (~MemBusy) begin
-            // initialization is done
-            MemInitializing <= 1'b0;
-            busy <= 1'b0;
-        end
-    end else begin
-        // Wait for operation to finish and latch incoming data on read.
-        if (cycles == 3'd4) begin
-            busy <= 0;
-            if (r_read) begin
-                if (~MemDataReady)      // assert data ready
-                    fail <= 1'b1;
-                if (r_read) 
-                    data <= MemDout;
-                r_read <= 1'b0;
-            end
-        end
-    end
+always @(posedge clk or negedge resetn) begin
 
     if (~resetn) begin
         busy <= 1'b1;
         fail <= 1'b0;
         total_written <= 0;
         MemInitializing <= 1'b1;
+    end 
+    else begin
+        MemWR <= 1'b0; MemRD <= 1'b0; MemRefresh <= 1'b0;
+        cycles <= cycles == 3'd7 ? 3'd7 : cycles + 3'd1;
+        
+        // Initiate read or write
+        if (!busy) begin
+            if (read || write || refresh) begin
+                MemAddr <= {1'b0, addr};
+                MemWR <= write;
+                MemRD <= read;
+                MemRefresh <= refresh;
+                busy <= 1'b1;
+                MemDin <= din;
+                cycles <= 3'd1;
+                r_read <= read;
+
+                if (write) total_written <= total_written + 1;
+            end 
+        end else if (MemInitializing) begin
+            if (~MemBusy) begin
+                // initialization is done
+                MemInitializing <= 1'b0;
+                busy <= 1'b0;
+            end
+        end else begin
+            // Wait for operation to finish and latch incoming data on read.
+            if (cycles == 3'd4) begin
+                busy <= 0;
+                if (r_read) begin
+                    if (~MemDataReady)      // assert data ready
+                        fail <= 1'b1;
+                    if (r_read) 
+                        data <= MemDout;
+                    r_read <= 1'b0;
+                end
+            end
+        end
     end
 end
 

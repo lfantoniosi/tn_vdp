@@ -1,5 +1,13 @@
 [
  {
+  "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_81p.v",
+  "InstLine" : 10,
+  "InstName" : "CLK_81P",
+  "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_81p.v",
+  "ModuleLine" : 10,
+  "ModuleName" : "CLK_81P"
+ },
+ {
   "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
   "InstLine" : 3,
   "InstName" : "v9958_top",
@@ -9,7 +17,7 @@
   "SubInsts" : [
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 121,
+    "InstLine" : 116,
     "InstName" : "clk_135_inst",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_135.v",
     "ModuleLine" : 10,
@@ -17,15 +25,15 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 136,
+    "InstLine" : 131,
     "InstName" : "clk_sdramp_inst",
-    "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_81p.v",
+    "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/gowin/clk_108p.v",
     "ModuleLine" : 10,
-    "ModuleName" : "CLK_81P"
+    "ModuleName" : "CLK_108P"
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 212,
+    "InstLine" : 157,
     "InstName" : "vram",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/memory_controller.v",
     "ModuleLine" : 1,
@@ -33,7 +41,7 @@
     "SubInsts" : [
      {
       "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/memory_controller.v",
-      "InstLine" : 48,
+      "InstLine" : 49,
       "InstName" : "u_sdram",
       "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/sdram.v",
       "ModuleLine" : 27,
@@ -43,7 +51,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 345,
+    "InstLine" : 282,
     "InstName" : "u_v9958",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vdp/vdp.vhd",
     "ModuleLine" : 254,
@@ -273,7 +281,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 531,
+    "InstLine" : 468,
     "InstName" : "hdmi_ntsc",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv",
     "ModuleLine" : 4,
@@ -365,7 +373,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 559,
+    "InstLine" : 496,
     "InstName" : "hdmi_pal",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/hdmi.sv",
     "ModuleLine" : 4,
@@ -457,7 +465,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 578,
+    "InstLine" : 515,
     "InstName" : "serializer",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/hdmi/serializer.sv",
     "ModuleLine" : 3,
@@ -465,7 +473,7 @@
    },
    {
     "InstFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/v9958_top.v",
-    "InstLine" : 595,
+    "InstLine" : 532,
     "InstName" : "SPI_MCP3202",
     "ModuleFile" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/SPI_MCP3202.v",
     "ModuleLine" : 20,

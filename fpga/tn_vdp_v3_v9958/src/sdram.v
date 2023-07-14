@@ -73,7 +73,8 @@ module sdram
     output      [15:0] dout,         // data output
     output [DATA_WIDTH-1:0] dout32, // 32-bit data output
     output            data_ready,   // available 6 cycles after wr is set
-    output            busy          // 0: ready for next command
+    output            busy,          // 0: ready for next command
+    output            enabled
 );
 
 // Tri-state DQ input/output
@@ -134,127 +135,129 @@ reg [3:0] cycle;        // each operation (config/read/write) are max 7 cycles
 //
 // SDRAM state machine
 //
-always @(posedge clk) begin
-    cycle <= cycle == 4'd15 ? 4'd15 : cycle + 4'd1;
-    // defaults
-    {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_NOP; 
-    casex ({state, cycle})
-        // wait 200 us on power-on
-        {INIT, 4'bxxxx} : if (cfg_now) begin
-            state <= CONFIG;
-            cycle <= 0;
-        end
-
-        // configuration sequence
-        //  cycle  / 0 \___/ 1 \___/ 2 \___/ ... __/ 6 \___/ ...___/10 \___/11 \___/ 12\___
-        //  cmd            |PC_All |Refresh|       |Refresh|       |  MRD  |       | _next_
-        //                 '-T_RP--`----  T_RC  ---'----  T_RC  ---'------T_MRD----'
-        {CONFIG, 4'd0} : begin
-            // precharge all
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_PreCharge;
-            FF_SDRAM_A[10] <= 1'b1;
-        end
-        {CONFIG, T_RP} : begin
-            // 1st AutoRefresh
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
-        end
-        {CONFIG, T_RP+T_RC} : begin
-            // 2nd AutoRefresh
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
-        end
-        {CONFIG, T_RP+T_RC+T_RC} : begin
-            // set register
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_SetModeReg;
-            FF_SDRAM_A[10:0] <= MODE_REG;
-        end
-        {CONFIG, T_RP+T_RC+T_RC+T_MRD} : begin
-            state <= IDLE;
-            ff_busy <= 1'b0;              // init&config is done
-        end
-        
-        // read/write/refresh
-        {IDLE, 4'bxxxx}: if (rd | wr) begin
-            // bank activate
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_BankActivate;
-            FF_SDRAM_BA <= addr[ROW_WIDTH+COL_WIDTH+BANK_WIDTH-1+1 : ROW_WIDTH+COL_WIDTH+1];    // bank id
-            FF_SDRAM_A <= addr[ROW_WIDTH+COL_WIDTH-1+1:COL_WIDTH+1];      // 12-bit row address
-            state <= rd ? READ : WRITE;
-            cycle <= 4'd1;
-            ff_busy <= 1'b1;
-        end else if (refresh) begin
-            // auto-refresh
-            // no need for precharge-all b/c all our r/w are done with auto-precharge.
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
-            state <= REFRESH;
-            cycle <= 4'd1;
-            ff_busy <= 1'b1;
-        end
-
-        // read sequence
-        //  cycle  / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
-        //  rd     /       \_______________________________
-        //  cmd            |Active | Read  |  NOP  |  NOP  | _Next_
-        //  DQ                                     |  Dout |
-        //  ff_data_ready ____________________________/       \_______   
-        //  ff_busy   ________/                               \_______
-        //                 `-T_RCD-'------CAS------'
-        {READ, T_RCD}: begin
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_Read;
-            FF_SDRAM_A[10] <= 1'b1;        // set auto precharge
-            FF_SDRAM_A[9:0] <= {1'b0, addr[COL_WIDTH-1+1:1]};  // column address
-            FF_SDRAM_DQM <= 4'b0;
-            off <= addr[0];
-        end
-        {READ, T_RCD+CAS}: begin
-            ff_data_ready <= 1'b1;
-        end
-        {READ, T_RCD+CAS+4'd1}: begin
-            ff_data_ready <= 1'b0;
-            ff_busy <= 0;
-            state <= IDLE;
-        end
-
-        // write sequence
-        //  cycle / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
-        //  wr    /       \_______________________________
-        //  cmd           |Active | Write |  NOP  |  NOP  | _Next_
-        //  DQ                    | Din   |
-        //  ff_busy   _______/                               \_______
-        //                `-T_RCD-'-------T_WR+T_RP-------'
-        {WRITE, T_RCD}: begin
-            {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_Write;
-            FF_SDRAM_A[10] <= 1'b1;        // set auto precharge
-            FF_SDRAM_A[9:0] <= {1'b0, addr[COL_WIDTH-1+1:1]};  // column address
-            FF_SDRAM_DQM <= addr[0] == 1'd0 ? { 2'b11, wdm } : { wdm, 2'b11 } ;     // only write the correct byte
-            off <= addr[0];
-            dq_out <= {din,din};
-            dq_oen <= 1'b0;                 // DQ output on
-        end
-        {WRITE, T_RCD+4'd1}: begin
-            dq_oen <= 1'b1;
-        end
-        {WRITE, T_RCD+T_WR+T_RP}: begin  // 2+2+1
-            ff_busy <= 0;
-            state <= IDLE;
-        end
-
-        // refresh sequence
-        //  cycle   / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
-        //  refresh /       \_______________________________
-        //  cmd             |Refresh|  NOP  |  NOP  |  NOP  | _Next_
-        //  ff_busy     _______/                               \_______
-        //                  `------------- T_RC ------------'
-        {REFRESH, T_RC}: begin
-            state <= IDLE;
-            ff_busy <= 0;
-        end
-    endcase
+always @(posedge clk or negedge resetn) begin
 
     if (~resetn) begin
         ff_busy <= 1'b1;
         dq_oen <= 1'b1;         // turn off DQ output
         FF_SDRAM_DQM <= 4'b0;
         state <= INIT;
+    end else
+    begin
+        cycle <= cycle == 4'd15 ? 4'd15 : cycle + 4'd1;
+        // defaults
+        {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_NOP; 
+        casex ({state, cycle})
+            // wait 200 us on power-on
+            {INIT, 4'bxxxx} : if (cfg_now) begin
+                state <= CONFIG;
+                cycle <= 0;
+            end
+
+            // configuration sequence
+            //  cycle  / 0 \___/ 1 \___/ 2 \___/ ... __/ 6 \___/ ...___/10 \___/11 \___/ 12\___
+            //  cmd            |PC_All |Refresh|       |Refresh|       |  MRD  |       | _next_
+            //                 '-T_RP--`----  T_RC  ---'----  T_RC  ---'------T_MRD----'
+            {CONFIG, 4'd0} : begin
+                // precharge all
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_PreCharge;
+                FF_SDRAM_A[10] <= 1'b1;
+            end
+            {CONFIG, T_RP} : begin
+                // 1st AutoRefresh
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
+            end
+            {CONFIG, T_RP+T_RC} : begin
+                // 2nd AutoRefresh
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
+            end
+            {CONFIG, T_RP+T_RC+T_RC} : begin
+                // set register
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_SetModeReg;
+                FF_SDRAM_A[10:0] <= MODE_REG;
+            end
+            {CONFIG, T_RP+T_RC+T_RC+T_MRD} : begin
+                state <= IDLE;
+                ff_busy <= 1'b0;              // init&config is done
+            end
+            
+            // read/write/refresh
+            {IDLE, 4'bxxxx}: if (rd | wr) begin
+                // bank activate
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_BankActivate;
+                FF_SDRAM_BA <= addr[ROW_WIDTH+COL_WIDTH+BANK_WIDTH-1+1 : ROW_WIDTH+COL_WIDTH+1];    // bank id
+                FF_SDRAM_A <= addr[ROW_WIDTH+COL_WIDTH-1+1:COL_WIDTH+1];      // 12-bit row address
+                state <= rd ? READ : WRITE;
+                cycle <= 4'd1;
+                ff_busy <= 1'b1;
+            end else if (refresh) begin
+                // auto-refresh
+                // no need for precharge-all b/c all our r/w are done with auto-precharge.
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_AutoRefresh;
+                state <= REFRESH;
+                cycle <= 4'd1;
+                ff_busy <= 1'b1;
+            end
+
+            // read sequence
+            //  cycle  / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
+            //  rd     /       \_______________________________
+            //  cmd            |Active | Read  |  NOP  |  NOP  | _Next_
+            //  DQ                                     |  Dout |
+            //  ff_data_ready ____________________________/       \_______   
+            //  ff_busy   ________/                               \_______
+            //                 `-T_RCD-'------CAS------'
+            {READ, T_RCD}: begin
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_Read;
+                FF_SDRAM_A[10] <= 1'b1;        // set auto precharge
+                FF_SDRAM_A[9:0] <= {1'b0, addr[COL_WIDTH-1+1:1]};  // column address
+                FF_SDRAM_DQM <= 4'b0;
+                off <= addr[0];
+            end
+            {READ, T_RCD+CAS}: begin
+                ff_data_ready <= 1'b1;
+            end
+            {READ, T_RCD+CAS+4'd1}: begin
+                ff_data_ready <= 1'b0;
+                ff_busy <= 0;
+                state <= IDLE;
+            end
+
+            // write sequence
+            //  cycle / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
+            //  wr    /       \_______________________________
+            //  cmd           |Active | Write |  NOP  |  NOP  | _Next_
+            //  DQ                    | Din   |
+            //  ff_busy   _______/                               \_______
+            //                `-T_RCD-'-------T_WR+T_RP-------'
+            {WRITE, T_RCD}: begin
+                {FF_SDRAM_nRAS, FF_SDRAM_nCAS, FF_SDRAM_nWE} <= CMD_Write;
+                FF_SDRAM_A[10] <= 1'b1;        // set auto precharge
+                FF_SDRAM_A[9:0] <= {1'b0, addr[COL_WIDTH-1+1:1]};  // column address
+                FF_SDRAM_DQM <= addr[0] == 1'd0 ? { 2'b11, wdm } : { wdm, 2'b11 } ;     // only write the correct byte
+                off <= addr[0];
+                dq_out <= {din,din};
+                dq_oen <= 1'b0;                 // DQ output on
+            end
+            {WRITE, T_RCD+4'd1}: begin
+                dq_oen <= 1'b1;
+            end
+            {WRITE, T_RCD+T_WR+T_RP}: begin  // 2+2+1
+                ff_busy <= 0;
+                state <= IDLE;
+            end
+
+            // refresh sequence
+            //  cycle   / 0 \___/ 1 \___/ 2 \___/ 3 \___/ 4 \___/ 5 \___
+            //  refresh /       \_______________________________
+            //  cmd             |Refresh|  NOP  |  NOP  |  NOP  | _Next_
+            //  ff_busy     _______/                               \_______
+            //                  `------------- T_RC ------------'
+            {REFRESH, T_RC}: begin
+                state <= IDLE;
+                ff_busy <= 0;
+            end
+        endcase
     end
 end
 
@@ -264,24 +267,26 @@ end
 //
 reg  [14:0]   rst_cnt;
 reg rst_done, rst_done_p1, cfg_busy;
-  
-always @(posedge clk) begin
-    rst_done_p1 <= rst_done;
-    cfg_now     <= rst_done & ~rst_done_p1;// Rising Edge Detect
+assign enabled = rst_done;
 
-    if (rst_cnt != FREQ / 1000 * 200 / 1000) begin      // count to 200 us
-        rst_cnt  <= rst_cnt[14:0] + 1;
-        rst_done <= 1'b0;
-        cfg_busy <= 1'b1;
-    end else begin
-        rst_done <= 1'b1;
-        cfg_busy <= 1'b0;
-    end
-
+always @(posedge clk or negedge resetn) begin
     if (~resetn) begin
         rst_cnt  <= 15'd0;
         rst_done <= 1'b0;
         cfg_busy <= 1'b1;
+    end else
+    begin
+        rst_done_p1 <= rst_done;
+        cfg_now     <= rst_done & ~rst_done_p1;// Rising Edge Detect
+
+        if (rst_cnt != FREQ / 1000 * 200 / 1000) begin      // count to 200 us
+            rst_cnt  <= rst_cnt[14:0] + 1;
+            rst_done <= 1'b0;
+            cfg_busy <= 1'b1;
+        end else begin
+            rst_done <= 1'b1;
+            cfg_busy <= 1'b0;
+        end
     end
 end
 

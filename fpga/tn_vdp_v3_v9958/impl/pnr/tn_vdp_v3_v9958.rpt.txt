@@ -12,27 +12,27 @@
   <Part Number>: GW2AR-LV18QN88C8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Wed Jul 12 02:45:34 2023
+  <Created Time>:Fri Jul 14 02:16:45 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.724s, Elapsed time = 0h 0m 0.724s
-    Placement Phase 1: CPU time = 0h 0m 0.248s, Elapsed time = 0h 0m 0.248s
+    Placement Phase 0: CPU time = 0h 0m 0.703s, Elapsed time = 0h 0m 0.704s
+    Placement Phase 1: CPU time = 0h 0m 0.243s, Elapsed time = 0h 0m 0.243s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 3: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
-    Total Placement: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s
+    Placement Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
+    Total Placement: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
-    Routing Phase 1: CPU time = 0h 0m 0.284s, Elapsed time = 0h 0m 0.284s
+    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.002s
+    Routing Phase 1: CPU time = 0h 0m 0.293s, Elapsed time = 0h 0m 0.292s
     Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
  Generate output files:
     CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 
- Total Time and Memory Usage: CPU time = 0h 0m 16s, Elapsed time = 0h 0m 16s, Peak memory usage = 422MB
+ Total Time and Memory Usage: CPU time = 0h 0m 17s, Elapsed time = 0h 0m 17s, Peak memory usage = 399MB
 
 
 3. Resource Usage Summary
@@ -40,18 +40,18 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 5368/20736  26%
-    --LUT,ALU,ROM16           | 5320(4695 LUT, 625 ALU, 0 ROM16)
+  Logic                       | 5285/20736  26%
+    --LUT,ALU,ROM16           | 5237(4613 LUT, 624 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
-  Register                    | 2698/15915  17%
+  Register                    | 2682/15915  17%
     --Logic Register as Latch | 0/15552  0%
-    --Logic Register as FF    | 2671/15552  18%
+    --Logic Register as FF    | 2655/15552  18%
     --I/O Register as Latch   | 0/363  0%
     --I/O Register as FF      | 27/363  8%
-  CLS                         | 3757/10368  37%
+  CLS                         | 3703/10368  36%
   I/O Port                    | 37
-  I/O Buf                     | 31
-    --Input Buf               | 13
+  I/O Buf                     | 32
+    --Input Buf               | 14
     --Output Buf              | 10
     --Inout Buf               | 8
   IOLOGIC                     | 5%
@@ -83,7 +83,7 @@
   bank 3   | 9/17(52%)   
   bank 4   | 8/8(100%)   
   bank 5   | 9/10(90%)   
-  bank 6   | 7/9(77%)    
+  bank 6   | 6/9(66%)    
   bank 7   | 1/1(100%)   
   =======================
 
@@ -93,8 +93,8 @@
   -------------------------------
   Global Clock  | Usage       
   -------------------------------
-  PRIMARY       | 4/8(50%)
-  LW            | 7/8(88%)
+  PRIMARY       | 5/8(63%)
+  LW            | 8/8(100%)
   GCLK_PIN      | 2/5(40%)
   PLL           | 2/2(100%)
   CLKDIV        | 0/8(0%)
@@ -108,11 +108,13 @@
   Signal         | Global Clock   | Location
   -------------------------------------------
   clk_d          | PRIMARY        |  TR TL BR BL
+  clk_50_d       | PRIMARY        |  BR
   clk_125_d      | PRIMARY        |  TR BR
-  clk_sdram      | PRIMARY        |  TR TL BR BL
+  clk_sdram      | PRIMARY        |  TR TL BL
   clk_sdramp     | PRIMARY        |  TR
-  n623_3         | LW             |  -
   reset_w        | LW             |  -
+  n526_5         | LW             |  -
+  n231_5         | LW             |  -
   clk_cpu        | LW             |  -
   clk_grom       | LW             |  -
   clk_audio      | LW             |  -
@@ -130,7 +132,6 @@ Port Name         | Diff Pair | Loc./Bank     | Constraint | Dir.  | Site     | 
 clk               |           | 4/7           | Y          | in    | IOL7[A]  | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 clk_50            |           | 10/6          | Y          | in    | IOL29[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 clk_125           |           | 11/6          | Y          | in    | IOL29[B] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
-clk_63            |           | 13/6          | Y          | in    | IOL45[A] | LVCMOS18   | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 s1                |           | 88/3          | Y          | in    | IOR30[A] | LVCMOS18   | NA    | DOWN      | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3       
 reset_n           |           | 31/5          | Y          | in    | IOB18[A] | LVCMOS33   | NA    | NONE      | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
 mode[0]           |           | 27/5          | Y          | in    | IOB8[A]  | LVCMOS33   | NA    | NONE      | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3       
@@ -210,7 +211,7 @@ Loc./Bank| Signal            | Dir.  | Site     | IO Type  | Drive | Pull Mode |
 4/7      | clk               | in    | IOL7[A]  | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
 10/6     | clk_50            | in    | IOL29[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
 11/6     | clk_125           | in    | IOL29[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
-13/6     | clk_63            | in    | IOL45[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  
+13/6     | -                 | in    | IOL45[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 15/6     | -                 | in    | IOL47[A] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 16/6     | -                 | in    | IOL47[B] | LVCMOS18 | NA    | UP        | ON        | NONE       | NA         | NA         | NA              | NA            | 3.3  
 17/6     | maxspr_n          | in    | IOL49[A] | LVCMOS33 | NA    | UP        | ON        | NONE       | NA         | NA         | OFF             | NA            | 3.3  

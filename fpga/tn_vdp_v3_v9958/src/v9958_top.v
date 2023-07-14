@@ -4,7 +4,7 @@ module v9958_top(
     input   clk,
     input   clk_50,
     input   clk_125,
-    input   clk_63,
+    input   clk_93,
 
     input   s1,
 
@@ -50,10 +50,6 @@ module v9958_top(
 
     );
 
-    reg rst_n = 0;
-    always @(posedge clk) begin
-        rst_n <= ~s1;
-    end
 
 // VDP signals
 	wire			VdpReq;
@@ -85,7 +81,7 @@ module v9958_top(
     wire            reset_n_w;
 
 
-   wire clk_bufg;
+    wire clk_bufg;
 
     wire clk_135_w;
     wire clk_3_w;
@@ -103,14 +99,13 @@ module v9958_top(
     .I(clk)
     );
 
+    reg rst_n = 0;
+    always @(posedge clk_w) rst_n <= ~s1;
+
+
     BUFG clk_50_bufg_inst(
     .O(clk_50_w),
     .I(clk_50)
-    );
-
-    BUFG clk_63_bufg_inst(
-    .O(clk_63_w),
-    .I(clk_63)
     );
 
     BUFG clk_125_bufg_inst(
@@ -133,7 +128,7 @@ module v9958_top(
     wire rst_n_w;
     assign rst_n_w = rst_n & clk_135_lock_w & clk_sdram_lock_w; 
 
-    CLK_81P clk_sdramp_inst (
+    CLK_108P clk_sdramp_inst (
         .clkout(clk_sdram), //output clkout
         .lock(clk_sdram_lock_w), //output lock
         .clkoutp(clk_sdramp), //output clkoutp
@@ -155,73 +150,24 @@ module v9958_top(
     assign reset_w = ~reset_n_w;
 
     wire ram_busy, ram_fail;
-    reg [7:0] SdSeq = 7'b0;
-
-    reg    [7:0] VrmDbo_r;
-    wire   [7:0] VrmDbo_w;
-    assign VrmDbo_w = VrmDbo_r;
-
-    reg    VrmWre_r = 1'b0;
-    wire   VrmWre_w;
-    reg    VrmRde_r = 1'b0;
-    wire   VrmRde_w;
-    assign VrmWre_w = VrmWre_r;
-    assign VrmRde_w = VrmRde_r;
-
-    reg    refresh_r = 1'b0;
-    wire   refresh_w;
-    assign refresh_w = refresh_r;
-
-    always @(posedge clk_sdramp_w or negedge reset_n_w) begin
-        if (~reset_n_w) begin
-            SdSeq = 7'd0;
-            refresh_r <= 1'b0;
-            VrmWre_r <= 1'b0;
-            VrmRde_r <= 1'b0;
-        end else begin 
-
-            refresh_r <= 1'b0;
-            VrmWre_r <= 1'b0;
-            VrmRde_r = 1'b0;
-
-            if (SdSeq == 7'd0 && VideoDLClk && VideoDHClk  && ~ram_busy) 
-            begin
-                VrmWre_r <= ~WeVdp_n;
-                VrmRde_r <= ~ReVdp_n;
-                VrmDbo_r <= VrmDbo;
-                SdSeq <= SdSeq + 7'd1;
-            end
-            else if (SdSeq == 7'd1 && ~ram_busy) 
-            begin
-                SdSeq = 7'd2;
-            end
-            else if (SdSeq == 7'd2 && ~ram_busy) 
-            begin
-                refresh_r <= 1'b1;
-                SdSeq = 7'd3;
-            end
-            else if (SdSeq == 7'd3 && ~ram_busy) 
-            begin
-                SdSeq = 7'd0;
-            end
-        end
-    end
 
       wire [19:0] ram_total_written;
-      memory_controller #(.FREQ(67_500_000) )
+      wire ram_enabled;
+      memory_controller #(.FREQ(108_000_000) )
        vram(.clk(clk_sdram_w), 
             .clk_sdram(clk_sdramp_w), 
             .resetn(reset_n_w),
-            .read(VrmRde_w), 
-            .write(VrmWre_w),
-            .refresh(refresh_w),
+            .read(WeVdp_n & VideoDLClk & VideoDHClk & ~ram_busy), 
+            .write(~WeVdp_n & VideoDLClk & VideoDHClk & ~ram_busy),
+            .refresh(~VideoDLClk & ~VideoDHClk & ~ram_busy),
             .addr({ 5'b0 , VdpAdr[15:0] } ),
-            .din({ VrmDbo_w, VrmDbo_w }),
+            .din({ VrmDbo, VrmDbo }),
             .wdm({ ~VdpAdr[16], VdpAdr[16] }),
             .dout(VrmDbi),
             .busy(ram_busy), 
             .fail(ram_fail), 
             .total_written(ram_total_written),
+            .enabled(ram_enabled),
 
             .SDRAM_DQ(IO_sdram_dq), .SDRAM_A(O_sdram_addr), .SDRAM_BA(O_sdram_ba), .SDRAM_nCS(O_sdram_cs_n),
             .SDRAM_nWE(O_sdram_wen_n), .SDRAM_nRAS(O_sdram_ras_n), .SDRAM_nCAS(O_sdram_cas_n), 
@@ -244,8 +190,6 @@ module v9958_top(
 
     reg io_state_r = 1'b0; 
     reg [1:0] cs_latch;
-    reg csrn_27_r;
-    reg cswn_27_r;
 	wire	[7:0]	CpuDbi;
  
     reg [1:0] csr_sync_r;
@@ -291,7 +235,6 @@ module v9958_top(
     assign csw_next = (csw_sync_r == 2'b00) ? 1'b0 : (csw_sync_r == 2'b11 ? 1'b1 : csw_next);
     assign cswn_w = cswn_sdram_r;
 
-
 	reg			    CpuReq;
 	reg 			CpuWrt;
 	reg   	[15:0]	CpuAdr;
@@ -300,8 +243,6 @@ module v9958_top(
      always @(posedge clk_w or negedge reset_n_w) begin
         if(reset_n_w == 0) begin
             io_state_r = 1'b0;
-            csrn_27_r = 1'b1;
-            cswn_27_r = 1'b1;
 
             CpuDbo = 1'b0;
             CpuAdr = 15'b0;
@@ -311,8 +252,6 @@ module v9958_top(
         else begin
 
             if (!io_state_r) begin
-                csrn_27_r = csrn_w;
-                cswn_27_r = cswn_w;
 
                 CpuAdr = { 14'b0, { mode[1], mode[0] }};
                 CpuDbo = cd; 
@@ -323,8 +262,6 @@ module v9958_top(
                 io_state_r = 1'b1;
 
             end else begin
-                 csrn_27_r = 1'b1;
-                 cswn_27_r = 1'b1;
 
                  CpuWrt = 1'b0;
                  CpuReq = 1'b0;
@@ -344,7 +281,7 @@ module v9958_top(
     wire [10:0] vdp_cy;
     VDP u_v9958 (
 		.CLK21M				( clk_w         						),
-		.RESET				( reset_w        					),
+		.RESET				( reset_w | ~ram_enabled       		),
 		.REQ				( CpuReq 							),
 		.ACK				( 									),
 		.WRT				( CpuWrt							),
@@ -399,13 +336,13 @@ module v9958_top(
 
 ///////////
 
-    localparam CPUCLK_SRCFRQ = 81.0;
+    localparam CPUCLK_SRCFRQ = 50.0;
     localparam CPUCLK_FRQ = 315.0/88.0;
     localparam integer CPUCLK_DELAY = $floor(CPUCLK_SRCFRQ / CPUCLK_FRQ / 2 + 0.5);
     logic [$clog2(CPUCLK_DELAY)-1:0] cpuclk_divider;
     logic clk_cpu;
 
-    always_ff@(posedge clk_sdram_w) 
+    always_ff@(posedge clk_50_w) 
     begin
         if (cpuclk_divider != CPUCLK_DELAY - 1) 
             cpuclk_divider++;
@@ -420,13 +357,13 @@ module v9958_top(
     );
 
 
-    localparam GROMCLK_SRCFRQ = 81.0;
+    localparam GROMCLK_SRCFRQ = 50.0;
     localparam GROMCLK_FRQ = 315.0/88.0 / 8.0;
     localparam integer GROMCLK_DELAY = $floor(GROMCLK_SRCFRQ / GROMCLK_FRQ / 2.0 + 0.5);
     logic [$clog2(GROMCLK_DELAY)-1:0] gromclk_divider;
     logic clk_grom;
 
-    always_ff@(posedge clk_sdram_w) 
+    always_ff@(posedge clk_50_w) 
     begin
         if (gromclk_divider != GROMCLK_DELAY - 1) 
             gromclk_divider++;
@@ -532,7 +469,7 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( hdmi_reset | reset_w ),
+          .reset( hdmi_reset | reset_w | ~ram_enabled ),
           .audio_sample_word(audio_sample_word),
           .cx(cx_ntsc), 
           .cy(cy_ntsc),
@@ -560,7 +497,7 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( hdmi_reset | reset_w ),
+          .reset( hdmi_reset | reset_w  | ~ram_enabled),
           .audio_sample_word(audio_sample_word),
           .cx(cx_pal), 
           .cy(cy_pal),
@@ -587,7 +524,7 @@ module v9958_top(
 
     // ADC
     wire w_SCK_enable;
-    reg [11:0] audio_sample;
+    wire [11:0] audio_sample;
     SPI_MCP3202 #(
 	.SGL(1),        // sets ADC to single ended mode
 	.ODD(0)         // sets sample input to channel 0
@@ -605,7 +542,7 @@ module v9958_top(
 
     always @(posedge clk_w) begin     
         if (sample_valid)
-            sample <= { 2'b0, audio_sample[11:2], 4'b0 };
+            sample <= { 1'b0, audio_sample[11:2], 5'b0 };
     end
     assign sample_w = sample;
 
