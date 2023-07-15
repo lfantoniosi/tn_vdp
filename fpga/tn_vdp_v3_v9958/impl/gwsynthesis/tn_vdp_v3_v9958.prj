@@ -5,8 +5,8 @@
     <Device id="GW2AR-18C" package="QFN88" speed="8" partNumber="GW2AR-LV18QN88C8/I7"/>
     <FileList>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\SPI_MCP3202.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_108p.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_135.v" type="verilog"/>
-        <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_81p.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\audio_clock_regeneration_packet.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\audio_info_frame.sv" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\audio_sample_packet.sv" type="verilog"/>
@@ -21,7 +21,7 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\sdram.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vram.v" type="verilog"/>
-        <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_108p.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\ram.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_colordec.vhd" type="vhdl"/>

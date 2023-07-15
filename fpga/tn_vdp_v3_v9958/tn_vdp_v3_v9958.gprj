@@ -8,7 +8,6 @@
         <File path="src/SPI_MCP3202.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_108p.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_135.v" type="file.verilog" enable="1"/>
-        <File path="src/gowin/clk_81p.v" type="file.verilog" enable="1"/>
         <File path="src/hdmi/audio_clock_regeneration_packet.sv" type="file.verilog" enable="1"/>
         <File path="src/hdmi/audio_info_frame.sv" type="file.verilog" enable="1"/>
         <File path="src/hdmi/audio_sample_packet.sv" type="file.verilog" enable="1"/>
@@ -23,6 +22,7 @@
         <File path="src/sdram.v" type="file.verilog" enable="1"/>
         <File path="src/v9958_top.v" type="file.verilog" enable="1"/>
         <File path="src/vram.v" type="file.verilog" enable="1"/>
+        <File path="src/lpf.vhd" type="file.vhdl" enable="1"/>
         <File path="src/ram.vhd" type="file.vhdl" enable="1"/>
         <File path="src/vdp/vdp.vhd" type="file.vhdl" enable="1"/>
         <File path="src/vdp/vdp_colordec.vhd" type="file.vhdl" enable="1"/>

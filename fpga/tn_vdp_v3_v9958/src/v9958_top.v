@@ -3,8 +3,8 @@
 module v9958_top(
     input   clk,
     input   clk_50,
-    input   clk_125,
-    input   clk_93,
+//    input   clk_125,
+//    input   clk_93,
 
     input   s1,
 
@@ -84,7 +84,6 @@ module v9958_top(
     wire clk_bufg;
 
     wire clk_135_w;
-    wire clk_3_w;
     wire clk_135_lock_w;
 
     wire clk_sdram_w;
@@ -94,24 +93,20 @@ module v9958_top(
     logic [9:0] cy;
     logic [9:0] cx;
 
+    wire clk_w;
     BUFG clk_bufg_inst(
     .O(clk_w),
     .I(clk)
     );
 
-    reg rst_n = 0;
-    always @(posedge clk_w) rst_n <= ~s1;
-
-
+    wire clk_50_w;
     BUFG clk_50_bufg_inst(
     .O(clk_50_w),
     .I(clk_50)
     );
 
-    BUFG clk_125_bufg_inst(
-    .O(clk_125_w),
-    .I(clk_125)
-    );
+    reg rst_n = 0;
+    always @(posedge clk_w) rst_n <= ~s1;
 
     CLK_135 clk_135_inst(
         .clkout(clk_135), //output clkout
@@ -154,8 +149,8 @@ module v9958_top(
       wire [19:0] ram_total_written;
       wire ram_enabled;
       memory_controller #(.FREQ(108_000_000) )
-       vram(.clk(clk_sdram_w), 
-            .clk_sdram(clk_sdramp_w), 
+       vram(.clk(clk_sdramp_w), 
+            .clk_sdram(clk_sdram_w), 
             .resetn(reset_n_w),
             .read(WeVdp_n & VideoDLClk & VideoDHClk & ~ram_busy), 
             .write(~WeVdp_n & VideoDLClk & VideoDHClk & ~ram_busy),
@@ -280,7 +275,7 @@ module v9958_top(
     wire [10:0] vdp_cx;
     wire [10:0] vdp_cy;
     VDP u_v9958 (
-		.CLK21M				( clk_w         						),
+		.CLK21M				( clk_w         					),
 		.RESET				( reset_w | ~ram_enabled       		),
 		.REQ				( CpuReq 							),
 		.ACK				( 									),
@@ -383,7 +378,7 @@ module v9958_top(
 
     reg ff_pal_mode;
     wire pal_mode;
-    reg ff_hdmi_reset;
+    reg ff_video_reset;
 
     localparam NTSC_Y = 525-40;
     localparam PAL_Y  = 625-55;
@@ -395,24 +390,30 @@ module v9958_top(
     always_ff@(posedge clk_w) 
     begin
         
-        ff_hdmi_reset <= vdp_hdmi_reset;
+        ff_video_reset <= vdp_hdmi_reset;
 
         if (vdp_cx == 11'b0 && vdp_cy == 11'b0) begin
             if ((pal_mode == 1'b0 && (vdp_cx != cx_ntsc || vdp_cy != cy_ntsc)) ||
-                (pal_mode == 1'b0 && (vdp_cx != cx_pal || vdp_cy != cy_pal)))
-                ff_hdmi_reset <= 1'b1;
+                (pal_mode == 1'b1 && (vdp_cx != cx_pal || vdp_cy != cy_pal)))
+                ff_video_reset <= 1'b1;
         end
     end
 
-    wire hdmi_reset;
-    assign hdmi_reset = ff_hdmi_reset;
+    wire video_reset;
+    assign video_reset = ff_video_reset;
 
-    always_ff@(posedge clk_w) 
+    always_ff@(posedge clk_w or negedge reset_n_w) 
     begin        
-        if (hdmi_reset)
+        if (!reset_n_w)
+            ff_pal_mode <= 1'b0;
+        else
+        if (video_reset)
             ff_pal_mode <= vdp_pal_mode;
     end
     assign pal_mode = ff_pal_mode;
+    wire hdmi_reset;
+    assign hdmi_reset = video_reset | reset_w | ~ram_enabled;
+
 
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
@@ -437,7 +438,7 @@ module v9958_top(
     .I(clk_audio)
     );
 
-    reg [15:0] sample; 
+
     wire [15:0] sample_w;
 
     reg [15:0] audio_sample_word [1:0], audio_sample_word0 [1:0];
@@ -469,7 +470,7 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( hdmi_reset | reset_w | ~ram_enabled ),
+          .reset( hdmi_reset ),
           .audio_sample_word(audio_sample_word),
           .cx(cx_ntsc), 
           .cy(cy_ntsc),
@@ -497,7 +498,7 @@ module v9958_top(
           .clk_pixel(clk_w), 
           .clk_audio(clk_audio_w),
           .rgb({dvi_r, dvi_g, dvi_b}), 
-          .reset( hdmi_reset | reset_w  | ~ram_enabled),
+          .reset( hdmi_reset ),
           .audio_sample_word(audio_sample_word),
           .cx(cx_pal), 
           .cy(cy_pal),
@@ -522,29 +523,71 @@ module v9958_top(
         .OB({tmds_clk_n, tmds_data_n})
     );
 
+////////////////////
+
     // ADC
-    wire w_SCK_enable;
+    wire sck_enable;
     wire [11:0] audio_sample;
     SPI_MCP3202 #(
 	.SGL(1),        // sets ADC to single ended mode
 	.ODD(0)         // sets sample input to channel 0
 	)
     SPI_MCP3202 (
-	.clk(clk_125_w),                 // 125  MHz 
+	.clk(clk_135_w),                 // 125  MHz 
 	.EN(reset_n_w),                  // Enable the SPI core (ACTIVE HIGH)
 	.MISO(adc_miso),                // data out of ADC (Dout pin)
 	.MOSI(adc_mosi),               // Data into ADC (Din pin)
-	.SCK(adc_clk), 	           // SPI clock
+    .SCK_ENABLE(sck_enable),
 	.o_DATA(audio_sample),      // 12 bit word (for other modules)
     .CS(adc_cs),                 // Chip Select
 	.DATA_VALID(sample_valid)          // is high when there is a full 12 bit word. 
 	); 
 
-    always @(posedge clk_125_w) begin     
-        if (sample_valid)
-            sample <= { 1'b0, audio_sample[11:2], 5'b0 };
+    localparam SCKCLK_SRCFRQ = 135.0;
+    localparam SCKCLK_FRQ = 0.9;
+    localparam integer SCKCLK_DELAY = $floor(SCKCLK_SRCFRQ / SCKCLK_FRQ / 2.0 + 0.5);
+    logic [$clog2(SCKCLK_DELAY)-1:0] sckclk_divider;
+    logic clk_sck;
+
+    always_ff@(posedge clk_135_w) 
+    begin
+        if (sckclk_divider != SCKCLK_DELAY - 1) 
+            sckclk_divider++;
+        else begin 
+            clk_sck <= ~clk_sck;
+            sckclk_divider <= 0; 
+        end
     end
-    assign sample_w = sample;
+    BUFG clk_sckclk_bufg_inst(
+    .O(sckclk_w),
+    .I(clk_sck)
+    );
+
+    assign adc_clk = sckclk_w & sck_enable;
+    
+    reg [15:0] adc_sample;
+    always @(posedge clk_135_w) begin     
+        if (sample_valid)
+            adc_sample <= { audio_sample[11:0], 4'b0 };
+    end
+//    assign sample_w = adc_sample;
+
+    wire [31:0] adc_sample_w;
+    assign adc_sample_w = { adc_sample, 16'b0 };
+
+    reg [31:0] sample;
+    LPF1 #(
+        .MSBI(32)
+    )
+    LPF (
+        .CLK21M(clk_135_w),
+        .RESET(reset_w),
+        .CLKENA(1'b1),
+        .IDATA(adc_sample_w),
+        .ODATA(sample)
+    );
+
+    assign sample_w = sample[31:16];
 
 endmodule
 
