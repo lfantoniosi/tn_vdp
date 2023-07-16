@@ -72,6 +72,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\memory_controller.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\sdram.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vram.v<br>
+D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\pinfilter.v<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\ram.vhd<br>
 D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd<br>
@@ -117,7 +118,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sat Jul 15 16:36:34 2023
+<td>Sun Jul 16 03:41:10 2023
 </td>
 </tr>
 <tr>
@@ -133,11 +134,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Synthesis Process</td>
-<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.625s, Elapsed time = 0h 0m 0.823s, Peak memory usage = 366.824MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 2s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.234s, Elapsed time = 0h 0m 0.333s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 366.824MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.171s, Elapsed time = 0h 0m 0.239s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.036s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.041s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.04s, Peak memory usage = 366.824MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0.593s, Elapsed time = 0h 0m 0.849s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.046s, Elapsed time = 0h 0m 0.128s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.062s, Elapsed time = 0h 0m 0.151s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 10s, Elapsed time = 0h 0m 18s, Peak memory usage = 366.824MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.234s, Elapsed time = 0h 0m 0.403s, Peak memory usage = 366.824MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.171s, Elapsed time = 0h 0m 0.325s, Peak memory usage = 366.824MB<br/></td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.25s, Elapsed time = 0h 0m 0.782s, Peak memory usage = 403.102MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 0.984s, Elapsed time = 0h 0m 2s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 0.125s, Elapsed time = 0h 0m 0.309s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 0.171s, Elapsed time = 0h 0m 0.767s, Peak memory usage = 403.102MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 0.015s, Elapsed time = 0h 0m 0.172s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.029s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.037s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.035s, Peak memory usage = 403.102MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 0.265s, Elapsed time = 0h 0m 0.715s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.031s, Elapsed time = 0h 0m 0.119s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0.14s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 19s, Peak memory usage = 403.102MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 0.218s, Elapsed time = 0h 0m 0.538s, Peak memory usage = 403.102MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0.203s, Elapsed time = 0h 0m 0.411s, Peak memory usage = 403.102MB<br/></td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 14s, Elapsed time = 0h 0m 24s, Peak memory usage = 366.824MB</td>
+<td>CPU time = 0h 0m 11s, Elapsed time = 0h 0m 25s, Peak memory usage = 403.102MB</td>
 </tr>
 </table>
 <h1><a name="resource">Resource</a></h1>
@@ -157,7 +158,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label"><b>I/O Buf </b></td>
-<td>95</td>
+<td>96</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspIBUF</td>
@@ -177,7 +178,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspBUFG</td>
-<td>9</td>
+<td>10</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspELVDS_OBUF</td>
@@ -185,7 +186,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label"><b>Register </b></td>
-<td>2780</td>
+<td>2790</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFF</td>
@@ -205,15 +206,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFR</td>
-<td>193</td>
+<td>196</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
-<td>168</td>
-</tr>
-<tr>
-<td class="label">&nbsp&nbsp&nbsp&nbspDFFP</td>
-<td>6</td>
+<td>169</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFPE</td>
@@ -221,35 +218,35 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
-<td>176</td>
+<td>191</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspDFFCE</td>
-<td>854</td>
+<td>851</td>
 </tr>
 <tr>
 <td class="label"><b>LUT </b></td>
-<td>4638</td>
+<td>4620</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
-<td>386</td>
+<td>387</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
-<td>1752</td>
+<td>1697</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
-<td>2500</td>
+<td>2536</td>
 </tr>
 <tr>
 <td class="label"><b>ALU </b></td>
-<td>600</td>
+<td>601</td>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
-<td>600</td>
+<td>601</td>
 </tr>
 <tr>
 <td class="label"><b>SSRAM </b></td>
@@ -305,12 +302,12 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>5331(4683 LUTs, 600 ALUs, 8 SSRAMs) / 20736</td>
+<td>5314(4665 LUTs, 601 ALUs, 8 SSRAMs) / 20736</td>
 <td>26%</td>
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>2780 / 15915</td>
+<td>2790 / 15915</td>
 <td>18%</td>
 </tr>
 <tr>
@@ -320,7 +317,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">&nbsp&nbsp--Register as FF</td>
-<td>2780 / 15915</td>
+<td>2790 / 15915</td>
 <td>18%</td>
 </tr>
 <tr>
@@ -377,17 +374,6 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>clk_135_bufg_inst/I </td>
 </tr>
 <tr>
-<td>clk_sdram_bufg_inst/I</td>
-<td>Base</td>
-<td>10.000</td>
-<td>100.0</td>
-<td>0.000</td>
-<td>5.000</td>
-<td> </td>
-<td> </td>
-<td>clk_sdram_bufg_inst/I </td>
-</tr>
-<tr>
 <td>clk_50_bufg_inst/I</td>
 <td>Base</td>
 <td>10.000</td>
@@ -408,6 +394,17 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td> </td>
 <td> </td>
 <td>clk_sdramp_bufg_inst/I </td>
+</tr>
+<tr>
+<td>clk_sdram_bufg_inst/I</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>clk_sdram_bufg_inst/I </td>
 </tr>
 <tr>
 <td>clk_clock_bufg_inst/I</td>
@@ -443,17 +440,6 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>clk_135_bufg_inst/O </td>
 </tr>
 <tr>
-<td>O_sdram_clk_d</td>
-<td>Base</td>
-<td>10.000</td>
-<td>100.0</td>
-<td>0.000</td>
-<td>5.000</td>
-<td> </td>
-<td> </td>
-<td>clk_sdram_bufg_inst/O </td>
-</tr>
-<tr>
 <td>clk_50_w</td>
 <td>Base</td>
 <td>10.000</td>
@@ -474,6 +460,17 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td> </td>
 <td> </td>
 <td>clk_sdramp_bufg_inst/O </td>
+</tr>
+<tr>
+<td>O_sdram_clk_d</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.0</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>clk_sdram_bufg_inst/O </td>
 </tr>
 <tr>
 <td>clk_audio_w</td>
@@ -589,16 +586,16 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>1</td>
 <td>clk</td>
 <td>27.0(MHz)</td>
-<td>360.0(MHz)</td>
-<td>4</td>
+<td>295.3(MHz)</td>
+<td>5</td>
 <td>TOP</td>
 </tr>
 <tr>
 <td>2</td>
 <td>clk_w</td>
 <td>100.0(MHz)</td>
-<td>112.2(MHz)</td>
-<td>13</td>
+<td>107.8(MHz)</td>
+<td>14</td>
 <td>TOP</td>
 </tr>
 <tr>
@@ -611,14 +608,6 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td>4</td>
-<td>O_sdram_clk_d</td>
-<td>100.0(MHz)</td>
-<td>771.6(MHz)</td>
-<td>2</td>
-<td>TOP</td>
-</tr>
-<tr>
-<td>5</td>
 <td>clk_50_w</td>
 <td>100.0(MHz)</td>
 <td>351.9(MHz)</td>
@@ -626,11 +615,19 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>TOP</td>
 </tr>
 <tr>
-<td>6</td>
+<td>5</td>
 <td>clk_sdramp_w</td>
 <td>100.0(MHz)</td>
-<td>251.1(MHz)</td>
+<td>288.4(MHz)</td>
+<td>5</td>
+<td>TOP</td>
+</tr>
+<tr>
 <td>6</td>
+<td>O_sdram_clk_d</td>
+<td>100.0(MHz)</td>
+<td>771.6(MHz)</td>
+<td>2</td>
 <td>TOP</td>
 </tr>
 <tr>
@@ -648,11 +645,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>1.086</td>
+<td>0.726</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>9.059</td>
+<td>9.419</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -660,7 +657,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>hdmi_ntsc/video_data_13_s0</td>
+<td>hdmi_ntsc/video_data_11_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
@@ -698,7 +695,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -707,15 +704,15 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/video_data_13_s0/CLK</td>
+<td>hdmi_ntsc/video_data_11_s0/CLK</td>
 </tr>
 <tr>
 <td>0.412</td>
 <td>0.232</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>14</td>
-<td>hdmi_ntsc/video_data_13_s0/Q</td>
+<td>16</td>
+<td>hdmi_ntsc/video_data_11_s0/Q</td>
 </tr>
 <tr>
 <td>0.649</td>
@@ -723,7 +720,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s11/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/I1</td>
 </tr>
 <tr>
 <td>1.204</td>
@@ -731,7 +728,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s11/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/F</td>
 </tr>
 <tr>
 <td>1.441</td>
@@ -739,50 +736,66 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s9/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/I2</td>
 </tr>
 <tr>
-<td>1.958</td>
-<td>0.517</td>
+<td>1.894</td>
+<td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s9/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/F</td>
 </tr>
 <tr>
-<td>2.195</td>
+<td>2.131</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s6/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/I3</td>
 </tr>
 <tr>
-<td>2.712</td>
-<td>0.517</td>
+<td>2.502</td>
+<td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
-<td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s6/F</td>
+<td>5</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/F</td>
 </tr>
 <tr>
-<td>2.949</td>
+<td>2.739</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/I0</td>
 </tr>
 <tr>
-<td>3.504</td>
-<td>0.555</td>
+<td>3.256</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/F</td>
+</tr>
+<tr>
+<td>3.493</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I3</td>
+</tr>
+<tr>
+<td>3.864</td>
+<td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>4</td>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/F</td>
 </tr>
 <tr>
-<td>3.741</td>
+<td>4.101</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -790,7 +803,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/I1</td>
 </tr>
 <tr>
-<td>4.311</td>
+<td>4.671</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
@@ -798,7 +811,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/COUT</td>
 </tr>
 <tr>
-<td>4.311</td>
+<td>4.671</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -806,7 +819,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n131_s1/CIN</td>
 </tr>
 <tr>
-<td>4.781</td>
+<td>5.141</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -814,7 +827,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n131_s1/SUM</td>
 </tr>
 <tr>
-<td>5.018</td>
+<td>5.378</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -822,7 +835,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/I0</td>
 </tr>
 <tr>
-<td>5.567</td>
+<td>5.927</td>
 <td>0.549</td>
 <td>tINS</td>
 <td>FR</td>
@@ -830,7 +843,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/COUT</td>
 </tr>
 <tr>
-<td>5.567</td>
+<td>5.927</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -838,7 +851,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n217_s/CIN</td>
 </tr>
 <tr>
-<td>6.037</td>
+<td>6.397</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -846,7 +859,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n217_s/SUM</td>
 </tr>
 <tr>
-<td>6.274</td>
+<td>6.634</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -854,7 +867,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s1/I0</td>
 </tr>
 <tr>
-<td>6.791</td>
+<td>7.151</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
@@ -862,7 +875,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s1/F</td>
 </tr>
 <tr>
-<td>7.028</td>
+<td>7.388</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -870,7 +883,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s0/I0</td>
 </tr>
 <tr>
-<td>7.545</td>
+<td>7.905</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
@@ -878,7 +891,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s0/F</td>
 </tr>
 <tr>
-<td>7.782</td>
+<td>8.142</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -886,7 +899,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n287_s/I1</td>
 </tr>
 <tr>
-<td>8.352</td>
+<td>8.712</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
@@ -894,7 +907,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n287_s/COUT</td>
 </tr>
 <tr>
-<td>8.352</td>
+<td>8.712</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -902,7 +915,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n286_s/CIN</td>
 </tr>
 <tr>
-<td>8.822</td>
+<td>9.182</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -910,7 +923,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_pal/tmds_gen[1].tmds_channel/n286_s/SUM</td>
 </tr>
 <tr>
-<td>9.059</td>
+<td>9.419</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -941,7 +954,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -973,12 +986,12 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.277, 70.695%; route: 2.370, 26.692%; tC2Q: 0.232, 2.613%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.400, 69.272%; route: 2.607, 28.217%; tC2Q: 0.232, 2.511%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 </table>
@@ -988,11 +1001,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>1.086</td>
+<td>0.726</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>9.059</td>
+<td>9.419</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1000,7 +1013,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>hdmi_ntsc/video_data_13_s0</td>
+<td>hdmi_ntsc/video_data_11_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
@@ -1038,7 +1051,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1047,15 +1060,15 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/video_data_13_s0/CLK</td>
+<td>hdmi_ntsc/video_data_11_s0/CLK</td>
 </tr>
 <tr>
 <td>0.412</td>
 <td>0.232</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>14</td>
-<td>hdmi_ntsc/video_data_13_s0/Q</td>
+<td>16</td>
+<td>hdmi_ntsc/video_data_11_s0/Q</td>
 </tr>
 <tr>
 <td>0.649</td>
@@ -1063,7 +1076,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s11/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/I1</td>
 </tr>
 <tr>
 <td>1.204</td>
@@ -1071,7 +1084,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s11/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/F</td>
 </tr>
 <tr>
 <td>1.441</td>
@@ -1079,50 +1092,66 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s9/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/I2</td>
 </tr>
 <tr>
-<td>1.958</td>
-<td>0.517</td>
+<td>1.894</td>
+<td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s9/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/F</td>
 </tr>
 <tr>
-<td>2.195</td>
+<td>2.131</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s6/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/I3</td>
 </tr>
 <tr>
-<td>2.712</td>
-<td>0.517</td>
+<td>2.502</td>
+<td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
-<td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s6/F</td>
+<td>5</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/F</td>
 </tr>
 <tr>
-<td>2.949</td>
+<td>2.739</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/I0</td>
 </tr>
 <tr>
-<td>3.504</td>
-<td>0.555</td>
+<td>3.256</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/F</td>
+</tr>
+<tr>
+<td>3.493</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I3</td>
+</tr>
+<tr>
+<td>3.864</td>
+<td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>4</td>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/F</td>
 </tr>
 <tr>
-<td>3.741</td>
+<td>4.101</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1130,7 +1159,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n132_s1/I1</td>
 </tr>
 <tr>
-<td>4.311</td>
+<td>4.671</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
@@ -1138,7 +1167,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n132_s1/COUT</td>
 </tr>
 <tr>
-<td>4.311</td>
+<td>4.671</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -1146,7 +1175,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n131_s1/CIN</td>
 </tr>
 <tr>
-<td>4.781</td>
+<td>5.141</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -1154,7 +1183,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n131_s1/SUM</td>
 </tr>
 <tr>
-<td>5.018</td>
+<td>5.378</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1162,7 +1191,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n218_s/I0</td>
 </tr>
 <tr>
-<td>5.567</td>
+<td>5.927</td>
 <td>0.549</td>
 <td>tINS</td>
 <td>FR</td>
@@ -1170,7 +1199,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n218_s/COUT</td>
 </tr>
 <tr>
-<td>5.567</td>
+<td>5.927</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -1178,7 +1207,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n217_s/CIN</td>
 </tr>
 <tr>
-<td>6.037</td>
+<td>6.397</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -1186,7 +1215,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n217_s/SUM</td>
 </tr>
 <tr>
-<td>6.274</td>
+<td>6.634</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1194,7 +1223,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s1/I0</td>
 </tr>
 <tr>
-<td>6.791</td>
+<td>7.151</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
@@ -1202,7 +1231,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s1/F</td>
 </tr>
 <tr>
-<td>7.028</td>
+<td>7.388</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1210,7 +1239,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s0/I0</td>
 </tr>
 <tr>
-<td>7.545</td>
+<td>7.905</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
@@ -1218,7 +1247,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s0/F</td>
 </tr>
 <tr>
-<td>7.782</td>
+<td>8.142</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1226,7 +1255,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n287_s/I1</td>
 </tr>
 <tr>
-<td>8.352</td>
+<td>8.712</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
@@ -1234,7 +1263,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n287_s/COUT</td>
 </tr>
 <tr>
-<td>8.352</td>
+<td>8.712</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
@@ -1242,7 +1271,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n286_s/CIN</td>
 </tr>
 <tr>
-<td>8.822</td>
+<td>9.182</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
@@ -1250,7 +1279,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>hdmi_ntsc/tmds_gen[1].tmds_channel/n286_s/SUM</td>
 </tr>
 <tr>
-<td>9.059</td>
+<td>9.419</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
@@ -1281,7 +1310,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1313,12 +1342,12 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>13</td>
+<td>14</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 6.277, 70.695%; route: 2.370, 26.692%; tC2Q: 0.232, 2.613%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 6.400, 69.272%; route: 2.607, 28.217%; tC2Q: 0.232, 2.511%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 </table>
@@ -1328,11 +1357,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>1.173</td>
+<td>1.211</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>8.972</td>
+<td>8.934</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1340,11 +1369,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>hdmi_ntsc/video_data_4_s0</td>
+<td>hdmi_ntsc/video_data_11_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_4_s0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_3_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -1378,7 +1407,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1387,15 +1416,15 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/video_data_4_s0/CLK</td>
+<td>hdmi_ntsc/video_data_11_s0/CLK</td>
 </tr>
 <tr>
 <td>0.412</td>
 <td>0.232</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>15</td>
-<td>hdmi_ntsc/video_data_4_s0/Q</td>
+<td>16</td>
+<td>hdmi_ntsc/video_data_11_s0/Q</td>
 </tr>
 <tr>
 <td>0.649</td>
@@ -1403,7 +1432,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s13/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/I1</td>
 </tr>
 <tr>
 <td>1.204</td>
@@ -1411,7 +1440,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s13/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/F</td>
 </tr>
 <tr>
 <td>1.441</td>
@@ -1419,183 +1448,183 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s11/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/I2</td>
 </tr>
 <tr>
-<td>1.996</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s11/F</td>
-</tr>
-<tr>
-<td>2.233</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s8/I2</td>
-</tr>
-<tr>
-<td>2.686</td>
+<td>1.894</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s8/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/F</td>
 </tr>
 <tr>
-<td>2.923</td>
+<td>2.131</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s5/I3</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/I3</td>
 </tr>
 <tr>
-<td>3.294</td>
+<td>2.502</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
-<td>14</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s5/F</td>
+<td>5</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/F</td>
 </tr>
 <tr>
-<td>3.531</td>
+<td>2.739</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N0q_m07_2_s5/I3</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/I0</td>
 </tr>
 <tr>
-<td>3.902</td>
+<td>3.256</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/F</td>
+</tr>
+<tr>
+<td>3.493</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I3</td>
+</tr>
+<tr>
+<td>3.864</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N0q_m07_2_s5/F</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/F</td>
 </tr>
 <tr>
-<td>4.139</td>
+<td>4.101</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n131_s1/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/I1</td>
 </tr>
 <tr>
-<td>4.709</td>
+<td>4.671</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n131_s1/COUT</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/COUT</td>
 </tr>
 <tr>
-<td>4.709</td>
+<td>4.671</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n130_s1/CIN</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n131_s1/CIN</td>
 </tr>
 <tr>
-<td>5.179</td>
+<td>5.141</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n130_s1/SUM</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n131_s1/SUM</td>
 </tr>
 <tr>
-<td>5.416</td>
+<td>5.378</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n217_s/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/I0</td>
 </tr>
 <tr>
-<td>5.965</td>
+<td>5.927</td>
 <td>0.549</td>
 <td>tINS</td>
 <td>FR</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n217_s/COUT</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/COUT</td>
 </tr>
 <tr>
-<td>5.965</td>
+<td>5.927</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n216_s/CIN</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n217_s/CIN</td>
 </tr>
 <tr>
-<td>6.435</td>
+<td>6.397</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n216_s/SUM</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n217_s/SUM</td>
 </tr>
 <tr>
-<td>6.672</td>
+<td>6.634</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_add_4_s1/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s1/I0</td>
 </tr>
 <tr>
-<td>7.189</td>
+<td>7.151</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_add_4_s1/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s1/F</td>
 </tr>
 <tr>
-<td>7.426</td>
+<td>7.388</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_add_4_s0/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s0/I0</td>
 </tr>
 <tr>
-<td>7.943</td>
+<td>7.905</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_add_4_s0/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_3_s0/F</td>
 </tr>
 <tr>
-<td>8.180</td>
+<td>8.142</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n286_s/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n287_s/I1</td>
 </tr>
 <tr>
-<td>8.735</td>
+<td>8.697</td>
 <td>0.555</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/n286_s/SUM</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n287_s/SUM</td>
 </tr>
 <tr>
-<td>8.972</td>
+<td>8.934</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_4_s0/D</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_3_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1621,7 +1650,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1630,7 +1659,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_4_s0/CLK</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_3_s0/CLK</td>
 </tr>
 <tr>
 <td>10.145</td>
@@ -1638,7 +1667,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/acc_4_s0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_3_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1658,7 +1687,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.953, 67.709%; route: 2.607, 29.652%; tC2Q: 0.232, 2.639%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 5.915, 67.569%; route: 2.607, 29.781%; tC2Q: 0.232, 2.650%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 </table>
@@ -1668,11 +1697,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>1.173</td>
+<td>1.211</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>8.972</td>
+<td>8.934</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -1680,11 +1709,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>hdmi_ntsc/video_data_4_s0</td>
+<td>hdmi_ntsc/video_data_11_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_4_s0</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_3_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -1718,7 +1747,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1727,15 +1756,15 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/video_data_4_s0/CLK</td>
+<td>hdmi_ntsc/video_data_11_s0/CLK</td>
 </tr>
 <tr>
 <td>0.412</td>
 <td>0.232</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>15</td>
-<td>hdmi_ntsc/video_data_4_s0/Q</td>
+<td>16</td>
+<td>hdmi_ntsc/video_data_11_s0/Q</td>
 </tr>
 <tr>
 <td>0.649</td>
@@ -1743,7 +1772,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s13/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/I1</td>
 </tr>
 <tr>
 <td>1.204</td>
@@ -1751,7 +1780,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s13/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/F</td>
 </tr>
 <tr>
 <td>1.441</td>
@@ -1759,183 +1788,183 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s11/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/I2</td>
 </tr>
 <tr>
-<td>1.996</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s11/F</td>
-</tr>
-<tr>
-<td>2.233</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s8/I2</td>
-</tr>
-<tr>
-<td>2.686</td>
+<td>1.894</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s8/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/F</td>
 </tr>
 <tr>
-<td>2.923</td>
+<td>2.131</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s5/I3</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/I3</td>
 </tr>
 <tr>
-<td>3.294</td>
+<td>2.502</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
-<td>14</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N1q_m07_2_s5/F</td>
+<td>5</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/F</td>
 </tr>
 <tr>
-<td>3.531</td>
+<td>2.739</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N0q_m07_2_s5/I3</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/I0</td>
 </tr>
 <tr>
-<td>3.902</td>
+<td>3.256</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/F</td>
+</tr>
+<tr>
+<td>3.493</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I3</td>
+</tr>
+<tr>
+<td>3.864</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>hdmi_pal/tmds_gen[0].tmds_channel/N0q_m07_2_s5/F</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/F</td>
 </tr>
 <tr>
-<td>4.139</td>
+<td>4.101</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n131_s1/I1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n132_s1/I1</td>
 </tr>
 <tr>
-<td>4.709</td>
+<td>4.671</td>
 <td>0.570</td>
 <td>tINS</td>
 <td>FR</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n131_s1/COUT</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n132_s1/COUT</td>
 </tr>
 <tr>
-<td>4.709</td>
+<td>4.671</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n130_s1/CIN</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n131_s1/CIN</td>
 </tr>
 <tr>
-<td>5.179</td>
+<td>5.141</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n130_s1/SUM</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n131_s1/SUM</td>
 </tr>
 <tr>
-<td>5.416</td>
+<td>5.378</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n217_s/I0</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n218_s/I0</td>
 </tr>
 <tr>
-<td>5.965</td>
+<td>5.927</td>
 <td>0.549</td>
 <td>tINS</td>
 <td>FR</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n217_s/COUT</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n218_s/COUT</td>
 </tr>
 <tr>
-<td>5.965</td>
+<td>5.927</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n216_s/CIN</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n217_s/CIN</td>
 </tr>
 <tr>
-<td>6.435</td>
+<td>6.397</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n216_s/SUM</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n217_s/SUM</td>
 </tr>
 <tr>
-<td>6.672</td>
+<td>6.634</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_add_4_s1/I0</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s1/I0</td>
 </tr>
 <tr>
-<td>7.189</td>
+<td>7.151</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_add_4_s1/F</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s1/F</td>
 </tr>
 <tr>
-<td>7.426</td>
+<td>7.388</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_add_4_s0/I0</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s0/I0</td>
 </tr>
 <tr>
-<td>7.943</td>
+<td>7.905</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_add_4_s0/F</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_add_3_s0/F</td>
 </tr>
 <tr>
-<td>8.180</td>
+<td>8.142</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n286_s/I1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n287_s/I1</td>
 </tr>
 <tr>
-<td>8.735</td>
+<td>8.697</td>
 <td>0.555</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/n286_s/SUM</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/n287_s/SUM</td>
 </tr>
 <tr>
-<td>8.972</td>
+<td>8.934</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_4_s0/D</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_3_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -1961,7 +1990,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -1970,7 +1999,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_4_s0/CLK</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_3_s0/CLK</td>
 </tr>
 <tr>
 <td>10.145</td>
@@ -1978,7 +2007,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[0].tmds_channel/acc_4_s0</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/acc_3_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -1998,7 +2027,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.953, 67.709%; route: 2.607, 29.652%; tC2Q: 0.232, 2.639%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 5.915, 67.569%; route: 2.607, 29.781%; tC2Q: 0.232, 2.650%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 </table>
@@ -2008,11 +2037,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <table class="summary_table">
 <tr>
 <td class="label">Slack</td>
-<td>1.442</td>
+<td>1.696</td>
 </tr>
 <tr>
 <td class="label">Data Arrival Time</td>
-<td>8.703</td>
+<td>8.449</td>
 </tr>
 <tr>
 <td class="label">Data Required Time</td>
@@ -2020,11 +2049,11 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">From</td>
-<td>hdmi_ntsc/video_data_18_s0</td>
+<td>hdmi_ntsc/video_data_11_s0</td>
 </tr>
 <tr>
 <td class="label">To</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_4_s0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_2_s0</td>
 </tr>
 <tr>
 <td class="label">Launch Clk</td>
@@ -2058,7 +2087,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -2067,15 +2096,15 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_ntsc/video_data_18_s0/CLK</td>
+<td>hdmi_ntsc/video_data_11_s0/CLK</td>
 </tr>
 <tr>
 <td>0.412</td>
 <td>0.232</td>
 <td>tC2Q</td>
 <td>RF</td>
-<td>25</td>
-<td>hdmi_ntsc/video_data_18_s0/Q</td>
+<td>16</td>
+<td>hdmi_ntsc/video_data_11_s0/Q</td>
 </tr>
 <tr>
 <td>0.649</td>
@@ -2083,7 +2112,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s11/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/I1</td>
 </tr>
 <tr>
 <td>1.204</td>
@@ -2091,7 +2120,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s11/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s12/F</td>
 </tr>
 <tr>
 <td>1.441</td>
@@ -2099,31 +2128,31 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s10/I3</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/I2</td>
 </tr>
 <tr>
-<td>1.812</td>
-<td>0.371</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s10/F</td>
-</tr>
-<tr>
-<td>2.049</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s12/I2</td>
-</tr>
-<tr>
-<td>2.502</td>
+<td>1.894</td>
 <td>0.453</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s12/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s9/F</td>
+</tr>
+<tr>
+<td>2.131</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/I3</td>
+</tr>
+<tr>
+<td>2.502</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/N1q_m07_1_s6/F</td>
 </tr>
 <tr>
 <td>2.739</td>
@@ -2131,151 +2160,135 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s4/I3</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/I0</td>
 </tr>
 <tr>
-<td>3.110</td>
+<td>3.256</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N1q_m07_1_s5/F</td>
+</tr>
+<tr>
+<td>3.493</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/I3</td>
+</tr>
+<tr>
+<td>3.864</td>
 <td>0.371</td>
 <td>tINS</td>
 <td>FF</td>
 <td>4</td>
-<td>hdmi_ntsc/tmds_gen[2].tmds_channel/N0q_m07_1_s4/F</td>
+<td>hdmi_ntsc/tmds_gen[1].tmds_channel/N0q_m07_1_s4/F</td>
 </tr>
 <tr>
-<td>3.347</td>
+<td>4.101</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n132_s1/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/I1</td>
 </tr>
 <tr>
-<td>3.917</td>
-<td>0.570</td>
+<td>4.656</td>
+<td>0.555</td>
 <td>tINS</td>
-<td>FR</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n132_s1/COUT</td>
-</tr>
-<tr>
-<td>3.917</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>RR</td>
+<td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n131_s1/CIN</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n132_s1/SUM</td>
 </tr>
 <tr>
-<td>4.387</td>
-<td>0.470</td>
-<td>tINS</td>
-<td>RF</td>
-<td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n131_s1/SUM</td>
-</tr>
-<tr>
-<td>4.624</td>
+<td>4.893</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n218_s/I0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n219_s0/I0</td>
 </tr>
 <tr>
-<td>5.173</td>
+<td>5.442</td>
 <td>0.549</td>
 <td>tINS</td>
 <td>FR</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n218_s/COUT</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n219_s0/COUT</td>
 </tr>
 <tr>
-<td>5.173</td>
+<td>5.442</td>
 <td>0.000</td>
 <td>tNET</td>
 <td>RR</td>
 <td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n217_s/CIN</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/CIN</td>
 </tr>
 <tr>
-<td>5.643</td>
+<td>5.912</td>
 <td>0.470</td>
 <td>tINS</td>
 <td>RF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n217_s/SUM</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n218_s/SUM</td>
 </tr>
 <tr>
-<td>5.880</td>
+<td>6.149</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_add_3_s1/I1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_2_s1/I0</td>
 </tr>
 <tr>
-<td>6.435</td>
-<td>0.555</td>
-<td>tINS</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_add_3_s1/F</td>
-</tr>
-<tr>
-<td>6.672</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_add_3_s0/I0</td>
-</tr>
-<tr>
-<td>7.189</td>
+<td>6.666</td>
 <td>0.517</td>
 <td>tINS</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_add_3_s0/F</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_2_s1/F</td>
 </tr>
 <tr>
-<td>7.426</td>
-<td>0.237</td>
-<td>tNET</td>
-<td>FF</td>
-<td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n287_s/I1</td>
-</tr>
-<tr>
-<td>7.996</td>
-<td>0.570</td>
-<td>tINS</td>
-<td>FR</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n287_s/COUT</td>
-</tr>
-<tr>
-<td>7.996</td>
-<td>0.000</td>
-<td>tNET</td>
-<td>RR</td>
-<td>2</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n286_s/CIN</td>
-</tr>
-<tr>
-<td>8.466</td>
-<td>0.470</td>
-<td>tINS</td>
-<td>RF</td>
-<td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/n286_s/SUM</td>
-</tr>
-<tr>
-<td>8.703</td>
+<td>6.903</td>
 <td>0.237</td>
 <td>tNET</td>
 <td>FF</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_4_s0/D</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_2_s0/I0</td>
+</tr>
+<tr>
+<td>7.420</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_add_2_s0/F</td>
+</tr>
+<tr>
+<td>7.657</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>2</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n288_s/I1</td>
+</tr>
+<tr>
+<td>8.212</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/n288_s/SUM</td>
+</tr>
+<tr>
+<td>8.449</td>
+<td>0.237</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_2_s0/D</td>
 </tr>
 </table>
 <b>Data Required Path:</b>
@@ -2301,7 +2314,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>0.000</td>
 <td>tCL</td>
 <td>RR</td>
-<td>2514</td>
+<td>2513</td>
 <td>clk_bufg_inst/O</td>
 </tr>
 <tr>
@@ -2310,7 +2323,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tNET</td>
 <td>RR</td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_4_s0/CLK</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_2_s0/CLK</td>
 </tr>
 <tr>
 <td>10.145</td>
@@ -2318,7 +2331,7 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 <td>tSu</td>
 <td> </td>
 <td>1</td>
-<td>hdmi_pal/tmds_gen[2].tmds_channel/acc_4_s0</td>
+<td>hdmi_pal/tmds_gen[1].tmds_channel/acc_2_s0</td>
 </tr>
 </table>
 <b>Path Statistics:</b>
@@ -2333,12 +2346,12 @@ D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vencode.vhd<br>
 </tr>
 <tr>
 <td class="label">Logic Level:</td>
-<td>13</td>
+<td>12</td>
 </tr>
 <tr>
 <td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 <tr>
-<td class="label">Arrival Data Path Delay:</td><td> cell: 5.921, 69.471%; route: 2.370, 27.807%; tC2Q: 0.232, 2.722%</td></tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 5.430, 65.667%; route: 2.607, 31.527%; tC2Q: 0.232, 2.806%</td></tr>
 <tr>
 <td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.180, 100.000%</td></tr>
 </table>

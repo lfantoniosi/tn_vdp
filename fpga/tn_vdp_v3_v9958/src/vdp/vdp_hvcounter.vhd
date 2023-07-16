@@ -138,7 +138,11 @@ BEGIN
             IF( ((W_H_CNT_HALF OR W_H_CNT_END) AND W_FIELD_END AND FF_FIELD) = '1' )THEN
                 FF_PAL_MODE         <= PAL_MODE;
                 FF_INTERLACE_MODE   <= INTERLACE_MODE;
-                FF_HDMI_RESET       <= '1';
+                IF (FF_PAL_MODE = PAL_MODE)THEN
+                    FF_HDMI_RESET <= '0';
+                ELSE 
+                    FF_HDMI_RESET <= '1';
+                END IF;
             ELSE
                 FF_HDMI_RESET       <= '0';
             END IF;

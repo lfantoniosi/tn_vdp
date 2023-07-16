@@ -1,5 +1,4 @@
 {
- "Device" : "GW2AR-18C",
  "Files" : [
   {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/SPI_MCP3202.v",
@@ -67,6 +66,10 @@
   },
   {
    "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/vram.v",
+   "Type" : "verilog"
+  },
+  {
+   "Path" : "D:/src/tn_vdp/fpga/tn_vdp_v3_v9958/src/pinfilter.v",
    "Type" : "verilog"
   },
   {

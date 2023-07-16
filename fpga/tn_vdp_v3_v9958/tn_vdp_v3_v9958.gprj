@@ -19,6 +19,7 @@
         <File path="src/hdmi/source_product_description_info_frame.sv" type="file.verilog" enable="1"/>
         <File path="src/hdmi/tmds_channel.sv" type="file.verilog" enable="1"/>
         <File path="src/memory_controller.v" type="file.verilog" enable="1"/>
+        <File path="src/pinfilter.v" type="file.verilog" enable="1"/>
         <File path="src/sdram.v" type="file.verilog" enable="1"/>
         <File path="src/v9958_top.v" type="file.verilog" enable="1"/>
         <File path="src/vram.v" type="file.verilog" enable="1"/>
