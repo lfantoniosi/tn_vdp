@@ -6,6 +6,7 @@
     <Device name="GW2AR-18C" pn="GW2AR-LV18QN88C8/I7">gw2ar18c-000</Device>
     <FileList>
         <File path="src/SPI_MCP3202.v" type="file.verilog" enable="1"/>
+        <File path="src/clockdiv.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_108p.v" type="file.verilog" enable="1"/>
         <File path="src/gowin/clk_135.v" type="file.verilog" enable="1"/>
         <File path="src/hdmi/audio_clock_regeneration_packet.sv" type="file.verilog" enable="1"/>

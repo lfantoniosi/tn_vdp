@@ -83,7 +83,7 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 </tr>
 <tr>
 <td class="label">Created Time</td>
-<td>Sun Jul 16 03:41:26 2023
+<td>Mon Jul 17 02:11:44 2023
 </td>
 </tr>
 <tr>
@@ -97,24 +97,24 @@ table.detail_table th.label {  min-width: 8%; width: 8%; }
 <tr>
 <td class="label">Place & Route Process</td>
 <td>Running placement:
-   Placement Phase 0: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s
-   Placement Phase 1: CPU time = 0h 0m 0.404s, Elapsed time = 0h 0m 0.403s
-   Placement Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+   Placement Phase 0: CPU time = 0h 0m 0.746s, Elapsed time = 0h 0m 0.745s
+   Placement Phase 1: CPU time = 0h 0m 0.291s, Elapsed time = 0h 0m 0.291s
+   Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
    Placement Phase 3: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-   Total Placement: CPU time = 0h 0m 7s, Elapsed time = 0h 0m 7s
+   Total Placement: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
 Running routing:
    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
-   Routing Phase 1: CPU time = 0h 0m 0.376s, Elapsed time = 0h 0m 0.375s
-   Routing Phase 2: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+   Routing Phase 1: CPU time = 0h 0m 0.305s, Elapsed time = 0h 0m 0.304s
+   Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
    Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
-   Total Routing: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
+   Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 Generate output files:
-   CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
+   CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
 </td>
 </tr>
 <tr>
 <td class="label">Total Time and Memory Usage</td>
-<td>CPU time = 0h 0m 14s, Elapsed time = 0h 0m 14s, Peak memory usage = 403MB</td>
+<td>CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s, Peak memory usage = 405MB</td>
 </tr>
 </table>
 <br/>
@@ -129,12 +129,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Logic</td>
-<td>5408/20736</td>
+<td>5493/20736</td>
 <td>27%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --LUT,ALU,ROM16</td>
-<td>5360(4661 LUT, 699 ALU, 0 ROM16)</td>
+<td>5445(4734 LUT, 711 ALU, 0 ROM16)</td>
 <td>-</td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">Register</td>
-<td>2790/15915</td>
+<td>2835/15915</td>
 <td>18%</td>
 </tr>
 <tr>
@@ -154,8 +154,8 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --Logic Register as FF</td>
-<td>2763/15552</td>
-<td>18%</td>
+<td>2808/15552</td>
+<td>19%</td>
 </tr>
 <tr>
 <td class="label">&nbsp &nbsp --I/O Register as Latch</td>
@@ -169,12 +169,12 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">CLS</td>
-<td>3878/10368</td>
-<td>38%</td>
+<td>3949/10368</td>
+<td>39%</td>
 </tr>
 <tr>
 <td class="label">I/O Port</td>
-<td>35</td>
+<td>36</td>
 <td>-</td>
 </tr>
 <tr>
@@ -284,7 +284,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">bank 6</td>
-<td>5/9(55%)</td>
+<td>6/9(66%)</td>
 </tr>
 <tr>
 <td class="label">bank 7</td>
@@ -337,19 +337,19 @@ Generate output files:
 <td> TR TL BR BL</td>
 </tr>
 <tr>
-<td class="label">clk_50_d</td>
+<td class="label">clk_125_d</td>
 <td>PRIMARY</td>
-<td> BR</td>
+<td> BL</td>
 </tr>
 <tr>
 <td class="label">clk_135</td>
 <td>PRIMARY</td>
-<td> BR BL</td>
+<td> TR BR</td>
 </tr>
 <tr>
 <td class="label">clk_sdram</td>
 <td>PRIMARY</td>
-<td> TR TL BR BL</td>
+<td> TR TL BL</td>
 </tr>
 <tr>
 <td class="label">clk_sdramp</td>
@@ -448,6 +448,24 @@ Generate output files:
 <td>Y</td>
 <td>in</td>
 <td>IOL29[A]</td>
+<td>LVCMOS18</td>
+<td>NA</td>
+<td>UP</td>
+<td>ON</td>
+<td>NONE</td>
+<td>NA</td>
+<td>NA</td>
+<td>OFF</td>
+<td>NA</td>
+<td>3.3</td>
+</tr>
+<tr>
+<td class="label">clk_125</td>
+<td></td>
+<td>11/6</td>
+<td>Y</td>
+<td>in</td>
+<td>IOL29[B]</td>
 <td>LVCMOS18</td>
 <td>NA</td>
 <td>UP</td>
@@ -1595,7 +1613,7 @@ Generate output files:
 </tr>
 <tr>
 <td class="label">11/6</td>
-<td>-</td>
+<td>clk_125</td>
 <td>in</td>
 <td>IOL29[B]</td>
 <td>LVCMOS18</td>
@@ -1605,7 +1623,7 @@ Generate output files:
 <td>NONE</td>
 <td>NA</td>
 <td>NA</td>
-<td>NA</td>
+<td>OFF</td>
 <td>NA</td>
 <td>3.3</td>
 </tr>

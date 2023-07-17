@@ -22,6 +22,7 @@
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vram.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\pinfilter.v" type="verilog"/>
+        <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v" type="verilog"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\ram.vhd" type="vhdl"/>
         <File path="D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd" type="vhdl"/>

@@ -2265,7 +2265,7 @@
     (property "Reference" "C5" (at 100.965 105.41 90)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "C_Polarized_US" (at 100.965 107.95 90)
+    (property "Value" "10uF" (at 100.965 107.95 90)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" (at 100.33 111.76 0)

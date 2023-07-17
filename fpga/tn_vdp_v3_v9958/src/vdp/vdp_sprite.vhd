@@ -365,8 +365,7 @@ BEGIN
             FF_SP_EN <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( DOTSTATE = "01" AND DOTCOUNTERX = 0 )THEN
---                FF_SP_EN <= (NOT REG_R8_SP_OFF) AND W_ACTIVE;
-                FF_SP_EN <= W_ACTIVE;
+                FF_SP_EN <= (NOT REG_R8_SP_OFF) AND W_ACTIVE;
             END IF;
         END IF;
     END PROCESS;
@@ -525,7 +524,7 @@ BEGIN
                     END IF;
                 WHEN SPSTATE_YTEST_DRAW =>
                     IF( DOTCOUNTERX = 256+8 )THEN
-                        SPVRAMACCESSING <= (NOT REG_R8_SP_OFF) AND FF_SP_EN;
+                        SPVRAMACCESSING <= FF_SP_EN;
                     END IF;
                 WHEN SPSTATE_PREPARE =>
                     IF( SPPREPAREEND = '1' )THEN

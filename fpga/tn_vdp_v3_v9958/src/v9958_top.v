@@ -3,7 +3,7 @@
 module v9958_top(
     input   clk,
     input   clk_50,
-//    input   clk_125,
+    input   clk_125,
  //   input   clk_111,
 
     input   s1,
@@ -104,10 +104,10 @@ module v9958_top(
     .O(clk_50_w),
     .I(clk_50)
     );
-    wire clk_111_w;
-    BUFG clk_111_bufg_inst(
-    .O(clk_111_w),
-    .I(clk_111)
+    wire clk_125_w;
+    BUFG clk_125_bufg_inst(
+    .O(clk_125_w),
+    .I(clk_125)
     );
 
     reg s1_n = 0;
@@ -343,49 +343,28 @@ module v9958_top(
 
 ///////////
 
-    localparam CPUCLK_SRCFRQ = 50.0;
-    localparam CPUCLK_FRQ = 315.0/88.0;
-    localparam integer CPUCLK_DELAY0 = $floor(CPUCLK_SRCFRQ / CPUCLK_FRQ / 2);
-    localparam integer CPUCLK_DELAY1 = CPUCLK_DELAY0 + $floor((CPUCLK_SRCFRQ / CPUCLK_FRQ) - CPUCLK_DELAY0 + 0.5);
-    logic [$clog2(CPUCLK_DELAY1)-1:0] cpuclk_divider;
-    logic clk_cpu;
-    wire cpuclk_skew;
-
-    always@(posedge clk_50_w)
-    begin
-        if (cpuclk_divider != CPUCLK_DELAY0-1 && cpuclk_divider != CPUCLK_DELAY1-1) 
-            cpuclk_divider++;
-        else begin 
-            clk_cpu <= ~clk_cpu; 
-            if (cpuclk_divider == CPUCLK_DELAY1-1)
-                cpuclk_divider = 0;
-            else cpuclk_divider++;
-        end
-
-    end
+    wire clk_cpu;
+    CLOCK_DIV #(
+        .CLK_SRC(125.0),
+        .CLK_DIV(3.58)
+    ) cpuclkd (
+        .clk_src(clk_125_w),
+        .clk_div(clk_cpu)
+    );
     BUFG clk_cpuclk_bufg_inst(
     .O(cpuclk_w),
     .I(clk_cpu)
     );
 
-    localparam GROMCLK_SRCFRQ = 50.0;
-    localparam GROMCLK_FRQ = 315.0/88.0 / 8.0;
-    localparam integer GROMCLK_DELAY0 = $floor(GROMCLK_SRCFRQ / GROMCLK_FRQ / 2.0);
-    localparam integer GROMCLK_DELAY1 = GROMCLK_DELAY0 + $floor((GROMCLK_SRCFRQ / GROMCLK_FRQ) - GROMCLK_DELAY0 + 0.5);
-    logic [$clog2(GROMCLK_DELAY1)-1:0] gromclk_divider;
-    logic clk_grom;
+    wire clk_grom;
+    CLOCK_DIV #(
+        .CLK_SRC(125.0),
+        .CLK_DIV(3.58/8.0)
+    ) gromclkd (
+        .clk_src(clk_125_w),
+        .clk_div(clk_grom)
+    );
 
-    always_ff@(posedge clk_50_w) 
-    begin
-        if (gromclk_divider != GROMCLK_DELAY0-1 && gromclk_divider != GROMCLK_DELAY1-1) 
-            gromclk_divider++;
-        else begin 
-            clk_grom <= ~clk_grom;
-            if (gromclk_divider == GROMCLK_DELAY1-1)
-                gromclk_divider <= 0;
-            else gromclk_divider++; 
-        end
-    end
     BUFG clk_gromclk_bufg_inst(
     .O(gromclk_w),
     .I(clk_grom)
@@ -425,25 +404,17 @@ module v9958_top(
     localparam CLKFRQ = 27000;
     localparam AUDIO_RATE=44100;
     localparam AUDIO_BIT_WIDTH = 16;
-    localparam integer AUDIO_CLK_DELAY0 = $floor(CLKFRQ * 1000.0 / AUDIO_RATE / 2.0);
-    localparam integer AUDIO_CLK_DELAY1 = AUDIO_CLK_DELAY0 + $floor((CLKFRQ * 1000.0 / AUDIO_RATE) - AUDIO_CLK_DELAY0 + 0.5);
     localparam NUM_CHANNELS = 3;
-    logic [$clog2(AUDIO_CLK_DELAY1)-1:0] audio_divider;
-    logic clk_audio;
-    logic clk_audio_w;
 
-    always_ff@(posedge clk) 
-    begin
-        if (audio_divider != AUDIO_CLK_DELAY0-1 && audio_divider != AUDIO_CLK_DELAY1-1) 
-            audio_divider++;
-        else begin 
-            clk_audio <= ~clk_audio; 
-            if (audio_divider == AUDIO_CLK_DELAY1-1)
-                audio_divider <= 0;
-            else audio_divider++; 
-        end
-    end
-    BUFG clk_clock_bufg_inst(
+    wire clk_audio;
+    CLOCK_DIV #(
+        .CLK_SRC(27),
+        .CLK_DIV(0.041)
+    ) audioclkd (
+        .clk_src(clk_w),
+        .clk_div(clk_audio)
+    );
+    BUFG clk_audio_bufg_inst(
     .O(clk_audio_w),
     .I(clk_audio)
     );
@@ -558,18 +529,16 @@ module v9958_top(
     logic [$clog2(SCKCLK_DELAY1)-1:0] sckclk_divider;
     logic clk_sck;
 
-    always_ff@(posedge clk_135_w) 
-    begin
-        if (sckclk_divider != SCKCLK_DELAY0-1 && sckclk_divider != SCKCLK_DELAY1-1) 
-            sckclk_divider++;
-        else begin 
-            clk_sck <= ~clk_sck;
-            if (sckclk_divider == SCKCLK_DELAY1-1)
-                sckclk_divider <= 0;
-            else sckclk_divider++; 
-        end
-    end
-    BUFG clk_sckclk_bufg_inst(
+
+    wire clk_sck;
+    CLOCK_DIV #(
+        .CLK_SRC(135),
+        .CLK_DIV(0.9)
+    ) adcclkd (
+        .clk_src(clk_135_w),
+        .clk_div(clk_sck)
+    );
+    BUFG clk_sck_bufg_inst(
     .O(sckclk_w),
     .I(clk_sck)
     );

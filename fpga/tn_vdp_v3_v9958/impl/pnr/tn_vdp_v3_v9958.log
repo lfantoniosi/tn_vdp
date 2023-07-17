@@ -15,6 +15,7 @@ Running routing......
 [70%] Routing Phase 1 completed
 [80%] Routing Phase 2 completed
 WARN  (PR1014) : Generic routing resource will be used to clock signal 'clk_d' by the specified constraint. And then it may lead to the excessive delay or skew
+WARN  (PR1014) : Generic routing resource will be used to clock signal 'clk_125_d' by the specified constraint. And then it may lead to the excessive delay or skew
 [90%] Routing Phase 3 completed
 Running timing analysis......
 [95%] Timing analysis completed
@@ -28,5 +29,5 @@ Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.pin.h
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.rpt.html" completed
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.rpt.txt" completed
 Generate file "D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\impl\pnr\tn_vdp_v3_v9958.tr.html" completed
-Sun Jul 16 03:41:26 2023
+Mon Jul 17 02:11:45 2023
 
