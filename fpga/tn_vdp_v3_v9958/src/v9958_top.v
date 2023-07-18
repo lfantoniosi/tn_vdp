@@ -17,6 +17,7 @@ module v9958_top(
     output  gromclk,
     output  cpuclk,
     inout   [7:0] cd,
+//    inout   [0:7] cd,
 
     output  adc_clk,
     output  adc_cs,
@@ -211,7 +212,6 @@ module v9958_top(
     assign OFFSET_Y =  6'd16; //6'b0010011;
     assign scanlin = ~scanlin_n;
 
-
     wire cswn_w;
     PINFILTER cswn_filter (
         .clk(clk_sdram_w),
@@ -370,7 +370,7 @@ module v9958_top(
     .I(clk_grom)
     );
 
-    assign gromclk = (gromclk_ena_n ? cpuclk_w: gromclk_w); 
+    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'bz) : gromclk_w); 
     assign cpuclk = (cpuclk_ena_n ? 1'bz : cpuclk_w);
 //////////
 
@@ -409,7 +409,7 @@ module v9958_top(
     wire clk_audio;
     CLOCK_DIV #(
         .CLK_SRC(27),
-        .CLK_DIV(0.041)
+        .CLK_DIV(0.044100)
     ) audioclkd (
         .clk_src(clk_w),
         .clk_div(clk_audio)
