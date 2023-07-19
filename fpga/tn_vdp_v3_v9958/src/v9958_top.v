@@ -346,7 +346,7 @@ module v9958_top(
     wire clk_cpu;
     CLOCK_DIV #(
         .CLK_SRC(125.0),
-        .CLK_DIV(3.58)
+        .CLK_DIV(3.58) //5795)
     ) cpuclkd (
         .clk_src(clk_125_w),
         .clk_div(clk_cpu)
@@ -359,7 +359,7 @@ module v9958_top(
     wire clk_grom;
     CLOCK_DIV #(
         .CLK_SRC(125.0),
-        .CLK_DIV(3.58/8.0)
+        .CLK_DIV(3.58/8.0) //795/8.0)
     ) gromclkd (
         .clk_src(clk_125_w),
         .clk_div(clk_grom)
@@ -370,7 +370,7 @@ module v9958_top(
     .I(clk_grom)
     );
 
-    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'bz) : gromclk_w); 
+    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'b1) : gromclk_w); 
     assign cpuclk = (cpuclk_ena_n ? 1'bz : cpuclk_w);
 //////////
 

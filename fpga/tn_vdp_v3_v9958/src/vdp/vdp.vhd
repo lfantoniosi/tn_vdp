@@ -841,8 +841,8 @@ ARCHITECTURE RTL OF VDP IS
     SIGNAL PREWINDOW                    : STD_LOGIC;
     SIGNAL PREWINDOW_SP                 : STD_LOGIC;
     -- FOR FRAME ZONE
-    CONSTANT BWINDOW_X                    : STD_LOGIC := '1';
-    CONSTANT BWINDOW_Y                    : STD_LOGIC := '1';
+    SIGNAL BWINDOW_X                    : STD_LOGIC;
+    SIGNAL BWINDOW_Y                    : STD_LOGIC;
     SIGNAL BWINDOW                      : STD_LOGIC;
 
     -- DOT COUNTER - 8 ( READING ADDR )
@@ -1041,11 +1041,11 @@ BEGIN
     VDPR9PALMODE    <=  REG_R9_PAL_MODE     WHEN( NTSC_PAL_TYPE = '1' )ELSE
                         FORCED_V_MODE;
 
-    IVIDEOR <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
+    IVIDEOR <=  --(OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
                 IVIDEOR_VDP;
-    IVIDEOG <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
+    IVIDEOG <=  --(OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
                 IVIDEOG_VDP;
-    IVIDEOB <=  (OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
+    IVIDEOB <=  --(OTHERS => '0') WHEN( BWINDOW = '0' )ELSE
                 IVIDEOB_VDP;
 
     U_VDP_NTSC_PAL: VDP_NTSC_PAL
@@ -1194,54 +1194,55 @@ BEGIN
     );
 
     -- GENERATE BWINDOW
-    -- PROCESS( RESET, CLK21M )
-    -- BEGIN
-    --     IF( RESET = '1' )THEN
-    --         BWINDOW_X <= '0';
-    --     ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
---            IF( H_CNT = 200 ) THEN
---                BWINDOW_X <= '1';
---            ELSIF( H_CNT = CLOCKS_PER_LINE-1-1 )THEN
---                BWINDOW_X <= '0';
---            END IF;
-    --     END IF;
-    -- END PROCESS;
+    PROCESS( RESET, CLK21M )
+    BEGIN
+        IF( RESET = '1' )THEN
+            BWINDOW_X <= '0';
+        ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
+            IF( H_CNT = 200 ) THEN
+                BWINDOW_X <= '1';
+            ELSIF( H_CNT = CLOCKS_PER_LINE-1-1 )THEN
+                BWINDOW_X <= '0';
+            END IF;
+        END IF;
+    END PROCESS;
 
-    -- PROCESS( RESET, CLK21M )
-    -- BEGIN
-    --     IF( RESET = '1' )THEN
-    --         BWINDOW_Y <= '0';
-    --     ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
---            IF( REG_R9_INTERLACE_MODE='0' ) THEN
+    PROCESS( RESET, CLK21M )
+    BEGIN
+        IF( RESET = '1' )THEN
+            BWINDOW_Y <= '0';
+        ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
+            IF( REG_R9_INTERLACE_MODE='0' ) THEN
                 -- NON-INTERLACE
                 -- 3+3+16 = 19
---                IF( (V_CNT = 20*2) OR
---                        ((V_CNT = 524+20*2) AND (VDPR9PALMODE = '0')) OR
---                        ((V_CNT = 626+20*2) AND (VDPR9PALMODE = '1')) ) THEN
---                    BWINDOW_Y <= '1';
---                ELSIF(  ((V_CNT = 524) AND (VDPR9PALMODE = '0')) OR
---                        ((V_CNT = 626) AND (VDPR9PALMODE = '1')) OR
---                         (V_CNT = 0) ) THEN
-                    -- BWINDOW_Y <= '1';
---                END IF;
---            ELSE
---                 INTERLACE
---                IF( (V_CNT = 20*2) OR
+                IF( (V_CNT = 20*2) OR
+                        ((V_CNT = 524+20*2) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 626+20*2) AND (VDPR9PALMODE = '1')) ) THEN
+                    BWINDOW_Y <= '1';
+                ELSIF(  ((V_CNT = 524) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 626) AND (VDPR9PALMODE = '1')) OR
+                         (V_CNT = 0) ) THEN
+                    BWINDOW_Y <= '0';
+                END IF;
+            ELSE
+                -- INTERLACE
+                IF( (V_CNT = 20*2) OR
                         -- +1 SHOULD BE NEEDED.
                         -- BECAUSE ODD FIELD'S START IS DELAYED HALF LINE.
                         -- SO THE START POSITION OF DISPLAY TIME SHOULD BE
                         -- DELAYED MORE HALF LINE.
---                        ((V_CNT = 525+20*2 + 1) AND (VDPR9PALMODE = '0')) OR
---                        ((V_CNT = 625+20*2 + 1) AND (VDPR9PALMODE = '1')) ) THEN
---                    BWINDOW_Y <= '1';
---                ELSIF(  ((V_CNT = 525) AND (VDPR9PALMODE = '0')) OR
---                        ((V_CNT = 625) AND (VDPR9PALMODE = '1')) OR
---                         (V_CNT = 0) ) THEN
---                    BWINDOW_Y <= '0';
---                END IF;
---            END IF;
-    --     END IF;
-    -- END PROCESS;
+                        ((V_CNT = 525+20*2 + 1) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 625+20*2 + 1) AND (VDPR9PALMODE = '1')) ) THEN
+                    BWINDOW_Y <= '1';
+                ELSIF(  ((V_CNT = 525) AND (VDPR9PALMODE = '0')) OR
+                        ((V_CNT = 625) AND (VDPR9PALMODE = '1')) OR
+                         (V_CNT = 0) ) THEN
+                    BWINDOW_Y <= '0';
+                END IF;
+            END IF;
+
+        END IF;
+    END PROCESS;
 
     PROCESS( RESET, CLK21M )
     BEGIN
