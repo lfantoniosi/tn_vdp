@@ -5,17 +5,17 @@
       "Application": "Pcbnew",
       "Version": "7.0.1"
     },
-    "CreationDate": "2023-07-20T10:40:34-07:00"
+    "CreationDate": "2023-07-20T10:28:40-07:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
-      "Name": "tn_vdp_v3_board",
-      "GUID": "746e5f76-6470-45f7-9633-5f626f617264",
+      "Name": "tn_vdp_v9958_socket",
+      "GUID": "746e5f76-6470-45f7-9639-3935385f736f",
       "Revision": "rev?"
     },
     "Size": {
-      "X": 49.464,
-      "Y": 67.918
+      "X": 22.1,
+      "Y": 67.225
     },
     "LayerNumber": 2,
     "BoardThickness": 1.6,
@@ -32,47 +32,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "tn_vdp_v3_board-F_Cu.gbr",
+      "Path": "tn_vdp_v9958_socket-F_Cu.gbr",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-B_Cu.gbr",
+      "Path": "tn_vdp_v9958_socket-B_Cu.gbr",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-F_Paste.gbr",
+      "Path": "tn_vdp_v9958_socket-F_Paste.gbr",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-B_Paste.gbr",
+      "Path": "tn_vdp_v9958_socket-B_Paste.gbr",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-F_Silkscreen.gbr",
+      "Path": "tn_vdp_v9958_socket-F_Silkscreen.gbr",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-B_Silkscreen.gbr",
+      "Path": "tn_vdp_v9958_socket-B_Silkscreen.gbr",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "tn_vdp_v3_board-F_Mask.gbr",
+      "Path": "tn_vdp_v9958_socket-F_Mask.gbr",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "tn_vdp_v3_board-B_Mask.gbr",
+      "Path": "tn_vdp_v9958_socket-B_Mask.gbr",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "tn_vdp_v3_board-Edge_Cuts.gbr",
+      "Path": "tn_vdp_v9958_socket-Edge_Cuts.gbr",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }
