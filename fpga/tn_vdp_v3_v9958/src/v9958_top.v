@@ -209,7 +209,7 @@ module v9958_top(
     assign cd = csr_n == 0 ? CpuDbi : 8'bzzzzzzzz;
 
     assign VDP_ID  =  5'b00010; // V9958
-    assign OFFSET_Y =  6'd16; //6'b0010011;
+    assign OFFSET_Y =  6'd16; 
     assign scanlin = ~scanlin_n;
 
     wire cswn_w;
@@ -226,20 +226,6 @@ module v9958_top(
         .reset_n(reset_n_w),
         .din(csr_n),
         .dout(csrn_w)
-    );
-
-    wire [1:0] mode_w;
-    PINFILTER mode0_filter (
-        .clk(clk_sdram_w),
-        .reset_n(reset_n_w),
-        .din(mode[0]),
-        .dout(mode_w[0])
-    );
-    PINFILTER mode1_filter (
-        .clk(clk_sdram_w),
-        .reset_n(reset_n_w),
-        .din(mode[1]),
-        .dout(mode_w[1])
     );
 
 	reg			    CpuReq;
@@ -260,7 +246,7 @@ module v9958_top(
 
             if (!io_state_r) begin
 
-                CpuAdr = { 14'b0, { mode_w[1], mode_w[0] }};
+                CpuAdr = { 14'b0, { mode[1], mode[0] }};
                 CpuDbo = cd; 
                 CpuReq = (csrn_w ^ cswn_w);
                 CpuWrt = ~cswn_w;
@@ -346,7 +332,7 @@ module v9958_top(
     wire clk_cpu;
     CLOCK_DIV #(
         .CLK_SRC(125.0),
-        .CLK_DIV(3.58) //5795)
+        .CLK_DIV(3.58)
     ) cpuclkd (
         .clk_src(clk_125_w),
         .clk_div(clk_cpu)
@@ -359,7 +345,7 @@ module v9958_top(
     wire clk_grom;
     CLOCK_DIV #(
         .CLK_SRC(125.0),
-        .CLK_DIV(3.58/8.0) //795/8.0)
+        .CLK_DIV(3.58/8.0) 
     ) gromclkd (
         .clk_src(clk_125_w),
         .clk_div(clk_grom)

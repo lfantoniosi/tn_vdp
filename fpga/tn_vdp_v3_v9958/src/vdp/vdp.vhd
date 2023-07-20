@@ -1199,9 +1199,9 @@ BEGIN
         IF( RESET = '1' )THEN
             BWINDOW_X <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( H_CNT = 200 ) THEN
+            IF( H_CNT = 180 ) THEN
                 BWINDOW_X <= '1';
-            ELSIF( H_CNT = CLOCKS_PER_LINE-1-1 )THEN
+            ELSIF( H_CNT = CLOCKS_PER_LINE-1-1-20 )THEN
                 BWINDOW_X <= '0';
             END IF;
         END IF;

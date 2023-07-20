@@ -293,7 +293,8 @@ BEGIN
     -----------------------------------------------------------------------------
     -- H BLANKING
     -----------------------------------------------------------------------------
-    W_H_BLANK_START     <=  W_H_CNT_END;
+    W_H_BLANK_START     <=   '1' WHEN( FF_H_CNT = CLOCKS_PER_LINE-21 )ELSE
+                            '0'; --W_H_CNT_END;
     W_H_BLANK_END       <=  '1' WHEN( FF_H_CNT = LEFT_BORDER )ELSE
                             '0';
 
