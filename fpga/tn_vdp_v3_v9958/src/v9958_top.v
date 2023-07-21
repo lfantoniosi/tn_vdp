@@ -332,7 +332,8 @@ module v9958_top(
     wire clk_cpu;
     CLOCK_DIV #(
         .CLK_SRC(125.0),
-        .CLK_DIV(3.58)
+        .CLK_DIV(315.0/88.0),
+        .PRECISION_BITS(16)
     ) cpuclkd (
         .clk_src(clk_125_w),
         .clk_div(clk_cpu)
@@ -342,21 +343,22 @@ module v9958_top(
     .I(clk_cpu)
     );
 
-    wire clk_grom;
-    CLOCK_DIV #(
-        .CLK_SRC(125.0),
-        .CLK_DIV(3.58/8.0) 
-    ) gromclkd (
-        .clk_src(clk_125_w),
-        .clk_div(clk_grom)
-    );
+//    wire clk_grom;
+//    CLOCK_DIV #(
+//        .CLK_SRC(125.0),
+//        .CLK_DIV(3.58/8.0),
+//        .PRECISION_BITS(16)
+//    ) gromclkd (
+//        .clk_src(clk_125_w),
+//        .clk_div(clk_grom)
+//    );
 
-    BUFG clk_gromclk_bufg_inst(
-    .O(gromclk_w),
-    .I(clk_grom)
-    );
+//    BUFG clk_gromclk_bufg_inst(
+//    .O(gromclk_w),
+//    .I(clk_grom)
+//    );
 
-    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'b1) : gromclk_w); 
+//    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'b1) : gromclk_w); 
     assign cpuclk = (cpuclk_ena_n ? 1'bz : cpuclk_w);
 //////////
 
@@ -395,7 +397,8 @@ module v9958_top(
     wire clk_audio;
     CLOCK_DIV #(
         .CLK_SRC(27),
-        .CLK_DIV(0.044100)
+        .CLK_DIV(0.044100),
+        .PRECISION_BITS(16)
     ) audioclkd (
         .clk_src(clk_w),
         .clk_div(clk_audio)
@@ -519,7 +522,8 @@ module v9958_top(
     wire clk_sck;
     CLOCK_DIV #(
         .CLK_SRC(135),
-        .CLK_DIV(0.9)
+        .CLK_DIV(0.9),
+        .PRECISION_BITS(16)
     ) adcclkd (
         .clk_src(clk_135_w),
         .clk_div(clk_sck)
