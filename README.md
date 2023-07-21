@@ -1,6 +1,20 @@
 # TN VDP 
 
 ![logo](images/tn-vdp_splash.png)
+
+# Latest updates:
+
+## 2023-06-20: V3 Main Board with audio fix (Tang20k only)
+
+New V3 board with audio fix has been submitted. Check the kicad folder for gerbers. It requires few new components that you can read on the board. Pretty simple: 10uf capacitor and an optional cinch connector. I will not be updating the BOM lists. WIP project. For a 9958 socket, turn off GromClk (Jumper 3). Leave CpuClk on (Jumper4).
+
+## 2023-06-20: V9958 Socket (V3 Tang20K)
+
+The V9958 drop-in socket (SDIP-64) has been submitted. Check the kicad folder. Code has been improved for Omega MSX compatibility. SDIP pin header are hard to find. Check AliExpress for **"1.778mm Pitch Single Row Male Round Pin Header"**. Not including links they aren't persistent. You need a V3 main board as well for the Tang20K. 
+
+**Note** My Omega MSX has the RAM expansion module and I found out it has incompatiblity with the Tang (seems to be too noisy). If you get issues with IDE controllers, try removing some RAM chips from higher banks. I left my Omega with only 2MB. It's not a PSU problem but rather a routing issue that plagues the Omega for some time.
+
+# Project details
  
 ## Tang Nano 9K TMS9118A VDP
 
