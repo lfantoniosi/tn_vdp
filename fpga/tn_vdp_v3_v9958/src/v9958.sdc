@@ -16,3 +16,4 @@ create_generated_clock -name clk_sdram -source [get_ports {clk}] -master_clock c
 
 create_generated_clock -name clk_cpu -source [get_ports {clk_125}] -master_clock clk_125 -divide_by 34  -multiply_by 1 -add [get_nets {clk_cpu}]
 //create_generated_clock -name clk_grom -source [get_ports {clk_125}] -master_clock clk_125 -divide_by 272 -multiply_by 1 -add [get_nets {clk_grom}]
+

@@ -16,8 +16,8 @@ module v9958_top(
     output  int_n,
     output  gromclk,
     output  cpuclk,
-    inout   [7:0] cd,
-//    inout   [0:7] cd,
+//    inout   [7:0] cd,
+    inout   [0:7] cd,
 
     output  adc_clk,
     output  adc_cs,
@@ -196,8 +196,8 @@ module v9958_top(
 
     reg io_state_r = 1'b0; 
     reg [1:0] cs_latch;
-	wire	[7:0]	CpuDbi;
- 
+ 	wire [7:0]	CpuDbi;
+
     reg [1:0] csr_sync_r;
     reg [1:0] csw_sync_r;
     wire csr_next;
@@ -287,7 +287,7 @@ module v9958_top(
 		.PRAMADR			( VdpAdr							),
 		.PRAMDBI			( VrmDbi							),
 		.PRAMDBO			( VrmDbo							),
-		.VDPSPEEDMODE		( 1'b0	                            ),	// for V9958 MSX2+/tR VDP
+		.VDPSPEEDMODE		( ~gromclk_ena_n                     ),	// for V9958 MSX2+/tR VDP
 		.RATIOMODE			( 3'b000							    ),	// for V9958 MSX2+/tR VDP
 		.CENTERYJK_R25_N 	( 1'b0          					),	// for V9958 MSX2+/tR VDP
 		.PVIDEOR			( VideoR							),
@@ -325,7 +325,6 @@ module v9958_top(
     assign dvi_g = (scanlin && cy[0]) ? { 1'b0, VideoG,   1'b0 } : {VideoG,   2'b0 };
     assign dvi_b = (scanlin && cy[0]) ? { 1'b0, VideoB,   1'b0 } : {VideoB,   2'b0 };
 
-    assign int_n = pVdpInt_n;
 
 ///////////
 
@@ -343,6 +342,8 @@ module v9958_top(
     .I(clk_cpu)
     );
 
+    assign int_n = pVdpInt_n;
+
 //    wire clk_grom;
 //    CLOCK_DIV #(
 //        .CLK_SRC(125.0),
@@ -358,8 +359,8 @@ module v9958_top(
 //    .I(clk_grom)
 //    );
 
-//    assign gromclk = (gromclk_ena_n ? (cpuclk_ena_n ? cpuclk_w : 1'b1) : gromclk_w); 
-    assign cpuclk = (cpuclk_ena_n ? 1'bz : cpuclk_w);
+    assign gromclk = cpuclk_ena_n ? cpuclk_w : 1'b1; 
+    assign cpuclk = cpuclk_ena_n ? 1'bz :  cpuclk_w;
 //////////
 
     reg ff_video_reset;
