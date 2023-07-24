@@ -81,7 +81,8 @@ ENTITY VDP_HVCOUNTER IS
         INTERLACE_MODE          : IN    STD_LOGIC;
         Y212_MODE               : IN    STD_LOGIC;
         OFFSET_Y                : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-        HDMI_RESET              : OUT   STD_LOGIC
+        HDMI_RESET              : OUT   STD_LOGIC;
+        Y_ADJ                   : IN    STD_LOGIC_VECTOR(  8 DOWNTO 0 )
     );
 END VDP_HVCOUNTER;
 
@@ -325,8 +326,8 @@ BEGIN
     W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
                                       (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
                             '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
-                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE - Y_ADJ + OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
+                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE - Y_ADJ + OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
                             '0';
 
     PROCESS( RESET, CLK21M )

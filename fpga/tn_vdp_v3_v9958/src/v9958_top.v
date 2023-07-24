@@ -209,7 +209,7 @@ module v9958_top(
     assign cd = csr_n == 0 ? CpuDbi : 8'bzzzzzzzz;
 
     assign VDP_ID  =  5'b00010; // V9958
-    assign OFFSET_Y =  6'd16; 
+    assign OFFSET_Y = 1; //6'd16; 
     assign scanlin = ~scanlin_n;
 
     wire cswn_w;
@@ -365,8 +365,8 @@ module v9958_top(
 
     reg ff_video_reset;
 
-    localparam NTSC_Y = 525-40;
-    localparam PAL_Y  = 625-55;
+    localparam NTSC_Y = 0; //525-40;
+    localparam PAL_Y  = 0; //625-55;
     logic [9:0] cy_ntsc;
     logic [9:0] cx_ntsc;
     logic [9:0] cy_pal;

@@ -127,7 +127,8 @@ ARCHITECTURE RTL OF VDP_SSG IS
             INTERLACE_MODE      : IN    STD_LOGIC;
             Y212_MODE           : IN    STD_LOGIC;
             OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-            HDMI_RESET          : OUT   STD_LOGIC    
+            HDMI_RESET          : OUT   STD_LOGIC;
+            Y_ADJ               : IN    STD_LOGIC_VECTOR(  8 DOWNTO 0 )    
         );
     END COMPONENT;
 
@@ -202,7 +203,8 @@ BEGIN
         INTERLACE_MODE      => REG_R9_INTERLACE_MODE,
         Y212_MODE           => REG_R9_Y_DOTS        ,
         OFFSET_Y            => OFFSET_Y             ,
-        HDMI_RESET          => HDMI_RESET
+        HDMI_RESET          => HDMI_RESET           ,
+        Y_ADJ               => W_Y_ADJ
     );
 
     -----------------------------------------------------------------------------
@@ -453,8 +455,8 @@ BEGIN
     W_V_BLANKING_END    <=  '1' WHEN( (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
                                       (W_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
                             '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
-                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
+    W_V_BLANKING_START  <=  '1' WHEN( (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE - W_Y_ADJ + OFFSET_Y + LED_TV_Y_NTSC) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '0') OR
+                                      (W_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE - W_Y_ADJ + OFFSET_Y + LED_TV_Y_PAL) & (W_FIELD AND REG_R9_INTERLACE_MODE)) AND VDPR9PALMODE = '1') )ELSE
                             '0';
 
 END RTL;
