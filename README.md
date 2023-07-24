@@ -55,6 +55,8 @@ The v3 of the fpga code and mainboard is for use on a Tang Nano 20K only. There 
 
 See instructions below for programming it.
 
+**Note** The gromclk signal has been retired from V9958 128K (no MSX ever uses it). So instead turning this jumper on puts the VDP in no-wait mode, full speed 27Mhz. Turning off it makes the VDP at normal speed (for VDP commands).
+
 ## NABU PC Floppy images
 
 Bootable 80 colums for NABU PC CP/M 3 images can be downloaded here (flux and HxC2001): 
