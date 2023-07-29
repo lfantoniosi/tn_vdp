@@ -12,20 +12,20 @@
   <Part Number>: GW2AR-LV18QN88C8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Fri Jul 28 17:58:00 2023
+  <Created Time>:Fri Jul 28 18:11:31 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.778s, Elapsed time = 0h 0m 0.779s
-    Placement Phase 1: CPU time = 0h 0m 0.291s, Elapsed time = 0h 0m 0.29s
+    Placement Phase 0: CPU time = 0h 0m 0.769s, Elapsed time = 0h 0m 0.769s
+    Placement Phase 1: CPU time = 0h 0m 0.291s, Elapsed time = 0h 0m 0.291s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Placement Phase 3: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Total Placement: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
  Running routing:
     Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
-    Routing Phase 1: CPU time = 0h 0m 0.32s, Elapsed time = 0h 0m 0.319s
+    Routing Phase 1: CPU time = 0h 0m 0.319s, Elapsed time = 0h 0m 0.319s
     Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 5523/20736  27%
-    --LUT,ALU,ROM16           | 5475(4748 LUT, 727 ALU, 0 ROM16)
+  Logic                       | 5521/20736  27%
+    --LUT,ALU,ROM16           | 5473(4746 LUT, 727 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
   Register                    | 2818/15915  18%
     --Logic Register as Latch | 0/15552  0%
     --Logic Register as FF    | 2791/15552  18%
     --I/O Register as Latch   | 0/363  0%
     --I/O Register as FF      | 27/363  8%
-  CLS                         | 3952/10368  39%
+  CLS                         | 3958/10368  39%
   I/O Port                    | 36
   I/O Buf                     | 31
     --Input Buf               | 13
@@ -109,9 +109,9 @@
   -------------------------------------------
   clk_d          | PRIMARY        |  TR TL BR BL
   clk_125_d      | PRIMARY        |  BL
-  clk_135        | PRIMARY        |  TR TL
-  clk_sdram      | PRIMARY        |  TR BL
-  clk_sdramp     | PRIMARY        |  TR TL
+  clk_135        | PRIMARY        |  BR
+  clk_sdram      | PRIMARY        |  TR BR BL
+  clk_sdramp     | PRIMARY        |  TR TL BR BL
   reset_w        | LW             |  -
   hdmi_reset     | LW             |  -
   n205_5         | LW             |  -
