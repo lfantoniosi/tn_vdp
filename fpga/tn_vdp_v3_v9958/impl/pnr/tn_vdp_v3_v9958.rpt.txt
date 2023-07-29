@@ -12,27 +12,27 @@
   <Part Number>: GW2AR-LV18QN88C8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Mon Jul 24 03:10:52 2023
+  <Created Time>:Fri Jul 28 17:58:00 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.788s, Elapsed time = 0h 0m 0.788s
-    Placement Phase 1: CPU time = 0h 0m 0.288s, Elapsed time = 0h 0m 0.289s
+    Placement Phase 0: CPU time = 0h 0m 0.778s, Elapsed time = 0h 0m 0.779s
+    Placement Phase 1: CPU time = 0h 0m 0.291s, Elapsed time = 0h 0m 0.29s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Placement Phase 3: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
     Total Placement: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.003s, Elapsed time = 0h 0m 0.002s
-    Routing Phase 1: CPU time = 0h 0m 0.332s, Elapsed time = 0h 0m 0.332s
+    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
+    Routing Phase 1: CPU time = 0h 0m 0.32s, Elapsed time = 0h 0m 0.319s
     Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
  Generate output files:
     CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 
- Total Time and Memory Usage: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s, Peak memory usage = 422MB
+ Total Time and Memory Usage: CPU time = 0h 0m 11s, Elapsed time = 0h 0m 11s, Peak memory usage = 424MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 5526/20736  27%
-    --LUT,ALU,ROM16           | 5478(4756 LUT, 722 ALU, 0 ROM16)
+  Logic                       | 5523/20736  27%
+    --LUT,ALU,ROM16           | 5475(4748 LUT, 727 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
-  Register                    | 2810/15915  18%
+  Register                    | 2818/15915  18%
     --Logic Register as Latch | 0/15552  0%
-    --Logic Register as FF    | 2783/15552  18%
+    --Logic Register as FF    | 2791/15552  18%
     --I/O Register as Latch   | 0/363  0%
     --I/O Register as FF      | 27/363  8%
-  CLS                         | 3945/10368  39%
+  CLS                         | 3952/10368  39%
   I/O Port                    | 36
   I/O Buf                     | 31
     --Input Buf               | 13
