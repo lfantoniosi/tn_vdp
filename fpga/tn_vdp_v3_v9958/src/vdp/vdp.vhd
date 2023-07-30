@@ -364,7 +364,8 @@ ARCHITECTURE RTL OF VDP IS
             CLR_HSYNC_INT           : IN    STD_LOGIC;
             REQ_VSYNC_INT_N         : OUT   STD_LOGIC;
             REQ_HSYNC_INT_N         : OUT   STD_LOGIC;
-            REG_R19_HSYNC_INT_LINE  : IN    STD_LOGIC_VECTOR(  7 DOWNTO 0 )
+            REG_R19_HSYNC_INT_LINE  : IN    STD_LOGIC_VECTOR(  7 DOWNTO 0 );
+            ENAHSYNC                : IN    STD_LOGIC
         );
     END COMPONENT;
 
@@ -1136,19 +1137,24 @@ BEGIN
         CLR_HSYNC_INT           => CLR_HSYNC_INT                    ,
         REQ_VSYNC_INT_N         => REQ_VSYNC_INT_N                  ,
         REQ_HSYNC_INT_N         => REQ_HSYNC_INT_N                  ,
-        REG_R19_HSYNC_INT_LINE  => REG_R19_HSYNC_INT_LINE
+        REG_R19_HSYNC_INT_LINE  => REG_R19_HSYNC_INT_LINE           ,
+        ENAHSYNC                => ENAHSYNC
     );
+    
+    ACTIVE_LINE <=  '1'     WHEN( H_CNT(1 DOWNTO 0) = "10" AND (PREDOTCOUNTER_X = "011111111" OR PREDOTCOUNTER_X = "111111111") )ELSE
+                '0';
 
-    PROCESS( CLK21M )
-    BEGIN
-        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
-            IF( PREDOTCOUNTER_X = 255 )THEN
-                ACTIVE_LINE <= '1';
-            ELSE
-                ACTIVE_LINE <= '0';
-            END IF;
-        END IF;
-    END PROCESS;
+
+--    PROCESS( CLK21M )
+--    BEGIN
+--        IF( CLK21M'EVENT AND CLK21M = '1' )THEN
+--            IF( PREDOTCOUNTER_X = 255 )THEN
+--                ACTIVE_LINE <= '1';
+--            ELSE
+--                ACTIVE_LINE <= '0';
+--            END IF;
+--        END IF;
+--    END PROCESS;
 
     -----------------------------------------------------------------------------
     -- SYNCHRONOUS SIGNAL GENERATOR

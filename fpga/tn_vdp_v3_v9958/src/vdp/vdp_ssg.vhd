@@ -406,6 +406,8 @@ BEGIN
             FF_PRE_Y_CNT        <= (OTHERS =>'0');
             FF_MONITOR_LINE     <= (OTHERS =>'0');
             PREWINDOW_Y         <= '0';
+            PREWINDOW_Y_SP  <= '0'; 
+            ENAHSYNC        <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
 
             IF( W_HSYNC = '1' )THEN
@@ -424,9 +426,8 @@ BEGIN
                     FF_TOP_BORDER_LINES <= "000000000" - W_Y_ADJ - PREDOTCOUNTERYPSTART;
                     PREWINDOW_Y_SP  <= '1';
                 ELSE
-                    IF( PREDOTCOUNTER_YP_V = 255 )THEN
+                    IF( FF_MONITOR_LINE = 255 )THEN
                         PREDOTCOUNTER_YP_V := FF_MONITOR_LINE;
-                        ENAHSYNC        <= '0';
                     ELSE
                         PREDOTCOUNTER_YP_V := FF_MONITOR_LINE + 1;
                     END IF;
@@ -436,8 +437,9 @@ BEGIN
                     ELSIF( PREDOTCOUNTER_YP_V = W_V_SYNC_INTR_START_LINE )THEN
                         PREWINDOW_Y     <= '0';
                         PREWINDOW_Y_SP  <= '0';
-                    ELSIF( PREDOTCOUNTER_YP_V = W_V_SYNC_INTR_START_LINE + 1 )THEN
-                        ENAHSYNC        <= PREWINDOW_Y;
+                    ELSIF( (VDPR9PALMODE = '0' AND PREDOTCOUNTER_YP_V = 240) OR                        
+                           (VDPR9PALMODE = '1' AND PREDOTCOUNTER_YP_V = 288) )THEN
+                        ENAHSYNC        <= '0';
                     END IF;
                     FF_MONITOR_LINE <= PREDOTCOUNTER_YP_V;
                 END IF;

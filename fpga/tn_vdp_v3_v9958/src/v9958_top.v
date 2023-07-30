@@ -16,8 +16,8 @@ module v9958_top(
     output  int_n,
     output  gromclk,
     output  cpuclk,
-    inout   [7:0] cd,
-//    inout   [0:7] cd,
+//    inout   [7:0] cd,
+    inout   [0:7] cd,
 
     output  adc_clk,
     output  adc_cs,

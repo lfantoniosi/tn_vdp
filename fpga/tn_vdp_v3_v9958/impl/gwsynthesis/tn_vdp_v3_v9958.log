@@ -1,6 +1,7 @@
 GowinSynthesis start
 Running parser ...
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\SPI_MCP3202.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_108p.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\gowin\clk_135.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\audio_clock_regeneration_packet.sv'
@@ -21,6 +22,7 @@ Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\source_produ
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\tmds_channel.sv'
 WARN  (EX2478) : Non-net output port 'tmds' cannot be initialized at declaration in SystemVerilog mode("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\tmds_channel.sv":16)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\memory_controller.v'
+Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\pinfilter.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\sdram.v'
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v'
 Undeclared symbol 'rst_n', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":118)
@@ -35,8 +37,6 @@ Previous declaration of 'clk_sck' is from here("D:\src\tn_vdp\fpga\tn_vdp_v3_v99
 WARN  (EX3671) : Second declaration of 'clk_sck' is ignored("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":523)
 Undeclared symbol 'sckclk_w', assumed default net type 'wire'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":533)
 Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vram.v'
-Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\pinfilter.v'
-Analyzing Verilog file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v'
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd'
 Analyzing entity 'lpf1'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd":39)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd":52)
@@ -80,7 +80,7 @@ Analyzing entity 'vdp_hvcounter'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":91)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd'
 Analyzing entity 'vdp_interrupt'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":65)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":82)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":83)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd'
 Analyzing entity 'vdp_linebuf'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd":89)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd":99)
@@ -165,18 +165,18 @@ Processing 'VDP_COMMAND(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_co
 WARN  (EX4160) : Latch inferred for net 'NXCOUNT[9]'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_command.vhd":783)
 Processing 'VDP_WAIT_CONTROL(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_wait_control.vhd":59)
 Returning to Verilog mode to proceed with elaboration("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":313)
-Compiling module 'CLOCK_DIV(CLK_SRC=125.0,CLK_DIV=3.57954545454545)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":1)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":12)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":13)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":15)
-WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":31)
-WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":34)
-Compiling module 'CLOCK_DIV(CLK_SRC=27,CLK_DIV=0.0441)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":1)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":12)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":13)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":15)
-WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":31)
-WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":34)
+Compiling module 'CLOCK_DIV(CLK_SRC=125.0,CLK_DIV=3.57954545454545)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":24)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":35)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":36)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":38)
+WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":54)
+WARN  (EX3791) : Expression size 8 truncated to fit in target size 7("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":57)
+Compiling module 'CLOCK_DIV(CLK_SRC=27,CLK_DIV=0.0441)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":24)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":35)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":36)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":38)
+WARN  (EX3791) : Expression size 18 truncated to fit in target size 17("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":54)
+WARN  (EX3791) : Expression size 12 truncated to fit in target size 11("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":57)
 Compiling module 'hdmi(VIDEO_ID_CODE=2,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,START_Y=480)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\hdmi.sv":4)
 Compiling module 'packet_picker(VIDEO_ID_CODE=2,VIDEO_RATE=27000000.0,IT_CONTENT=1'b1,AUDIO_BIT_WIDTH=16,AUDIO_RATE=44100,VENDOR_NAME=64'b0101010101101110011010110110111001101111011101110110111000000000,PRODUCT_DESCRIPTION=128'b01000110010100000100011101000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,SOURCE_DEVICE_INFORMATION=8'b00000000)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":4)
 Extracting RAM for identifier 'audio_sample_word_buffer'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":80)
@@ -203,11 +203,11 @@ WARN  (EX3670) : Actual bit length 10 differs from formal bit length 12 for port
 Compiling module 'serializer(VIDEO_RATE=0)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\serializer.sv":3)
 Compiling module 'SPI_MCP3202'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\SPI_MCP3202.v":20)
 WARN  (EX3791) : Expression size 13 truncated to fit in target size 12("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\SPI_MCP3202.v":63)
-Compiling module 'CLOCK_DIV(CLK_DIV=0.9)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":1)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":12)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":13)
-WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":15)
-WARN  (EX3791) : Expression size 10 truncated to fit in target size 9("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":34)
+Compiling module 'CLOCK_DIV(CLK_SRC=135,CLK_DIV=0.9)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":24)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":35)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":36)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":38)
+WARN  (EX3791) : Expression size 10 truncated to fit in target size 9("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\clockdiv.v":57)
 Switching to VHDL mode to elaborate design unit 'LPF1'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":558)
 Processing 'LPF1(msbi=32)(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\lpf.vhd":39)
 WARN  (EX3670) : Actual bit length 32 differs from formal bit length 33 for port 'IDATA'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\v9958_top.v":556)
@@ -239,7 +239,7 @@ WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame
 WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":131)
 WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":137)
 WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":140)
-WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd":1051)
+WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd":1052)
 WARN  (NL0002) : The module "palette_g" instantiated to "U_PALETTEMEMG" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_register.vhd":394)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_doublebuf.vhd":128)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_doublebuf.vhd":155)

@@ -1,7 +1,30 @@
+/////////////////////////////////////////////////////////////////////////////////////////
+// Differential Clock Divider
+//
+// This clock divider provides a fine grained clock division achieving much better 
+// results in dividing source clocks.
+//
+// It works by integrating the difference (clock skew) over the time and skipping
+// cycles everytime the difference is over 1 cycle to keep up with the target clock.
+//
+// For example: integer dividing 125Mhz by 3.579545 gives us 34 wich provides a clock
+// of 3.676470588 Mhz or 2.71% off !
+//
+// By using this differential clock divider on the same values you can achieve 3.58Mhz
+// wich corresponds to 0.01% off !!!!
+// 
+// Don't forget to add a BUFG to the output clk for a higher fanout of the signal
+//
+// Author: Felipe Antoniosi
+// Date: 2023/07/01
+//
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
 module CLOCK_DIV
 #(
-parameter real CLK_SRC = 135,
-parameter real CLK_DIV = 3.6,
+parameter real CLK_SRC = 125,
+parameter real CLK_DIV = 3.579545,
 parameter int PRECISION_BITS = 16
 )
 (
