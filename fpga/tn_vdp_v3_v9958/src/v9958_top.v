@@ -209,7 +209,7 @@ module v9958_top(
     assign cd = csr_n == 0 ? CpuDbi : 8'bzzzzzzzz;
 
     assign VDP_ID  =  5'b00010; // V9958
-    assign OFFSET_Y = 6'd16; //6'd16; 
+    assign OFFSET_Y = 6'd16; 
     assign scanlin = ~scanlin_n;
 
     wire cswn_w;

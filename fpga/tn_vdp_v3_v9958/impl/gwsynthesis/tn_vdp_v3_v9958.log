@@ -77,10 +77,10 @@ Analyzing entity 'vdp_graphic4567'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\v
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_graphic4567.vhd":137)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd'
 Analyzing entity 'vdp_hvcounter'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":67)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":91)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":88)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd'
 Analyzing entity 'vdp_interrupt'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":65)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":83)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":82)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd'
 Analyzing entity 'vdp_linebuf'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd":89)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_linebuf.vhd":99)
@@ -136,7 +136,7 @@ Extracting RAM for identifier 'IMEM'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp
 Processing 'VDP_INTERRUPT(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":65)
 Processing 'VDP_SSG(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":69)
 Processing 'VDP_HVCOUNTER(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":67)
-'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":252)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":244)
 Processing 'VDP_COLORDEC(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_colordec.vhd":68)
 Processing 'VDP_TEXT12(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_text12.vhd":104)
 'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_text12.vhd":344)
@@ -239,7 +239,7 @@ WARN  (NL0002) : The module "audio_info_frame" instantiated to "audio_info_frame
 WARN  (NL0002) : The module "audio_sample_packet" instantiated to "audio_sample_packet" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":131)
 WARN  (NL0002) : The module "auxiliary_video_information_info_frame" instantiated to "auxiliary_video_information_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":137)
 WARN  (NL0002) : The module "source_product_description_info_frame" instantiated to "source_product_description_info_frame" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\hdmi\packet_picker.sv":140)
-WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd":1052)
+WARN  (NL0002) : The module "VDP_NTSC_PAL" instantiated to "U_VDP_NTSC_PAL" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp.vhd":1051)
 WARN  (NL0002) : The module "palette_g" instantiated to "U_PALETTEMEMG" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_register.vhd":394)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GE" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_doublebuf.vhd":128)
 WARN  (NL0002) : The module "VDP_LINEBUF" instantiated to "U_BUF_GO" is swept in optimizing("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_doublebuf.vhd":155)
