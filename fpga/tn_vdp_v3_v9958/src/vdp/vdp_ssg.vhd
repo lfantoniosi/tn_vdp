@@ -127,7 +127,9 @@ ARCHITECTURE RTL OF VDP_SSG IS
             INTERLACE_MODE      : IN    STD_LOGIC;
             Y212_MODE           : IN    STD_LOGIC;
             OFFSET_Y            : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-            HDMI_RESET          : OUT   STD_LOGIC
+            HDMI_RESET          : OUT   STD_LOGIC;
+            BLANKING_START      : IN    STD_LOGIC;
+            BLANKING_END        : IN    STD_LOGIC
         );
     END COMPONENT;
 
@@ -205,7 +207,9 @@ BEGIN
         INTERLACE_MODE      => REG_R9_INTERLACE_MODE,
         Y212_MODE           => REG_R9_Y_DOTS        ,
         OFFSET_Y            => OFFSET_Y             ,
-        HDMI_RESET          => HDMI_RESET           
+        HDMI_RESET          => HDMI_RESET           ,
+        BLANKING_START      => W_V_BLANKING_START   ,
+        BLANKING_END        => W_V_BLANKING_END
     );
 
     -----------------------------------------------------------------------------

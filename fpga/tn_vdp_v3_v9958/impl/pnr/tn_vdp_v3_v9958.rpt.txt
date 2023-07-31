@@ -12,27 +12,27 @@
   <Part Number>: GW2AR-LV18QN88C8/I7
   <Device>: GW2AR-18
   <Device Version>: C
-  <Created Time>:Sun Jul 30 21:30:28 2023
+  <Created Time>:Sun Jul 30 22:13:29 2023
 
 
 2. PnR Details
 
   Running placement:
-    Placement Phase 0: CPU time = 0h 0m 0.814s, Elapsed time = 0h 0m 0.814s
-    Placement Phase 1: CPU time = 0h 0m 0.304s, Elapsed time = 0h 0m 0.304s
+    Placement Phase 0: CPU time = 0h 0m 0.735s, Elapsed time = 0h 0m 0.735s
+    Placement Phase 1: CPU time = 0h 0m 0.275s, Elapsed time = 0h 0m 0.275s
     Placement Phase 2: CPU time = 0h 0m 2s, Elapsed time = 0h 0m 2s
-    Placement Phase 3: CPU time = 0h 0m 9s, Elapsed time = 0h 0m 9s
-    Total Placement: CPU time = 0h 0m 13s, Elapsed time = 0h 0m 13s
+    Placement Phase 3: CPU time = 0h 0m 8s, Elapsed time = 0h 0m 8s
+    Total Placement: CPU time = 0h 0m 12s, Elapsed time = 0h 0m 12s
  Running routing:
-    Routing Phase 0: CPU time = 0h 0m 0.001s, Elapsed time = 0h 0m 0.002s
-    Routing Phase 1: CPU time = 0h 0m 0.324s, Elapsed time = 0h 0m 0.323s
+    Routing Phase 0: CPU time = 0h 0m 0.002s, Elapsed time = 0h 0m 0.002s
+    Routing Phase 1: CPU time = 0h 0m 0.307s, Elapsed time = 0h 0m 0.308s
     Routing Phase 2: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
     Routing Phase 3: CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s
     Total Routing: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s
  Generate output files:
     CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s
 
- Total Time and Memory Usage: CPU time = 0h 0m 19s, Elapsed time = 0h 0m 19s, Peak memory usage = 382MB
+ Total Time and Memory Usage: CPU time = 0h 0m 18s, Elapsed time = 0h 0m 18s, Peak memory usage = 382MB
 
 
 3. Resource Usage Summary
@@ -40,15 +40,15 @@
   ----------------------------------------------------------
   Resources                   | Usage
   ----------------------------------------------------------
-  Logic                       | 5523/20736  27%
-    --LUT,ALU,ROM16           | 5475(4734 LUT, 741 ALU, 0 ROM16)
+  Logic                       | 5569/20736  27%
+    --LUT,ALU,ROM16           | 5521(4791 LUT, 730 ALU, 0 ROM16)
     --SSRAM(RAM16)            | 8
   Register                    | 2819/15915  18%
     --Logic Register as Latch | 0/15552  0%
     --Logic Register as FF    | 2792/15552  18%
     --I/O Register as Latch   | 0/363  0%
     --I/O Register as FF      | 27/363  8%
-  CLS                         | 3876/10368  38%
+  CLS                         | 3937/10368  38%
   I/O Port                    | 36
   I/O Buf                     | 31
     --Input Buf               | 13
@@ -153,14 +153,14 @@ tmds_clk_p        | tmds_clk_n | 33,34/5       | Y          | out   | IOB24    |
 tmds_data_p[0]    | tmds_data_n[0] | 35,36/4       | Y          | out   | IOB30    | LVCMOS33D  | 16    | NONE      | NA        | NA         | NA         | NA         | NA              | NA            | 3.3       
 tmds_data_p[1]    | tmds_data_n[1] | 37,38/4       | Y          | out   | IOB34    | LVCMOS33D  | 16    | NONE      | NA        | NA         | NA         | NA         | NA              | NA            | 3.3       
 tmds_data_p[2]    | tmds_data_n[2] | 39,40/4       | Y          | out   | IOB40    | LVCMOS33D  | 16    | NONE      | NA        | NA         | NA         | NA         | NA              | NA            | 3.3       
-cd[7]             |           | 42/4          | Y          | io    | IOB42[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
-cd[6]             |           | 41/4          | Y          | io    | IOB43[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
-cd[5]             |           | 56/3          | Y          | io    | IOR36[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
-cd[4]             |           | 54/3          | Y          | io    | IOR38[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
-cd[3]             |           | 51/3          | Y          | io    | IOR45[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
-cd[2]             |           | 48/3          | Y          | io    | IOR49[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
-cd[1]             |           | 55/3          | Y          | io    | IOR36[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
 cd[0]             |           | 49/3          | Y          | io    | IOR49[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[1]             |           | 55/3          | Y          | io    | IOR36[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[2]             |           | 48/3          | Y          | io    | IOR49[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[3]             |           | 51/3          | Y          | io    | IOR45[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[4]             |           | 54/3          | Y          | io    | IOR38[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[5]             |           | 56/3          | Y          | io    | IOR36[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | OFF             | NA            | 3.3       
+cd[6]             |           | 41/4          | Y          | io    | IOB43[A] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
+cd[7]             |           | 42/4          | Y          | io    | IOB42[B] | LVCMOS33   | 16    | NONE      | NA        | NONE       | OFF        | NA         | NA              | NA            | 3.3       
 =========================================================================================================================================================================================================================
 
 

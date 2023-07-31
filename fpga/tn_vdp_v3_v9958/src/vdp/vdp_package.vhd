@@ -124,9 +124,9 @@ PACKAGE VDP_PACKAGE IS
 --  SHARED VARIABLE OFFSET_Y                    : STD_LOGIC_VECTOR(  6 DOWNTO 0 );              -- managed by Switched I/O ports
 
     CONSTANT LED_TV_X_NTSC                      : INTEGER := -20;
-    CONSTANT LED_TV_Y_NTSC                      : INTEGER := 4; --1; 
+    CONSTANT LED_TV_Y_NTSC                      : INTEGER := 1; 
     CONSTANT LED_TV_X_PAL                       : INTEGER := -20;
-    CONSTANT LED_TV_Y_PAL                       : INTEGER := 4; --3; 
+    CONSTANT LED_TV_Y_PAL                       : INTEGER := 3; 
 
 --  CONSTANT DISPLAY_OFFSET_NTSC                : INTEGER := 0;
 --  CONSTANT DISPLAY_OFFSET_PAL                 : INTEGER := 27;

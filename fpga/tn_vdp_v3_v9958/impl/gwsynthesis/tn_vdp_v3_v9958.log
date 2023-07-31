@@ -77,7 +77,7 @@ Analyzing entity 'vdp_graphic4567'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\v
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_graphic4567.vhd":137)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd'
 Analyzing entity 'vdp_hvcounter'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":67)
-Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":88)
+Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":90)
 Analyzing VHDL file 'D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd'
 Analyzing entity 'vdp_interrupt'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":65)
 Analyzing architecture 'rtl'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":82)
@@ -136,7 +136,7 @@ Extracting RAM for identifier 'IMEM'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp
 Processing 'VDP_INTERRUPT(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_interrupt.vhd":65)
 Processing 'VDP_SSG(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":69)
 Processing 'VDP_HVCOUNTER(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_hvcounter.vhd":67)
-'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":244)
+'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_ssg.vhd":248)
 Processing 'VDP_COLORDEC(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_colordec.vhd":68)
 Processing 'VDP_TEXT12(RTL)'("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_text12.vhd":104)
 'others' clause is never selected("D:\src\tn_vdp\fpga\tn_vdp_v3_v9958\src\vdp\vdp_text12.vhd":344)

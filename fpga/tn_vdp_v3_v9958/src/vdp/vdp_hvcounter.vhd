@@ -81,7 +81,9 @@ ENTITY VDP_HVCOUNTER IS
         INTERLACE_MODE          : IN    STD_LOGIC;
         Y212_MODE               : IN    STD_LOGIC;
         OFFSET_Y                : IN    STD_LOGIC_VECTOR(  6 DOWNTO 0 );
-        HDMI_RESET              : OUT   STD_LOGIC
+        HDMI_RESET              : OUT   STD_LOGIC;
+        BLANKING_START          : IN    STD_LOGIC;
+        BLANKING_END            : IN    STD_LOGIC
     );
 END VDP_HVCOUNTER;
 
@@ -111,8 +113,8 @@ ARCHITECTURE RTL OF VDP_HVCOUNTER IS
     SIGNAL W_LINE_MODE              : STD_LOGIC_VECTOR(  1 DOWNTO 0 );
     SIGNAL W_H_BLANK_START          : STD_LOGIC;
     SIGNAL W_H_BLANK_END            : STD_LOGIC;
-    SIGNAL W_V_BLANKING_START       : STD_LOGIC;
-    SIGNAL W_V_BLANKING_END         : STD_LOGIC;
+--    SIGNAL W_V_BLANKING_START       : STD_LOGIC;
+--    SIGNAL W_V_BLANKING_END         : STD_LOGIC;
     SIGNAL W_V_SYNC_INTR_START_LINE : STD_LOGIC_VECTOR(  8 DOWNTO 0 );
         
 BEGIN
@@ -313,21 +315,21 @@ BEGIN
     -----------------------------------------------------------------------------
     -- V BLANKING
     -----------------------------------------------------------------------------
-    W_LINE_MODE <= Y212_MODE & FF_PAL_MODE;
+--    W_LINE_MODE <= Y212_MODE & FF_PAL_MODE;
 
-    WITH W_LINE_MODE SELECT W_V_SYNC_INTR_START_LINE <=
-        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_192_NTSC, 9 )   WHEN "00",
-        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_NTSC, 9 )   WHEN "10",
-        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_192_PAL, 9 )    WHEN "01",
-        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_PAL, 9 )    WHEN "11",
-        (OTHERS => 'X')                                         WHEN OTHERS;
+--    WITH W_LINE_MODE SELECT W_V_SYNC_INTR_START_LINE <=
+--        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_192_NTSC, 9 )   WHEN "00",
+--        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_NTSC, 9 )   WHEN "10",
+--        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_192_PAL, 9 )    WHEN "01",
+--        CONV_STD_LOGIC_VECTOR( V_BLANKING_START_212_PAL, 9 )    WHEN "11",
+--        (OTHERS => 'X')                                         WHEN OTHERS;
 
-    W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
-                                      (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
-                            '0';
-    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
-                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
-                            '0';
+--    W_V_BLANKING_END    <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
+--                                      (FF_V_CNT_IN_FIELD = ("00" & (OFFSET_Y + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+--                            '0';
+--    W_V_BLANKING_START  <=  '1' WHEN( (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_NTSC) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '0') OR
+--                                      (FF_V_CNT_IN_FIELD = ((W_V_SYNC_INTR_START_LINE + LED_TV_Y_PAL) & (FF_FIELD AND FF_INTERLACE_MODE)) AND FF_PAL_MODE = '1') )ELSE
+--                            '0';
 
     PROCESS( RESET, CLK21M )
     BEGIN
@@ -335,9 +337,9 @@ BEGIN
             FF_V_BLANK <= '0';
         ELSIF( CLK21M'EVENT AND CLK21M = '1' )THEN
             IF( W_H_BLANK_END = '1' )THEN
-                IF( W_V_BLANKING_END = '1' )THEN
+                IF( BLANKING_END = '1' )THEN
                     FF_V_BLANK <= '0';
-                ELSIF( W_V_BLANKING_START = '1' )THEN
+                ELSIF( BLANKING_START = '1' )THEN
                     FF_V_BLANK <= '1';
                 END IF;
             END IF;
