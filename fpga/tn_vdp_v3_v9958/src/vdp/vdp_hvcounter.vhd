@@ -296,6 +296,7 @@ BEGIN
     -- H BLANKING
     -----------------------------------------------------------------------------
     W_H_BLANK_START     <=  W_H_CNT_END;
+
     W_H_BLANK_END       <=  '1' WHEN( FF_H_CNT = LEFT_BORDER )ELSE
                             '0';
 
