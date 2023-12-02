@@ -342,7 +342,7 @@ module v9958_top(
     .I(clk_cpu)
     );
 
-    assign int_n = pVdpInt_n;
+    assign int_n = pVdpInt_n ? 1'bz : 1'b0;
 
 //    wire clk_grom;
 //    CLOCK_DIV #(
